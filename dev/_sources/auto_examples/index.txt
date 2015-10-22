@@ -5442,6 +5442,31 @@ Examples concerning the :mod:`sklearn.tree` module.
    tree/plot_iris
 
 
+
+.. raw:: html
+
+    <div class="thumbnailContainer" tooltip="The decision tree structure can be analysed to gain further insight on the relation between the...">
+
+.. only:: html
+
+  .. figure:: tree/images/thumb/unveil_tree_structure.png
+    :target: ./tree/unveil_tree_structure.html
+
+    :ref:`example_tree_unveil_tree_structure.py`
+
+
+.. raw:: html
+
+    </div>
+
+
+
+.. toctree::
+   :hidden:
+
+   tree/unveil_tree_structure
+
+
 .. raw:: html
 
     <div class="clearer"></div>
