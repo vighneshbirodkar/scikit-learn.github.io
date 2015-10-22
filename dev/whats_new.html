@@ -533,46 +533,68 @@ attribute to select important features of the input data. By
 <div class="section" id="id9">
 <h4>Bug fixes<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
 <blockquote>
-<div><ul class="simple">
-<li>Fixed non-determinism in <a class="reference internal" href="modules/generated/sklearn.dummy.DummyClassifier.html#sklearn.dummy.DummyClassifier" title="sklearn.dummy.DummyClassifier"><tt class="xref py py-class docutils literal"><span class="pre">dummy.DummyClassifier</span></tt></a> with sparse
-multi-label output. By <a class="reference external" href="http://peekaboo-vision.blogspot.com">Andreas Müller</a>.</li>
-<li>Fixed the output shape of <a class="reference internal" href="modules/generated/sklearn.linear_model.RANSACRegressor.html#sklearn.linear_model.RANSACRegressor" title="sklearn.linear_model.RANSACRegressor"><tt class="xref py py-class docutils literal"><span class="pre">linear_model.RANSACRegressor</span></tt></a> to
-<tt class="docutils literal"><span class="pre">(n_samples,</span> <span class="pre">)</span></tt>. By <a class="reference external" href="http://peekaboo-vision.blogspot.com">Andreas Müller</a>.</li>
-<li>Fixed bug in <tt class="xref py py-class docutils literal"><span class="pre">decomposition.DictLearning</span></tt> when <tt class="docutils literal"><span class="pre">n_jobs</span> <span class="pre">&lt;</span> <span class="pre">0</span></tt>. By
-<a class="reference external" href="http://peekaboo-vision.blogspot.com">Andreas Müller</a>.</li>
-<li>Fixed bug where <a class="reference internal" href="modules/generated/sklearn.grid_search.RandomizedSearchCV.html#sklearn.grid_search.RandomizedSearchCV" title="sklearn.grid_search.RandomizedSearchCV"><tt class="xref py py-class docutils literal"><span class="pre">grid_search.RandomizedSearchCV</span></tt></a> could consume a
-lot of memory for large discrete grids. By <a class="reference external" href="http://joelnothman.com">Joel Nothman</a>.</li>
-<li>Fixed bug in <a class="reference internal" href="modules/generated/sklearn.linear_model.LogisticRegressionCV.html#sklearn.linear_model.LogisticRegressionCV" title="sklearn.linear_model.LogisticRegressionCV"><tt class="xref py py-class docutils literal"><span class="pre">linear_model.LogisticRegressionCV</span></tt></a> where <cite>penalty</cite> was ignored
-in the final fit. By <a class="reference external" href="https://manojbits.wordpress.com">Manoj Kumar</a>.</li>
-<li>Fixed bug in <tt class="xref py py-class docutils literal"><span class="pre">ensemble.forest.ForestClassifier</span></tt> while computing
-oob_score and X is a sparse.csc_matrix. By <a class="reference external" href="https://github.com/ankurankan">Ankur Ankan</a>.</li>
-<li>All regressors now consistently handle and warn when given <tt class="docutils literal"><span class="pre">y</span></tt> that is of
-shape <tt class="docutils literal"><span class="pre">(n_samples,</span> <span class="pre">1)</span></tt>. By <a class="reference external" href="http://peekaboo-vision.blogspot.com">Andreas Müller</a>.</li>
-<li>Fix in <a class="reference internal" href="modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans" title="sklearn.cluster.KMeans"><tt class="xref py py-class docutils literal"><span class="pre">cluster.KMeans</span></tt></a> cluster reassignment for sparse input by
-<a class="reference external" href="https://github.com/larsmans">Lars Buitinck</a>.</li>
-<li>Fixed a bug in <tt class="xref py py-class docutils literal"><span class="pre">lda.LDA</span></tt> that could cause asymmetric covariance
-matrices when using shrinkage. By <a class="reference external" href="https://github.com/kazemakase">Martin Billinger</a>.</li>
-<li>Fixed <a class="reference internal" href="modules/generated/sklearn.cross_validation.cross_val_predict.html#sklearn.cross_validation.cross_val_predict" title="sklearn.cross_validation.cross_val_predict"><tt class="xref py py-func docutils literal"><span class="pre">cross_validation.cross_val_predict</span></tt></a> for estimators with
-sparse predictions. By Buddha Prakash.</li>
-<li>Fixed the <tt class="docutils literal"><span class="pre">predict_proba</span></tt> method of <a class="reference internal" href="modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression" title="sklearn.linear_model.LogisticRegression"><tt class="xref py py-class docutils literal"><span class="pre">linear_model.LogisticRegression</span></tt></a>
+<div><ul>
+<li><p class="first">Fixed non-determinism in <a class="reference internal" href="modules/generated/sklearn.dummy.DummyClassifier.html#sklearn.dummy.DummyClassifier" title="sklearn.dummy.DummyClassifier"><tt class="xref py py-class docutils literal"><span class="pre">dummy.DummyClassifier</span></tt></a> with sparse
+multi-label output. By <a class="reference external" href="http://peekaboo-vision.blogspot.com">Andreas Müller</a>.</p>
+</li>
+<li><p class="first">Fixed the output shape of <a class="reference internal" href="modules/generated/sklearn.linear_model.RANSACRegressor.html#sklearn.linear_model.RANSACRegressor" title="sklearn.linear_model.RANSACRegressor"><tt class="xref py py-class docutils literal"><span class="pre">linear_model.RANSACRegressor</span></tt></a> to
+<tt class="docutils literal"><span class="pre">(n_samples,</span> <span class="pre">)</span></tt>. By <a class="reference external" href="http://peekaboo-vision.blogspot.com">Andreas Müller</a>.</p>
+</li>
+<li><p class="first">Fixed bug in <tt class="xref py py-class docutils literal"><span class="pre">decomposition.DictLearning</span></tt> when <tt class="docutils literal"><span class="pre">n_jobs</span> <span class="pre">&lt;</span> <span class="pre">0</span></tt>. By
+<a class="reference external" href="http://peekaboo-vision.blogspot.com">Andreas Müller</a>.</p>
+</li>
+<li><p class="first">Fixed bug where <a class="reference internal" href="modules/generated/sklearn.grid_search.RandomizedSearchCV.html#sklearn.grid_search.RandomizedSearchCV" title="sklearn.grid_search.RandomizedSearchCV"><tt class="xref py py-class docutils literal"><span class="pre">grid_search.RandomizedSearchCV</span></tt></a> could consume a
+lot of memory for large discrete grids. By <a class="reference external" href="http://joelnothman.com">Joel Nothman</a>.</p>
+</li>
+<li><p class="first">Fixed bug in <a class="reference internal" href="modules/generated/sklearn.linear_model.LogisticRegressionCV.html#sklearn.linear_model.LogisticRegressionCV" title="sklearn.linear_model.LogisticRegressionCV"><tt class="xref py py-class docutils literal"><span class="pre">linear_model.LogisticRegressionCV</span></tt></a> where <cite>penalty</cite> was ignored
+in the final fit. By <a class="reference external" href="https://manojbits.wordpress.com">Manoj Kumar</a>.</p>
+</li>
+<li><p class="first">Fixed bug in <tt class="xref py py-class docutils literal"><span class="pre">ensemble.forest.ForestClassifier</span></tt> while computing
+oob_score and X is a sparse.csc_matrix. By <a class="reference external" href="https://github.com/ankurankan">Ankur Ankan</a>.</p>
+</li>
+<li><p class="first">All regressors now consistently handle and warn when given <tt class="docutils literal"><span class="pre">y</span></tt> that is of
+shape <tt class="docutils literal"><span class="pre">(n_samples,</span> <span class="pre">1)</span></tt>. By <a class="reference external" href="http://peekaboo-vision.blogspot.com">Andreas Müller</a>.</p>
+</li>
+<li><p class="first">Fix in <a class="reference internal" href="modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans" title="sklearn.cluster.KMeans"><tt class="xref py py-class docutils literal"><span class="pre">cluster.KMeans</span></tt></a> cluster reassignment for sparse input by
+<a class="reference external" href="https://github.com/larsmans">Lars Buitinck</a>.</p>
+</li>
+<li><p class="first">Fixed a bug in <tt class="xref py py-class docutils literal"><span class="pre">lda.LDA</span></tt> that could cause asymmetric covariance
+matrices when using shrinkage. By <a class="reference external" href="https://github.com/kazemakase">Martin Billinger</a>.</p>
+</li>
+<li><p class="first">Fixed <a class="reference internal" href="modules/generated/sklearn.cross_validation.cross_val_predict.html#sklearn.cross_validation.cross_val_predict" title="sklearn.cross_validation.cross_val_predict"><tt class="xref py py-func docutils literal"><span class="pre">cross_validation.cross_val_predict</span></tt></a> for estimators with
+sparse predictions. By Buddha Prakash.</p>
+</li>
+<li><p class="first">Fixed the <tt class="docutils literal"><span class="pre">predict_proba</span></tt> method of <a class="reference internal" href="modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression" title="sklearn.linear_model.LogisticRegression"><tt class="xref py py-class docutils literal"><span class="pre">linear_model.LogisticRegression</span></tt></a>
 to use soft-max instead of one-vs-rest normalization. By <a class="reference external" href="https://manojbits.wordpress.com">Manoj Kumar</a>.
-(<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/5182">#5182</a>)</li>
-<li>Fixed the <tt class="xref py py-func docutils literal"><span class="pre">partial_fit</span></tt> method of <a class="reference internal" href="modules/generated/sklearn.linear_model.SGDClassifier.html#sklearn.linear_model.SGDClassifier" title="sklearn.linear_model.SGDClassifier"><tt class="xref py py-class docutils literal"><span class="pre">linear_model.SGDClassifier</span></tt></a>
+(<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/5182">#5182</a>)</p>
+</li>
+<li><p class="first">Fixed the <tt class="xref py py-func docutils literal"><span class="pre">partial_fit</span></tt> method of <a class="reference internal" href="modules/generated/sklearn.linear_model.SGDClassifier.html#sklearn.linear_model.SGDClassifier" title="sklearn.linear_model.SGDClassifier"><tt class="xref py py-class docutils literal"><span class="pre">linear_model.SGDClassifier</span></tt></a>
 when called with <tt class="docutils literal"><span class="pre">average=True</span></tt>. By <a class="reference external" href="https://github.com/andylamb">Andrew Lamb</a>.
-(<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/5282">#5282</a>)</li>
-<li>Dataset fetchers use different filenames under Python 2 and Python 3 to
+(<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/5282">#5282</a>)</p>
+</li>
+<li><p class="first">Dataset fetchers use different filenames under Python 2 and Python 3 to
 avoid pickling compatibility issues. By <a class="reference external" href="http://twitter.com/ogrisel">Olivier Grisel</a>.
-(<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/5355">#5355</a>)</li>
-<li>Fixed a bug in <a class="reference internal" href="modules/generated/sklearn.naive_bayes.GaussianNB.html#sklearn.naive_bayes.GaussianNB" title="sklearn.naive_bayes.GaussianNB"><tt class="xref py py-class docutils literal"><span class="pre">naive_bayes.GaussianNB</span></tt></a> which caused classification
-results to depend on scale. By <a class="reference external" href="http://www.astro.washington.edu/users/vanderplas/">Jake Vanderplas</a>.</li>
-<li>Fixed temporarily <a class="reference internal" href="modules/generated/sklearn.linear_model.Ridge.html#sklearn.linear_model.Ridge" title="sklearn.linear_model.Ridge"><tt class="xref py py-class docutils literal"><span class="pre">linear_model.Ridge</span></tt></a>, which was incorrect
+(<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/5355">#5355</a>)</p>
+</li>
+<li><p class="first">Fixed a bug in <a class="reference internal" href="modules/generated/sklearn.naive_bayes.GaussianNB.html#sklearn.naive_bayes.GaussianNB" title="sklearn.naive_bayes.GaussianNB"><tt class="xref py py-class docutils literal"><span class="pre">naive_bayes.GaussianNB</span></tt></a> which caused classification
+results to depend on scale. By <a class="reference external" href="http://www.astro.washington.edu/users/vanderplas/">Jake Vanderplas</a>.</p>
+</li>
+<li><p class="first">Fixed temporarily <a class="reference internal" href="modules/generated/sklearn.linear_model.Ridge.html#sklearn.linear_model.Ridge" title="sklearn.linear_model.Ridge"><tt class="xref py py-class docutils literal"><span class="pre">linear_model.Ridge</span></tt></a>, which was incorrect
 when fitting the intercept in the case of sparse data. The fix
 automatically changes the solver to &#8216;sag&#8217; in this case.
 (<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/5360">#5360</a>)
-By <a class="reference external" href="https://github.com/TomDLT">Tom Dupre la Tour</a>.</li>
-<li>Fixed a performance bug in <a class="reference internal" href="modules/generated/sklearn.decomposition.RandomizedPCA.html#sklearn.decomposition.RandomizedPCA" title="sklearn.decomposition.RandomizedPCA"><tt class="xref py py-class docutils literal"><span class="pre">decomposition.RandomizedPCA</span></tt></a> on data
+By <a class="reference external" href="https://github.com/TomDLT">Tom Dupre la Tour</a>.</p>
+</li>
+<li><p class="first">Fixed a performance bug in <a class="reference internal" href="modules/generated/sklearn.decomposition.RandomizedPCA.html#sklearn.decomposition.RandomizedPCA" title="sklearn.decomposition.RandomizedPCA"><tt class="xref py py-class docutils literal"><span class="pre">decomposition.RandomizedPCA</span></tt></a> on data
 with a large number of features and fewer samples. (<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/4478">#4478</a>)
-By <a class="reference external" href="http://peekaboo-vision.blogspot.com">Andreas Müller</a>, <a class="reference external" href="https://github.com/lesteve">Loic Esteve</a> and <a class="reference external" href="https://github.com/giorgiop">Giorgio Patrini</a>.</li>
+By <a class="reference external" href="http://peekaboo-vision.blogspot.com">Andreas Müller</a>, <a class="reference external" href="https://github.com/lesteve">Loic Esteve</a> and <a class="reference external" href="https://github.com/giorgiop">Giorgio Patrini</a>.</p>
+</li>
+<li><p class="first">Fixed bug in <tt class="xref py py-class docutils literal"><span class="pre">cross_decomposition.PLS</span></tt> that yielded unstable and
+platform dependent output, and failed on <cite>fit_transform</cite>.</p>
+<blockquote>
+<div><p>By <a class="reference external" href="https://github.com/arthurmensch">Arthur Mensch</a>.</p>
+</div></blockquote>
+</li>
 </ul>
 </div></blockquote>
 </div>
