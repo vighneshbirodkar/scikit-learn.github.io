@@ -342,6 +342,15 @@ with ease. (<a href="#id65"><span class="problematic" id="id66">`#4294 https://g
 have been deprecated and the classes and functions have been reorganized into
 the <tt class="xref py py-mod docutils literal"><span class="pre">model_selection</span></tt> module. (<a href="#id67"><span class="problematic" id="id68">`#4294 https://github.com/scikit-learn/scikit-learn/pull/4294&gt;`_</span></a>) by <a class="reference external" href="https://github.com/ragv">Raghav R V</a>.</li>
 </ul>
+<blockquote>
+<div><ul class="simple">
+<li>The random forest, extra trees and decision tree estimators now has a
+method <tt class="docutils literal"><span class="pre">decision_path</span></tt> which returns the decision path of samples in
+the tree. By <a class="reference external" href="http://www.ajoly.org">Arnaud Joly</a></li>
+<li>A new example has been added unveling the decision tree structure.
+By <a class="reference external" href="http://www.ajoly.org">Arnaud Joly</a></li>
+</ul>
+</div></blockquote>
 </div></blockquote>
 </div>
 <div class="section" id="bug-fixes">
@@ -1639,7 +1648,7 @@ optimization. By <a class="reference external" href="http://peekaboo-vision.blog
 generation methods (<a class="reference internal" href="modules/generated/sklearn.datasets.make_biclusters.html#sklearn.datasets.make_biclusters" title="sklearn.datasets.make_biclusters"><tt class="xref py py-func docutils literal"><span class="pre">sklearn.datasets.make_biclusters</span></tt></a> and
 <a class="reference internal" href="modules/generated/sklearn.datasets.make_checkerboard.html#sklearn.datasets.make_checkerboard" title="sklearn.datasets.make_checkerboard"><tt class="xref py py-func docutils literal"><span class="pre">sklearn.datasets.make_checkerboard</span></tt></a>), and scoring metrics
 (<a class="reference internal" href="modules/generated/sklearn.metrics.consensus_score.html#sklearn.metrics.consensus_score" title="sklearn.metrics.consensus_score"><tt class="xref py py-func docutils literal"><span class="pre">sklearn.metrics.consensus_score</span></tt></a>). By <a class="reference external" href="http://www.kemaleren.com">Kemal Eren</a>.</li>
-<li>Added <a class="reference internal" href="modules/neural_networks.html#rbm"><em>Restricted Boltzmann Machines</em></a>
+<li>Added <a class="reference internal" href="modules/neural_networks_unsupervised.html#rbm"><em>Restricted Boltzmann Machines</em></a>
 (<a class="reference internal" href="modules/generated/sklearn.neural_network.BernoulliRBM.html#sklearn.neural_network.BernoulliRBM" title="sklearn.neural_network.BernoulliRBM"><tt class="xref py py-class docutils literal"><span class="pre">neural_network.BernoulliRBM</span></tt></a>). By <a class="reference external" href="http://ynd.github.io/">Yann Dauphin</a>.</li>
 <li>Python 3 support by <a class="reference external" href="https://github.com/justinvf">Justin Vincent</a>, <a class="reference external" href="https://github.com/larsmans">Lars Buitinck</a>,
 <a class="reference external" href="https://github.com/smoitra87">Subhodeep Moitra</a> and <a class="reference external" href="http://twitter.com/ogrisel">Olivier Grisel</a>. All tests now pass under

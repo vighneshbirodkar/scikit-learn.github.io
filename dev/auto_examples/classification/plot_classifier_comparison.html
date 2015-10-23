@@ -194,6 +194,7 @@ set.</p>
 <span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.cross_validation.train_test_split.html#sklearn.cross_validation.train_test_split"><span class="n">train_test_split</span></a>
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.preprocessing.StandardScaler.html#sklearn.preprocessing.StandardScaler"><span class="n">StandardScaler</span></a>
 <span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.datasets.make_moons.html#sklearn.datasets.make_moons"><span class="n">make_moons</span></a><span class="p">,</span> <a href="../../modules/generated/sklearn.datasets.make_circles.html#sklearn.datasets.make_circles"><span class="n">make_circles</span></a><span class="p">,</span> <a href="../../modules/generated/sklearn.datasets.make_classification.html#sklearn.datasets.make_classification"><span class="n">make_classification</span></a>
+<span class="kn">from</span> <span class="nn">sklearn.neural_network</span> <span class="kn">import</span> <span class="n">MLPClassifier</span>
 <span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.neighbors.KNeighborsClassifier.html#sklearn.neighbors.KNeighborsClassifier"><span class="n">KNeighborsClassifier</span></a>
 <span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC"><span class="n">SVC</span></a>
 <span class="kn">from</span> <span class="nn">sklearn.gaussian_process</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.gaussian_process.GaussianProcessClassifier.html#sklearn.gaussian_process.GaussianProcessClassifier"><span class="n">GaussianProcessClassifier</span></a>
@@ -206,8 +207,8 @@ set.</p>
 <span class="n">h</span> <span class="o">=</span> <span class="o">.</span><span class="mo">02</span>  <span class="c"># step size in the mesh</span>
 
 <span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;Nearest Neighbors&quot;</span><span class="p">,</span> <span class="s">&quot;Linear SVM&quot;</span><span class="p">,</span> <span class="s">&quot;RBF SVM&quot;</span><span class="p">,</span> <span class="s">&quot;Gaussian Process&quot;</span><span class="p">,</span>
-         <span class="s">&quot;Decision Tree&quot;</span><span class="p">,</span> <span class="s">&quot;Random Forest&quot;</span><span class="p">,</span> <span class="s">&quot;AdaBoost&quot;</span><span class="p">,</span> <span class="s">&quot;Naive Bayes&quot;</span><span class="p">,</span>
-         <span class="s">&quot;QDA&quot;</span><span class="p">]</span>
+         <span class="s">&quot;Decision Tree&quot;</span><span class="p">,</span> <span class="s">&quot;Random Forest&quot;</span><span class="p">,</span> <span class="s">&quot;Neural Net&quot;</span><span class="p">,</span> <span class="s">&quot;AdaBoost&quot;</span><span class="p">,</span>
+         <span class="s">&quot;Naive Bayes&quot;</span><span class="p">,</span> <span class="s">&quot;QDA&quot;</span><span class="p">]</span>
 
 <span class="n">classifiers</span> <span class="o">=</span> <span class="p">[</span>
     <a href="../../modules/generated/sklearn.neighbors.KNeighborsClassifier.html#sklearn.neighbors.KNeighborsClassifier"><span class="n">KNeighborsClassifier</span></a><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
@@ -216,6 +217,7 @@ set.</p>
     <a href="../../modules/generated/sklearn.gaussian_process.GaussianProcessClassifier.html#sklearn.gaussian_process.GaussianProcessClassifier"><span class="n">GaussianProcessClassifier</span></a><span class="p">(</span><span class="mf">1.0</span> <span class="o">*</span> <a href="../../modules/generated/sklearn.gaussian_process.kernels.RBF.html#sklearn.gaussian_process.kernels.RBF"><span class="n">RBF</span></a><span class="p">(</span><span class="mf">1.0</span><span class="p">),</span> <span class="n">warm_start</span><span class="o">=</span><span class="bp">True</span><span class="p">),</span>
     <a href="../../modules/generated/sklearn.tree.DecisionTreeClassifier.html#sklearn.tree.DecisionTreeClassifier"><span class="n">DecisionTreeClassifier</span></a><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span>
     <a href="../../modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier"><span class="n">RandomForestClassifier</span></a><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">n_estimators</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">max_features</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+    <span class="n">MLPClassifier</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
     <a href="../../modules/generated/sklearn.ensemble.AdaBoostClassifier.html#sklearn.ensemble.AdaBoostClassifier"><span class="n">AdaBoostClassifier</span></a><span class="p">(),</span>
     <a href="../../modules/generated/sklearn.naive_bayes.GaussianNB.html#sklearn.naive_bayes.GaussianNB"><span class="n">GaussianNB</span></a><span class="p">(),</span>
     <a href="../../modules/generated/sklearn.discriminant_analysis.QuadraticDiscriminantAnalysis.html#sklearn.discriminant_analysis.QuadraticDiscriminantAnalysis"><span class="n">QuadraticDiscriminantAnalysis</span></a><span class="p">()]</span>
@@ -299,8 +301,8 @@ set.</p>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  11.23 seconds
-( 0 minutes  11.23 seconds)</p>
+<p><strong>Total running time of the example:</strong>  13.05 seconds
+( 0 minutes  13.05 seconds)</p>
 </div>
 
 

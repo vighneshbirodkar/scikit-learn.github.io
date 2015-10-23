@@ -4690,6 +4690,81 @@ Examples concerning the :mod:`sklearn.neural_network` module.
 
 .. raw:: html
 
+    <div class="thumbnailContainer" tooltip="Sometimes looking at the learned coefficients of a neural network can provide insight into the ...">
+
+.. only:: html
+
+  .. figure:: neural_networks/images/thumb/plot_mnist_filters.png
+    :target: ./neural_networks/plot_mnist_filters.html
+
+    :ref:`example_neural_networks_plot_mnist_filters.py`
+
+
+.. raw:: html
+
+    </div>
+
+
+
+.. toctree::
+   :hidden:
+
+   neural_networks/plot_mnist_filters
+
+
+
+.. raw:: html
+
+    <div class="thumbnailContainer" tooltip="This example visualizes some training loss curves for different stochastic learning strategies,...">
+
+.. only:: html
+
+  .. figure:: neural_networks/images/thumb/plot_mlp_training_curves.png
+    :target: ./neural_networks/plot_mlp_training_curves.html
+
+    :ref:`example_neural_networks_plot_mlp_training_curves.py`
+
+
+.. raw:: html
+
+    </div>
+
+
+
+.. toctree::
+   :hidden:
+
+   neural_networks/plot_mlp_training_curves
+
+
+
+.. raw:: html
+
+    <div class="thumbnailContainer" tooltip="A comparison of different values for regularization parameter 'alpha' on synthetic datasets. Th...">
+
+.. only:: html
+
+  .. figure:: neural_networks/images/thumb/plot_mlp_alpha.png
+    :target: ./neural_networks/plot_mlp_alpha.html
+
+    :ref:`example_neural_networks_plot_mlp_alpha.py`
+
+
+.. raw:: html
+
+    </div>
+
+
+
+.. toctree::
+   :hidden:
+
+   neural_networks/plot_mlp_alpha
+
+
+
+.. raw:: html
+
     <div class="thumbnailContainer" tooltip="For greyscale image data where pixel values can be interpreted as degrees of blackness on a whi...">
 
 .. only:: html
