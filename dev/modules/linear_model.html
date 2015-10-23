@@ -165,36 +165,37 @@
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#elastic-net">1.1.4. Elastic Net</a></li>
-<li><a class="reference internal" href="#multi-task-lasso">1.1.5. Multi-task Lasso</a></li>
-<li><a class="reference internal" href="#least-angle-regression">1.1.6. Least Angle Regression</a></li>
-<li><a class="reference internal" href="#lars-lasso">1.1.7. LARS Lasso</a><ul>
-<li><a class="reference internal" href="#mathematical-formulation">1.1.7.1. Mathematical formulation</a></li>
+<li><a class="reference internal" href="#multi-task-lasso">1.1.4. Multi-task Lasso</a></li>
+<li><a class="reference internal" href="#elastic-net">1.1.5. Elastic Net</a></li>
+<li><a class="reference internal" href="#multi-task-elastic-net">1.1.6. Multi-task Elastic Net</a></li>
+<li><a class="reference internal" href="#least-angle-regression">1.1.7. Least Angle Regression</a></li>
+<li><a class="reference internal" href="#lars-lasso">1.1.8. LARS Lasso</a><ul>
+<li><a class="reference internal" href="#mathematical-formulation">1.1.8.1. Mathematical formulation</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#orthogonal-matching-pursuit-omp">1.1.8. Orthogonal Matching Pursuit (OMP)</a></li>
-<li><a class="reference internal" href="#bayesian-regression">1.1.9. Bayesian Regression</a><ul>
-<li><a class="reference internal" href="#bayesian-ridge-regression">1.1.9.1. Bayesian Ridge Regression</a></li>
-<li><a class="reference internal" href="#automatic-relevance-determination-ard">1.1.9.2. Automatic Relevance Determination - ARD</a></li>
+<li><a class="reference internal" href="#orthogonal-matching-pursuit-omp">1.1.9. Orthogonal Matching Pursuit (OMP)</a></li>
+<li><a class="reference internal" href="#bayesian-regression">1.1.10. Bayesian Regression</a><ul>
+<li><a class="reference internal" href="#bayesian-ridge-regression">1.1.10.1. Bayesian Ridge Regression</a></li>
+<li><a class="reference internal" href="#automatic-relevance-determination-ard">1.1.10.2. Automatic Relevance Determination - ARD</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#logistic-regression">1.1.10. Logistic regression</a></li>
-<li><a class="reference internal" href="#stochastic-gradient-descent-sgd">1.1.11. Stochastic Gradient Descent - SGD</a></li>
-<li><a class="reference internal" href="#perceptron">1.1.12. Perceptron</a></li>
-<li><a class="reference internal" href="#passive-aggressive-algorithms">1.1.13. Passive Aggressive Algorithms</a></li>
-<li><a class="reference internal" href="#robustness-regression-outliers-and-modeling-errors">1.1.14. Robustness regression: outliers and modeling errors</a><ul>
-<li><a class="reference internal" href="#different-scenario-and-useful-concepts">1.1.14.1. Different scenario and useful concepts</a></li>
-<li><a class="reference internal" href="#ransac-random-sample-consensus">1.1.14.2. RANSAC: RANdom SAmple Consensus</a><ul>
-<li><a class="reference internal" href="#details-of-the-algorithm">1.1.14.2.1. Details of the algorithm</a></li>
+<li><a class="reference internal" href="#logistic-regression">1.1.11. Logistic regression</a></li>
+<li><a class="reference internal" href="#stochastic-gradient-descent-sgd">1.1.12. Stochastic Gradient Descent - SGD</a></li>
+<li><a class="reference internal" href="#perceptron">1.1.13. Perceptron</a></li>
+<li><a class="reference internal" href="#passive-aggressive-algorithms">1.1.14. Passive Aggressive Algorithms</a></li>
+<li><a class="reference internal" href="#robustness-regression-outliers-and-modeling-errors">1.1.15. Robustness regression: outliers and modeling errors</a><ul>
+<li><a class="reference internal" href="#different-scenario-and-useful-concepts">1.1.15.1. Different scenario and useful concepts</a></li>
+<li><a class="reference internal" href="#ransac-random-sample-consensus">1.1.15.2. RANSAC: RANdom SAmple Consensus</a><ul>
+<li><a class="reference internal" href="#details-of-the-algorithm">1.1.15.2.1. Details of the algorithm</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#theil-sen-estimator-generalized-median-based-estimator">1.1.14.3. Theil-Sen estimator: generalized-median-based estimator</a><ul>
-<li><a class="reference internal" href="#theoretical-considerations">1.1.14.3.1. Theoretical considerations</a></li>
+<li><a class="reference internal" href="#theil-sen-estimator-generalized-median-based-estimator">1.1.15.3. Theil-Sen estimator: generalized-median-based estimator</a><ul>
+<li><a class="reference internal" href="#theoretical-considerations">1.1.15.3.1. Theoretical considerations</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#polynomial-regression-extending-linear-models-with-basis-functions">1.1.15. Polynomial regression: extending linear models with basis functions</a></li>
+<li><a class="reference internal" href="#polynomial-regression-extending-linear-models-with-basis-functions">1.1.16. Polynomial regression: extending linear models with basis functions</a></li>
 </ul>
 </li>
 </ul>
@@ -430,8 +431,42 @@ They also tend to break when the problem is badly conditioned
 </div>
 </div>
 </div>
+<div class="section" id="multi-task-lasso">
+<span id="id4"></span><h2>1.1.4. Multi-task Lasso<a class="headerlink" href="#multi-task-lasso" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="generated/sklearn.linear_model.MultiTaskLasso.html#sklearn.linear_model.MultiTaskLasso" title="sklearn.linear_model.MultiTaskLasso"><tt class="xref py py-class docutils literal"><span class="pre">MultiTaskLasso</span></tt></a> is a linear model that estimates sparse
+coefficients for multiple regression problems jointly: <tt class="docutils literal"><span class="pre">y</span></tt> is a 2D array,
+of shape <tt class="docutils literal"><span class="pre">(n_samples,</span> <span class="pre">n_tasks)</span></tt>. The constraint is that the selected
+features are the same for all the regression problems, also called tasks.</p>
+<p>The following figure compares the location of the non-zeros in W obtained
+with a simple Lasso or a MultiTaskLasso. The Lasso estimates yields
+scattered non-zeros while the non-zeros of the MultiTaskLasso are full
+columns.</p>
+<p class="centered">
+<strong><a class="reference external image-reference" href="../auto_examples/linear_model/plot_multi_task_lasso_support.html"><img alt="multi_task_lasso_1" src="../_images/plot_multi_task_lasso_support_0011.png" style="width: 384.0px; height: 240.0px;" /></a>
+ <a class="reference external image-reference" href="../auto_examples/linear_model/plot_multi_task_lasso_support.html"><img alt="multi_task_lasso_2" src="../_images/plot_multi_task_lasso_support_0021.png" style="width: 384.0px; height: 288.0px;" /></a>
+</strong></p><p class="centered">
+<strong>Fitting a time-series model, imposing that any active feature be active at all times.</strong></p><div class="topic">
+<p class="topic-title first">Examples:</p>
+<ul class="simple">
+<li><a class="reference internal" href="../auto_examples/linear_model/plot_multi_task_lasso_support.html#example-linear-model-plot-multi-task-lasso-support-py"><em>Joint feature selection with multi-task Lasso</em></a></li>
+</ul>
+</div>
+<p>Mathematically, it consists of a linear model trained with a mixed
+<img class="math" src="../_images/math/ed1224e5faf752a5cd66f7e2468ecc4f14208cf9.png" alt="\ell_1"/> <img class="math" src="../_images/math/00534d854d26fe2a55c1065948f9b94f66255a4a.png" alt="\ell_2"/> prior as regularizer.
+The objective function to minimize is:</p>
+<div class="math">
+<p><img src="../_images/math/5ee1887e3b0ce168fddeda3227fd1cc187dcceb5.png" alt="\underset{w}{min\,} { \frac{1}{2n_{samples}} ||X W - Y||_{Fro} ^ 2 + \alpha ||W||_{21}}"/></p>
+</div><p>where <img class="math" src="../_images/math/e3deed4a732566dce26f4550df8bf7cb228985ac.png" alt="Fro"/> indicates the Frobenius norm:</p>
+<div class="math">
+<p><img src="../_images/math/765c8d1911ab9d01a165c0ab84ace4fd935fce4d.png" alt="||A||_{Fro} = \sqrt{\sum_{ij} a_{ij}^2}"/></p>
+</div><p>and <img class="math" src="../_images/math/ed1224e5faf752a5cd66f7e2468ecc4f14208cf9.png" alt="\ell_1"/> <img class="math" src="../_images/math/00534d854d26fe2a55c1065948f9b94f66255a4a.png" alt="\ell_2"/> reads:</p>
+<div class="math">
+<p><img src="../_images/math/35f63e1c3650c428a0f6d869c52e197d5d3b043d.png" alt="||A||_{2 1} = \sum_i \sqrt{\sum_j a_{ij}^2}"/></p>
+</div><p>The implementation in the class <a class="reference internal" href="generated/sklearn.linear_model.MultiTaskLasso.html#sklearn.linear_model.MultiTaskLasso" title="sklearn.linear_model.MultiTaskLasso"><tt class="xref py py-class docutils literal"><span class="pre">MultiTaskLasso</span></tt></a> uses coordinate descent as
+the algorithm to fit the coefficients.</p>
+</div>
 <div class="section" id="elastic-net">
-<span id="id4"></span><h2>1.1.4. Elastic Net<a class="headerlink" href="#elastic-net" title="Permalink to this headline">¶</a></h2>
+<span id="id5"></span><h2>1.1.5. Elastic Net<a class="headerlink" href="#elastic-net" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="generated/sklearn.linear_model.ElasticNet.html#sklearn.linear_model.ElasticNet" title="sklearn.linear_model.ElasticNet"><tt class="xref py py-class docutils literal"><span class="pre">ElasticNet</span></tt></a> is a linear regression model trained with L1 and L2 prior
 as regularizer. This combination allows for learning a sparse model where
 few of the weights are non-zero like <a class="reference internal" href="generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso" title="sklearn.linear_model.Lasso"><tt class="xref py py-class docutils literal"><span class="pre">Lasso</span></tt></a>, while still maintaining
@@ -459,39 +494,25 @@ Elastic-Net to inherit some of Ridge&#8217;s stability under rotation.</p>
 </ul>
 </div>
 </div>
-<div class="section" id="multi-task-lasso">
-<span id="id5"></span><h2>1.1.5. Multi-task Lasso<a class="headerlink" href="#multi-task-lasso" title="Permalink to this headline">¶</a></h2>
-<p>The <a class="reference internal" href="generated/sklearn.linear_model.MultiTaskLasso.html#sklearn.linear_model.MultiTaskLasso" title="sklearn.linear_model.MultiTaskLasso"><tt class="xref py py-class docutils literal"><span class="pre">MultiTaskLasso</span></tt></a> is a linear model that estimates sparse
-coefficients for multiple regression problems jointly: <tt class="docutils literal"><span class="pre">y</span></tt> is a 2D array,
-of shape (n_samples, n_tasks). The constraint is that the selected
+<div class="section" id="multi-task-elastic-net">
+<span id="id6"></span><h2>1.1.6. Multi-task Elastic Net<a class="headerlink" href="#multi-task-elastic-net" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="generated/sklearn.linear_model.MultiTaskElasticNet.html#sklearn.linear_model.MultiTaskElasticNet" title="sklearn.linear_model.MultiTaskElasticNet"><tt class="xref py py-class docutils literal"><span class="pre">MultiTaskElasticNet</span></tt></a> is an elastic-net model that estimates sparse
+coefficients for multiple regression problems jointly: <tt class="docutils literal"><span class="pre">Y</span></tt> is a 2D array,
+of shape <tt class="docutils literal"><span class="pre">(n_samples,</span> <span class="pre">n_tasks)</span></tt>. The constraint is that the selected
 features are the same for all the regression problems, also called tasks.</p>
-<p>The following figure compares the location of the non-zeros in W obtained
-with a simple Lasso or a MultiTaskLasso. The Lasso estimates yields
-scattered non-zeros while the non-zeros of the MultiTaskLasso are full
-columns.</p>
-<p class="centered">
-<strong><a class="reference external image-reference" href="../auto_examples/linear_model/plot_multi_task_lasso_support.html"><img alt="multi_task_lasso_1" src="../_images/plot_multi_task_lasso_support_0011.png" style="width: 384.0px; height: 240.0px;" /></a>
- <a class="reference external image-reference" href="../auto_examples/linear_model/plot_multi_task_lasso_support.html"><img alt="multi_task_lasso_2" src="../_images/plot_multi_task_lasso_support_0021.png" style="width: 384.0px; height: 288.0px;" /></a>
-</strong></p><p class="centered">
-<strong>Fitting a time-series model, imposing that any active feature be active at all times.</strong></p><div class="topic">
-<p class="topic-title first">Examples:</p>
-<ul class="simple">
-<li><a class="reference internal" href="../auto_examples/linear_model/plot_multi_task_lasso_support.html#example-linear-model-plot-multi-task-lasso-support-py"><em>Joint feature selection with multi-task Lasso</em></a></li>
-</ul>
-</div>
 <p>Mathematically, it consists of a linear model trained with a mixed
-<img class="math" src="../_images/math/ed1224e5faf752a5cd66f7e2468ecc4f14208cf9.png" alt="\ell_1"/> <img class="math" src="../_images/math/00534d854d26fe2a55c1065948f9b94f66255a4a.png" alt="\ell_2"/> prior as regularizer.
+<img class="math" src="../_images/math/ed1224e5faf752a5cd66f7e2468ecc4f14208cf9.png" alt="\ell_1"/> <img class="math" src="../_images/math/00534d854d26fe2a55c1065948f9b94f66255a4a.png" alt="\ell_2"/> prior and <img class="math" src="../_images/math/00534d854d26fe2a55c1065948f9b94f66255a4a.png" alt="\ell_2"/> prior as regularizer.
 The objective function to minimize is:</p>
 <div class="math">
-<p><img src="../_images/math/e5acafef51b1b67dc6d79c39f3ba645819a2d59b.png" alt="\underset{w}{min\,} { \frac{1}{2n_{samples}} ||X W - Y||_2 ^ 2 + \alpha ||W||_{21}}"/></p>
-</div><p>where;</p>
-<div class="math">
-<p><img src="../_images/math/3fc06d54f9cb1a3e988483f5bbaa2a7f3d0ccbdd.png" alt="||W||_{2 1} = \sum_i \sqrt{\sum_j w_{ij}^2}"/></p>
-</div><p>The implementation in the class <a class="reference internal" href="generated/sklearn.linear_model.MultiTaskLasso.html#sklearn.linear_model.MultiTaskLasso" title="sklearn.linear_model.MultiTaskLasso"><tt class="xref py py-class docutils literal"><span class="pre">MultiTaskLasso</span></tt></a> uses coordinate descent as
+<p><img src="../_images/math/a629b7d2da242d9f14802f71e0e0ead4d49c82fe.png" alt="\underset{W}{min\,} { \frac{1}{2n_{samples}} ||X W - Y||_{Fro}^2 + \alpha \rho ||W||_{2 1} +
+\frac{\alpha(1-\rho)}{2} ||W||_{Fro}^2}"/></p>
+</div><p>The implementation in the class <a class="reference internal" href="generated/sklearn.linear_model.MultiTaskElasticNet.html#sklearn.linear_model.MultiTaskElasticNet" title="sklearn.linear_model.MultiTaskElasticNet"><tt class="xref py py-class docutils literal"><span class="pre">MultiTaskElasticNet</span></tt></a> uses coordinate descent as
 the algorithm to fit the coefficients.</p>
+<p>The class <a class="reference internal" href="generated/sklearn.linear_model.MultiTaskElasticNetCV.html#sklearn.linear_model.MultiTaskElasticNetCV" title="sklearn.linear_model.MultiTaskElasticNetCV"><tt class="xref py py-class docutils literal"><span class="pre">MultiTaskElasticNetCV</span></tt></a> can be used to set the parameters
+<tt class="docutils literal"><span class="pre">alpha</span></tt> (<img class="math" src="../_images/math/ad59b6e24a4a00ac621801f8d7513d68be654ab5.png" alt="\alpha"/>) and <tt class="docutils literal"><span class="pre">l1_ratio</span></tt> (<img class="math" src="../_images/math/f574498915fa9e02eeb5141c24835d077eba3e75.png" alt="\rho"/>) by cross-validation.</p>
 </div>
 <div class="section" id="least-angle-regression">
-<span id="id6"></span><h2>1.1.6. Least Angle Regression<a class="headerlink" href="#least-angle-regression" title="Permalink to this headline">¶</a></h2>
+<span id="id7"></span><h2>1.1.7. Least Angle Regression<a class="headerlink" href="#least-angle-regression" title="Permalink to this headline">¶</a></h2>
 <p>Least-angle regression (LARS) is a regression algorithm for
 high-dimensional data, developed by Bradley Efron, Trevor Hastie, Iain
 Johnstone and Robert Tibshirani.</p>
@@ -527,7 +548,7 @@ Statistics article.</li>
 low-level implementation <a class="reference internal" href="generated/sklearn.linear_model.lars_path.html#sklearn.linear_model.lars_path" title="sklearn.linear_model.lars_path"><tt class="xref py py-func docutils literal"><span class="pre">lars_path</span></tt></a>.</p>
 </div>
 <div class="section" id="lars-lasso">
-<h2>1.1.7. LARS Lasso<a class="headerlink" href="#lars-lasso" title="Permalink to this headline">¶</a></h2>
+<h2>1.1.8. LARS Lasso<a class="headerlink" href="#lars-lasso" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="generated/sklearn.linear_model.LassoLars.html#sklearn.linear_model.LassoLars" title="sklearn.linear_model.LassoLars"><tt class="xref py py-class docutils literal"><span class="pre">LassoLars</span></tt></a> is a lasso model implemented using the LARS
 algorithm, and unlike the implementation based on coordinate_descent,
 this yields the exact solution, which is piecewise linear as a
@@ -555,7 +576,7 @@ function of the norm of its coefficients.</p>
 the regularization parameter almost for free, thus a common operation
 consist of retrieving the path with function <a class="reference internal" href="generated/sklearn.linear_model.lars_path.html#sklearn.linear_model.lars_path" title="sklearn.linear_model.lars_path"><tt class="xref py py-func docutils literal"><span class="pre">lars_path</span></tt></a></p>
 <div class="section" id="mathematical-formulation">
-<h3>1.1.7.1. Mathematical formulation<a class="headerlink" href="#mathematical-formulation" title="Permalink to this headline">¶</a></h3>
+<h3>1.1.8.1. Mathematical formulation<a class="headerlink" href="#mathematical-formulation" title="Permalink to this headline">¶</a></h3>
 <p>The algorithm is similar to forward stepwise regression, but instead
 of including variables at each step, the estimated parameters are
 increased in a direction equiangular to each one&#8217;s correlations with
@@ -575,7 +596,7 @@ by Hastie et al.</li>
 </div>
 </div>
 <div class="section" id="orthogonal-matching-pursuit-omp">
-<span id="omp"></span><h2>1.1.8. Orthogonal Matching Pursuit (OMP)<a class="headerlink" href="#orthogonal-matching-pursuit-omp" title="Permalink to this headline">¶</a></h2>
+<span id="omp"></span><h2>1.1.9. Orthogonal Matching Pursuit (OMP)<a class="headerlink" href="#orthogonal-matching-pursuit-omp" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="generated/sklearn.linear_model.OrthogonalMatchingPursuit.html#sklearn.linear_model.OrthogonalMatchingPursuit" title="sklearn.linear_model.OrthogonalMatchingPursuit"><tt class="xref py py-class docutils literal"><span class="pre">OrthogonalMatchingPursuit</span></tt></a> and <a class="reference internal" href="generated/sklearn.linear_model.orthogonal_mp.html#sklearn.linear_model.orthogonal_mp" title="sklearn.linear_model.orthogonal_mp"><tt class="xref py py-func docutils literal"><span class="pre">orthogonal_mp</span></tt></a> implements the OMP
 algorithm for approximating the fit of a linear model with constraints imposed
 on the number of non-zero coefficients (ie. the L <sub>0</sub> pseudo-norm).</p>
@@ -611,7 +632,7 @@ S. G. Mallat, Z. Zhang,</li>
 </div>
 </div>
 <div class="section" id="bayesian-regression">
-<span id="id8"></span><h2>1.1.9. Bayesian Regression<a class="headerlink" href="#bayesian-regression" title="Permalink to this headline">¶</a></h2>
+<span id="id9"></span><h2>1.1.10. Bayesian Regression<a class="headerlink" href="#bayesian-regression" title="Permalink to this headline">¶</a></h2>
 <p>Bayesian regression techniques can be used to include regularization
 parameters in the estimation procedure: the regularization parameter is
 not set in a hard sense but tuned to the data at hand.</p>
@@ -652,7 +673,7 @@ networks</cite> by Radford M. Neal</li>
 </ul>
 </div>
 <div class="section" id="bayesian-ridge-regression">
-<span id="id9"></span><h3>1.1.9.1. Bayesian Ridge Regression<a class="headerlink" href="#bayesian-ridge-regression" title="Permalink to this headline">¶</a></h3>
+<span id="id10"></span><h3>1.1.10.1. Bayesian Ridge Regression<a class="headerlink" href="#bayesian-ridge-regression" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="generated/sklearn.linear_model.BayesianRidge.html#sklearn.linear_model.BayesianRidge" title="sklearn.linear_model.BayesianRidge"><tt class="xref py py-class docutils literal"><span class="pre">BayesianRidge</span></tt></a> estimates a probabilistic model of the
 regression problem as described above.
 The prior for the parameter <img class="math" src="../_images/math/8659700e6646cd91bc02c32affaa5ec046ee9935.png" alt="w"/> is given by a spherical Gaussian:</p>
@@ -712,9 +733,9 @@ by MacKay, David J. C.</li>
 </div>
 </div>
 <div class="section" id="automatic-relevance-determination-ard">
-<h3>1.1.9.2. Automatic Relevance Determination - ARD<a class="headerlink" href="#automatic-relevance-determination-ard" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference internal" href="generated/sklearn.linear_model.ARDRegression.html#sklearn.linear_model.ARDRegression" title="sklearn.linear_model.ARDRegression"><tt class="xref py py-class docutils literal"><span class="pre">ARDRegression</span></tt></a> is very similar to <a class="reference internal" href="#id9">Bayesian Ridge Regression</a>,
-but can lead to sparser weights <img class="math" src="../_images/math/8659700e6646cd91bc02c32affaa5ec046ee9935.png" alt="w"/> <a class="footnote-reference" href="#id12" id="id10">[1]</a> <a class="footnote-reference" href="#id13" id="id11">[2]</a>.
+<h3>1.1.10.2. Automatic Relevance Determination - ARD<a class="headerlink" href="#automatic-relevance-determination-ard" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="generated/sklearn.linear_model.ARDRegression.html#sklearn.linear_model.ARDRegression" title="sklearn.linear_model.ARDRegression"><tt class="xref py py-class docutils literal"><span class="pre">ARDRegression</span></tt></a> is very similar to <a class="reference internal" href="#id10">Bayesian Ridge Regression</a>,
+but can lead to sparser weights <img class="math" src="../_images/math/8659700e6646cd91bc02c32affaa5ec046ee9935.png" alt="w"/> <a class="footnote-reference" href="#id13" id="id11">[1]</a> <a class="footnote-reference" href="#id14" id="id12">[2]</a>.
 <a class="reference internal" href="generated/sklearn.linear_model.ARDRegression.html#sklearn.linear_model.ARDRegression" title="sklearn.linear_model.ARDRegression"><tt class="xref py py-class docutils literal"><span class="pre">ARDRegression</span></tt></a> poses a different prior over <img class="math" src="../_images/math/8659700e6646cd91bc02c32affaa5ec046ee9935.png" alt="w"/>, by dropping the
 assumption of the Gaussian being spherical.</p>
 <p>Instead, the distribution over <img class="math" src="../_images/math/8659700e6646cd91bc02c32affaa5ec046ee9935.png" alt="w"/> is assumed to be an axis-parallel,
@@ -724,7 +745,7 @@ centered on zero and with a precision <img class="math" src="../_images/math/3d9
 <div class="math">
 <p><img src="../_images/math/f17f00ba8893fd3ea1e8cc7870ba73a12f031c08.png" alt="p(w|\lambda) = \mathcal{N}(w|0,A^{-1})"/></p>
 </div><p>with <img class="math" src="../_images/math/13f995fd0de4d863d93b62211954f6da80bde589.png" alt="diag \; (A) = \lambda = \{\lambda_{1},...,\lambda_{p}\}"/>.</p>
-<p>In contrast to <a class="reference internal" href="#id9">Bayesian Ridge Regression</a>, each coordinate of <img class="math" src="../_images/math/d3dc4f3acdee37990d156185ebe2e4eb8dd6e87f.png" alt="w_{i}"/>
+<p>In contrast to <a class="reference internal" href="#id10">Bayesian Ridge Regression</a>, each coordinate of <img class="math" src="../_images/math/d3dc4f3acdee37990d156185ebe2e4eb8dd6e87f.png" alt="w_{i}"/>
 has its own standard deviation <img class="math" src="../_images/math/3b765ea6939f1eba2541e91f870cb3c078aa29be.png" alt="\lambda_i"/>. The prior over all
 <img class="math" src="../_images/math/3b765ea6939f1eba2541e91f870cb3c078aa29be.png" alt="\lambda_i"/> is chosen to be the same gamma distribution given by
 hyperparameters <img class="math" src="../_images/math/18cbd415b1a8e3f19977c5d04d046d41c585c7de.png" alt="\lambda_1"/> and <img class="math" src="../_images/math/2bc2d2b207f861ff1c70724ebb8a9cd6831c0d52.png" alt="\lambda_2"/>.</p>
@@ -739,23 +760,23 @@ hyperparameters <img class="math" src="../_images/math/18cbd415b1a8e3f19977c5d04
 </div>
 <div class="topic">
 <p class="topic-title first">References:</p>
-<table class="docutils footnote" frame="void" id="id12" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id10">[1]</a></td><td>Christopher M. Bishop: Pattern Recognition and Machine Learning, Chapter 7.2.1</td></tr>
-</tbody>
-</table>
 <table class="docutils footnote" frame="void" id="id13" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id11">[2]</a></td><td>David Wipf and Srikantan Nagarajan: <a class="reference external" href="http://books.nips.cc/papers/files/nips20/NIPS2007_0976.pdf">A new view of automatic relevance determination.</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id11">[1]</a></td><td>Christopher M. Bishop: Pattern Recognition and Machine Learning, Chapter 7.2.1</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id14" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id12">[2]</a></td><td>David Wipf and Srikantan Nagarajan: <a class="reference external" href="http://books.nips.cc/papers/files/nips20/NIPS2007_0976.pdf">A new view of automatic relevance determination.</a></td></tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
 <div class="section" id="logistic-regression">
-<span id="id14"></span><h2>1.1.10. Logistic regression<a class="headerlink" href="#logistic-regression" title="Permalink to this headline">¶</a></h2>
+<span id="id15"></span><h2>1.1.11. Logistic regression<a class="headerlink" href="#logistic-regression" title="Permalink to this headline">¶</a></h2>
 <p>Logistic regression, despite its name, is a linear model for classification
 rather than regression. Logistic regression is also known in the literature as
 logit regression, maximum-entropy classification (MaxEnt)
@@ -793,7 +814,7 @@ in <a class="reference internal" href="generated/sklearn.linear_model.LogisticRe
 regression model, which means that its probability estimates should
 be better calibrated than the default &#8220;one-vs-rest&#8221; setting.
 &#8220;lbfgs&#8221;, &#8220;newton-cg&#8221; and &#8220;sag&#8221; solvers cannot optimize L1-penalized models, though, so the &#8220;multinomial&#8221; setting does not learn sparse models.</p>
-<p>The solver &#8220;sag&#8221; uses a Stochastic Average Gradient descent <a class="footnote-reference" href="#id16" id="id15">[3]</a>. It does not
+<p>The solver &#8220;sag&#8221; uses a Stochastic Average Gradient descent <a class="footnote-reference" href="#id17" id="id16">[3]</a>. It does not
 handle &#8220;multinomial&#8221; case, and is limited to L2-penalized models, yet it is
 often faster than other solvers for large datasets, when both the number of
 samples and the number of features are large.</p>
@@ -858,16 +879,16 @@ the <cite>multi_class</cite> option is set to &#8220;multinomial&#8221;, an opti
 obtained that minimizes the cross-entropy loss.</p>
 <div class="topic">
 <p class="topic-title first">References:</p>
-<table class="docutils footnote" frame="void" id="id16" rules="none">
+<table class="docutils footnote" frame="void" id="id17" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id15">[3]</a></td><td>Mark Schmidt, Nicolas Le Roux, and Francis Bach: <a class="reference external" href="http://hal.inria.fr/hal-00860051/PDF/sag_journal.pdf">Minimizing Finite Sums with the Stochastic Average Gradient.</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id16">[3]</a></td><td>Mark Schmidt, Nicolas Le Roux, and Francis Bach: <a class="reference external" href="http://hal.inria.fr/hal-00860051/PDF/sag_journal.pdf">Minimizing Finite Sums with the Stochastic Average Gradient.</a></td></tr>
 </tbody>
 </table>
 </div>
 </div>
 <div class="section" id="stochastic-gradient-descent-sgd">
-<h2>1.1.11. Stochastic Gradient Descent - SGD<a class="headerlink" href="#stochastic-gradient-descent-sgd" title="Permalink to this headline">¶</a></h2>
+<h2>1.1.12. Stochastic Gradient Descent - SGD<a class="headerlink" href="#stochastic-gradient-descent-sgd" title="Permalink to this headline">¶</a></h2>
 <p>Stochastic gradient descent is a simple yet very efficient approach
 to fit linear models. It is particularly useful when the number of samples
 (and the number of features) is very large.
@@ -886,7 +907,7 @@ while with <tt class="docutils literal"><span class="pre">loss=&quot;hinge&quot;
 </div>
 </div>
 <div class="section" id="perceptron">
-<span id="id17"></span><h2>1.1.12. Perceptron<a class="headerlink" href="#perceptron" title="Permalink to this headline">¶</a></h2>
+<span id="id18"></span><h2>1.1.13. Perceptron<a class="headerlink" href="#perceptron" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference internal" href="generated/sklearn.linear_model.Perceptron.html#sklearn.linear_model.Perceptron" title="sklearn.linear_model.Perceptron"><tt class="xref py py-class docutils literal"><span class="pre">Perceptron</span></tt></a> is another simple algorithm suitable for large scale
 learning. By default:</p>
 <blockquote>
@@ -901,7 +922,7 @@ train than SGD with the hinge loss and that the resulting models are
 sparser.</p>
 </div>
 <div class="section" id="passive-aggressive-algorithms">
-<span id="passive-aggressive"></span><h2>1.1.13. Passive Aggressive Algorithms<a class="headerlink" href="#passive-aggressive-algorithms" title="Permalink to this headline">¶</a></h2>
+<span id="passive-aggressive"></span><h2>1.1.14. Passive Aggressive Algorithms<a class="headerlink" href="#passive-aggressive-algorithms" title="Permalink to this headline">¶</a></h2>
 <p>The passive-aggressive algorithms are a family of algorithms for large-scale
 learning. They are similar to the Perceptron in that they do not require a
 learning rate. However, contrary to the Perceptron, they include a
@@ -920,14 +941,14 @@ K. Crammer, O. Dekel, J. Keshat, S. Shalev-Shwartz, Y. Singer - JMLR 7 (2006)</l
 </div>
 </div>
 <div class="section" id="robustness-regression-outliers-and-modeling-errors">
-<h2>1.1.14. Robustness regression: outliers and modeling errors<a class="headerlink" href="#robustness-regression-outliers-and-modeling-errors" title="Permalink to this headline">¶</a></h2>
+<h2>1.1.15. Robustness regression: outliers and modeling errors<a class="headerlink" href="#robustness-regression-outliers-and-modeling-errors" title="Permalink to this headline">¶</a></h2>
 <p>Robust regression is interested in fitting a regression model in the
 presence of corrupt data: either outliers, or error in the model.</p>
 <div class="figure align-center">
 <a class="reference external image-reference" href="../auto_examples/linear_model/plot_theilsen.html"><img alt="../_images/plot_theilsen_0011.png" src="../_images/plot_theilsen_0011.png" style="width: 400.0px; height: 300.0px;" /></a>
 </div>
 <div class="section" id="different-scenario-and-useful-concepts">
-<h3>1.1.14.1. Different scenario and useful concepts<a class="headerlink" href="#different-scenario-and-useful-concepts" title="Permalink to this headline">¶</a></h3>
+<h3>1.1.15.1. Different scenario and useful concepts<a class="headerlink" href="#different-scenario-and-useful-concepts" title="Permalink to this headline">¶</a></h3>
 <p>There are different things to keep in mind when dealing with data
 corrupted by outliers:</p>
 <ul>
@@ -1000,7 +1021,7 @@ disappear in large dimensional settings.</li>
 </div>
 </div>
 <div class="section" id="ransac-random-sample-consensus">
-<span id="ransac-regression"></span><h3>1.1.14.2. RANSAC: RANdom SAmple Consensus<a class="headerlink" href="#ransac-random-sample-consensus" title="Permalink to this headline">¶</a></h3>
+<span id="ransac-regression"></span><h3>1.1.15.2. RANSAC: RANdom SAmple Consensus<a class="headerlink" href="#ransac-random-sample-consensus" title="Permalink to this headline">¶</a></h3>
 <p>RANSAC (RANdom SAmple Consensus) fits a model from random subsets of
 inliers from the complete data set.</p>
 <p>RANSAC is a non-deterministic algorithm producing only a reasonable result with
@@ -1016,7 +1037,7 @@ estimated only from the determined inliers.</p>
 <a class="reference external image-reference" href="../auto_examples/linear_model/plot_ransac.html"><img alt="../_images/plot_ransac_0011.png" src="../_images/plot_ransac_0011.png" style="width: 400.0px; height: 300.0px;" /></a>
 </div>
 <div class="section" id="details-of-the-algorithm">
-<h4>1.1.14.2.1. Details of the algorithm<a class="headerlink" href="#details-of-the-algorithm" title="Permalink to this headline">¶</a></h4>
+<h4>1.1.15.2.1. Details of the algorithm<a class="headerlink" href="#details-of-the-algorithm" title="Permalink to this headline">¶</a></h4>
 <p>Each iteration performs the following steps:</p>
 <ol class="arabic simple">
 <li>Select <tt class="docutils literal"><span class="pre">min_samples</span></tt> random samples from the original data and check
@@ -1061,7 +1082,7 @@ Sunglok Choi, Taemin Kim and Wonpil Yu - BMVC (2009)</li>
 </div>
 </div>
 <div class="section" id="theil-sen-estimator-generalized-median-based-estimator">
-<span id="theil-sen-regression"></span><h3>1.1.14.3. Theil-Sen estimator: generalized-median-based estimator<a class="headerlink" href="#theil-sen-estimator-generalized-median-based-estimator" title="Permalink to this headline">¶</a></h3>
+<span id="theil-sen-regression"></span><h3>1.1.15.3. Theil-Sen estimator: generalized-median-based estimator<a class="headerlink" href="#theil-sen-estimator-generalized-median-based-estimator" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference internal" href="generated/sklearn.linear_model.TheilSenRegressor.html#sklearn.linear_model.TheilSenRegressor" title="sklearn.linear_model.TheilSenRegressor"><tt class="xref py py-class docutils literal"><span class="pre">TheilSenRegressor</span></tt></a> estimator uses a generalization of the median in
 multiple dimensions. It is thus robust to multivariate outliers. Note however
 that the robustness of the estimator decreases quickly with the dimensionality
@@ -1081,7 +1102,7 @@ better than an ordinary least squares in high dimension.</p>
 </ul>
 </div>
 <div class="section" id="theoretical-considerations">
-<h4>1.1.14.3.1. Theoretical considerations<a class="headerlink" href="#theoretical-considerations" title="Permalink to this headline">¶</a></h4>
+<h4>1.1.15.3.1. Theoretical considerations<a class="headerlink" href="#theoretical-considerations" title="Permalink to this headline">¶</a></h4>
 <p><a class="reference internal" href="generated/sklearn.linear_model.TheilSenRegressor.html#sklearn.linear_model.TheilSenRegressor" title="sklearn.linear_model.TheilSenRegressor"><tt class="xref py py-class docutils literal"><span class="pre">TheilSenRegressor</span></tt></a> is comparable to the <a class="reference internal" href="#ordinary-least-squares"><em>Ordinary Least Squares
 (OLS)</em></a> in terms of asymptotic efficiency and as an
 unbiased estimator. In contrast to OLS, Theil-Sen is a non-parametric
@@ -1095,9 +1116,9 @@ corrupted data of up to 29.3%.</p>
 <a class="reference external image-reference" href="../auto_examples/linear_model/plot_theilsen.html"><img alt="../_images/plot_theilsen_0011.png" src="../_images/plot_theilsen_0011.png" style="width: 400.0px; height: 300.0px;" /></a>
 </div>
 <p>The implementation of <a class="reference internal" href="generated/sklearn.linear_model.TheilSenRegressor.html#sklearn.linear_model.TheilSenRegressor" title="sklearn.linear_model.TheilSenRegressor"><tt class="xref py py-class docutils literal"><span class="pre">TheilSenRegressor</span></tt></a> in scikit-learn follows a
-generalization to a multivariate linear regression model <a class="footnote-reference" href="#f1" id="id18">[4]</a> using the
+generalization to a multivariate linear regression model <a class="footnote-reference" href="#f1" id="id19">[4]</a> using the
 spatial median which is a generalization of the median to multiple
-dimensions <a class="footnote-reference" href="#f2" id="id19">[5]</a>.</p>
+dimensions <a class="footnote-reference" href="#f2" id="id20">[5]</a>.</p>
 <p>In terms of time and space complexity, Theil-Sen scales according to</p>
 <div class="math">
 <p><img src="../_images/math/35169538be4ee2d0427ecfbc80400da2647df66b.png" alt="\binom{n_{samples}}{n_{subsamples}}"/></p>
@@ -1116,13 +1137,13 @@ considering only a random subset of all possible combinations.</p>
 <table class="docutils footnote" frame="void" id="f1" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id18">[4]</a></td><td>Xin Dang, Hanxiang Peng, Xueqin Wang and Heping Zhang: <a class="reference external" href="http://www.math.iupui.edu/~hpeng/MTSE_0908.pdf">Theil-Sen Estimators in a Multiple Linear Regression Model.</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id19">[4]</a></td><td>Xin Dang, Hanxiang Peng, Xueqin Wang and Heping Zhang: <a class="reference external" href="http://www.math.iupui.edu/~hpeng/MTSE_0908.pdf">Theil-Sen Estimators in a Multiple Linear Regression Model.</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="f2" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id19">[5]</a></td><td><ol class="first last upperalpha simple" start="20">
+<tr><td class="label"><a class="fn-backref" href="#id20">[5]</a></td><td><ol class="first last upperalpha simple" start="20">
 <li>Kärkkäinen and S. Äyrämö: <a class="reference external" href="http://users.jyu.fi/~samiayr/pdf/ayramo_eurogen05.pdf">On Computation of Spatial Median for Robust Data Mining.</a></li>
 </ol>
 </td></tr>
@@ -1133,7 +1154,7 @@ considering only a random subset of all possible combinations.</p>
 </div>
 </div>
 <div class="section" id="polynomial-regression-extending-linear-models-with-basis-functions">
-<span id="polynomial-regression"></span><h2>1.1.15. Polynomial regression: extending linear models with basis functions<a class="headerlink" href="#polynomial-regression-extending-linear-models-with-basis-functions" title="Permalink to this headline">¶</a></h2>
+<span id="polynomial-regression"></span><h2>1.1.16. Polynomial regression: extending linear models with basis functions<a class="headerlink" href="#polynomial-regression-extending-linear-models-with-basis-functions" title="Permalink to this headline">¶</a></h2>
 <p>One common pattern within machine learning is to use linear models trained
 on nonlinear functions of the data.  This approach maintains the generally
 fast performance of linear methods, while allowing them to fit a much wider
