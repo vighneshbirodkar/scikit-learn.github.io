@@ -36,7 +36,7 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="scikit-learn 0.18.dev0 documentation" href="../../index.html" />
     <link rel="up" title="Examples" href="../index.html" />
-    <link rel="next" title="SGD: Penalties" href="plot_sgd_penalties.html" />
+    <link rel="next" title="Lasso on dense and sparse data" href="lasso_dense_vs_sparse_data.html" />
     <link rel="prev" title="Logit function" href="plot_logistic.html" />
   
   
@@ -224,18 +224,21 @@ point. This makes feature selection by the Lasso more stable.</p>
 
 <span class="n">feature_to_plot</span> <span class="o">=</span> <span class="mi">0</span>
 <a href="http://matplotlib.org/api/figure_api.html#matplotlib.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">()</span>
-<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">coef</span><span class="p">[:,</span> <span class="n">feature_to_plot</span><span class="p">],</span> <span class="s">&#39;k&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Ground truth&#39;</span><span class="p">)</span>
-<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">coef_lasso_</span><span class="p">[:,</span> <span class="n">feature_to_plot</span><span class="p">],</span> <span class="s">&#39;g&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Lasso&#39;</span><span class="p">)</span>
-<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">coef_multi_task_lasso_</span><span class="p">[:,</span> <span class="n">feature_to_plot</span><span class="p">],</span>
-         <span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;MultiTaskLasso&#39;</span><span class="p">)</span>
+<span class="n">lw</span> <span class="o">=</span> <span class="mi">2</span>
+<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">coef</span><span class="p">[:,</span> <span class="n">feature_to_plot</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;seagreen&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="n">lw</span><span class="p">,</span>
+         <span class="n">label</span><span class="o">=</span><span class="s">&#39;Ground truth&#39;</span><span class="p">)</span>
+<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">coef_lasso_</span><span class="p">[:,</span> <span class="n">feature_to_plot</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;cornflowerblue&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="n">lw</span><span class="p">,</span>
+         <span class="n">label</span><span class="o">=</span><span class="s">&#39;Lasso&#39;</span><span class="p">)</span>
+<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">coef_multi_task_lasso_</span><span class="p">[:,</span> <span class="n">feature_to_plot</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;gold&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="n">lw</span><span class="p">,</span>
+         <span class="n">label</span><span class="o">=</span><span class="s">&#39;MultiTaskLasso&#39;</span><span class="p">)</span>
 <a href="http://matplotlib.org/api/legend_api.html#matplotlib.legend"><span class="n">plt</span><span class="o">.</span><span class="n">legend</span></a><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">&#39;upper center&#39;</span><span class="p">)</span>
 <a href="http://matplotlib.org/api/axis_api.html#matplotlib.axis"><span class="n">plt</span><span class="o">.</span><span class="n">axis</span></a><span class="p">(</span><span class="s">&#39;tight&#39;</span><span class="p">)</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.ylim"><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span></a><span class="p">([</span><span class="o">-</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">])</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  0.24 seconds
-( 0 minutes  0.24 seconds)</p>
+<p><strong>Total running time of the example:</strong>  0.23 seconds
+( 0 minutes  0.23 seconds)</p>
 </div>
 
 

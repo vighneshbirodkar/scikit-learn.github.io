@@ -3308,56 +3308,6 @@ Examples concerning the :mod:`sklearn.linear_model` module.
 
 .. raw:: html
 
-    <div class="thumbnailContainer" tooltip="In this example we see how to robustly fit a linear model to faulty data using the RANSAC algor...">
-
-.. only:: html
-
-  .. figure:: linear_model/images/thumb/plot_ransac.png
-    :target: ./linear_model/plot_ransac.html
-
-    :ref:`example_linear_model_plot_ransac.py`
-
-
-.. raw:: html
-
-    </div>
-
-
-
-.. toctree::
-   :hidden:
-
-   linear_model/plot_ransac
-
-
-
-.. raw:: html
-
-    <div class="thumbnailContainer" tooltip="This example demonstrates how to approximate a function with a polynomial of degree n_degree by...">
-
-.. only:: html
-
-  .. figure:: linear_model/images/thumb/plot_polynomial_interpolation.png
-    :target: ./linear_model/plot_polynomial_interpolation.html
-
-    :ref:`example_linear_model_plot_polynomial_interpolation.py`
-
-
-.. raw:: html
-
-    </div>
-
-
-
-.. toctree::
-   :hidden:
-
-   linear_model/plot_polynomial_interpolation
-
-
-
-.. raw:: html
-
     <div class="thumbnailContainer" tooltip="Computes path on IRIS dataset.">
 
 .. only:: html
@@ -3403,6 +3353,31 @@ Examples concerning the :mod:`sklearn.linear_model` module.
    :hidden:
 
    linear_model/plot_iris_logistic
+
+
+
+.. raw:: html
+
+    <div class="thumbnailContainer" tooltip="In this example we see how to robustly fit a linear model to faulty data using the RANSAC algor...">
+
+.. only:: html
+
+  .. figure:: linear_model/images/thumb/plot_ransac.png
+    :target: ./linear_model/plot_ransac.html
+
+    :ref:`example_linear_model_plot_ransac.py`
+
+
+.. raw:: html
+
+    </div>
+
+
+
+.. toctree::
+   :hidden:
+
+   linear_model/plot_ransac
 
 
 
@@ -3483,6 +3458,31 @@ Examples concerning the :mod:`sklearn.linear_model` module.
 
 .. raw:: html
 
+    <div class="thumbnailContainer" tooltip="This example demonstrates how to approximate a function with a polynomial of degree n_degree by...">
+
+.. only:: html
+
+  .. figure:: linear_model/images/thumb/plot_polynomial_interpolation.png
+    :target: ./linear_model/plot_polynomial_interpolation.html
+
+    :ref:`example_linear_model_plot_polynomial_interpolation.py`
+
+
+.. raw:: html
+
+    </div>
+
+
+
+.. toctree::
+   :hidden:
+
+   linear_model/plot_polynomial_interpolation
+
+
+
+.. raw:: html
+
     <div class="thumbnailContainer" tooltip="Show in the plot is how the logistic regression would, in this synthetic dataset, classify valu...">
 
 .. only:: html
@@ -3528,31 +3528,6 @@ Examples concerning the :mod:`sklearn.linear_model` module.
    :hidden:
 
    linear_model/plot_multi_task_lasso_support
-
-
-
-.. raw:: html
-
-    <div class="thumbnailContainer" tooltip="Plot the contours of the three penalties.">
-
-.. only:: html
-
-  .. figure:: linear_model/images/thumb/plot_sgd_penalties.png
-    :target: ./linear_model/plot_sgd_penalties.html
-
-    :ref:`example_linear_model_plot_sgd_penalties.py`
-
-
-.. raw:: html
-
-    </div>
-
-
-
-.. toctree::
-   :hidden:
-
-   linear_model/plot_sgd_penalties
 
 
 
@@ -3633,6 +3608,31 @@ Examples concerning the :mod:`sklearn.linear_model` module.
 
 .. raw:: html
 
+    <div class="thumbnailContainer" tooltip="Plot the contours of the three penalties.">
+
+.. only:: html
+
+  .. figure:: linear_model/images/thumb/plot_sgd_penalties.png
+    :target: ./linear_model/plot_sgd_penalties.html
+
+    :ref:`example_linear_model_plot_sgd_penalties.py`
+
+
+.. raw:: html
+
+    </div>
+
+
+
+.. toctree::
+   :hidden:
+
+   linear_model/plot_sgd_penalties
+
+
+
+.. raw:: html
+
     <div class="thumbnailContainer" tooltip="Computes a Bayesian Ridge Regression on a synthetic dataset.">
 
 .. only:: html
@@ -3683,31 +3683,6 @@ Examples concerning the :mod:`sklearn.linear_model` module.
 
 .. raw:: html
 
-    <div class="thumbnailContainer" tooltip="Fit regression model with Bayesian Ridge Regression.">
-
-.. only:: html
-
-  .. figure:: linear_model/images/thumb/plot_ard.png
-    :target: ./linear_model/plot_ard.html
-
-    :ref:`example_linear_model_plot_ard.py`
-
-
-.. raw:: html
-
-    </div>
-
-
-
-.. toctree::
-   :hidden:
-
-   linear_model/plot_ard
-
-
-
-.. raw:: html
-
     <div class="thumbnailContainer" tooltip="Comparison of the sparsity (percentage of zero coefficients) of solutions when L1 and L2 penalt...">
 
 .. only:: html
@@ -3728,6 +3703,31 @@ Examples concerning the :mod:`sklearn.linear_model` module.
    :hidden:
 
    linear_model/plot_logistic_l1_l2_sparsity
+
+
+
+.. raw:: html
+
+    <div class="thumbnailContainer" tooltip="Fit regression model with Bayesian Ridge Regression.">
+
+.. only:: html
+
+  .. figure:: linear_model/images/thumb/plot_ard.png
+    :target: ./linear_model/plot_ard.html
+
+    :ref:`example_linear_model_plot_ard.py`
+
+
+.. raw:: html
+
+    </div>
+
+
+
+.. toctree::
+   :hidden:
+
+   linear_model/plot_ard
 
 
 
