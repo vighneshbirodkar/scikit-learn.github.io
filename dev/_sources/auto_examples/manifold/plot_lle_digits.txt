@@ -119,6 +119,6 @@ initialization.
 .. literalinclude:: plot_lle_digits.py
     :lines: 19-
 
-**Total running time of the example:**  66.01 seconds
-( 1 minutes  6.01 seconds)
+**Total running time of the example:**  66.34 seconds
+( 1 minutes  6.34 seconds)
     
