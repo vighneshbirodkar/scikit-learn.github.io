@@ -152,6 +152,7 @@
 <li><a class="reference internal" href="#id1">2.7.2. Outlier Detection</a><ul>
 <li><a class="reference internal" href="#fitting-an-elliptic-envelope">2.7.2.1. Fitting an elliptic envelope</a></li>
 <li><a class="reference internal" href="#one-class-svm-versus-elliptic-envelope">2.7.2.2. One-class SVM versus elliptic envelope</a></li>
+<li><a class="reference internal" href="#isolation-forest">2.7.2.3. Isolation Forest</a></li>
 </ul>
 </li>
 </ul>
@@ -349,6 +350,39 @@ completely fails.</td>
 comparison of the <a class="reference internal" href="generated/sklearn.svm.OneClassSVM.html#sklearn.svm.OneClassSVM" title="sklearn.svm.OneClassSVM"><tt class="xref py py-class docutils literal"><span class="pre">svm.OneClassSVM</span></tt></a> (tuned to perform like
 an outlier detection method) and a covariance-based outlier
 detection with <a class="reference internal" href="generated/sklearn.covariance.MinCovDet.html#sklearn.covariance.MinCovDet" title="sklearn.covariance.MinCovDet"><tt class="xref py py-class docutils literal"><span class="pre">covariance.MinCovDet</span></tt></a>.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="isolation-forest">
+<h3>2.7.2.3. Isolation Forest<a class="headerlink" href="#isolation-forest" title="Permalink to this headline">¶</a></h3>
+<p>One efficient way of performing outlier detection in high-dimensional datasets
+is to use random forests.
+<a class="reference internal" href="generated/sklearn.ensemble.IsolationForest.html#sklearn.ensemble.IsolationForest" title="sklearn.ensemble.IsolationForest"><tt class="xref py py-class docutils literal"><span class="pre">ensemble.IsolationForest</span></tt></a> consists in &#8216;isolating&#8217; the observations
+by randomly selecting a feature and then randomly selecting a split value
+between the maximum and minimum values of the selected feature.</p>
+<p>Since recursive partitioning can be represented by a tree structure, the
+number of splitting required to isolate a point is equivalent to the path
+length from the root node to a terminating node.</p>
+<p>This path length, averaged among a forest of such random trees, is a
+measure of abnormality and our decision function.</p>
+<p>Indeed random partitioning produces noticeable shorter paths for anomalies.
+Hence, when a forest of random trees collectively produce shorter path
+lengths for some particular points, then they are highly likely to be
+anomalies.</p>
+<p>This strategy is illustrated below.</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="../auto_examples/ensemble/plot_isolation_forest.html"><img alt="../_images/plot_isolation_forest_0011.png" src="../_images/plot_isolation_forest_0011.png" style="width: 600.0px; height: 450.0px;" /></a>
+</div>
+<div class="topic">
+<p class="topic-title first">Examples:</p>
+<ul class="simple">
+<li>See <a class="reference internal" href="../auto_examples/ensemble/plot_isolation_forest.html#example-ensemble-plot-isolation-forest-py"><em>IsolationForest example</em></a> for
+an illustration of the use of IsolationForest.</li>
+<li>See <a class="reference internal" href="../auto_examples/covariance/plot_outlier_detection.html#example-covariance-plot-outlier-detection-py"><em>Outlier detection with several methods.</em></a> for a
+comparison of <a class="reference internal" href="generated/sklearn.ensemble.IsolationForest.html#sklearn.ensemble.IsolationForest" title="sklearn.ensemble.IsolationForest"><tt class="xref py py-class docutils literal"><span class="pre">ensemble.IsolationForest</span></tt></a> with
+<a class="reference internal" href="generated/sklearn.svm.OneClassSVM.html#sklearn.svm.OneClassSVM" title="sklearn.svm.OneClassSVM"><tt class="xref py py-class docutils literal"><span class="pre">svm.OneClassSVM</span></tt></a> (tuned to perform like an outlier detection
+method) and a covariance-based outlier detection with
+<a class="reference internal" href="generated/sklearn.covariance.MinCovDet.html#sklearn.covariance.MinCovDet" title="sklearn.covariance.MinCovDet"><tt class="xref py py-class docutils literal"><span class="pre">covariance.MinCovDet</span></tt></a>.</li>
 </ul>
 </div>
 </div>

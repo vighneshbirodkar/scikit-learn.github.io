@@ -1604,7 +1604,7 @@ Examples concerning the :mod:`sklearn.covariance` module.
 
 .. raw:: html
 
-    <div class="thumbnailContainer" tooltip="When the amount of contamination is known, this example illustrates two different ways of perfo...">
+    <div class="thumbnailContainer" tooltip="When the amount of contamination is known, this example illustrates three different ways of per...">
 
 .. only:: html
 
@@ -2265,6 +2265,31 @@ Examples concerning the :mod:`sklearn.ensemble` module.
    :hidden:
 
    ensemble/plot_forest_importances
+
+
+
+.. raw:: html
+
+    <div class="thumbnailContainer" tooltip="An example using IsolationForest for anomaly detection.">
+
+.. only:: html
+
+  .. figure:: ensemble/images/thumb/plot_isolation_forest.png
+    :target: ./ensemble/plot_isolation_forest.html
+
+    :ref:`example_ensemble_plot_isolation_forest.py`
+
+
+.. raw:: html
+
+    </div>
+
+
+
+.. toctree::
+   :hidden:
+
+   ensemble/plot_isolation_forest
 
 
 

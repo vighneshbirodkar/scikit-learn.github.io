@@ -7,7 +7,7 @@
 Outlier detection with several methods.
 ==========================================
 
-When the amount of contamination is known, this example illustrates two
+When the amount of contamination is known, this example illustrates three
 different ways of performing :ref:`outlier_detection`:
 
 - based on a robust estimator of covariance, which is assuming that the
@@ -17,6 +17,10 @@ different ways of performing :ref:`outlier_detection`:
 - using the One-Class SVM and its ability to capture the shape of the
   data set, hence performing better when the data is strongly
   non-Gaussian, i.e. with two well-separated clusters;
+
+- using the Isolation Forest algorithm, which is based on random forests and
+  hence more adapted to large-dimensional settings, even if it performs
+  quite well in the examples below.
 
 The ground truth about inliers and outliers is given by the points colors
 while the orange-filled area indicates which points are reported as inliers
@@ -53,8 +57,8 @@ fraction.
 **Python source code:** :download:`plot_outlier_detection.py <plot_outlier_detection.py>`
 
 .. literalinclude:: plot_outlier_detection.py
-    :lines: 26-
+    :lines: 30-
 
-**Total running time of the example:**  4.08 seconds
-( 0 minutes  4.08 seconds)
+**Total running time of the example:**  46.71 seconds
+( 0 minutes  46.71 seconds)
     

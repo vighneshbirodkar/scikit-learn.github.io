@@ -167,7 +167,7 @@
             
   <div class="section" id="outlier-detection-with-several-methods">
 <span id="example-covariance-plot-outlier-detection-py"></span><h1>Outlier detection with several methods.<a class="headerlink" href="#outlier-detection-with-several-methods" title="Permalink to this headline">¶</a></h1>
-<p>When the amount of contamination is known, this example illustrates two
+<p>When the amount of contamination is known, this example illustrates three
 different ways of performing <a class="reference internal" href="../../modules/outlier_detection.html#outlier-detection"><em>Novelty and Outlier Detection</em></a>:</p>
 <ul class="simple">
 <li>based on a robust estimator of covariance, which is assuming that the
@@ -176,6 +176,9 @@ in that case.</li>
 <li>using the One-Class SVM and its ability to capture the shape of the
 data set, hence performing better when the data is strongly
 non-Gaussian, i.e. with two well-separated clusters;</li>
+<li>using the Isolation Forest algorithm, which is based on random forests and
+hence more adapted to large-dimensional settings, even if it performs
+quite well in the examples below.</li>
 </ul>
 <p>The ground truth about inliers and outliers is given by the points colors
 while the orange-filled area indicates which points are reported as inliers
@@ -202,6 +205,9 @@ fraction.</p>
 
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">svm</span>
 <span class="kn">from</span> <span class="nn">sklearn.covariance</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.covariance.EllipticEnvelope.html#sklearn.covariance.EllipticEnvelope"><span class="n">EllipticEnvelope</span></a>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">IsolationForest</span>
+
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 
 <span class="c"># Example settings</span>
 <span class="n">n_samples</span> <span class="o">=</span> <span class="mi">200</span>
@@ -212,7 +218,8 @@ fraction.</p>
 <span class="n">classifiers</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s">&quot;One-Class SVM&quot;</span><span class="p">:</span> <a href="../../modules/generated/sklearn.svm.OneClassSVM.html#sklearn.svm.OneClassSVM"><span class="n">svm</span><span class="o">.</span><span class="n">OneClassSVM</span></a><span class="p">(</span><span class="n">nu</span><span class="o">=</span><span class="mf">0.95</span> <span class="o">*</span> <span class="n">outliers_fraction</span> <span class="o">+</span> <span class="mf">0.05</span><span class="p">,</span>
                                      <span class="n">kernel</span><span class="o">=</span><span class="s">&quot;rbf&quot;</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="mf">0.1</span><span class="p">),</span>
-    <span class="s">&quot;robust covariance estimator&quot;</span><span class="p">:</span> <a href="../../modules/generated/sklearn.covariance.EllipticEnvelope.html#sklearn.covariance.EllipticEnvelope"><span class="n">EllipticEnvelope</span></a><span class="p">(</span><span class="n">contamination</span><span class="o">=.</span><span class="mi">1</span><span class="p">)}</span>
+    <span class="s">&quot;robust covariance estimator&quot;</span><span class="p">:</span> <a href="../../modules/generated/sklearn.covariance.EllipticEnvelope.html#sklearn.covariance.EllipticEnvelope"><span class="n">EllipticEnvelope</span></a><span class="p">(</span><span class="n">contamination</span><span class="o">=.</span><span class="mi">1</span><span class="p">),</span>
+    <span class="s">&quot;Isolation Forest&quot;</span><span class="p">:</span> <span class="n">IsolationForest</span><span class="p">(</span><span class="n">max_samples</span><span class="o">=</span><span class="n">n_samples</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">rng</span><span class="p">)}</span>
 
 <span class="c"># Compare given classifiers under given settings</span>
 <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy-1.6.0/reference/generated/numpy.meshgrid.html#numpy.meshgrid"><span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span></a><span class="p">(</span><a href="http://docs.scipy.org/doc/numpy-1.6.0/reference/generated/numpy.linspace.html#numpy.linspace"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">500</span><span class="p">),</span> <a href="http://docs.scipy.org/doc/numpy-1.6.0/reference/generated/numpy.linspace.html#numpy.linspace"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">500</span><span class="p">))</span>
@@ -231,7 +238,7 @@ fraction.</p>
     <span class="c"># Add outliers</span>
     <span class="n">X</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy-1.6.0/reference/generated/numpy.r_.html#numpy.r_"><span class="n">np</span><span class="o">.</span><span class="n">r_</span></a><span class="p">[</span><span class="n">X</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=-</span><span class="mi">6</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">n_outliers</span><span class="p">,</span> <span class="mi">2</span><span class="p">))]</span>
 
-    <span class="c"># Fit the model with the One-Class SVM</span>
+    <span class="c"># Fit the model</span>
     <a href="http://matplotlib.org/api/figure_api.html#matplotlib.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">clf_name</span><span class="p">,</span> <span class="n">clf</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">classifiers</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
         <span class="c"># fit the data and tag outliers</span>
@@ -244,7 +251,7 @@ fraction.</p>
         <span class="c"># plot the levels lines and the points</span>
         <span class="n">Z</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><a href="http://docs.scipy.org/doc/numpy-1.6.0/reference/generated/numpy.c_.html#numpy.c_"><span class="n">np</span><span class="o">.</span><span class="n">c_</span></a><span class="p">[</span><span class="n">xx</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">yy</span><span class="o">.</span><span class="n">ravel</span><span class="p">()])</span>
         <span class="n">Z</span> <span class="o">=</span> <span class="n">Z</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-        <span class="n">subplot</span> <span class="o">=</span> <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.subplot"><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span></a><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">subplot</span> <span class="o">=</span> <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.subplot"><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span></a><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
         <span class="n">subplot</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&quot;Outlier detection&quot;</span><span class="p">)</span>
         <span class="n">subplot</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><a href="http://docs.scipy.org/doc/numpy-1.6.0/reference/generated/numpy.linspace.html#numpy.linspace"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="n">Z</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">threshold</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span>
                          <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Blues_r</span><span class="p">)</span>
@@ -267,8 +274,8 @@ fraction.</p>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  4.08 seconds
-( 0 minutes  4.08 seconds)</p>
+<p><strong>Total running time of the example:</strong>  46.71 seconds
+( 0 minutes  46.71 seconds)</p>
 </div>
 
 
