@@ -37,7 +37,7 @@
     <link rel="top" title="scikit-learn 0.18.dev0 documentation" href="../../index.html" />
     <link rel="up" title="Examples" href="../index.html" />
     <link rel="next" title="Sample pipeline for text feature extraction and evaluation" href="grid_search_text_feature_extraction.html" />
-    <link rel="prev" title="Comparing randomized search and grid search for hyperparameter estimation" href="randomized_search.html" />
+    <link rel="prev" title="Receiver Operating Characteristic (ROC) with cross validation" href="plot_roc_crossval.html" />
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -113,14 +113,14 @@
   <!-- rellinks[1:] is an ugly hack to avoid link to module
   index -->
         <div class="rellink">
-        <a href="randomized_search.html"
+        <a href="plot_roc_crossval.html"
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        Comparing ran...
+        Receiver Oper...
         </span>
             <span class="hiddenrellink">
-            Comparing randomized search and grid search for hyperparameter estimation
+            Receiver Operating Characteristic (ROC) with cross validation
             </span>
         </a>
         </div>
@@ -230,6 +230,8 @@ matrix as a binary prediction (micro-averaging).</p>
 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">cycle</span>
+
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">svm</span><span class="p">,</span> <span class="n">datasets</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.metrics.precision_recall_curve.html#sklearn.metrics.precision_recall_curve"><span class="n">precision_recall_curve</span></a>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.metrics.average_precision_score.html#sklearn.metrics.average_precision_score"><span class="n">average_precision_score</span></a>
@@ -241,6 +243,10 @@ matrix as a binary prediction (micro-averaging).</p>
 <span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
+
+<span class="c"># setup plot details</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">cycle</span><span class="p">([</span><span class="s">&#39;navy&#39;</span><span class="p">,</span> <span class="s">&#39;turquoise&#39;</span><span class="p">,</span> <span class="s">&#39;darkorange&#39;</span><span class="p">,</span> <span class="s">&#39;cornflowerblue&#39;</span><span class="p">,</span> <span class="s">&#39;teal&#39;</span><span class="p">])</span>
+<span class="n">lw</span> <span class="o">=</span> <span class="mi">2</span>
 
 <span class="c"># Binarize the output</span>
 <span class="n">y</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.preprocessing.label_binarize.html#sklearn.preprocessing.label_binarize"><span class="n">label_binarize</span></a><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
@@ -275,9 +281,11 @@ matrix as a binary prediction (micro-averaging).</p>
 <span class="n">average_precision</span><span class="p">[</span><span class="s">&quot;micro&quot;</span><span class="p">]</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.metrics.average_precision_score.html#sklearn.metrics.average_precision_score"><span class="n">average_precision_score</span></a><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_score</span><span class="p">,</span>
                                                      <span class="n">average</span><span class="o">=</span><span class="s">&quot;micro&quot;</span><span class="p">)</span>
 
+
 <span class="c"># Plot Precision-Recall curve</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.clf"><span class="n">plt</span><span class="o">.</span><span class="n">clf</span></a><span class="p">()</span>
-<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">recall</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">precision</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Precision-Recall curve&#39;</span><span class="p">)</span>
+<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">recall</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">precision</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="n">lw</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;navy&#39;</span><span class="p">,</span>
+         <span class="n">label</span><span class="o">=</span><span class="s">&#39;Precision-Recall curve&#39;</span><span class="p">)</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.xlabel"><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span></a><span class="p">(</span><span class="s">&#39;Recall&#39;</span><span class="p">)</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.ylabel"><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span></a><span class="p">(</span><span class="s">&#39;Precision&#39;</span><span class="p">)</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.ylim"><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span></a><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">])</span>
@@ -288,11 +296,11 @@ matrix as a binary prediction (micro-averaging).</p>
 
 <span class="c"># Plot Precision-Recall curve for each class</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.clf"><span class="n">plt</span><span class="o">.</span><span class="n">clf</span></a><span class="p">()</span>
-<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">recall</span><span class="p">[</span><span class="s">&quot;micro&quot;</span><span class="p">],</span> <span class="n">precision</span><span class="p">[</span><span class="s">&quot;micro&quot;</span><span class="p">],</span>
+<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">recall</span><span class="p">[</span><span class="s">&quot;micro&quot;</span><span class="p">],</span> <span class="n">precision</span><span class="p">[</span><span class="s">&quot;micro&quot;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;gold&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="n">lw</span><span class="p">,</span>
          <span class="n">label</span><span class="o">=</span><span class="s">&#39;micro-average Precision-recall curve (area = {0:0.2f})&#39;</span>
                <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">average_precision</span><span class="p">[</span><span class="s">&quot;micro&quot;</span><span class="p">]))</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_classes</span><span class="p">):</span>
-    <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">recall</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">precision</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n_classes</span><span class="p">),</span> <span class="n">colors</span><span class="p">):</span>
+    <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">recall</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">precision</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="n">lw</span><span class="p">,</span>
              <span class="n">label</span><span class="o">=</span><span class="s">&#39;Precision-recall curve of class {0} (area = {1:0.2f})&#39;</span>
                    <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">average_precision</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
 
@@ -305,8 +313,8 @@ matrix as a binary prediction (micro-averaging).</p>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  0.40 seconds
-( 0 minutes  0.40 seconds)</p>
+<p><strong>Total running time of the example:</strong>  0.47 seconds
+( 0 minutes  0.47 seconds)</p>
 </div>
 
 
@@ -324,7 +332,7 @@ matrix as a binary prediction (micro-averaging).</p>
      <div class="rel">
     
     <div class="buttonPrevious">
-      <a href="randomized_search.html">Previous
+      <a href="plot_roc_crossval.html">Previous
       </a>
     </div>
     

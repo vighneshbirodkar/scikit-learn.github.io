@@ -4283,31 +4283,6 @@ Examples concerning model selection, mostly contained in the
 
 .. raw:: html
 
-    <div class="thumbnailContainer" tooltip="Example of Receiver Operating Characteristic (ROC) metric to evaluate classifier output quality...">
-
-.. only:: html
-
-  .. figure:: model_selection/images/thumb/plot_roc_crossval.png
-    :target: ./model_selection/plot_roc_crossval.html
-
-    :ref:`example_model_selection_plot_roc_crossval.py`
-
-
-.. raw:: html
-
-    </div>
-
-
-
-.. toctree::
-   :hidden:
-
-   model_selection/plot_roc_crossval
-
-
-
-.. raw:: html
-
     <div class="thumbnailContainer" tooltip="This examples shows how a classifier is optimized by cross-validation, which is done using the ...">
 
 .. only:: html
@@ -4378,6 +4353,31 @@ Examples concerning model selection, mostly contained in the
    :hidden:
 
    model_selection/randomized_search
+
+
+
+.. raw:: html
+
+    <div class="thumbnailContainer" tooltip="Example of Receiver Operating Characteristic (ROC) metric to evaluate classifier output quality...">
+
+.. only:: html
+
+  .. figure:: model_selection/images/thumb/plot_roc_crossval.png
+    :target: ./model_selection/plot_roc_crossval.html
+
+    :ref:`example_model_selection_plot_roc_crossval.py`
+
+
+.. raw:: html
+
+    </div>
+
+
+
+.. toctree::
+   :hidden:
+
+   model_selection/plot_roc_crossval
 
 
 
