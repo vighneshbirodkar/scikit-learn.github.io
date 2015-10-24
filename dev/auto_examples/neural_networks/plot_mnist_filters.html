@@ -201,7 +201,7 @@ Test set score: 0.971800
 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.datasets.fetch_mldata.html#sklearn.datasets.fetch_mldata"><span class="n">fetch_mldata</span></a>
-<span class="kn">from</span> <span class="nn">sklearn.neural_network</span> <span class="kn">import</span> <span class="n">MLPClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.neural_network</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.neural_network.MLPClassifier.html#sklearn.neural_network.MLPClassifier"><span class="n">MLPClassifier</span></a>
 
 <span class="n">mnist</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.fetch_mldata.html#sklearn.datasets.fetch_mldata"><span class="n">fetch_mldata</span></a><span class="p">(</span><span class="s">&quot;MNIST original&quot;</span><span class="p">)</span>
 <span class="c"># rescale the data, use the traditional train/test split</span>
@@ -211,7 +211,7 @@ Test set score: 0.971800
 
 <span class="c"># mlp = MLPClassifier(hidden_layer_sizes=(100, 100), max_iter=400, alpha=1e-4,</span>
 <span class="c">#                     algorithm=&#39;sgd&#39;, verbose=10, tol=1e-4, random_state=1)</span>
-<span class="n">mlp</span> <span class="o">=</span> <span class="n">MLPClassifier</span><span class="p">(</span><span class="n">hidden_layer_sizes</span><span class="o">=</span><span class="p">(</span><span class="mi">50</span><span class="p">,),</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span>
+<span class="n">mlp</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.neural_network.MLPClassifier.html#sklearn.neural_network.MLPClassifier"><span class="n">MLPClassifier</span></a><span class="p">(</span><span class="n">hidden_layer_sizes</span><span class="o">=</span><span class="p">(</span><span class="mi">50</span><span class="p">,),</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span>
                     <span class="n">algorithm</span><span class="o">=</span><span class="s">&#39;sgd&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
                     <span class="n">learning_rate_init</span><span class="o">=.</span><span class="mi">1</span><span class="p">)</span>
 
@@ -231,8 +231,8 @@ Test set score: 0.971800
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  76.37 seconds
-( 1 minutes  16.37 seconds)</p>
+<p><strong>Total running time of the example:</strong>  54.34 seconds
+( 0 minutes  54.34 seconds)</p>
 </div>
 
 

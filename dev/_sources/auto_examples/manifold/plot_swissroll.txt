@@ -19,7 +19,7 @@ with locally linear embedding
 **Script output**::
 
   Computing LLE embedding
-  Done. Reconstruction error: 1.28443e-07
+  Done. Reconstruction error: 1.2816e-07
 
 
 
