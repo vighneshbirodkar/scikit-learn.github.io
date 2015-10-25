@@ -3042,31 +3042,6 @@ Examples concerning the :mod:`sklearn.gaussian_process` module.
 
 .. raw:: html
 
-    <div class="thumbnailContainer" tooltip="Both kernel ridge regression (KRR) and Gaussian process regression (GPR) learn a target functio...">
-
-.. only:: html
-
-  .. figure:: gaussian_process/images/thumb/plot_compare_gpr_krr.png
-    :target: ./gaussian_process/plot_compare_gpr_krr.html
-
-    :ref:`example_gaussian_process_plot_compare_gpr_krr.py`
-
-
-.. raw:: html
-
-    </div>
-
-
-
-.. toctree::
-   :hidden:
-
-   gaussian_process/plot_compare_gpr_krr
-
-
-
-.. raw:: html
-
     <div class="thumbnailContainer" tooltip="This example is based on Section 5.4.3 of "Gaussian Processes for Machine Learning" [RW2006]. I...">
 
 .. only:: html
@@ -3087,6 +3062,31 @@ Examples concerning the :mod:`sklearn.gaussian_process` module.
    :hidden:
 
    gaussian_process/plot_gpr_co2
+
+
+
+.. raw:: html
+
+    <div class="thumbnailContainer" tooltip="Both kernel ridge regression (KRR) and Gaussian process regression (GPR) learn a target functio...">
+
+.. only:: html
+
+  .. figure:: gaussian_process/images/thumb/plot_compare_gpr_krr.png
+    :target: ./gaussian_process/plot_compare_gpr_krr.html
+
+    :ref:`example_gaussian_process_plot_compare_gpr_krr.py`
+
+
+.. raw:: html
+
+    </div>
+
+
+
+.. toctree::
+   :hidden:
+
+   gaussian_process/plot_compare_gpr_krr
 
 
 

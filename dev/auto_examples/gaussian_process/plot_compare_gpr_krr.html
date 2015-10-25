@@ -36,8 +36,8 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="scikit-learn 0.18.dev0 documentation" href="../../index.html" />
     <link rel="up" title="Examples" href="../index.html" />
-    <link rel="next" title="Gaussian process regression (GPR) on Mauna Loa CO2 data." href="plot_gpr_co2.html" />
-    <link rel="prev" title="Illustration of prior and posterior Gaussian process for different kernels" href="plot_gpr_prior_posterior.html" />
+    <link rel="next" title="Probabilistic predictions with Gaussian process classification (GPC)" href="plot_gpc.html" />
+    <link rel="prev" title="Gaussian process regression (GPR) on Mauna Loa CO2 data." href="plot_gpr_co2.html" />
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -113,14 +113,14 @@
   <!-- rellinks[1:] is an ugly hack to avoid link to module
   index -->
         <div class="rellink">
-        <a href="plot_gpr_prior_posterior.html"
+        <a href="plot_gpr_co2.html"
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        Illustration ...
+        Gaussian proc...
         </span>
             <span class="hiddenrellink">
-            Illustration of prior and posterior Gaussian process for different kernels
+            Gaussian process regression (GPR) on Mauna Loa CO2 data.
             </span>
         </a>
         </div>
@@ -206,11 +206,11 @@ the variance of the predictive distribution of GPR takes considerable longer
 than just predicting the mean.</p>
 <img alt="../../_images/plot_compare_gpr_krr_001.png" class="align-center" src="../../_images/plot_compare_gpr_krr_001.png" />
 <p><strong>Script output</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>Time for KRR fitting: 8.119
-Time for GPR fitting: 0.267
-Time for KRR prediction: 0.129
-Time for GPR prediction: 0.130
-Time for GPR prediction with standard-deviation: 0.757
+<div class="highlight-python"><div class="highlight"><pre>Time for KRR fitting: 7.746
+Time for GPR fitting: 0.262
+Time for KRR prediction: 0.146
+Time for GPR prediction: 0.143
+Time for GPR prediction with standard-deviation: 0.788
 </pre></div>
 </div>
 <p><strong>Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_compare_gpr_krr.py"><tt class="xref download docutils literal"><span class="pre">plot_compare_gpr_krr.py</span></tt></a></p>
@@ -272,24 +272,27 @@ Time for GPR prediction with standard-deviation: 0.757
       <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">stime</span><span class="p">))</span>
 
 <span class="c"># Plot results</span>
-<a href="http://matplotlib.org/api/figure_api.html#matplotlib.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<a href="http://matplotlib.org/api/figure_api.html#matplotlib.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">lw</span> <span class="o">=</span> <span class="mi">2</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.scatter"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span></a><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s">&#39;k&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;data&#39;</span><span class="p">)</span>
-<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">X_plot</span><span class="p">,</span> <a href="http://docs.scipy.org/doc/numpy-1.6.0/reference/generated/numpy.sin.html#numpy.sin"><span class="n">np</span><span class="o">.</span><span class="n">sin</span></a><span class="p">(</span><span class="n">X_plot</span><span class="p">),</span> <span class="n">c</span><span class="o">=</span><span class="s">&#39;k&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;True&#39;</span><span class="p">)</span>
-<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">X_plot</span><span class="p">,</span> <span class="n">y_kr</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s">&#39;g&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;KRR (</span><span class="si">%s</span><span class="s">)&#39;</span> <span class="o">%</span> <span class="n">kr</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
-<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">X_plot</span><span class="p">,</span> <span class="n">y_gpr</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;GPR (</span><span class="si">%s</span><span class="s">)&#39;</span> <span class="o">%</span> <span class="n">gpr</span><span class="o">.</span><span class="n">kernel_</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">X_plot</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y_gpr</span> <span class="o">-</span> <span class="n">y_std</span><span class="p">,</span> <span class="n">y_gpr</span> <span class="o">+</span> <span class="n">y_std</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">,</span>
+<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">X_plot</span><span class="p">,</span> <a href="http://docs.scipy.org/doc/numpy-1.6.0/reference/generated/numpy.sin.html#numpy.sin"><span class="n">np</span><span class="o">.</span><span class="n">sin</span></a><span class="p">(</span><span class="n">X_plot</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;navy&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="n">lw</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;True&#39;</span><span class="p">)</span>
+<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">X_plot</span><span class="p">,</span> <span class="n">y_kr</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;turquoise&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="n">lw</span><span class="p">,</span>
+         <span class="n">label</span><span class="o">=</span><span class="s">&#39;KRR (</span><span class="si">%s</span><span class="s">)&#39;</span> <span class="o">%</span> <span class="n">kr</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">X_plot</span><span class="p">,</span> <span class="n">y_gpr</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;darkorange&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="n">lw</span><span class="p">,</span>
+         <span class="n">label</span><span class="o">=</span><span class="s">&#39;GPR (</span><span class="si">%s</span><span class="s">)&#39;</span> <span class="o">%</span> <span class="n">gpr</span><span class="o">.</span><span class="n">kernel_</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">X_plot</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y_gpr</span> <span class="o">-</span> <span class="n">y_std</span><span class="p">,</span> <span class="n">y_gpr</span> <span class="o">+</span> <span class="n">y_std</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;darkorange&#39;</span><span class="p">,</span>
                  <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.xlabel"><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span></a><span class="p">(</span><span class="s">&#39;data&#39;</span><span class="p">)</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.ylabel"><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span></a><span class="p">(</span><span class="s">&#39;target&#39;</span><span class="p">)</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.xlim"><span class="n">plt</span><span class="o">.</span><span class="n">xlim</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.ylim"><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span></a><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.title"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span><span class="s">&#39;GPR versus Kernel Ridge&#39;</span><span class="p">)</span>
-<a href="http://matplotlib.org/api/legend_api.html#matplotlib.legend"><span class="n">plt</span><span class="o">.</span><span class="n">legend</span></a><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">prop</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;size&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">})</span>
+<a href="http://matplotlib.org/api/legend_api.html#matplotlib.legend"><span class="n">plt</span><span class="o">.</span><span class="n">legend</span></a><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">&quot;best&quot;</span><span class="p">,</span>  <span class="n">scatterpoints</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">prop</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;size&#39;</span><span class="p">:</span> <span class="mi">8</span><span class="p">})</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  9.51 seconds
-( 0 minutes  9.51 seconds)</p>
+<p><strong>Total running time of the example:</strong>  9.20 seconds
+( 0 minutes  9.20 seconds)</p>
 </div>
 
 
@@ -307,7 +310,7 @@ Time for GPR prediction with standard-deviation: 0.757
      <div class="rel">
     
     <div class="buttonPrevious">
-      <a href="plot_gpr_prior_posterior.html">Previous
+      <a href="plot_gpr_co2.html">Previous
       </a>
     </div>
     

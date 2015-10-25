@@ -217,7 +217,7 @@ thus improve classification.</p>
 <span class="n">scores</span> <span class="o">=</span> <span class="o">-</span><a href="http://docs.scipy.org/doc/numpy-1.6.0/reference/generated/numpy.log10.html#numpy.log10"><span class="n">np</span><span class="o">.</span><span class="n">log10</span></a><span class="p">(</span><span class="n">selector</span><span class="o">.</span><span class="n">pvalues_</span><span class="p">)</span>
 <span class="n">scores</span> <span class="o">/=</span> <span class="n">scores</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.bar"><span class="n">plt</span><span class="o">.</span><span class="n">bar</span></a><span class="p">(</span><span class="n">X_indices</span> <span class="o">-</span> <span class="o">.</span><span class="mi">45</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">width</span><span class="o">=.</span><span class="mi">2</span><span class="p">,</span>
-        <span class="n">label</span><span class="o">=</span><span class="s">r&#39;Univariate score ($-Log(p_{value})$)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;g&#39;</span><span class="p">)</span>
+        <span class="n">label</span><span class="o">=</span><span class="s">r&#39;Univariate score ($-Log(p_{value})$)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;darkorange&#39;</span><span class="p">)</span>
 
 <span class="c">###############################################################################</span>
 <span class="c"># Compare to the weights of an SVM</span>
@@ -227,7 +227,8 @@ thus improve classification.</p>
 <span class="n">svm_weights</span> <span class="o">=</span> <span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">coef_</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">svm_weights</span> <span class="o">/=</span> <span class="n">svm_weights</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 
-<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.bar"><span class="n">plt</span><span class="o">.</span><span class="n">bar</span></a><span class="p">(</span><span class="n">X_indices</span> <span class="o">-</span> <span class="o">.</span><span class="mi">25</span><span class="p">,</span> <span class="n">svm_weights</span><span class="p">,</span> <span class="n">width</span><span class="o">=.</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;SVM weight&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">)</span>
+<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.bar"><span class="n">plt</span><span class="o">.</span><span class="n">bar</span></a><span class="p">(</span><span class="n">X_indices</span> <span class="o">-</span> <span class="o">.</span><span class="mi">25</span><span class="p">,</span> <span class="n">svm_weights</span><span class="p">,</span> <span class="n">width</span><span class="o">=.</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;SVM weight&#39;</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s">&#39;navy&#39;</span><span class="p">)</span>
 
 <span class="n">clf_selected</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC"><span class="n">svm</span><span class="o">.</span><span class="n">SVC</span></a><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s">&#39;linear&#39;</span><span class="p">)</span>
 <span class="n">clf_selected</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">selector</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">y</span><span class="p">)</span>
@@ -236,7 +237,7 @@ thus improve classification.</p>
 <span class="n">svm_weights_selected</span> <span class="o">/=</span> <span class="n">svm_weights_selected</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.bar"><span class="n">plt</span><span class="o">.</span><span class="n">bar</span></a><span class="p">(</span><span class="n">X_indices</span><span class="p">[</span><span class="n">selector</span><span class="o">.</span><span class="n">get_support</span><span class="p">()]</span> <span class="o">-</span> <span class="o">.</span><span class="mo">05</span><span class="p">,</span> <span class="n">svm_weights_selected</span><span class="p">,</span>
-        <span class="n">width</span><span class="o">=.</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;SVM weights after selection&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;b&#39;</span><span class="p">)</span>
+        <span class="n">width</span><span class="o">=.</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;SVM weights after selection&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;c&#39;</span><span class="p">)</span>
 
 
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.title"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span><span class="s">&quot;Comparing feature selection&quot;</span><span class="p">)</span>
@@ -247,8 +248,8 @@ thus improve classification.</p>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  0.24 seconds
-( 0 minutes  0.24 seconds)</p>
+<p><strong>Total running time of the example:</strong>  0.16 seconds
+( 0 minutes  0.16 seconds)</p>
 </div>
 
 
