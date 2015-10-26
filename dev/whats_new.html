@@ -345,9 +345,20 @@ utilities.  (<a href="#id65"><span class="problematic" id="id66">`#4294 https://
 <li>The random forest, extra trees and decision tree estimators now has a
 method <tt class="docutils literal"><span class="pre">decision_path</span></tt> which returns the decision path of samples in
 the tree. By <a class="reference external" href="http://www.ajoly.org">Arnaud Joly</a></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>The random forest, extra tree and decision tree estimators now has a
+method <tt class="docutils literal"><span class="pre">decision_path</span></tt> which returns the decision path of samples in
+the tree. By <a class="reference external" href="http://www.ajoly.org">Arnaud Joly</a></li>
 <li>A new example has been added unveling the decision tree structure.
 By <a class="reference external" href="http://www.ajoly.org">Arnaud Joly</a></li>
+<li>Random forest, extra trees, decision trees and gradient boosting estimator
+accept the parameter <tt class="docutils literal"><span class="pre">min_samples_split</span></tt> and <tt class="docutils literal"><span class="pre">min_samples_leaf</span></tt>
+provided as a percentage of the training samples. By
+<a href="#id67"><span class="problematic" id="id68">`yelite`_</span></a> and <a class="reference external" href="http://www.ajoly.org">Arnaud Joly</a></li>
 </ul>
+</div></blockquote>
 </div></blockquote>
 </div>
 <div class="section" id="bug-fixes">
@@ -355,20 +366,23 @@ By <a class="reference external" href="http://www.ajoly.org">Arnaud Joly</a></li
 <blockquote>
 <div><ul class="simple">
 <li><tt class="xref py py-class docutils literal"><span class="pre">RandomizedPCA</span></tt> default number of <cite>iterated_power</cite> is 2 instead of 3.
-This is a speed up with a minor precision decrease. (<a href="#id67"><span class="problematic" id="id68">`#5141 https://github.com/scikit-learn/scikit-learn/pull/5141&gt;`_</span></a>) by <a class="reference external" href="https://github.com/giorgiop">Giorgio Patrini</a>.</li>
+This is a speed up with a minor precision decrease. (<a href="#id69"><span class="problematic" id="id70">`#5141 https://github.com/scikit-learn/scikit-learn/pull/5141&gt;`_</span></a>) by <a class="reference external" href="https://github.com/giorgiop">Giorgio Patrini</a>.</li>
 <li><tt class="xref py py-func docutils literal"><span class="pre">randomized_svd</span></tt> performs 2 power iterations by default, instead or 0.
 In practice this is often enough for obtaining a good approximation of the
-true eigenvalues/vectors in the presence of noise. (<a href="#id69"><span class="problematic" id="id70">`#5141 https://github.com/scikit-learn/scikit-learn/pull/5141&gt;`_</span></a>) by <a class="reference external" href="https://github.com/giorgiop">Giorgio Patrini</a>.</li>
+true eigenvalues/vectors in the presence of noise. (<a href="#id71"><span class="problematic" id="id72">`#5141 https://github.com/scikit-learn/scikit-learn/pull/5141&gt;`_</span></a>) by <a class="reference external" href="https://github.com/giorgiop">Giorgio Patrini</a>.</li>
 <li><tt class="xref py py-func docutils literal"><span class="pre">randomized_range_finder</span></tt> is more numerically stable when many
 power iterations are requested, since it applies LU normalization by default.
 If <cite>n_iter&lt;2</cite> numerical issues are unlikely, thus no normalization is applied.
-Other normalization options are available: &#8216;none&#8217;, &#8216;LU&#8217; and &#8216;QR&#8217;. (<a href="#id71"><span class="problematic" id="id72">`#5141 https://github.com/scikit-learn/scikit-learn/pull/5141&gt;`_</span></a>) by <a class="reference external" href="https://github.com/giorgiop">Giorgio Patrini</a>.</li>
+Other normalization options are available: &#8216;none&#8217;, &#8216;LU&#8217; and &#8216;QR&#8217;. (<a href="#id73"><span class="problematic" id="id74">`#5141 https://github.com/scikit-learn/scikit-learn/pull/5141&gt;`_</span></a>) by <a class="reference external" href="https://github.com/giorgiop">Giorgio Patrini</a>.</li>
 <li>Fixed bug in <a class="reference internal" href="modules/generated/sklearn.manifold.spectral_embedding.html#sklearn.manifold.spectral_embedding" title="sklearn.manifold.spectral_embedding"><tt class="xref py py-func docutils literal"><span class="pre">manifold.spectral_embedding</span></tt></a> where diagonal of unnormalized
 Laplacian matrix was incorrectly set to 1. By <a class="reference external" href="https://github.com/yanlend">Peter Fischer</a>.</li>
 <li>Fixed incorrect initialization of <tt class="xref py py-func docutils literal"><span class="pre">utils.arpack.eigsh</span></tt> on all
 occurrences. Affects <tt class="xref py py-class docutils literal"><span class="pre">cluster.SpectralBiclustering</span></tt>,
 <a class="reference internal" href="modules/generated/sklearn.decomposition.KernelPCA.html#sklearn.decomposition.KernelPCA" title="sklearn.decomposition.KernelPCA"><tt class="xref py py-class docutils literal"><span class="pre">decomposition.KernelPCA</span></tt></a>, <a class="reference internal" href="modules/generated/sklearn.manifold.LocallyLinearEmbedding.html#sklearn.manifold.LocallyLinearEmbedding" title="sklearn.manifold.LocallyLinearEmbedding"><tt class="xref py py-class docutils literal"><span class="pre">manifold.LocallyLinearEmbedding</span></tt></a>,
 and <a class="reference internal" href="modules/generated/sklearn.manifold.SpectralEmbedding.html#sklearn.manifold.SpectralEmbedding" title="sklearn.manifold.SpectralEmbedding"><tt class="xref py py-class docutils literal"><span class="pre">manifold.SpectralEmbedding</span></tt></a>. By <a class="reference external" href="https://github.com/yanlend">Peter Fischer</a>.</li>
+<li>Random forest, extra trees, decision trees and gradient boosting
+won&#8217;t accept anymore <tt class="docutils literal"><span class="pre">min_samples_split=1</span></tt> as at least 2 samples
+are required to split a decision tree node. By <a class="reference external" href="http://www.ajoly.org">Arnaud Joly</a></li>
 </ul>
 </div></blockquote>
 </div>
@@ -380,7 +394,7 @@ and <a class="reference internal" href="modules/generated/sklearn.manifold.Spect
 <li>The <tt class="xref py py-mod docutils literal"><span class="pre">cross_validation</span></tt>, <tt class="xref py py-mod docutils literal"><span class="pre">grid_search</span></tt> and <tt class="xref py py-mod docutils literal"><span class="pre">learning_curve</span></tt>
 have been deprecated and the classes and functions have been reorganized into
 the <tt class="xref py py-mod docutils literal"><span class="pre">model_selection</span></tt> module.
-(<a href="#id73"><span class="problematic" id="id74">`#4294 https://github.com/scikit-learn/scikit-learn/pull/4294&gt;`_</span></a>) by <a class="reference external" href="https://github.com/ragv">Raghav R V</a>.</li>
+(<a href="#id75"><span class="problematic" id="id76">`#4294 https://github.com/scikit-learn/scikit-learn/pull/4294&gt;`_</span></a>) by <a class="reference external" href="https://github.com/ragv">Raghav R V</a>.</li>
 </ul>
 </div></blockquote>
 </div>

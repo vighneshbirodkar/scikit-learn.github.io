@@ -470,7 +470,8 @@ the size of the tree to prevent overfitting.</li>
 <li>Use <tt class="docutils literal"><span class="pre">min_samples_split</span></tt> or <tt class="docutils literal"><span class="pre">min_samples_leaf</span></tt> to control the number of
 samples at a leaf node.  A very small number will usually mean the tree
 will overfit, whereas a large number will prevent the tree from learning
-the data.  Try <tt class="docutils literal"><span class="pre">min_samples_leaf=5</span></tt> as an initial value.
+the data. Try <tt class="docutils literal"><span class="pre">min_samples_leaf=5</span></tt> as an initial value. If the sample size
+varies greatly, a float number can be used as percentage in these two parameters.
 The main difference between the two is that <tt class="docutils literal"><span class="pre">min_samples_leaf</span></tt> guarantees
 a minimum number of samples in a leaf, while <tt class="docutils literal"><span class="pre">min_samples_split</span></tt> can
 create arbitrary small leaves, though <tt class="docutils literal"><span class="pre">min_samples_split</span></tt> is more common
