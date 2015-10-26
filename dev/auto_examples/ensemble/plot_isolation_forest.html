@@ -168,17 +168,17 @@
   <div class="section" id="isolationforest-example">
 <span id="example-ensemble-plot-isolation-forest-py"></span><h1>IsolationForest example<a class="headerlink" href="#isolationforest-example" title="Permalink to this headline">¶</a></h1>
 <p>An example using IsolationForest for anomaly detection.</p>
-<p>IsolationForest consists in &#8216;isolating&#8217; the observations by randomly selecting
-a feature and then randomly selecting a split value between the maximum and
-minimum values of the selected feature.</p>
+<p>The IsolationForest &#8216;isolates&#8217; observations by randomly selecting a feature
+and then randomly selecting a split value between the maximum and minimum
+values of the selected feature.</p>
 <p>Since recursive partitioning can be represented by a tree structure, the
-number of splitting required to isolate a sample is equivalent to the path
-length from the root node to a terminating node.</p>
-<p>This path length, averaged among a forest of such random trees, is a measure
+number of splittings required to isolate a sample is equivalent to the path
+length from the root node to the terminating node.</p>
+<p>This path length, averaged over a forest of such random trees, is a measure
 of abnormality and our decision function.</p>
-<p>Indeed random partitioning produces noticeable shorter paths for anomalies.
+<p>Random partitioning produces noticeable shorter paths for anomalies.
 Hence, when a forest of random trees collectively produce shorter path lengths
-for some particular samples, then they are highly likely to be anomalies.</p>
+for particular samples, they are highly likely to be anomalies.</p>
 <table class="docutils footnote" frame="void" id="id1" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
