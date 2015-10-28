@@ -36,8 +36,8 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="scikit-learn 0.18.dev0 documentation" href="../../index.html" />
     <link rel="up" title="Examples" href="../index.html" />
-    <link rel="next" title="Incremental PCA" href="plot_incremental_pca.html" />
-    <link rel="prev" title="Plot randomly generated multilabel dataset" href="../datasets/plot_random_multilabel_dataset.html" />
+    <link rel="next" title="PCA example with Iris Data-set" href="plot_pca_iris.html" />
+    <link rel="prev" title="Incremental PCA" href="plot_incremental_pca.html" />
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -113,14 +113,14 @@
   <!-- rellinks[1:] is an ugly hack to avoid link to module
   index -->
         <div class="rellink">
-        <a href="../datasets/plot_random_multilabel_dataset.html"
+        <a href="plot_incremental_pca.html"
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        Plot randomly...
+        Incremental PCA
         </span>
             <span class="hiddenrellink">
-            Plot randomly generated multilabel dataset
+            Incremental PCA
             </span>
         </a>
         </div>
@@ -213,22 +213,27 @@ LDA, in contrast to PCA, is a supervised method, using known class labels.</p>
       <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="n">pca</span><span class="o">.</span><span class="n">explained_variance_ratio_</span><span class="p">))</span>
 
 <a href="http://matplotlib.org/api/figure_api.html#matplotlib.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">()</span>
-<span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">target_name</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="s">&quot;rgb&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">target_names</span><span class="p">):</span>
-    <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.scatter"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span></a><span class="p">(</span><span class="n">X_r</span><span class="p">[</span><span class="n">y</span> <span class="o">==</span> <span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X_r</span><span class="p">[</span><span class="n">y</span> <span class="o">==</span> <span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">target_name</span><span class="p">)</span>
-<a href="http://matplotlib.org/api/legend_api.html#matplotlib.legend"><span class="n">plt</span><span class="o">.</span><span class="n">legend</span></a><span class="p">()</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;navy&#39;</span><span class="p">,</span> <span class="s">&#39;turquoise&#39;</span><span class="p">,</span> <span class="s">&#39;darkorange&#39;</span><span class="p">]</span>
+<span class="n">lw</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="k">for</span> <span class="n">color</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">target_name</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">colors</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">target_names</span><span class="p">):</span>
+    <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.scatter"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span></a><span class="p">(</span><span class="n">X_r</span><span class="p">[</span><span class="n">y</span> <span class="o">==</span> <span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X_r</span><span class="p">[</span><span class="n">y</span> <span class="o">==</span> <span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">8</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="n">lw</span><span class="p">,</span>
+                <span class="n">label</span><span class="o">=</span><span class="n">target_name</span><span class="p">)</span>
+<a href="http://matplotlib.org/api/legend_api.html#matplotlib.legend"><span class="n">plt</span><span class="o">.</span><span class="n">legend</span></a><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">&#39;best&#39;</span><span class="p">,</span> <span class="n">shadow</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">scatterpoints</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.title"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span><span class="s">&#39;PCA of IRIS dataset&#39;</span><span class="p">)</span>
 
 <a href="http://matplotlib.org/api/figure_api.html#matplotlib.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">()</span>
-<span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">target_name</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="s">&quot;rgb&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">target_names</span><span class="p">):</span>
-    <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.scatter"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span></a><span class="p">(</span><span class="n">X_r2</span><span class="p">[</span><span class="n">y</span> <span class="o">==</span> <span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X_r2</span><span class="p">[</span><span class="n">y</span> <span class="o">==</span> <span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">target_name</span><span class="p">)</span>
-<a href="http://matplotlib.org/api/legend_api.html#matplotlib.legend"><span class="n">plt</span><span class="o">.</span><span class="n">legend</span></a><span class="p">()</span>
+<span class="k">for</span> <span class="n">color</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">target_name</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">colors</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">target_names</span><span class="p">):</span>
+    <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.scatter"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span></a><span class="p">(</span><span class="n">X_r2</span><span class="p">[</span><span class="n">y</span> <span class="o">==</span> <span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X_r2</span><span class="p">[</span><span class="n">y</span> <span class="o">==</span> <span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">8</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+                <span class="n">label</span><span class="o">=</span><span class="n">target_name</span><span class="p">)</span>
+<a href="http://matplotlib.org/api/legend_api.html#matplotlib.legend"><span class="n">plt</span><span class="o">.</span><span class="n">legend</span></a><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">&#39;best&#39;</span><span class="p">,</span> <span class="n">shadow</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">scatterpoints</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.title"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span><span class="s">&#39;LDA of IRIS dataset&#39;</span><span class="p">)</span>
 
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  0.16 seconds
-( 0 minutes  0.16 seconds)</p>
+<p><strong>Total running time of the example:</strong>  0.17 seconds
+( 0 minutes  0.17 seconds)</p>
 </div>
 
 
@@ -246,7 +251,7 @@ LDA, in contrast to PCA, is a supervised method, using known class labels.</p>
      <div class="rel">
     
     <div class="buttonPrevious">
-      <a href="../datasets/plot_random_multilabel_dataset.html">Previous
+      <a href="plot_incremental_pca.html">Previous
       </a>
     </div>
     

@@ -1904,31 +1904,6 @@ Examples concerning the :mod:`sklearn.decomposition` module.
 
 .. raw:: html
 
-    <div class="thumbnailContainer" tooltip="The Iris dataset represents 3 kind of Iris flowers (Setosa, Versicolour and Virginica) with 4 a...">
-
-.. only:: html
-
-  .. figure:: decomposition/images/thumb/plot_pca_vs_lda.png
-    :target: ./decomposition/plot_pca_vs_lda.html
-
-    :ref:`example_decomposition_plot_pca_vs_lda.py`
-
-
-.. raw:: html
-
-    </div>
-
-
-
-.. toctree::
-   :hidden:
-
-   decomposition/plot_pca_vs_lda
-
-
-
-.. raw:: html
-
     <div class="thumbnailContainer" tooltip="=============== Incremental PCA ===============">
 
 .. only:: html
@@ -1949,6 +1924,31 @@ Examples concerning the :mod:`sklearn.decomposition` module.
    :hidden:
 
    decomposition/plot_incremental_pca
+
+
+
+.. raw:: html
+
+    <div class="thumbnailContainer" tooltip="The Iris dataset represents 3 kind of Iris flowers (Setosa, Versicolour and Virginica) with 4 a...">
+
+.. only:: html
+
+  .. figure:: decomposition/images/thumb/plot_pca_vs_lda.png
+    :target: ./decomposition/plot_pca_vs_lda.html
+
+    :ref:`example_decomposition_plot_pca_vs_lda.py`
+
+
+.. raw:: html
+
+    </div>
+
+
+
+.. toctree::
+   :hidden:
+
+   decomposition/plot_pca_vs_lda
 
 
 
