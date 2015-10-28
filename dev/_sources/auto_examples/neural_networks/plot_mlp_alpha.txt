@@ -32,6 +32,6 @@ decision boundery.
 .. literalinclude:: plot_mlp_alpha.py
     :lines: 18-
 
-**Total running time of the example:**  8.42 seconds
-( 0 minutes  8.42 seconds)
+**Total running time of the example:**  8.36 seconds
+( 0 minutes  8.36 seconds)
     

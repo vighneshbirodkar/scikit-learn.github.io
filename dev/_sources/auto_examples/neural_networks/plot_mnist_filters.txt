@@ -52,6 +52,6 @@ smoother spatial appearance.
 .. literalinclude:: plot_mnist_filters.py
     :lines: 23-
 
-**Total running time of the example:**  54.41 seconds
-( 0 minutes  54.41 seconds)
+**Total running time of the example:**  54.05 seconds
+( 0 minutes  54.05 seconds)
     
