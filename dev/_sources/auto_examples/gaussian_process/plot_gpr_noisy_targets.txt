@@ -45,6 +45,6 @@ regularization of the assumed covariance between the training points.
 .. literalinclude:: plot_gpr_noisy_targets.py
     :lines: 21-
 
-**Total running time of the example:**  1.30 seconds
-( 0 minutes  1.30 seconds)
+**Total running time of the example:**  1.27 seconds
+( 0 minutes  1.27 seconds)
     
