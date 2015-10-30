@@ -75,6 +75,6 @@ precision-recall.
 .. literalinclude:: plot_sparse_recovery.py
     :lines: 41-
 
-**Total running time of the example:**  11.48 seconds
-( 0 minutes  11.48 seconds)
+**Total running time of the example:**  11.50 seconds
+( 0 minutes  11.50 seconds)
     

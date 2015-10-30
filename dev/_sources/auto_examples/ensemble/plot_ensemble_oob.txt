@@ -36,6 +36,6 @@ error stabilizes.
 .. literalinclude:: plot_ensemble_oob.py
     :lines: 22-
 
-**Total running time of the example:**  19.32 seconds
-( 0 minutes  19.32 seconds)
+**Total running time of the example:**  20.54 seconds
+( 0 minutes  20.54 seconds)
     
