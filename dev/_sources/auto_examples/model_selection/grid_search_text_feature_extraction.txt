@@ -48,5 +48,5 @@ Here is a sample output of a run on a quad-core machine::
 **Python source code:** :download:`grid_search_text_feature_extraction.py <grid_search_text_feature_extraction.py>`
 
 .. literalinclude:: grid_search_text_feature_extraction.py
-    :lines: 43-
+    :lines: 44-
     

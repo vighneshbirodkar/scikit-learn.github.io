@@ -340,7 +340,7 @@ random forests. By <a class="reference external" href="https://webperso.telecom-
 available from <tt class="xref py py-mod docutils literal"><span class="pre">model_selection</span></tt>. These expose a <tt class="docutils literal"><span class="pre">split</span></tt> method
 that takes in the data and yields a generator for the different splits.
 This change makes it possible to do nested cross-validation with ease,
-facilitated by <tt class="xref py py-class docutils literal"><span class="pre">model_selection.GridSearchCV</span></tt> and similar
+facilitated by <a class="reference internal" href="modules/generated/sklearn.model_selection.GridSearchCV.html#sklearn.model_selection.GridSearchCV" title="sklearn.model_selection.GridSearchCV"><tt class="xref py py-class docutils literal"><span class="pre">model_selection.GridSearchCV</span></tt></a> and similar
 utilities.  (<a href="#id65"><span class="problematic" id="id66">`#4294 https://github.com/scikit-learn/scikit-learn/pull/4294&gt;`_</span></a>) by <a class="reference external" href="https://github.com/ragv">Raghav R V</a>.</li>
 <li>The random forest, extra trees and decision tree estimators now has a
 method <tt class="docutils literal"><span class="pre">decision_path</span></tt> which returns the decision path of samples in
@@ -2548,7 +2548,7 @@ and <a class="reference internal" href="modules/generated/sklearn.metrics.pairwi
 by <a class="reference external" href="http://www.mblondel.org">Mathieu Blondel</a>.</li>
 <li><a class="reference internal" href="modules/clustering.html#k-means"><em>K-means</em></a> can now be run in parallel, using the <tt class="docutils literal"><span class="pre">n_jobs</span></tt> argument
 to either <a class="reference internal" href="modules/clustering.html#k-means"><em>K-means</em></a> or <tt class="xref py py-class docutils literal"><span class="pre">KMeans</span></tt>, by <a class="reference external" href="http://www.twitter.com/robertlayton">Robert Layton</a>.</li>
-<li>Improved <a class="reference internal" href="modules/cross_validation.html#cross-validation"><em>Cross-validation: evaluating estimator performance</em></a> and <a class="reference internal" href="modules/grid_search.html#grid-search"><em>Grid Search: Searching for estimator parameters</em></a> documentation
+<li>Improved <a class="reference internal" href="modules/cross_validation.html#cross-validation"><em>Cross-validation: evaluating estimator performance</em></a> and <a class="reference internal" href="modules/grid_search.html#grid-search"><em>Tuning the hyper-parameters of an estimator</em></a> documentation
 and introduced the new <a class="reference internal" href="modules/generated/sklearn.cross_validation.train_test_split.html#sklearn.cross_validation.train_test_split" title="sklearn.cross_validation.train_test_split"><tt class="xref py py-func docutils literal"><span class="pre">cross_validation.train_test_split</span></tt></a>
 helper function by <a class="reference external" href="http://twitter.com/ogrisel">Olivier Grisel</a></li>
 <li><a class="reference internal" href="modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC" title="sklearn.svm.SVC"><tt class="xref py py-class docutils literal"><span class="pre">svm.SVC</span></tt></a> members <tt class="docutils literal"><span class="pre">coef_</span></tt> and <tt class="docutils literal"><span class="pre">intercept_</span></tt> changed sign for

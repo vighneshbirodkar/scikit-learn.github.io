@@ -183,13 +183,13 @@ is good but the validation score is poor.</p>
 
 <span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.datasets.load_digits.html#sklearn.datasets.load_digits"><span class="n">load_digits</span></a>
 <span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC"><span class="n">SVC</span></a>
-<span class="kn">from</span> <span class="nn">sklearn.learning_curve</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.learning_curve.validation_curve.html#sklearn.learning_curve.validation_curve"><span class="n">validation_curve</span></a>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">validation_curve</span>
 
 <span class="n">digits</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.load_digits.html#sklearn.datasets.load_digits"><span class="n">load_digits</span></a><span class="p">()</span>
 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">digits</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">digits</span><span class="o">.</span><span class="n">target</span>
 
 <span class="n">param_range</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy-1.6.0/reference/generated/numpy.logspace.html#numpy.logspace"><span class="n">np</span><span class="o">.</span><span class="n">logspace</span></a><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">train_scores</span><span class="p">,</span> <span class="n">test_scores</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.learning_curve.validation_curve.html#sklearn.learning_curve.validation_curve"><span class="n">validation_curve</span></a><span class="p">(</span>
+<span class="n">train_scores</span><span class="p">,</span> <span class="n">test_scores</span> <span class="o">=</span> <span class="n">validation_curve</span><span class="p">(</span>
     <a href="../../modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC"><span class="n">SVC</span></a><span class="p">(),</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">param_name</span><span class="o">=</span><span class="s">&quot;gamma&quot;</span><span class="p">,</span> <span class="n">param_range</span><span class="o">=</span><span class="n">param_range</span><span class="p">,</span>
     <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s">&quot;accuracy&quot;</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">train_scores_mean</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy-1.6.0/reference/generated/numpy.mean.html#numpy.mean"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><span class="n">train_scores</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -216,8 +216,8 @@ is good but the validation score is poor.</p>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  68.91 seconds
-( 1 minutes  8.91 seconds)</p>
+<p><strong>Total running time of the example:</strong>  67.27 seconds
+( 1 minutes  7.27 seconds)</p>
 </div>
 
 

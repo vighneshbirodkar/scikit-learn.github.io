@@ -187,11 +187,11 @@ samples.</p>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">cross_validation</span>
 <span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.naive_bayes.GaussianNB.html#sklearn.naive_bayes.GaussianNB"><span class="n">GaussianNB</span></a>
 <span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC"><span class="n">SVC</span></a>
 <span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.datasets.load_digits.html#sklearn.datasets.load_digits"><span class="n">load_digits</span></a>
-<span class="kn">from</span> <span class="nn">sklearn.learning_curve</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.learning_curve.learning_curve.html#sklearn.learning_curve"><span class="n">learning_curve</span></a>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.learning_curve.learning_curve.html#sklearn.learning_curve"><span class="n">learning_curve</span></a>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">ShuffleSplit</span>
 
 
 <span class="k">def</span> <span class="nf">plot_learning_curve</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
@@ -218,10 +218,20 @@ samples.</p>
 <span class="sd">    ylim : tuple, shape (ymin, ymax), optional</span>
 <span class="sd">        Defines minimum and maximum yvalues plotted.</span>
 
-<span class="sd">    cv : integer, cross-validation generator, optional</span>
-<span class="sd">        If an integer is passed, it is the number of folds (defaults to 3).</span>
-<span class="sd">        Specific cross-validation objects can be passed, see</span>
-<span class="sd">        sklearn.cross_validation module for the list of possible objects</span>
+<span class="sd">    cv : int, cross-validation generator or an iterable, optional</span>
+<span class="sd">        Determines the cross-validation splitting strategy.</span>
+<span class="sd">        Possible inputs for cv are:</span>
+<span class="sd">          - None, to use the default 3-fold cross-validation,</span>
+<span class="sd">          - integer, to specify the number of folds.</span>
+<span class="sd">          - An object to be used as a cross-validation generator.</span>
+<span class="sd">          - An iterable yielding train/test splits.</span>
+
+<span class="sd">        For integer/None inputs, if ``y`` is binary or multiclass,</span>
+<span class="sd">        :class:`StratifiedKFold` used. If the estimator is not a classifier</span>
+<span class="sd">        or if ``y`` is neither binary nor multiclass, :class:`KFold` is used.</span>
+
+<span class="sd">        Refer :ref:`User Guide &lt;cross_validation&gt;` for the various</span>
+<span class="sd">        cross-validators that can be used here.</span>
 
 <span class="sd">    n_jobs : integer, optional</span>
 <span class="sd">        Number of jobs to run in parallel (default 1).</span>
@@ -240,10 +250,10 @@ samples.</p>
     <span class="n">test_scores_std</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy-1.6.0/reference/generated/numpy.std.html#numpy.std"><span class="n">np</span><span class="o">.</span><span class="n">std</span></a><span class="p">(</span><span class="n">test_scores</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.grid"><span class="n">plt</span><span class="o">.</span><span class="n">grid</span></a><span class="p">()</span>
 
-    <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.fill_between"><span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span></a><span class="p">(</span><span class="n">train_sizes</span><span class="p">,</span> <span class="n">train_scores_mean</span> <span class="o">-</span> <span class="n">train_scores_std</span><span class="p">,</span>
+    <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot"><span class="n">plt</span></a><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">train_sizes</span><span class="p">,</span> <span class="n">train_scores_mean</span> <span class="o">-</span> <span class="n">train_scores_std</span><span class="p">,</span>
                      <span class="n">train_scores_mean</span> <span class="o">+</span> <span class="n">train_scores_std</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
                      <span class="n">color</span><span class="o">=</span><span class="s">&quot;r&quot;</span><span class="p">)</span>
-    <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.fill_between"><span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span></a><span class="p">(</span><span class="n">train_sizes</span><span class="p">,</span> <span class="n">test_scores_mean</span> <span class="o">-</span> <span class="n">test_scores_std</span><span class="p">,</span>
+    <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot"><span class="n">plt</span></a><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">train_sizes</span><span class="p">,</span> <span class="n">test_scores_mean</span> <span class="o">-</span> <span class="n">test_scores_std</span><span class="p">,</span>
                      <span class="n">test_scores_mean</span> <span class="o">+</span> <span class="n">test_scores_std</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;g&quot;</span><span class="p">)</span>
     <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">train_sizes</span><span class="p">,</span> <span class="n">train_scores_mean</span><span class="p">,</span> <span class="s">&#39;o-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;r&quot;</span><span class="p">,</span>
              <span class="n">label</span><span class="o">=</span><span class="s">&quot;Training score&quot;</span><span class="p">)</span>
@@ -261,24 +271,22 @@ samples.</p>
 <span class="n">title</span> <span class="o">=</span> <span class="s">&quot;Learning Curves (Naive Bayes)&quot;</span>
 <span class="c"># Cross validation with 100 iterations to get smoother mean test and train</span>
 <span class="c"># score curves, each time with 20% data randomly selected as a validation set.</span>
-<span class="n">cv</span> <span class="o">=</span> <span class="n">cross_validation</span><span class="o">.</span><span class="n">ShuffleSplit</span><span class="p">(</span><span class="n">digits</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">n_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
-                                   <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">cv</span> <span class="o">=</span> <span class="n">ShuffleSplit</span><span class="p">(</span><span class="n">n_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="n">estimator</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.naive_bayes.GaussianNB.html#sklearn.naive_bayes.GaussianNB"><span class="n">GaussianNB</span></a><span class="p">()</span>
 <span class="n">plot_learning_curve</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">1.01</span><span class="p">),</span> <span class="n">cv</span><span class="o">=</span><span class="n">cv</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 
 <span class="n">title</span> <span class="o">=</span> <span class="s">&quot;Learning Curves (SVM, RBF kernel, $\gamma=0.001$)&quot;</span>
 <span class="c"># SVC is more expensive so we do a lower number of CV iterations:</span>
-<span class="n">cv</span> <span class="o">=</span> <span class="n">cross_validation</span><span class="o">.</span><span class="n">ShuffleSplit</span><span class="p">(</span><span class="n">digits</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">n_iter</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-                                   <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">cv</span> <span class="o">=</span> <span class="n">ShuffleSplit</span><span class="p">(</span><span class="n">n_iter</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">estimator</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC"><span class="n">SVC</span></a><span class="p">(</span><span class="n">gamma</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
 <span class="n">plot_learning_curve</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">1.01</span><span class="p">),</span> <span class="n">cv</span><span class="o">=</span><span class="n">cv</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  17.14 seconds
-( 0 minutes  17.14 seconds)</p>
+<p><strong>Total running time of the example:</strong>  15.73 seconds
+( 0 minutes  15.73 seconds)</p>
 </div>
 
 

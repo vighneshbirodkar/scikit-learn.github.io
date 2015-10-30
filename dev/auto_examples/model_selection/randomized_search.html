@@ -36,8 +36,8 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="scikit-learn 0.18.dev0 documentation" href="../../index.html" />
     <link rel="up" title="Examples" href="../index.html" />
-    <link rel="next" title="Receiver Operating Characteristic (ROC) with cross validation" href="plot_roc_crossval.html" />
-    <link rel="prev" title="Train error vs Test error" href="plot_train_error_vs_test_error.html" />
+    <link rel="next" title="Precision-Recall" href="plot_precision_recall.html" />
+    <link rel="prev" title="Receiver Operating Characteristic (ROC) with cross validation" href="plot_roc_crossval.html" />
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -113,14 +113,14 @@
   <!-- rellinks[1:] is an ugly hack to avoid link to module
   index -->
         <div class="rellink">
-        <a href="plot_train_error_vs_test_error.html"
+        <a href="plot_roc_crossval.html"
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        Train error v...
+        Receiver Oper...
         </span>
             <span class="hiddenrellink">
-            Train error vs Test error
+            Receiver Operating Characteristic (ROC) with cross validation
             </span>
         </a>
         </div>
@@ -187,7 +187,8 @@ simultaneously using grid search, but pick only the ones deemed most important.<
 <span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">itemgetter</span>
 <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">randint</span> <span class="k">as</span> <a href="http://docs.scipy.org/doc/scipy-0.11.0/reference/generated/scipy.stats.randint.html#scipy.stats.randint"><span class="n">sp_randint</span></a>
 
-<span class="kn">from</span> <span class="nn">sklearn.grid_search</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.grid_search.GridSearchCV.html#sklearn.grid_search.GridSearchCV"><span class="n">GridSearchCV</span></a><span class="p">,</span> <a href="../../modules/generated/sklearn.grid_search.RandomizedSearchCV.html#sklearn.grid_search.RandomizedSearchCV"><span class="n">RandomizedSearchCV</span></a>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">RandomizedSearchCV</span>
 <span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.datasets.load_digits.html#sklearn.datasets.load_digits"><span class="n">load_digits</span></a>
 <span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier"><span class="n">RandomForestClassifier</span></a>
 
@@ -221,7 +222,7 @@ simultaneously using grid search, but pick only the ones deemed most important.<
 
 <span class="c"># run randomized search</span>
 <span class="n">n_iter_search</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="n">random_search</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.grid_search.RandomizedSearchCV.html#sklearn.grid_search.RandomizedSearchCV"><span class="n">RandomizedSearchCV</span></a><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">param_distributions</span><span class="o">=</span><span class="n">param_dist</span><span class="p">,</span>
+<span class="n">random_search</span> <span class="o">=</span> <span class="n">RandomizedSearchCV</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">param_distributions</span><span class="o">=</span><span class="n">param_dist</span><span class="p">,</span>
                                    <span class="n">n_iter</span><span class="o">=</span><span class="n">n_iter_search</span><span class="p">)</span>
 
 <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
@@ -239,7 +240,7 @@ simultaneously using grid search, but pick only the ones deemed most important.<
               <span class="s">&quot;criterion&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s">&quot;gini&quot;</span><span class="p">,</span> <span class="s">&quot;entropy&quot;</span><span class="p">]}</span>
 
 <span class="c"># run grid search</span>
-<span class="n">grid_search</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.grid_search.GridSearchCV.html#sklearn.grid_search.GridSearchCV"><span class="n">GridSearchCV</span></a><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">param_grid</span><span class="o">=</span><span class="n">param_grid</span><span class="p">)</span>
+<span class="n">grid_search</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">param_grid</span><span class="o">=</span><span class="n">param_grid</span><span class="p">)</span>
 <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
 <span class="n">grid_search</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 
@@ -265,7 +266,7 @@ simultaneously using grid search, but pick only the ones deemed most important.<
      <div class="rel">
     
     <div class="buttonPrevious">
-      <a href="plot_train_error_vs_test_error.html">Previous
+      <a href="plot_roc_crossval.html">Previous
       </a>
     </div>
     

@@ -192,13 +192,17 @@ quite substantially.
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">cross_validation</span><span class="p">,</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">linear_model</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.linear_model.LassoCV.html#sklearn.linear_model.LassoCV"><span class="n">LassoCV</span></a>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso"><span class="n">Lasso</span></a>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">KFold</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
 
-<span class="n">diabetes</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.load_diabetes.html#sklearn.datasets.load_diabetes"><span class="n">datasets</span><span class="o">.</span><span class="n">load_diabetes</span></a><span class="p">()</span>
+<span class="n">diabetes</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_diabetes</span><span class="p">()</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">diabetes</span><span class="o">.</span><span class="n">data</span><span class="p">[:</span><span class="mi">150</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">diabetes</span><span class="o">.</span><span class="n">target</span><span class="p">[:</span><span class="mi">150</span><span class="p">]</span>
 
-<span class="n">lasso</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso"><span class="n">linear_model</span><span class="o">.</span><span class="n">Lasso</span></a><span class="p">()</span>
+<span class="n">lasso</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso"><span class="n">Lasso</span></a><span class="p">()</span>
 <span class="n">alphas</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy-1.6.0/reference/generated/numpy.logspace.html#numpy.logspace"><span class="n">np</span><span class="o">.</span><span class="n">logspace</span></a><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
 
 <span class="n">scores</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
@@ -206,7 +210,7 @@ quite substantially.
 
 <span class="k">for</span> <span class="n">alpha</span> <span class="ow">in</span> <span class="n">alphas</span><span class="p">:</span>
     <span class="n">lasso</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha</span>
-    <span class="n">this_scores</span> <span class="o">=</span> <span class="n">cross_validation</span><span class="o">.</span><span class="n">cross_val_score</span><span class="p">(</span><span class="n">lasso</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">this_scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">lasso</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><a href="http://docs.scipy.org/doc/numpy-1.6.0/reference/generated/numpy.mean.html#numpy.mean"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><span class="n">this_scores</span><span class="p">))</span>
     <span class="n">scores_std</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><a href="http://docs.scipy.org/doc/numpy-1.6.0/reference/generated/numpy.std.html#numpy.std"><span class="n">np</span><span class="o">.</span><span class="n">std</span></a><span class="p">(</span><span class="n">this_scores</span><span class="p">))</span>
 
@@ -229,15 +233,15 @@ quite substantially.
 <span class="c"># performs cross-validation on the training data it receives).</span>
 <span class="c"># We use external cross-validation to see how much the automatically obtained</span>
 <span class="c"># alphas differ across different cross-validation folds.</span>
-<span class="n">lasso_cv</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.linear_model.LassoCV.html#sklearn.linear_model.LassoCV"><span class="n">linear_model</span><span class="o">.</span><span class="n">LassoCV</span></a><span class="p">(</span><span class="n">alphas</span><span class="o">=</span><span class="n">alphas</span><span class="p">)</span>
-<span class="n">k_fold</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.cross_validation.KFold.html#sklearn.cross_validation.KFold"><span class="n">cross_validation</span><span class="o">.</span><span class="n">KFold</span></a><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">lasso_cv</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.linear_model.LassoCV.html#sklearn.linear_model.LassoCV"><span class="n">LassoCV</span></a><span class="p">(</span><span class="n">alphas</span><span class="o">=</span><span class="n">alphas</span><span class="p">)</span>
+<span class="n">k_fold</span> <span class="o">=</span> <span class="n">KFold</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">&quot;Answer to the bonus question:&quot;</span><span class="p">,</span>
       <span class="s">&quot;how much can you trust the selection of alpha?&quot;</span><span class="p">)</span>
 <span class="k">print</span><span class="p">()</span>
 <span class="k">print</span><span class="p">(</span><span class="s">&quot;Alpha parameters maximising the generalization score on different&quot;</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">&quot;subsets of the data:&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">k_fold</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">k_fold</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)):</span>
     <span class="n">lasso_cv</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">train</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">train</span><span class="p">])</span>
     <span class="k">print</span><span class="p">(</span><span class="s">&quot;[fold {0}] alpha: {1:.5f}, score: {2:.5f}&quot;</span><span class="o">.</span>
           <span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">lasso_cv</span><span class="o">.</span><span class="n">alpha_</span><span class="p">,</span> <span class="n">lasso_cv</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">test</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">test</span><span class="p">])))</span>
@@ -249,8 +253,8 @@ quite substantially.
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  0.63 seconds
-( 0 minutes  0.63 seconds)</p>
+<p><strong>Total running time of the example:</strong>  0.71 seconds
+( 0 minutes  0.71 seconds)</p>
 </div>
 
 

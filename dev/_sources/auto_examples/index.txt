@@ -4199,8 +4199,7 @@ Examples concerning the :mod:`sklearn.mixture` module.
 Model Selection
 -----------------------
 
-Examples concerning model selection, mostly contained in the
-:mod:`sklearn.grid_search` and :mod:`sklearn.cross_validation` modules.
+Examples related to the :mod:`sklearn.model_selection` module.
 
 
 
@@ -4333,31 +4332,6 @@ Examples concerning model selection, mostly contained in the
 
 .. raw:: html
 
-    <div class="thumbnailContainer" tooltip="Compare randomized search and grid search for optimizing hyperparameters of a random forest. Al...">
-
-.. only:: html
-
-  .. figure:: model_selection/images/thumb/randomized_search.png
-    :target: ./model_selection/randomized_search.html
-
-    :ref:`example_model_selection_randomized_search.py`
-
-
-.. raw:: html
-
-    </div>
-
-
-
-.. toctree::
-   :hidden:
-
-   model_selection/randomized_search
-
-
-
-.. raw:: html
-
     <div class="thumbnailContainer" tooltip="Example of Receiver Operating Characteristic (ROC) metric to evaluate classifier output quality...">
 
 .. only:: html
@@ -4378,6 +4352,31 @@ Examples concerning model selection, mostly contained in the
    :hidden:
 
    model_selection/plot_roc_crossval
+
+
+
+.. raw:: html
+
+    <div class="thumbnailContainer" tooltip="Compare randomized search and grid search for optimizing hyperparameters of a random forest. Al...">
+
+.. only:: html
+
+  .. figure:: model_selection/images/thumb/randomized_search.png
+    :target: ./model_selection/randomized_search.html
+
+    :ref:`example_model_selection_randomized_search.py`
+
+
+.. raw:: html
+
+    </div>
+
+
+
+.. toctree::
+   :hidden:
+
+   model_selection/randomized_search
 
 
 
@@ -5138,31 +5137,6 @@ Examples concerning the :mod:`sklearn.svm` module.
 
 .. raw:: html
 
-    <div class="thumbnailContainer" tooltip="This example shows how to perform univariate feature before running a SVC (support vector class...">
-
-.. only:: html
-
-  .. figure:: svm/images/thumb/plot_svm_anova.png
-    :target: ./svm/plot_svm_anova.html
-
-    :ref:`example_svm_plot_svm_anova.py`
-
-
-.. raw:: html
-
-    </div>
-
-
-
-.. toctree::
-   :hidden:
-
-   svm/plot_svm_anova
-
-
-
-.. raw:: html
-
     <div class="thumbnailContainer" tooltip="Plot decision function of a weighted dataset, where the size of points is proportional to its w...">
 
 .. only:: html
@@ -5183,6 +5157,31 @@ Examples concerning the :mod:`sklearn.svm` module.
    :hidden:
 
    svm/plot_weighted_samples
+
+
+
+.. raw:: html
+
+    <div class="thumbnailContainer" tooltip="This example shows how to perform univariate feature before running a SVC (support vector class...">
+
+.. only:: html
+
+  .. figure:: svm/images/thumb/plot_svm_anova.png
+    :target: ./svm/plot_svm_anova.html
+
+    :ref:`example_svm_plot_svm_anova.py`
+
+
+.. raw:: html
+
+    </div>
+
+
+
+.. toctree::
+   :hidden:
+
+   svm/plot_svm_anova
 
 
 
