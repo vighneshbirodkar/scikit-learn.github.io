@@ -185,7 +185,7 @@ regression does the prediction.</p>
 
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span><span class="p">,</span> <span class="n">decomposition</span><span class="p">,</span> <span class="n">datasets</span>
 <span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <a href="../modules/generated/sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline"><span class="n">Pipeline</span></a>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <a href="../modules/generated/sklearn.model_selection.GridSearchCV.html#sklearn.model_selection.GridSearchCV"><span class="n">GridSearchCV</span></a>
 
 <span class="n">logistic</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LogisticRegression</span><span class="p">()</span>
 
@@ -216,7 +216,7 @@ regression does the prediction.</p>
 
 <span class="c">#Parameters of pipelines can be set using ‘__’ separated parameter names:</span>
 
-<span class="n">estimator</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">pipe</span><span class="p">,</span>
+<span class="n">estimator</span> <span class="o">=</span> <a href="../modules/generated/sklearn.model_selection.GridSearchCV.html#sklearn.model_selection.GridSearchCV"><span class="n">GridSearchCV</span></a><span class="p">(</span><span class="n">pipe</span><span class="p">,</span>
                          <span class="nb">dict</span><span class="p">(</span><span class="n">pca__n_components</span><span class="o">=</span><span class="n">n_components</span><span class="p">,</span>
                               <span class="n">logistic__C</span><span class="o">=</span><span class="n">Cs</span><span class="p">))</span>
 <span class="n">estimator</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_digits</span><span class="p">,</span> <span class="n">y_digits</span><span class="p">)</span>
@@ -227,8 +227,8 @@ regression does the prediction.</p>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  24.57 seconds
-( 0 minutes  24.57 seconds)</p>
+<p><strong>Total running time of the example:</strong>  20.93 seconds
+( 0 minutes  20.93 seconds)</p>
 </div>
 
 

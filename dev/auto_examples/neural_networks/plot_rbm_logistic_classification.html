@@ -184,26 +184,26 @@ example shows that the features extracted by the BernoulliRBM help improve the
 classification accuracy.</p>
 <img alt="../../_images/plot_rbm_logistic_classification_001.png" class="align-center" src="../../_images/plot_rbm_logistic_classification_001.png" />
 <p><strong>Script output</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>[BernoulliRBM] Iteration 1, pseudo-likelihood = -25.39, time = 1.69s
-[BernoulliRBM] Iteration 2, pseudo-likelihood = -23.77, time = 1.93s
-[BernoulliRBM] Iteration 3, pseudo-likelihood = -22.94, time = 1.92s
-[BernoulliRBM] Iteration 4, pseudo-likelihood = -21.91, time = 1.88s
-[BernoulliRBM] Iteration 5, pseudo-likelihood = -21.69, time = 1.96s
-[BernoulliRBM] Iteration 6, pseudo-likelihood = -21.06, time = 1.95s
-[BernoulliRBM] Iteration 7, pseudo-likelihood = -20.89, time = 1.95s
-[BernoulliRBM] Iteration 8, pseudo-likelihood = -20.64, time = 1.87s
-[BernoulliRBM] Iteration 9, pseudo-likelihood = -20.36, time = 1.91s
-[BernoulliRBM] Iteration 10, pseudo-likelihood = -20.09, time = 1.85s
-[BernoulliRBM] Iteration 11, pseudo-likelihood = -20.08, time = 1.89s
+<div class="highlight-python"><div class="highlight"><pre>[BernoulliRBM] Iteration 1, pseudo-likelihood = -25.39, time = 1.61s
+[BernoulliRBM] Iteration 2, pseudo-likelihood = -23.77, time = 1.92s
+[BernoulliRBM] Iteration 3, pseudo-likelihood = -22.94, time = 1.88s
+[BernoulliRBM] Iteration 4, pseudo-likelihood = -21.91, time = 1.91s
+[BernoulliRBM] Iteration 5, pseudo-likelihood = -21.69, time = 1.88s
+[BernoulliRBM] Iteration 6, pseudo-likelihood = -21.06, time = 1.92s
+[BernoulliRBM] Iteration 7, pseudo-likelihood = -20.89, time = 1.92s
+[BernoulliRBM] Iteration 8, pseudo-likelihood = -20.64, time = 1.89s
+[BernoulliRBM] Iteration 9, pseudo-likelihood = -20.36, time = 1.94s
+[BernoulliRBM] Iteration 10, pseudo-likelihood = -20.09, time = 1.90s
+[BernoulliRBM] Iteration 11, pseudo-likelihood = -20.08, time = 1.86s
 [BernoulliRBM] Iteration 12, pseudo-likelihood = -19.82, time = 1.91s
-[BernoulliRBM] Iteration 13, pseudo-likelihood = -19.64, time = 1.84s
-[BernoulliRBM] Iteration 14, pseudo-likelihood = -19.61, time = 1.89s
-[BernoulliRBM] Iteration 15, pseudo-likelihood = -19.57, time = 1.88s
-[BernoulliRBM] Iteration 16, pseudo-likelihood = -19.41, time = 1.84s
-[BernoulliRBM] Iteration 17, pseudo-likelihood = -19.30, time = 1.91s
-[BernoulliRBM] Iteration 18, pseudo-likelihood = -19.25, time = 1.89s
-[BernoulliRBM] Iteration 19, pseudo-likelihood = -19.27, time = 1.84s
-[BernoulliRBM] Iteration 20, pseudo-likelihood = -19.01, time = 1.85s
+[BernoulliRBM] Iteration 13, pseudo-likelihood = -19.64, time = 1.88s
+[BernoulliRBM] Iteration 14, pseudo-likelihood = -19.61, time = 1.84s
+[BernoulliRBM] Iteration 15, pseudo-likelihood = -19.57, time = 1.87s
+[BernoulliRBM] Iteration 16, pseudo-likelihood = -19.41, time = 1.85s
+[BernoulliRBM] Iteration 17, pseudo-likelihood = -19.30, time = 1.89s
+[BernoulliRBM] Iteration 18, pseudo-likelihood = -19.25, time = 1.85s
+[BernoulliRBM] Iteration 19, pseudo-likelihood = -19.27, time = 1.88s
+[BernoulliRBM] Iteration 20, pseudo-likelihood = -19.01, time = 1.86s
 
 Logistic regression using RBM features:
              precision    recall  f1-score   support
@@ -252,7 +252,7 @@ avg / total       0.77      0.77      0.77      1797
 
 <span class="kn">from</span> <span class="nn">scipy.ndimage</span> <span class="kn">import</span> <span class="n">convolve</span>
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span><span class="p">,</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">metrics</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.model_selection.train_test_split.html#sklearn.model_selection.train_test_split"><span class="n">train_test_split</span></a>
 <span class="kn">from</span> <span class="nn">sklearn.neural_network</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.neural_network.BernoulliRBM.html#sklearn.neural_network.BernoulliRBM"><span class="n">BernoulliRBM</span></a>
 <span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline"><span class="n">Pipeline</span></a>
 
@@ -296,7 +296,7 @@ avg / total       0.77      0.77      0.77      1797
 <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">nudge_dataset</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">digits</span><span class="o">.</span><span class="n">target</span><span class="p">)</span>
 <span class="n">X</span> <span class="o">=</span> <span class="p">(</span><span class="n">X</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.0001</span><span class="p">)</span>  <span class="c"># 0-1 scaling</span>
 
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">Y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">Y_test</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.model_selection.train_test_split.html#sklearn.model_selection.train_test_split"><span class="n">train_test_split</span></a><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span>
                                                     <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
                                                     <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
@@ -356,8 +356,8 @@ avg / total       0.77      0.77      0.77      1797
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  122.98 seconds
-( 2 minutes  2.98 seconds)</p>
+<p><strong>Total running time of the example:</strong>  122.46 seconds
+( 2 minutes  2.46 seconds)</p>
 </div>
 
 

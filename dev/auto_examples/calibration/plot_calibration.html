@@ -212,7 +212,7 @@ With sigmoid calibration: 0.109
 <span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.naive_bayes.GaussianNB.html#sklearn.naive_bayes.GaussianNB"><span class="n">GaussianNB</span></a>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.metrics.brier_score_loss.html#sklearn.metrics.brier_score_loss"><span class="n">brier_score_loss</span></a>
 <span class="kn">from</span> <span class="nn">sklearn.calibration</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.calibration.CalibratedClassifierCV.html#sklearn.calibration.CalibratedClassifierCV"><span class="n">CalibratedClassifierCV</span></a>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.model_selection.train_test_split.html#sklearn.model_selection.train_test_split"><span class="n">train_test_split</span></a>
 
 
 <span class="n">n_samples</span> <span class="o">=</span> <span class="mi">50000</span>
@@ -231,7 +231,7 @@ With sigmoid calibration: 0.109
 
 <span class="c"># split train, test for calibration</span>
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">sw_train</span><span class="p">,</span> <span class="n">sw_test</span> <span class="o">=</span> \
-    <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+    <a href="../../modules/generated/sklearn.model_selection.train_test_split.html#sklearn.model_selection.train_test_split"><span class="n">train_test_split</span></a><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 
 <span class="c"># Gaussian Naive-Bayes with no calibration</span>
 <span class="n">clf</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.naive_bayes.GaussianNB.html#sklearn.naive_bayes.GaussianNB"><span class="n">GaussianNB</span></a><span class="p">()</span>
@@ -292,8 +292,8 @@ With sigmoid calibration: 0.109
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  0.72 seconds
-( 0 minutes  0.72 seconds)</p>
+<p><strong>Total running time of the example:</strong>  0.73 seconds
+( 0 minutes  0.73 seconds)</p>
 </div>
 
 

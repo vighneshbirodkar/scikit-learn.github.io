@@ -423,10 +423,10 @@ By <a class="reference external" href="https://github.com/untom">Thomas Unterthi
 <li>The new class <a class="reference internal" href="modules/generated/sklearn.preprocessing.FunctionTransformer.html#sklearn.preprocessing.FunctionTransformer" title="sklearn.preprocessing.FunctionTransformer"><tt class="xref py py-class docutils literal"><span class="pre">preprocessing.FunctionTransformer</span></tt></a> turns a Python
 function into a <tt class="docutils literal"><span class="pre">Pipeline</span></tt>-compatible transformer object.
 By Joe Jevnik.</li>
-<li>The new classes <a class="reference internal" href="modules/generated/sklearn.cross_validation.LabelKFold.html#sklearn.cross_validation.LabelKFold" title="sklearn.cross_validation.LabelKFold"><tt class="xref py py-class docutils literal"><span class="pre">cross_validation.LabelKFold</span></tt></a> and
-<a class="reference internal" href="modules/generated/sklearn.cross_validation.LabelShuffleSplit.html#sklearn.cross_validation.LabelShuffleSplit" title="sklearn.cross_validation.LabelShuffleSplit"><tt class="xref py py-class docutils literal"><span class="pre">cross_validation.LabelShuffleSplit</span></tt></a> generate train-test folds,
-respectively similar to <a class="reference internal" href="modules/generated/sklearn.cross_validation.KFold.html#sklearn.cross_validation.KFold" title="sklearn.cross_validation.KFold"><tt class="xref py py-class docutils literal"><span class="pre">cross_validation.KFold</span></tt></a> and
-<a class="reference internal" href="modules/generated/sklearn.cross_validation.ShuffleSplit.html#sklearn.cross_validation.ShuffleSplit" title="sklearn.cross_validation.ShuffleSplit"><tt class="xref py py-class docutils literal"><span class="pre">cross_validation.ShuffleSplit</span></tt></a>, except that the folds are
+<li>The new classes <tt class="xref py py-class docutils literal"><span class="pre">cross_validation.LabelKFold</span></tt> and
+<tt class="xref py py-class docutils literal"><span class="pre">cross_validation.LabelShuffleSplit</span></tt> generate train-test folds,
+respectively similar to <tt class="xref py py-class docutils literal"><span class="pre">cross_validation.KFold</span></tt> and
+<tt class="xref py py-class docutils literal"><span class="pre">cross_validation.ShuffleSplit</span></tt>, except that the folds are
 conditioned on a label array. By <a class="reference external" href="https://bmcfee.github.io">Brian McFee</a>, <a class="reference external" href="https://github.com/JeanKossaifi">Jean Kossaifi</a> and
 <a class="reference external" href="http://www.montefiore.ulg.ac.be/~glouppe/">Gilles Louppe</a>.</li>
 <li><a class="reference internal" href="modules/generated/sklearn.decomposition.LatentDirichletAllocation.html#sklearn.decomposition.LatentDirichletAllocation" title="sklearn.decomposition.LatentDirichletAllocation"><tt class="xref py py-class docutils literal"><span class="pre">decomposition.LatentDirichletAllocation</span></tt></a> implements the Latent
@@ -474,7 +474,7 @@ models to increase the size of the ensemble. By
 <a class="reference external" href="https://github.com/betatim">Tim Head</a>.</li>
 <li>Added option to use multi-output regression metrics without averaging.
 By Konstantin Shmelkov and <a class="reference external" href="https://github.com/eickenberg">Michael Eickenberg</a>.</li>
-<li>Added <tt class="docutils literal"><span class="pre">stratify</span></tt> option to <a class="reference internal" href="modules/generated/sklearn.cross_validation.train_test_split.html#sklearn.cross_validation.train_test_split" title="sklearn.cross_validation.train_test_split"><tt class="xref py py-func docutils literal"><span class="pre">cross_validation.train_test_split</span></tt></a>
+<li>Added <tt class="docutils literal"><span class="pre">stratify</span></tt> option to <tt class="xref py py-func docutils literal"><span class="pre">cross_validation.train_test_split</span></tt>
 for stratified splitting. By Miroslav Batchkarov.</li>
 <li>The <a class="reference internal" href="modules/generated/sklearn.tree.export_graphviz.html#sklearn.tree.export_graphviz" title="sklearn.tree.export_graphviz"><tt class="xref py py-func docutils literal"><span class="pre">tree.export_graphviz</span></tt></a> function now supports aesthetic
 improvements for <a class="reference internal" href="modules/generated/sklearn.tree.DecisionTreeClassifier.html#sklearn.tree.DecisionTreeClassifier" title="sklearn.tree.DecisionTreeClassifier"><tt class="xref py py-class docutils literal"><span class="pre">tree.DecisionTreeClassifier</span></tt></a> and
@@ -512,7 +512,7 @@ By <a class="reference external" href="https://github.com/TomDLT">Tom Dupre la T
 <li>Upgraded to joblib 0.9.3 to benefit from the new automatic batching of
 short tasks. This makes it possible for scikit-learn to benefit from
 parallelism when many very short tasks are executed in parallel, for
-instance by the <a class="reference internal" href="modules/generated/sklearn.grid_search.GridSearchCV.html#sklearn.grid_search.GridSearchCV" title="sklearn.grid_search.GridSearchCV"><tt class="xref py py-class docutils literal"><span class="pre">grid_search.GridSearchCV</span></tt></a> meta-estimator
+instance by the <tt class="xref py py-class docutils literal"><span class="pre">grid_search.GridSearchCV</span></tt> meta-estimator
 with <tt class="docutils literal"><span class="pre">n_jobs</span> <span class="pre">&gt;</span> <span class="pre">1</span></tt> used with a large grid of parameters on a small
 dataset. By <a class="reference external" href="http://vene.ro">Vlad Niculae</a>, <a class="reference external" href="http://twitter.com/ogrisel">Olivier Grisel</a> and <a class="reference external" href="https://github.com/lesteve">Loic Esteve</a>.</li>
 <li>For more details about changes in joblib 0.9.3 see the release notes:
@@ -585,7 +585,7 @@ multi-label output. By <a class="reference external" href="http://peekaboo-visio
 <li><p class="first">Fixed bug in <tt class="xref py py-class docutils literal"><span class="pre">decomposition.DictLearning</span></tt> when <tt class="docutils literal"><span class="pre">n_jobs</span> <span class="pre">&lt;</span> <span class="pre">0</span></tt>. By
 <a class="reference external" href="http://peekaboo-vision.blogspot.com">Andreas Müller</a>.</p>
 </li>
-<li><p class="first">Fixed bug where <a class="reference internal" href="modules/generated/sklearn.grid_search.RandomizedSearchCV.html#sklearn.grid_search.RandomizedSearchCV" title="sklearn.grid_search.RandomizedSearchCV"><tt class="xref py py-class docutils literal"><span class="pre">grid_search.RandomizedSearchCV</span></tt></a> could consume a
+<li><p class="first">Fixed bug where <tt class="xref py py-class docutils literal"><span class="pre">grid_search.RandomizedSearchCV</span></tt> could consume a
 lot of memory for large discrete grids. By <a class="reference external" href="http://joelnothman.com">Joel Nothman</a>.</p>
 </li>
 <li><p class="first">Fixed bug in <a class="reference internal" href="modules/generated/sklearn.linear_model.LogisticRegressionCV.html#sklearn.linear_model.LogisticRegressionCV" title="sklearn.linear_model.LogisticRegressionCV"><tt class="xref py py-class docutils literal"><span class="pre">linear_model.LogisticRegressionCV</span></tt></a> where <cite>penalty</cite> was ignored
@@ -603,7 +603,7 @@ shape <tt class="docutils literal"><span class="pre">(n_samples,</span> <span cl
 <li><p class="first">Fixed a bug in <tt class="xref py py-class docutils literal"><span class="pre">lda.LDA</span></tt> that could cause asymmetric covariance
 matrices when using shrinkage. By <a class="reference external" href="https://github.com/kazemakase">Martin Billinger</a>.</p>
 </li>
-<li><p class="first">Fixed <a class="reference internal" href="modules/generated/sklearn.cross_validation.cross_val_predict.html#sklearn.cross_validation.cross_val_predict" title="sklearn.cross_validation.cross_val_predict"><tt class="xref py py-func docutils literal"><span class="pre">cross_validation.cross_val_predict</span></tt></a> for estimators with
+<li><p class="first">Fixed <tt class="xref py py-func docutils literal"><span class="pre">cross_validation.cross_val_predict</span></tt> for estimators with
 sparse predictions. By Buddha Prakash.</p>
 </li>
 <li><p class="first">Fixed the <tt class="docutils literal"><span class="pre">predict_proba</span></tt> method of <a class="reference internal" href="modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression" title="sklearn.linear_model.LogisticRegression"><tt class="xref py py-class docutils literal"><span class="pre">linear_model.LogisticRegression</span></tt></a>
@@ -766,7 +766,7 @@ method. By <a class="reference external" href="http://kastnerkyle.github.io">Kyl
 <li>Averaged SGD for <a class="reference internal" href="modules/generated/sklearn.linear_model.SGDClassifier.html#sklearn.linear_model.SGDClassifier" title="sklearn.linear_model.SGDClassifier"><tt class="xref py py-class docutils literal"><span class="pre">SGDClassifier</span></tt></a>
 and <a class="reference internal" href="modules/generated/sklearn.linear_model.SGDRegressor.html#sklearn.linear_model.SGDRegressor" title="sklearn.linear_model.SGDRegressor"><tt class="xref py py-class docutils literal"><span class="pre">SGDRegressor</span></tt></a> By
 <a class="reference external" href="https://github.com/dsullivan7">Danny Sullivan</a>.</li>
-<li>Added <a class="reference internal" href="modules/generated/sklearn.cross_validation.cross_val_predict.html#sklearn.cross_validation.cross_val_predict" title="sklearn.cross_validation.cross_val_predict"><tt class="xref py py-func docutils literal"><span class="pre">cross_val_predict</span></tt></a>
+<li>Added <tt class="xref py py-func docutils literal"><span class="pre">cross_val_predict</span></tt>
 function which computes cross-validated estimates. By <a class="reference external" href="http://luispedro.org">Luis Pedro Coelho</a></li>
 <li>Added <a class="reference internal" href="modules/generated/sklearn.linear_model.TheilSenRegressor.html#sklearn.linear_model.TheilSenRegressor" title="sklearn.linear_model.TheilSenRegressor"><tt class="xref py py-class docutils literal"><span class="pre">linear_model.TheilSenRegressor</span></tt></a>, a robust
 generalized-median-based estimator. By <a class="reference external" href="https://github.com/FlorianWilhelm">Florian Wilhelm</a>.</li>
@@ -781,7 +781,7 @@ kernelized ridge regression.
 By <a class="reference external" href="http://www.mblondel.org">Mathieu Blondel</a> and <a class="reference external" href="https://jmetzen.github.io/">Jan Hendrik Metzen</a>.</li>
 <li>All solvers in <a class="reference internal" href="modules/generated/sklearn.linear_model.Ridge.html#sklearn.linear_model.Ridge" title="sklearn.linear_model.Ridge"><tt class="xref py py-class docutils literal"><span class="pre">linear_model.Ridge</span></tt></a> now support <cite>sample_weight</cite>.
 By <a class="reference external" href="http://www.mblondel.org">Mathieu Blondel</a>.</li>
-<li>Added <a class="reference internal" href="modules/generated/sklearn.cross_validation.PredefinedSplit.html#sklearn.cross_validation.PredefinedSplit" title="sklearn.cross_validation.PredefinedSplit"><tt class="xref py py-class docutils literal"><span class="pre">cross_validation.PredefinedSplit</span></tt></a> cross-validation
+<li>Added <tt class="xref py py-class docutils literal"><span class="pre">cross_validation.PredefinedSplit</span></tt> cross-validation
 for fixed user-provided cross-validation folds.
 By <a class="reference external" href="https://github.com/untom">Thomas Unterthiner</a>.</li>
 <li>Added <a class="reference internal" href="modules/generated/sklearn.calibration.CalibratedClassifierCV.html#sklearn.calibration.CalibratedClassifierCV" title="sklearn.calibration.CalibratedClassifierCV"><tt class="xref py py-class docutils literal"><span class="pre">calibration.CalibratedClassifierCV</span></tt></a>, an approach for
@@ -867,7 +867,7 @@ and <a class="reference external" href="https://github.com/larsmans">Lars Buitin
 frequency for <a class="reference internal" href="modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier" title="sklearn.ensemble.RandomForestClassifier"><tt class="xref py py-class docutils literal"><span class="pre">ensemble.RandomForestClassifier</span></tt></a>,
 <a class="reference internal" href="modules/generated/sklearn.tree.DecisionTreeClassifier.html#sklearn.tree.DecisionTreeClassifier" title="sklearn.tree.DecisionTreeClassifier"><tt class="xref py py-class docutils literal"><span class="pre">tree.DecisionTreeClassifier</span></tt></a>, <a class="reference internal" href="modules/generated/sklearn.ensemble.ExtraTreesClassifier.html#sklearn.ensemble.ExtraTreesClassifier" title="sklearn.ensemble.ExtraTreesClassifier"><tt class="xref py py-class docutils literal"><span class="pre">ensemble.ExtraTreesClassifier</span></tt></a>
 and <a class="reference internal" href="modules/generated/sklearn.tree.ExtraTreeClassifier.html#sklearn.tree.ExtraTreeClassifier" title="sklearn.tree.ExtraTreeClassifier"><tt class="xref py py-class docutils literal"><span class="pre">tree.ExtraTreeClassifier</span></tt></a>. By <a class="reference external" href="http://trevorstephens.com/">Trevor Stephens</a>.</li>
-<li><a class="reference internal" href="modules/generated/sklearn.grid_search.RandomizedSearchCV.html#sklearn.grid_search.RandomizedSearchCV" title="sklearn.grid_search.RandomizedSearchCV"><tt class="xref py py-class docutils literal"><span class="pre">grid_search.RandomizedSearchCV</span></tt></a> now does sampling without
+<li><tt class="xref py py-class docutils literal"><span class="pre">grid_search.RandomizedSearchCV</span></tt> now does sampling without
 replacement if all parameters are given as lists. By <a class="reference external" href="http://peekaboo-vision.blogspot.com">Andreas Müller</a>.</li>
 <li>Parallelized calculation of <tt class="xref py py-func docutils literal"><span class="pre">pairwise_distances</span></tt> is now supported
 for scipy metrics and custom callables. By <a class="reference external" href="http://joelnothman.com">Joel Nothman</a>.</li>
@@ -920,12 +920,12 @@ See <a class="reference internal" href="auto_examples/cluster/plot_kmeans_silhou
 <div><ul class="simple">
 <li>Metaestimators now support ducktyping for the presence of <tt class="docutils literal"><span class="pre">decision_function</span></tt>,
 <tt class="docutils literal"><span class="pre">predict_proba</span></tt> and other methods. This fixes behavior of
-<a class="reference internal" href="modules/generated/sklearn.grid_search.GridSearchCV.html#sklearn.grid_search.GridSearchCV" title="sklearn.grid_search.GridSearchCV"><tt class="xref py py-class docutils literal"><span class="pre">grid_search.GridSearchCV</span></tt></a>,
-<a class="reference internal" href="modules/generated/sklearn.grid_search.RandomizedSearchCV.html#sklearn.grid_search.RandomizedSearchCV" title="sklearn.grid_search.RandomizedSearchCV"><tt class="xref py py-class docutils literal"><span class="pre">grid_search.RandomizedSearchCV</span></tt></a>, <a class="reference internal" href="modules/generated/sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline" title="sklearn.pipeline.Pipeline"><tt class="xref py py-class docutils literal"><span class="pre">pipeline.Pipeline</span></tt></a>,
+<tt class="xref py py-class docutils literal"><span class="pre">grid_search.GridSearchCV</span></tt>,
+<tt class="xref py py-class docutils literal"><span class="pre">grid_search.RandomizedSearchCV</span></tt>, <a class="reference internal" href="modules/generated/sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline" title="sklearn.pipeline.Pipeline"><tt class="xref py py-class docutils literal"><span class="pre">pipeline.Pipeline</span></tt></a>,
 <a class="reference internal" href="modules/generated/sklearn.feature_selection.RFE.html#sklearn.feature_selection.RFE" title="sklearn.feature_selection.RFE"><tt class="xref py py-class docutils literal"><span class="pre">feature_selection.RFE</span></tt></a>, <a class="reference internal" href="modules/generated/sklearn.feature_selection.RFECV.html#sklearn.feature_selection.RFECV" title="sklearn.feature_selection.RFECV"><tt class="xref py py-class docutils literal"><span class="pre">feature_selection.RFECV</span></tt></a> when nested.
 By <a class="reference external" href="http://joelnothman.com">Joel Nothman</a></li>
 <li>The <tt class="docutils literal"><span class="pre">scoring</span></tt> attribute of grid-search and cross-validation methods is no longer
-ignored when a <a class="reference internal" href="modules/generated/sklearn.grid_search.GridSearchCV.html#sklearn.grid_search.GridSearchCV" title="sklearn.grid_search.GridSearchCV"><tt class="xref py py-class docutils literal"><span class="pre">grid_search.GridSearchCV</span></tt></a> is given as a base estimator or
+ignored when a <tt class="xref py py-class docutils literal"><span class="pre">grid_search.GridSearchCV</span></tt> is given as a base estimator or
 the base estimator doesn&#8217;t have predict.</li>
 <li>The function <tt class="xref py py-func docutils literal"><span class="pre">hierarchical.ward_tree</span></tt> now returns the children in
 the same order for both the structured and unstructured versions. By
@@ -1008,8 +1008,8 @@ We now use the weighted average of targets (secondary method). By
 <h3>API changes summary<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul>
-<li><p class="first"><a class="reference internal" href="modules/generated/sklearn.grid_search.GridSearchCV.html#sklearn.grid_search.GridSearchCV" title="sklearn.grid_search.GridSearchCV"><tt class="xref py py-class docutils literal"><span class="pre">GridSearchCV</span></tt></a> and
-<a class="reference internal" href="modules/generated/sklearn.cross_validation.cross_val_score.html#sklearn.cross_validation.cross_val_score" title="sklearn.cross_validation.cross_val_score"><tt class="xref py py-func docutils literal"><span class="pre">cross_val_score</span></tt></a> and other
+<li><p class="first"><tt class="xref py py-class docutils literal"><span class="pre">GridSearchCV</span></tt> and
+<tt class="xref py py-func docutils literal"><span class="pre">cross_val_score</span></tt> and other
 meta-estimators don&#8217;t convert pandas DataFrames into arrays any more,
 allowing DataFrame specific operations in custom estimators.</p>
 </li>
@@ -1142,9 +1142,9 @@ running the tests. By <a class="reference external" href="http://joelnothman.com
 <h3>Bug fixes<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
-<li>Made <a class="reference internal" href="modules/generated/sklearn.cross_validation.cross_val_score.html#sklearn.cross_validation.cross_val_score" title="sklearn.cross_validation.cross_val_score"><tt class="xref py py-func docutils literal"><span class="pre">cross_validation.cross_val_score</span></tt></a> use
-<a class="reference internal" href="modules/generated/sklearn.cross_validation.KFold.html#sklearn.cross_validation.KFold" title="sklearn.cross_validation.KFold"><tt class="xref py py-class docutils literal"><span class="pre">cross_validation.KFold</span></tt></a> instead of
-<a class="reference internal" href="modules/generated/sklearn.cross_validation.StratifiedKFold.html#sklearn.cross_validation.StratifiedKFold" title="sklearn.cross_validation.StratifiedKFold"><tt class="xref py py-class docutils literal"><span class="pre">cross_validation.StratifiedKFold</span></tt></a> on multi-output classification
+<li>Made <tt class="xref py py-func docutils literal"><span class="pre">cross_validation.cross_val_score</span></tt> use
+<tt class="xref py py-class docutils literal"><span class="pre">cross_validation.KFold</span></tt> instead of
+<tt class="xref py py-class docutils literal"><span class="pre">cross_validation.StratifiedKFold</span></tt> on multi-output classification
 problems. By <a class="reference external" href="https://github.com/nmayorov">Nikolay Mayorov</a>.</li>
 <li>Support unseen labels <a class="reference internal" href="modules/generated/sklearn.preprocessing.LabelBinarizer.html#sklearn.preprocessing.LabelBinarizer" title="sklearn.preprocessing.LabelBinarizer"><tt class="xref py py-class docutils literal"><span class="pre">preprocessing.LabelBinarizer</span></tt></a> to restore
 the default behavior of 0.14.1 for backward compatibility. By
@@ -1154,8 +1154,8 @@ convergence detection. By Edward Raff and <a class="reference external" href="ht
 <li>Fixed the behavior of <a class="reference internal" href="modules/generated/sklearn.multiclass.OneVsOneClassifier.html#sklearn.multiclass.OneVsOneClassifier" title="sklearn.multiclass.OneVsOneClassifier"><tt class="xref py py-class docutils literal"><span class="pre">multiclass.OneVsOneClassifier</span></tt></a>.
 in case of ties at the per-class vote level by computing the correct
 per-class sum of prediction scores. By <a class="reference external" href="http://peekaboo-vision.blogspot.com">Andreas Müller</a>.</li>
-<li>Made <a class="reference internal" href="modules/generated/sklearn.cross_validation.cross_val_score.html#sklearn.cross_validation.cross_val_score" title="sklearn.cross_validation.cross_val_score"><tt class="xref py py-func docutils literal"><span class="pre">cross_validation.cross_val_score</span></tt></a> and
-<a class="reference internal" href="modules/generated/sklearn.grid_search.GridSearchCV.html#sklearn.grid_search.GridSearchCV" title="sklearn.grid_search.GridSearchCV"><tt class="xref py py-class docutils literal"><span class="pre">grid_search.GridSearchCV</span></tt></a> accept Python lists as input data.
+<li>Made <tt class="xref py py-func docutils literal"><span class="pre">cross_validation.cross_val_score</span></tt> and
+<tt class="xref py py-class docutils literal"><span class="pre">grid_search.GridSearchCV</span></tt> accept Python lists as input data.
 This is especially useful for cross-validation and model selection of
 text processing pipelines. By <a class="reference external" href="http://peekaboo-vision.blogspot.com">Andreas Müller</a>.</li>
 <li>Fixed data input checks of most estimators to accept input data that
@@ -1208,13 +1208,13 @@ agglomerative clustering with average linkage, complete linkage and
 ward strategies, by  <a class="reference external" href="https://github.com/nellev">Nelle Varoquaux</a> and <a class="reference external" href="http://gael-varoquaux.info">Gael Varoquaux</a>.</li>
 <li>Shorthand constructors <a class="reference internal" href="modules/generated/sklearn.pipeline.make_pipeline.html#sklearn.pipeline.make_pipeline" title="sklearn.pipeline.make_pipeline"><tt class="xref py py-func docutils literal"><span class="pre">pipeline.make_pipeline</span></tt></a> and
 <a class="reference internal" href="modules/generated/sklearn.pipeline.make_union.html#sklearn.pipeline.make_union" title="sklearn.pipeline.make_union"><tt class="xref py py-func docutils literal"><span class="pre">pipeline.make_union</span></tt></a> were added by <a class="reference external" href="https://github.com/larsmans">Lars Buitinck</a>.</li>
-<li>Shuffle option for <a class="reference internal" href="modules/generated/sklearn.cross_validation.StratifiedKFold.html#sklearn.cross_validation.StratifiedKFold" title="sklearn.cross_validation.StratifiedKFold"><tt class="xref py py-class docutils literal"><span class="pre">cross_validation.StratifiedKFold</span></tt></a>.
+<li>Shuffle option for <tt class="xref py py-class docutils literal"><span class="pre">cross_validation.StratifiedKFold</span></tt>.
 By <a class="reference external" href="https://github.com/jblackburne">Jeffrey Blackburne</a>.</li>
 <li>Incremental learning (<tt class="docutils literal"><span class="pre">partial_fit</span></tt>) for Gaussian Naive Bayes by
 Imran Haque.</li>
 <li>Added <tt class="docutils literal"><span class="pre">partial_fit</span></tt> to <a class="reference internal" href="modules/generated/sklearn.neural_network.BernoulliRBM.html#sklearn.neural_network.BernoulliRBM" title="sklearn.neural_network.BernoulliRBM"><tt class="xref py py-class docutils literal"><span class="pre">BernoulliRBM</span></tt></a>
 By <a class="reference external" href="https://github.com/dsullivan7">Danny Sullivan</a>.</li>
-<li>Added <a class="reference internal" href="modules/generated/sklearn.learning_curve.learning_curve.html#sklearn.learning_curve.learning_curve" title="sklearn.learning_curve.learning_curve"><tt class="xref py py-func docutils literal"><span class="pre">learning_curve</span></tt></a> utility to
+<li>Added <tt class="xref py py-func docutils literal"><span class="pre">learning_curve</span></tt> utility to
 chart performance with respect to training size. See
 <a class="reference internal" href="auto_examples/model_selection/plot_learning_curve.html#example-model-selection-plot-learning-curve-py"><em>Plotting Learning Curves</em></a>. By Alexander Fabisch.</li>
 <li>Add positive option in <a class="reference internal" href="modules/generated/sklearn.linear_model.LassoCV.html#sklearn.linear_model.LassoCV" title="sklearn.linear_model.LassoCV"><tt class="xref py py-class docutils literal"><span class="pre">LassoCV</span></tt></a> and
@@ -1290,7 +1290,7 @@ scale up gracefully to large datasets. By <a class="reference external" href="ht
 <a class="reference internal" href="modules/generated/sklearn.decomposition.FactorAnalysis.html#sklearn.decomposition.FactorAnalysis" title="sklearn.decomposition.FactorAnalysis"><tt class="xref py py-class docutils literal"><span class="pre">decomposition.FactorAnalysis</span></tt></a> to save memory and
 significantly speedup computation by <a class="reference external" href="https://github.com/dengemann">Denis Engemann</a>, and
 <a class="reference external" href="http://alexandre.gramfort.net">Alexandre Gramfort</a>.</li>
-<li>Changed <a class="reference internal" href="modules/generated/sklearn.cross_validation.StratifiedKFold.html#sklearn.cross_validation.StratifiedKFold" title="sklearn.cross_validation.StratifiedKFold"><tt class="xref py py-class docutils literal"><span class="pre">cross_validation.StratifiedKFold</span></tt></a> to try and
+<li>Changed <tt class="xref py py-class docutils literal"><span class="pre">cross_validation.StratifiedKFold</span></tt> to try and
 preserve as much of the original ordering of samples as possible so as
 not to hide overfitting on datasets with a non-negligible level of
 samples dependency.
@@ -1408,8 +1408,8 @@ Please use <a class="reference internal" href="modules/generated/sklearn.covaria
 <li><tt class="xref py py-class docutils literal"><span class="pre">cluster.WardClustering</span></tt> is deprecated. Use</li>
 <li><a class="reference internal" href="modules/generated/sklearn.cluster.AgglomerativeClustering.html#sklearn.cluster.AgglomerativeClustering" title="sklearn.cluster.AgglomerativeClustering"><tt class="xref py py-class docutils literal"><span class="pre">cluster.AgglomerativeClustering</span></tt></a> instead.</li>
 <li><tt class="xref py py-class docutils literal"><span class="pre">cross_validation.Bootstrap</span></tt> is deprecated.
-<a class="reference internal" href="modules/generated/sklearn.cross_validation.KFold.html#sklearn.cross_validation.KFold" title="sklearn.cross_validation.KFold"><tt class="xref py py-class docutils literal"><span class="pre">cross_validation.KFold</span></tt></a> or
-<a class="reference internal" href="modules/generated/sklearn.cross_validation.ShuffleSplit.html#sklearn.cross_validation.ShuffleSplit" title="sklearn.cross_validation.ShuffleSplit"><tt class="xref py py-class docutils literal"><span class="pre">cross_validation.ShuffleSplit</span></tt></a> are recommended instead.</li>
+<tt class="xref py py-class docutils literal"><span class="pre">cross_validation.KFold</span></tt> or
+<tt class="xref py py-class docutils literal"><span class="pre">cross_validation.ShuffleSplit</span></tt> are recommended instead.</li>
 <li>Direct support for the sequence of sequences (or list of lists) multilabel
 format is deprecated. To convert to and from the supported binary
 indicator matrix format, use
@@ -1654,8 +1654,8 @@ consumption in all tree-based estimators. By <a class="reference external" href=
 <a class="reference internal" href="modules/generated/sklearn.ensemble.AdaBoostRegressor.html#sklearn.ensemble.AdaBoostRegressor" title="sklearn.ensemble.AdaBoostRegressor"><tt class="xref py py-class docutils literal"><span class="pre">ensemble.AdaBoostRegressor</span></tt></a>, by <a class="reference external" href="http://noel.dawe.me">Noel Dawe</a>  and
 <a class="reference external" href="http://www.montefiore.ulg.ac.be/~glouppe/">Gilles Louppe</a>. See the <a class="reference internal" href="modules/ensemble.html#adaboost"><em>AdaBoost</em></a> section of the user
 guide for details and examples.</li>
-<li>Added <a class="reference internal" href="modules/generated/sklearn.grid_search.RandomizedSearchCV.html#sklearn.grid_search.RandomizedSearchCV" title="sklearn.grid_search.RandomizedSearchCV"><tt class="xref py py-class docutils literal"><span class="pre">grid_search.RandomizedSearchCV</span></tt></a> and
-<a class="reference internal" href="modules/generated/sklearn.grid_search.ParameterSampler.html#sklearn.grid_search.ParameterSampler" title="sklearn.grid_search.ParameterSampler"><tt class="xref py py-class docutils literal"><span class="pre">grid_search.ParameterSampler</span></tt></a> for randomized hyperparameter
+<li>Added <tt class="xref py py-class docutils literal"><span class="pre">grid_search.RandomizedSearchCV</span></tt> and
+<tt class="xref py py-class docutils literal"><span class="pre">grid_search.ParameterSampler</span></tt> for randomized hyperparameter
 optimization. By <a class="reference external" href="http://peekaboo-vision.blogspot.com">Andreas Müller</a>.</li>
 <li>Added <a class="reference internal" href="modules/biclustering.html#biclustering"><em>biclustering</em></a> algorithms
 (<a class="reference internal" href="modules/generated/sklearn.cluster.bicluster.SpectralCoclustering.html#sklearn.cluster.bicluster.SpectralCoclustering" title="sklearn.cluster.bicluster.SpectralCoclustering"><tt class="xref py py-class docutils literal"><span class="pre">sklearn.cluster.bicluster.SpectralCoclustering</span></tt></a> and
@@ -1677,8 +1677,8 @@ By <a class="reference external" href="https://github.com/norbert">Norbert Cromb
 <a class="reference external" href="http://peekaboo-vision.blogspot.de/2013/01/machine-learning-cheat-sheet-for-scikit.html">Machine Learning Cheat Sheet (for scikit-learn)</a>
 to the documentation. See <a class="reference internal" href="tutorial/machine_learning_map/index.html#ml-map"><em>Choosing the right estimator</em></a>.
 By <a class="reference external" href="https://github.com/jaquesgrobler/scikit-learn/wiki/Jaques-Grobler">Jaques Grobler</a>.</li>
-<li><a class="reference internal" href="modules/generated/sklearn.grid_search.GridSearchCV.html#sklearn.grid_search.GridSearchCV" title="sklearn.grid_search.GridSearchCV"><tt class="xref py py-class docutils literal"><span class="pre">grid_search.GridSearchCV</span></tt></a> and
-<a class="reference internal" href="modules/generated/sklearn.cross_validation.cross_val_score.html#sklearn.cross_validation.cross_val_score" title="sklearn.cross_validation.cross_val_score"><tt class="xref py py-func docutils literal"><span class="pre">cross_validation.cross_val_score</span></tt></a> now support the use of advanced
+<li><tt class="xref py py-class docutils literal"><span class="pre">grid_search.GridSearchCV</span></tt> and
+<tt class="xref py py-func docutils literal"><span class="pre">cross_validation.cross_val_score</span></tt> now support the use of advanced
 scoring function such as area under the ROC curve and f-beta scores.
 See <a class="reference internal" href="modules/model_evaluation.html#scoring-parameter"><em>The scoring parameter: defining model evaluation rules</em></a> for details. By <a class="reference external" href="http://peekaboo-vision.blogspot.com">Andreas Müller</a>
 and <a class="reference external" href="https://github.com/larsmans">Lars Buitinck</a>.
@@ -1728,8 +1728,8 @@ loss. By Jochen Wersdörfer and <a class="reference external" href="https://gith
 incorrect probabilities has been fixed.</li>
 <li>Feature selectors now share a mixin providing consistent <tt class="docutils literal"><span class="pre">transform</span></tt>,
 <tt class="docutils literal"><span class="pre">inverse_transform</span></tt> and <tt class="docutils literal"><span class="pre">get_support</span></tt> methods. By <a class="reference external" href="http://joelnothman.com">Joel Nothman</a>.</li>
-<li>A fitted <a class="reference internal" href="modules/generated/sklearn.grid_search.GridSearchCV.html#sklearn.grid_search.GridSearchCV" title="sklearn.grid_search.GridSearchCV"><tt class="xref py py-class docutils literal"><span class="pre">grid_search.GridSearchCV</span></tt></a> or
-<a class="reference internal" href="modules/generated/sklearn.grid_search.RandomizedSearchCV.html#sklearn.grid_search.RandomizedSearchCV" title="sklearn.grid_search.RandomizedSearchCV"><tt class="xref py py-class docutils literal"><span class="pre">grid_search.RandomizedSearchCV</span></tt></a> can now generally be pickled.
+<li>A fitted <tt class="xref py py-class docutils literal"><span class="pre">grid_search.GridSearchCV</span></tt> or
+<tt class="xref py py-class docutils literal"><span class="pre">grid_search.RandomizedSearchCV</span></tt> can now generally be pickled.
 By <a class="reference external" href="http://joelnothman.com">Joel Nothman</a>.</li>
 <li>Refactored and vectorized implementation of <a class="reference internal" href="modules/generated/sklearn.metrics.roc_curve.html#sklearn.metrics.roc_curve" title="sklearn.metrics.roc_curve"><tt class="xref py py-func docutils literal"><span class="pre">metrics.roc_curve</span></tt></a>
 and <a class="reference internal" href="modules/generated/sklearn.metrics.precision_recall_curve.html#sklearn.metrics.precision_recall_curve" title="sklearn.metrics.precision_recall_curve"><tt class="xref py py-func docutils literal"><span class="pre">metrics.precision_recall_curve</span></tt></a>. By <a class="reference external" href="http://joelnothman.com">Joel Nothman</a>.</li>
@@ -1769,7 +1769,7 @@ that prevented all folds provided by a CV object to be used (only
 the first 3 were used). When providing a CV object, execution
 time may thus increase significantly compared to the previous
 version (bug results are correct now). By Philippe Gervais.</li>
-<li><a class="reference internal" href="modules/generated/sklearn.cross_validation.cross_val_score.html#sklearn.cross_validation.cross_val_score" title="sklearn.cross_validation.cross_val_score"><tt class="xref py py-class docutils literal"><span class="pre">cross_validation.cross_val_score</span></tt></a> and the <tt class="xref py py-mod docutils literal"><span class="pre">grid_search</span></tt>
+<li><tt class="xref py py-class docutils literal"><span class="pre">cross_validation.cross_val_score</span></tt> and the <tt class="xref py py-mod docutils literal"><span class="pre">grid_search</span></tt>
 module is now tested with multi-output data by <a class="reference external" href="http://www.ajoly.org">Arnaud Joly</a>.</li>
 <li><a class="reference internal" href="modules/generated/sklearn.datasets.make_multilabel_classification.html#sklearn.datasets.make_multilabel_classification" title="sklearn.datasets.make_multilabel_classification"><tt class="xref py py-func docutils literal"><span class="pre">datasets.make_multilabel_classification</span></tt></a> can now return
 the output in label indicator multilabel format  by <a class="reference external" href="http://www.ajoly.org">Arnaud Joly</a>.</li>
@@ -1817,7 +1817,7 @@ format as that of <a class="reference internal" href="modules/generated/sklearn.
 setting the <tt class="docutils literal"><span class="pre">return_models</span></tt> parameter to <tt class="docutils literal"><span class="pre">False</span></tt>. By
 <a class="reference external" href="https://github.com/jaquesgrobler/scikit-learn/wiki/Jaques-Grobler">Jaques Grobler</a> and <a class="reference external" href="http://alexandre.gramfort.net">Alexandre Gramfort</a></li>
 <li><tt class="xref py py-class docutils literal"><span class="pre">grid_search.IterGrid</span></tt> was renamed to
-<a class="reference internal" href="modules/generated/sklearn.grid_search.ParameterGrid.html#sklearn.grid_search.ParameterGrid" title="sklearn.grid_search.ParameterGrid"><tt class="xref py py-class docutils literal"><span class="pre">grid_search.ParameterGrid</span></tt></a>.</li>
+<tt class="xref py py-class docutils literal"><span class="pre">grid_search.ParameterGrid</span></tt>.</li>
 <li>Fixed bug in <tt class="xref py py-class docutils literal"><span class="pre">KFold</span></tt> causing imperfect class balance in some
 cases. By <a class="reference external" href="http://alexandre.gramfort.net">Alexandre Gramfort</a> and Tadej Janež.</li>
 <li><a class="reference internal" href="modules/generated/sklearn.neighbors.BallTree.html#sklearn.neighbors.BallTree" title="sklearn.neighbors.BallTree"><tt class="xref py py-class docutils literal"><span class="pre">sklearn.neighbors.BallTree</span></tt></a> has been refactored, and a
@@ -1842,8 +1842,8 @@ with zero eigenvalues was tacitly performed on all data.</li>
 sparse matrix in <a class="reference internal" href="modules/generated/sklearn.linear_model.RidgeCV.html#sklearn.linear_model.RidgeCV" title="sklearn.linear_model.RidgeCV"><tt class="xref py py-class docutils literal"><span class="pre">sklearn.linear_model.RidgeCV</span></tt></a>.</li>
 <li>Sparse matrix support in <a class="reference internal" href="modules/generated/sklearn.decomposition.RandomizedPCA.html#sklearn.decomposition.RandomizedPCA" title="sklearn.decomposition.RandomizedPCA"><tt class="xref py py-class docutils literal"><span class="pre">sklearn.decomposition.RandomizedPCA</span></tt></a>
 is now deprecated in favor of the new <tt class="docutils literal"><span class="pre">TruncatedSVD</span></tt>.</li>
-<li><a class="reference internal" href="modules/generated/sklearn.cross_validation.KFold.html#sklearn.cross_validation.KFold" title="sklearn.cross_validation.KFold"><tt class="xref py py-class docutils literal"><span class="pre">cross_validation.KFold</span></tt></a> and
-<a class="reference internal" href="modules/generated/sklearn.cross_validation.StratifiedKFold.html#sklearn.cross_validation.StratifiedKFold" title="sklearn.cross_validation.StratifiedKFold"><tt class="xref py py-class docutils literal"><span class="pre">cross_validation.StratifiedKFold</span></tt></a> now enforce <cite>n_folds &gt;= 2</cite>
+<li><tt class="xref py py-class docutils literal"><span class="pre">cross_validation.KFold</span></tt> and
+<tt class="xref py py-class docutils literal"><span class="pre">cross_validation.StratifiedKFold</span></tt> now enforce <cite>n_folds &gt;= 2</cite>
 otherwise a <tt class="docutils literal"><span class="pre">ValueError</span></tt> is raised. By <a class="reference external" href="http://twitter.com/ogrisel">Olivier Grisel</a>.</li>
 <li><a class="reference internal" href="modules/generated/sklearn.datasets.load_files.html#sklearn.datasets.load_files" title="sklearn.datasets.load_files"><tt class="xref py py-func docutils literal"><span class="pre">datasets.load_files</span></tt></a>&#8216;s <tt class="docutils literal"><span class="pre">charset</span></tt> and <tt class="docutils literal"><span class="pre">charset_errors</span></tt>
 parameters were renamed <tt class="docutils literal"><span class="pre">encoding</span></tt> and <tt class="docutils literal"><span class="pre">decode_errors</span></tt>.</li>
@@ -1969,7 +1969,7 @@ By <a class="reference external" href="http://kastnerkyle.github.io">Kyle Kastne
 <h3>Changelog<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
-<li>Fixed a testing error caused by the function <a class="reference internal" href="modules/generated/sklearn.cross_validation.train_test_split.html#sklearn.cross_validation.train_test_split" title="sklearn.cross_validation.train_test_split"><tt class="xref py py-func docutils literal"><span class="pre">cross_validation.train_test_split</span></tt></a> being
+<li>Fixed a testing error caused by the function <tt class="xref py py-func docutils literal"><span class="pre">cross_validation.train_test_split</span></tt> being
 interpreted as a test by <a class="reference external" href="http://www.onerussian.com/">Yaroslav Halchenko</a>.</li>
 <li>Fixed a bug in the reassignment of small clusters in the <a class="reference internal" href="modules/generated/sklearn.cluster.MiniBatchKMeans.html#sklearn.cluster.MiniBatchKMeans" title="sklearn.cluster.MiniBatchKMeans"><tt class="xref py py-class docutils literal"><span class="pre">cluster.MiniBatchKMeans</span></tt></a>
 by <a class="reference external" href="http://gael-varoquaux.info">Gael Varoquaux</a>.</li>
@@ -2093,7 +2093,7 @@ preference attribute (qid in svmlight file format) in
 <a class="reference internal" href="modules/generated/sklearn.datasets.load_svmlight_file.html#sklearn.datasets.load_svmlight_file" title="sklearn.datasets.load_svmlight_file"><tt class="xref py py-func docutils literal"><span class="pre">datasets.load_svmlight_file</span></tt></a> by <a class="reference external" href="http://fa.bianp.net">Fabian Pedregosa</a>.</li>
 <li>Faster and more robust <a class="reference internal" href="modules/generated/sklearn.metrics.confusion_matrix.html#sklearn.metrics.confusion_matrix" title="sklearn.metrics.confusion_matrix"><tt class="xref py py-func docutils literal"><span class="pre">metrics.confusion_matrix</span></tt></a> and
 <a class="reference internal" href="modules/clustering.html#clustering-evaluation"><em>Clustering performance evaluation</em></a> by Wei Li.</li>
-<li><a class="reference internal" href="modules/generated/sklearn.cross_validation.cross_val_score.html#sklearn.cross_validation.cross_val_score" title="sklearn.cross_validation.cross_val_score"><tt class="xref py py-func docutils literal"><span class="pre">cross_validation.cross_val_score</span></tt></a> now works with precomputed kernels
+<li><tt class="xref py py-func docutils literal"><span class="pre">cross_validation.cross_val_score</span></tt> now works with precomputed kernels
 and affinity matrices, by <a class="reference external" href="http://peekaboo-vision.blogspot.com">Andreas Müller</a>.</li>
 <li>LARS algorithm made more numerically stable with heuristics to drop
 regressors too correlated as well as to stop the path when
@@ -2160,12 +2160,12 @@ deprecated and will be removed in v0.14. Use the constructor option
 instead.</li>
 <li><tt class="xref py py-class docutils literal"><span class="pre">feature_extraction.text.DictVectorizer</span></tt> now returns sparse
 matrices in the CSR format, instead of COO.</li>
-<li>Renamed <tt class="docutils literal"><span class="pre">k</span></tt> in <a class="reference internal" href="modules/generated/sklearn.cross_validation.KFold.html#sklearn.cross_validation.KFold" title="sklearn.cross_validation.KFold"><tt class="xref py py-class docutils literal"><span class="pre">cross_validation.KFold</span></tt></a> and
-<a class="reference internal" href="modules/generated/sklearn.cross_validation.StratifiedKFold.html#sklearn.cross_validation.StratifiedKFold" title="sklearn.cross_validation.StratifiedKFold"><tt class="xref py py-class docutils literal"><span class="pre">cross_validation.StratifiedKFold</span></tt></a> to <tt class="docutils literal"><span class="pre">n_folds</span></tt>, renamed
+<li>Renamed <tt class="docutils literal"><span class="pre">k</span></tt> in <tt class="xref py py-class docutils literal"><span class="pre">cross_validation.KFold</span></tt> and
+<tt class="xref py py-class docutils literal"><span class="pre">cross_validation.StratifiedKFold</span></tt> to <tt class="docutils literal"><span class="pre">n_folds</span></tt>, renamed
 <tt class="docutils literal"><span class="pre">n_bootstraps</span></tt> to <tt class="docutils literal"><span class="pre">n_iter</span></tt> in <tt class="docutils literal"><span class="pre">cross_validation.Bootstrap</span></tt>.</li>
 <li>Renamed all occurrences of <tt class="docutils literal"><span class="pre">n_iterations</span></tt> to <tt class="docutils literal"><span class="pre">n_iter</span></tt> for consistency.
-This applies to <a class="reference internal" href="modules/generated/sklearn.cross_validation.ShuffleSplit.html#sklearn.cross_validation.ShuffleSplit" title="sklearn.cross_validation.ShuffleSplit"><tt class="xref py py-class docutils literal"><span class="pre">cross_validation.ShuffleSplit</span></tt></a>,
-<a class="reference internal" href="modules/generated/sklearn.cross_validation.StratifiedShuffleSplit.html#sklearn.cross_validation.StratifiedShuffleSplit" title="sklearn.cross_validation.StratifiedShuffleSplit"><tt class="xref py py-class docutils literal"><span class="pre">cross_validation.StratifiedShuffleSplit</span></tt></a>,
+This applies to <tt class="xref py py-class docutils literal"><span class="pre">cross_validation.ShuffleSplit</span></tt>,
+<tt class="xref py py-class docutils literal"><span class="pre">cross_validation.StratifiedShuffleSplit</span></tt>,
 <tt class="xref py py-func docutils literal"><span class="pre">utils.randomized_range_finder</span></tt> and <tt class="xref py py-func docutils literal"><span class="pre">utils.randomized_svd</span></tt>.</li>
 <li>Replaced <tt class="docutils literal"><span class="pre">rho</span></tt> in <a class="reference internal" href="modules/generated/sklearn.linear_model.ElasticNet.html#sklearn.linear_model.ElasticNet" title="sklearn.linear_model.ElasticNet"><tt class="xref py py-class docutils literal"><span class="pre">linear_model.ElasticNet</span></tt></a> and
 <a class="reference internal" href="modules/generated/sklearn.linear_model.SGDClassifier.html#sklearn.linear_model.SGDClassifier" title="sklearn.linear_model.SGDClassifier"><tt class="xref py py-class docutils literal"><span class="pre">linear_model.SGDClassifier</span></tt></a> by <tt class="docutils literal"><span class="pre">l1_ratio</span></tt>. The <tt class="docutils literal"><span class="pre">rho</span></tt> parameter
@@ -2200,10 +2200,10 @@ array of :class:&#8217;tree.DecisionTreeRegressor&#8217;.</li>
 attribute and support arbitrary dtypes for labels <tt class="docutils literal"><span class="pre">y</span></tt>.
 Also, the dtype returned by <tt class="docutils literal"><span class="pre">predict</span></tt> now reflects the dtype of
 <tt class="docutils literal"><span class="pre">y</span></tt> during <tt class="docutils literal"><span class="pre">fit</span></tt> (used to be <tt class="docutils literal"><span class="pre">np.float</span></tt>).</li>
-<li>Changed default test_size in <a class="reference internal" href="modules/generated/sklearn.cross_validation.train_test_split.html#sklearn.cross_validation.train_test_split" title="sklearn.cross_validation.train_test_split"><tt class="xref py py-func docutils literal"><span class="pre">cross_validation.train_test_split</span></tt></a>
+<li>Changed default test_size in <tt class="xref py py-func docutils literal"><span class="pre">cross_validation.train_test_split</span></tt>
 to None, added possibility to infer <tt class="docutils literal"><span class="pre">test_size</span></tt> from <tt class="docutils literal"><span class="pre">train_size</span></tt> in
-<a class="reference internal" href="modules/generated/sklearn.cross_validation.ShuffleSplit.html#sklearn.cross_validation.ShuffleSplit" title="sklearn.cross_validation.ShuffleSplit"><tt class="xref py py-class docutils literal"><span class="pre">cross_validation.ShuffleSplit</span></tt></a> and
-<a class="reference internal" href="modules/generated/sklearn.cross_validation.StratifiedShuffleSplit.html#sklearn.cross_validation.StratifiedShuffleSplit" title="sklearn.cross_validation.StratifiedShuffleSplit"><tt class="xref py py-class docutils literal"><span class="pre">cross_validation.StratifiedShuffleSplit</span></tt></a>.</li>
+<tt class="xref py py-class docutils literal"><span class="pre">cross_validation.ShuffleSplit</span></tt> and
+<tt class="xref py py-class docutils literal"><span class="pre">cross_validation.StratifiedShuffleSplit</span></tt>.</li>
 <li>Renamed function <tt class="xref py py-func docutils literal"><span class="pre">sklearn.metrics.zero_one</span></tt> to
 <a class="reference internal" href="modules/generated/sklearn.metrics.zero_one_loss.html#sklearn.metrics.zero_one_loss" title="sklearn.metrics.zero_one_loss"><tt class="xref py py-func docutils literal"><span class="pre">sklearn.metrics.zero_one_loss</span></tt></a>. Be aware that the default behavior
 in <a class="reference internal" href="modules/generated/sklearn.metrics.zero_one_loss.html#sklearn.metrics.zero_one_loss" title="sklearn.metrics.zero_one_loss"><tt class="xref py py-func docutils literal"><span class="pre">sklearn.metrics.zero_one_loss</span></tt></a> is different from
@@ -2520,8 +2520,8 @@ Woolam. <strong>Note</strong> the semi-supervised API is still work in progress,
 and may change.</li>
 <li>Added BIC/AIC model selection to classical <a class="reference internal" href="modules/mixture.html#gmm"><em>Gaussian mixture models</em></a> and unified
 the API with the remainder of scikit-learn, by <a class="reference external" href="http://parietal.saclay.inria.fr/Members/bertrand-thirion">Bertrand Thirion</a></li>
-<li>Added <a class="reference internal" href="modules/generated/sklearn.cross_validation.StratifiedShuffleSplit.html#sklearn.cross_validation.StratifiedShuffleSplit" title="sklearn.cross_validation.StratifiedShuffleSplit"><tt class="xref py py-class docutils literal"><span class="pre">sklearn.cross_validation.StratifiedShuffleSplit</span></tt></a>, which is
-a <a class="reference internal" href="modules/generated/sklearn.cross_validation.ShuffleSplit.html#sklearn.cross_validation.ShuffleSplit" title="sklearn.cross_validation.ShuffleSplit"><tt class="xref py py-class docutils literal"><span class="pre">sklearn.cross_validation.ShuffleSplit</span></tt></a> with balanced splits,
+<li>Added <tt class="xref py py-class docutils literal"><span class="pre">sklearn.cross_validation.StratifiedShuffleSplit</span></tt>, which is
+a <tt class="xref py py-class docutils literal"><span class="pre">sklearn.cross_validation.ShuffleSplit</span></tt> with balanced splits,
 by Yannick Schwartz.</li>
 <li><a class="reference internal" href="modules/generated/sklearn.neighbors.NearestCentroid.html#sklearn.neighbors.NearestCentroid" title="sklearn.neighbors.NearestCentroid"><tt class="xref py py-class docutils literal"><span class="pre">sklearn.neighbors.NearestCentroid</span></tt></a> classifier added, along with a
 <tt class="docutils literal"><span class="pre">shrink_threshold</span></tt> parameter, which implements <strong>shrunken centroid
@@ -2549,7 +2549,7 @@ by <a class="reference external" href="http://www.mblondel.org">Mathieu Blondel<
 <li><a class="reference internal" href="modules/clustering.html#k-means"><em>K-means</em></a> can now be run in parallel, using the <tt class="docutils literal"><span class="pre">n_jobs</span></tt> argument
 to either <a class="reference internal" href="modules/clustering.html#k-means"><em>K-means</em></a> or <tt class="xref py py-class docutils literal"><span class="pre">KMeans</span></tt>, by <a class="reference external" href="http://www.twitter.com/robertlayton">Robert Layton</a>.</li>
 <li>Improved <a class="reference internal" href="modules/cross_validation.html#cross-validation"><em>Cross-validation: evaluating estimator performance</em></a> and <a class="reference internal" href="modules/grid_search.html#grid-search"><em>Tuning the hyper-parameters of an estimator</em></a> documentation
-and introduced the new <a class="reference internal" href="modules/generated/sklearn.cross_validation.train_test_split.html#sklearn.cross_validation.train_test_split" title="sklearn.cross_validation.train_test_split"><tt class="xref py py-func docutils literal"><span class="pre">cross_validation.train_test_split</span></tt></a>
+and introduced the new <tt class="xref py py-func docutils literal"><span class="pre">cross_validation.train_test_split</span></tt>
 helper function by <a class="reference external" href="http://twitter.com/ogrisel">Olivier Grisel</a></li>
 <li><a class="reference internal" href="modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC" title="sklearn.svm.SVC"><tt class="xref py py-class docutils literal"><span class="pre">svm.SVC</span></tt></a> members <tt class="docutils literal"><span class="pre">coef_</span></tt> and <tt class="docutils literal"><span class="pre">intercept_</span></tt> changed sign for
 consistency with <tt class="docutils literal"><span class="pre">decision_function</span></tt>; for <tt class="docutils literal"><span class="pre">kernel==linear</span></tt>,
@@ -2775,7 +2775,7 @@ by <a class="reference external" href="http://www.mblondel.org">Mathieu Blondel<
 by <a class="reference external" href="http://www.montefiore.ulg.ac.be/~glouppe/">Gilles Louppe</a>.</li>
 <li>Parallel implementation of forests of randomized trees by
 <a class="reference external" href="http://www.montefiore.ulg.ac.be/~glouppe/">Gilles Louppe</a>.</li>
-<li><a class="reference internal" href="modules/generated/sklearn.cross_validation.ShuffleSplit.html#sklearn.cross_validation.ShuffleSplit" title="sklearn.cross_validation.ShuffleSplit"><tt class="xref py py-class docutils literal"><span class="pre">sklearn.cross_validation.ShuffleSplit</span></tt></a> can subsample the train
+<li><tt class="xref py py-class docutils literal"><span class="pre">sklearn.cross_validation.ShuffleSplit</span></tt> can subsample the train
 sets as well as the test sets by <a class="reference external" href="http://twitter.com/ogrisel">Olivier Grisel</a>.</li>
 <li>Errors in the build of the documentation fixed by <a class="reference external" href="http://peekaboo-vision.blogspot.com">Andreas Müller</a>.</li>
 </ul>
@@ -3249,7 +3249,7 @@ multi_class in <a class="reference internal" href="modules/generated/sklearn.svm
 <li>New features and performance improvements of text feature
 extraction.</li>
 <li>Improved sparse matrix support, both in main classes
-(<a class="reference internal" href="modules/generated/sklearn.grid_search.GridSearchCV.html#sklearn.grid_search.GridSearchCV" title="sklearn.grid_search.GridSearchCV"><tt class="xref py py-class docutils literal"><span class="pre">grid_search.GridSearchCV</span></tt></a>) as in modules
+(<tt class="xref py py-class docutils literal"><span class="pre">grid_search.GridSearchCV</span></tt>) as in modules
 sklearn.svm.sparse and sklearn.linear_model.sparse.</li>
 <li>Lots of cool new examples and a new section that uses real-world
 datasets was created. These include:
