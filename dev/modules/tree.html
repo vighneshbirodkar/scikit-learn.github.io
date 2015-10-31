@@ -491,7 +491,7 @@ a fraction of the overall sum of the sample weights.</li>
 <li>All decision trees use <tt class="docutils literal"><span class="pre">np.float32</span></tt> arrays internally.
 If training data is not in this format, a copy of the dataset will be made.</li>
 <li>If the input matrix X is very sparse, it is recommended to convert to sparse
-<tt class="docutils literal"><span class="pre">csc_matrix`</span> <span class="pre">before</span> <span class="pre">calling</span> <span class="pre">fit</span> <span class="pre">and</span> <span class="pre">sparse</span> <span class="pre">``csr_matrix</span></tt> before calling
+<tt class="docutils literal"><span class="pre">csc_matrix</span></tt> before calling fit and sparse <tt class="docutils literal"><span class="pre">csr_matrix</span></tt> before calling
 predict. Training time can be orders of magnitude faster for a sparse
 matrix input compared to a dense matrix when features have zero values in
 most of the samples.</li>
