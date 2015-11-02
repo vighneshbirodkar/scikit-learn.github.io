@@ -172,7 +172,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.model_selection" title="sklearn.model_selection"><tt class="xref py py-mod docutils literal"><span class="pre">sklearn.model_selection</span></tt></a>.train_test_split<a class="headerlink" href="#sklearn-model-selection-train-test-split" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="sklearn.model_selection.train_test_split">
-<tt class="descclassname">sklearn.model_selection.</tt><tt class="descname">train_test_split</tt><big>(</big><em>*arrays</em>, <em>**options</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/48a2329/sklearn/model_selection/_split.py#L1363"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.model_selection.train_test_split" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sklearn.model_selection.</tt><tt class="descname">train_test_split</tt><big>(</big><em>*arrays</em>, <em>**options</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/ddadf9c/sklearn/model_selection/_split.py#L1363"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.model_selection.train_test_split" title="Permalink to this definition">¶</a></dt>
 <dd><p>Split arrays or matrices into random train and test subsets</p>
 <p>Quick utility that wraps input validation and
 <tt class="docutils literal"><span class="pre">next(ShuffleSplit().split(X,</span> <span class="pre">y))</span></tt> and application to input data
@@ -183,10 +183,13 @@ oneliner.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>*arrays</strong> : sequence of arrays or scipy.sparse matrices with same shape[0]</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>*arrays</strong> : sequence of indexables with same length / shape[0]</p>
 <blockquote>
-<div><p>Python lists or tuples occurring in arrays are converted to 1D numpy
-arrays.</p>
+<div><p>allowed inputs are lists, numpy arrays, scipy-sparse
+matrices or pandas dataframes.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 0.16: </span>preserves input type instead of always casting to numpy array.</p>
+</div>
 </div></blockquote>
 <p><strong>test_size</strong> : float, int, or None (default is None)</p>
 <blockquote>
@@ -214,9 +217,12 @@ the labels array.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>splitting</strong> : list of arrays, length=2 * len(arrays)</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>splitting</strong> : list, length=2 * len(arrays)</p>
 <blockquote class="last">
-<div><p>List containing train-test split of input array.</p>
+<div><p>List containing train-test split of inputs.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 0.16: </span>Output type is the same as the input type.</p>
+</div>
 </div></blockquote>
 </td>
 </tr>
