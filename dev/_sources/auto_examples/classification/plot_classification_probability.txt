@@ -36,6 +36,6 @@ a result it can identify only the first class.
 .. literalinclude:: plot_classification_probability.py
     :lines: 14-
 
-**Total running time of the example:**  3.95 seconds
-( 0 minutes  3.95 seconds)
+**Total running time of the example:**  4.01 seconds
+( 0 minutes  4.01 seconds)
     

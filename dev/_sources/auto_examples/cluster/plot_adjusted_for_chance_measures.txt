@@ -43,21 +43,21 @@ value of k on various overlapping sub-samples of the dataset.
 **Script output**::
 
   Computing adjusted_rand_score for 10 values of n_clusters and n_samples=100
-  done in 0.228s
+  done in 0.235s
   Computing v_measure_score for 10 values of n_clusters and n_samples=100
   done in 0.035s
   Computing adjusted_mutual_info_score for 10 values of n_clusters and n_samples=100
-  done in 0.963s
+  done in 0.948s
   Computing mutual_info_score for 10 values of n_clusters and n_samples=100
-  done in 0.023s
+  done in 0.024s
   Computing adjusted_rand_score for 10 values of n_clusters and n_samples=1000
-  done in 0.236s
+  done in 0.249s
   Computing v_measure_score for 10 values of n_clusters and n_samples=1000
   done in 0.067s
   Computing adjusted_mutual_info_score for 10 values of n_clusters and n_samples=1000
-  done in 0.532s
+  done in 0.520s
   Computing mutual_info_score for 10 values of n_clusters and n_samples=1000
-  done in 0.041s
+  done in 0.042s
 
 
 
@@ -66,6 +66,6 @@ value of k on various overlapping sub-samples of the dataset.
 .. literalinclude:: plot_adjusted_for_chance_measures.py
     :lines: 23-
 
-**Total running time of the example:**  2.35 seconds
-( 0 minutes  2.35 seconds)
+**Total running time of the example:**  2.34 seconds
+( 0 minutes  2.34 seconds)
     
