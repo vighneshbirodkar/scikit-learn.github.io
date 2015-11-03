@@ -172,7 +172,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.cross_decomposition" title="sklearn.cross_decomposition"><tt class="xref py py-mod docutils literal"><span class="pre">sklearn.cross_decomposition</span></tt></a>.PLSCanonical<a class="headerlink" href="#sklearn-cross-decomposition-plscanonical" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="sklearn.cross_decomposition.PLSCanonical">
-<em class="property">class </em><tt class="descclassname">sklearn.cross_decomposition.</tt><tt class="descname">PLSCanonical</tt><big>(</big><em>n_components=2</em>, <em>scale=True</em>, <em>algorithm='nipals'</em>, <em>max_iter=500</em>, <em>tol=1e-06</em>, <em>copy=True</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/f9b92cb/sklearn/cross_decomposition/pls_.py#L596"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cross_decomposition.PLSCanonical" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sklearn.cross_decomposition.</tt><tt class="descname">PLSCanonical</tt><big>(</big><em>n_components=2</em>, <em>scale=True</em>, <em>algorithm='nipals'</em>, <em>max_iter=500</em>, <em>tol=1e-06</em>, <em>copy=True</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/22fc441/sklearn/cross_decomposition/pls_.py#L598"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cross_decomposition.PLSCanonical" title="Permalink to this definition">¶</a></dt>
 <dd><p>PLSCanonical implements the 2 blocks canonical PLS of the original Wold
 algorithm [Tenenhaus 1998] p.204, referred as PLS-C2A in [Wegelin 2000].</p>
 <p>This class inherits from PLS with mode=&#8221;A&#8221; and deflation_mode=&#8221;canonical&#8221;,
@@ -252,26 +252,29 @@ component. Not useful if the algorithm provided is &#8220;svd&#8221;.</p>
 <p class="last"><a class="reference internal" href="sklearn.cross_decomposition.CCA.html#sklearn.cross_decomposition.CCA" title="sklearn.cross_decomposition.CCA"><tt class="xref py py-obj docutils literal"><span class="pre">CCA</span></tt></a>, <a class="reference internal" href="sklearn.cross_decomposition.PLSSVD.html#sklearn.cross_decomposition.PLSSVD" title="sklearn.cross_decomposition.PLSSVD"><tt class="xref py py-obj docutils literal"><span class="pre">PLSSVD</span></tt></a></p>
 </div>
 <p class="rubric">Notes</p>
-<dl class="docutils">
-<dt>Matrices :</dt>
-<dd>T: <a href="#id3"><span class="problematic" id="id4">x_scores_</span></a>
-U: <a href="#id5"><span class="problematic" id="id6">y_scores_</span></a>
-W: <a href="#id7"><span class="problematic" id="id8">x_weights_</span></a>
-C: <a href="#id9"><span class="problematic" id="id10">y_weights_</span></a>
-P: <a href="#id11"><span class="problematic" id="id12">x_loadings_</span></a>
-Q: <a href="#id1"><span class="problematic" id="id2">y_loadings__</span></a></dd>
-<dt>Are computed such that:</dt>
-<dd>X = T P.T + Err and Y = U Q.T + Err
+<p>Matrices:</p>
+<div class="highlight-python"><div class="highlight"><pre>T: x_scores_
+U: y_scores_
+W: x_weights_
+C: y_weights_
+P: x_loadings_
+Q: y_loadings__
+</pre></div>
+</div>
+<p>Are computed such that:</p>
+<div class="highlight-python"><div class="highlight"><pre>X = T P.T + Err and Y = U Q.T + Err
 T[:, k] = Xk W[:, k] for k in range(n_components)
 U[:, k] = Yk C[:, k] for k in range(n_components)
-<a href="#id13"><span class="problematic" id="id14">x_rotations_</span></a> = W (P.T W)^(-1)
-<a href="#id15"><span class="problematic" id="id16">y_rotations_</span></a> = C (Q.T C)^(-1)</dd>
-</dl>
+x_rotations_ = W (P.T W)^(-1)
+y_rotations_ = C (Q.T C)^(-1)
+</pre></div>
+</div>
 <p>where Xk and Yk are residual matrices at iteration k.</p>
-<p>Slides explaining PLS
-:ref:http://www.eigenvector.com/Docs/Wise_pls_properties.pdf</p>
-<p>For each component k, find weights u, v that optimize::
-max corr(Xk u, Yk v) * std(Xk u) std(Yk u), such that <tt class="docutils literal"><span class="pre">|u|</span> <span class="pre">=</span> <span class="pre">|v|</span> <span class="pre">=</span> <span class="pre">1</span></tt></p>
+<p><cite>Slides explaining PLS &lt;http://www.eigenvector.com/Docs/Wise_pls_properties.pdf&gt;</cite></p>
+<p>For each component k, find weights u, v that optimize:</p>
+<div class="highlight-python"><div class="highlight"><pre>max corr(Xk u, Yk v) * std(Xk u) std(Yk u), such that ``|u| = |v| = 1``
+</pre></div>
+</div>
 <p>Note that it maximizes both the correlations between the scores and the
 intra-block variances.</p>
 <p>The residual matrix of X (Xk+1) block is obtained by the deflation on the
@@ -336,12 +339,12 @@ Editions Technic.</p>
 </table>
 <dl class="method">
 <dt id="sklearn.cross_decomposition.PLSCanonical.__init__">
-<tt class="descname">__init__</tt><big>(</big><em>n_components=2</em>, <em>scale=True</em>, <em>algorithm='nipals'</em>, <em>max_iter=500</em>, <em>tol=1e-06</em>, <em>copy=True</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/f9b92cb/sklearn/cross_decomposition/pls_.py#L727"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cross_decomposition.PLSCanonical.__init__" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">__init__</tt><big>(</big><em>n_components=2</em>, <em>scale=True</em>, <em>algorithm='nipals'</em>, <em>max_iter=500</em>, <em>tol=1e-06</em>, <em>copy=True</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/22fc441/sklearn/cross_decomposition/pls_.py#L732"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cross_decomposition.PLSCanonical.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="sklearn.cross_decomposition.PLSCanonical.fit">
-<tt class="descname">fit</tt><big>(</big><em>X</em>, <em>Y</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/f9b92cb/sklearn/cross_decomposition/pls_.py#L233"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cross_decomposition.PLSCanonical.fit" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">fit</tt><big>(</big><em>X</em>, <em>Y</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/22fc441/sklearn/cross_decomposition/pls_.py#L233"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cross_decomposition.PLSCanonical.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit model to data.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -365,7 +368,7 @@ n_targets is the number of response variables.</p>
 
 <dl class="method">
 <dt id="sklearn.cross_decomposition.PLSCanonical.fit_transform">
-<tt class="descname">fit_transform</tt><big>(</big><em>X</em>, <em>y=None</em>, <em>**fit_params</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/f9b92cb/sklearn/cross_decomposition/pls_.py#L437"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cross_decomposition.PLSCanonical.fit_transform" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">fit_transform</tt><big>(</big><em>X</em>, <em>y=None</em>, <em>**fit_params</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/22fc441/sklearn/cross_decomposition/pls_.py#L437"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cross_decomposition.PLSCanonical.fit_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Learn and apply the dimension reduction on the train data.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -396,7 +399,7 @@ q is the number of response variables.</p>
 
 <dl class="method">
 <dt id="sklearn.cross_decomposition.PLSCanonical.get_params">
-<tt class="descname">get_params</tt><big>(</big><em>deep=True</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/f9b92cb/sklearn/base.py#L206"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cross_decomposition.PLSCanonical.get_params" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_params</tt><big>(</big><em>deep=True</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/22fc441/sklearn/base.py#L206"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cross_decomposition.PLSCanonical.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters for this estimator.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -421,7 +424,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="method">
 <dt id="sklearn.cross_decomposition.PLSCanonical.predict">
-<tt class="descname">predict</tt><big>(</big><em>X</em>, <em>copy=True</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/f9b92cb/sklearn/cross_decomposition/pls_.py#L412"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cross_decomposition.PLSCanonical.predict" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">predict</tt><big>(</big><em>X</em>, <em>copy=True</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/22fc441/sklearn/cross_decomposition/pls_.py#L412"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cross_decomposition.PLSCanonical.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply the dimension reduction learned on the train data.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -447,7 +450,7 @@ be an issue in high dimensional space.</p>
 
 <dl class="method">
 <dt id="sklearn.cross_decomposition.PLSCanonical.score">
-<tt class="descname">score</tt><big>(</big><em>X</em>, <em>y</em>, <em>sample_weight=None</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/f9b92cb/sklearn/base.py#L325"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cross_decomposition.PLSCanonical.score" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">score</tt><big>(</big><em>X</em>, <em>y</em>, <em>sample_weight=None</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/22fc441/sklearn/base.py#L325"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cross_decomposition.PLSCanonical.score" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the coefficient of determination R^2 of the prediction.</p>
 <p>The coefficient R^2 is defined as (1 - u/v), where u is the regression
 sum of squares ((y_true - y_pred) ** 2).sum() and v is the residual
@@ -486,7 +489,7 @@ would get a R^2 score of 0.0.</p>
 
 <dl class="method">
 <dt id="sklearn.cross_decomposition.PLSCanonical.set_params">
-<tt class="descname">set_params</tt><big>(</big><em>**params</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/f9b92cb/sklearn/base.py#L243"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cross_decomposition.PLSCanonical.set_params" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">set_params</tt><big>(</big><em>**params</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/22fc441/sklearn/base.py#L243"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cross_decomposition.PLSCanonical.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the parameters of this estimator.</p>
 <p>The method works on simple estimators as well as on nested objects
 (such as pipelines). The former have parameters of the form
@@ -504,7 +507,7 @@ component of a nested object.</p>
 
 <dl class="method">
 <dt id="sklearn.cross_decomposition.PLSCanonical.transform">
-<tt class="descname">transform</tt><big>(</big><em>X</em>, <em>Y=None</em>, <em>copy=True</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/f9b92cb/sklearn/cross_decomposition/pls_.py#L374"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cross_decomposition.PLSCanonical.transform" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">transform</tt><big>(</big><em>X</em>, <em>Y=None</em>, <em>copy=True</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/22fc441/sklearn/cross_decomposition/pls_.py#L374"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cross_decomposition.PLSCanonical.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply the dimension reduction learned on the train data.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />

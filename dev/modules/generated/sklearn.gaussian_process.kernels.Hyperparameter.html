@@ -169,8 +169,47 @@
 <h1><tt class="xref py py-mod docutils literal"><span class="pre">sklearn.gaussian_process.kernels</span></tt>.Hyperparameter<a class="headerlink" href="#sklearn-gaussian-process-kernels-hyperparameter" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="sklearn.gaussian_process.kernels.Hyperparameter">
-<em class="property">class </em><tt class="descclassname">sklearn.gaussian_process.kernels.</tt><tt class="descname">Hyperparameter</tt><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/13cc60a/sklearn/gaussian_process/kernels.py#L36"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.gaussian_process.kernels.Hyperparameter" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sklearn.gaussian_process.kernels.</tt><tt class="descname">Hyperparameter</tt><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/22fc441/sklearn/gaussian_process/kernels.py#L36"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.gaussian_process.kernels.Hyperparameter" title="Permalink to this definition">¶</a></dt>
 <dd><p>A kernel hyperparameter&#8217;s specification in form of a namedtuple.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><p class="first"><strong>name</strong> : string</p>
+<blockquote>
+<div><p>The name of the hyperparameter. Note that a kernel using a
+hyperparameter with name &#8220;x&#8221; must have the attributes self.x and
+self.x_bounds</p>
+</div></blockquote>
+<p><strong>value_type</strong> : string</p>
+<blockquote>
+<div><p>The type of the hyperparameter. Currently, only &#8220;numeric&#8221;
+hyperparameters are supported.</p>
+</div></blockquote>
+<p><strong>bounds</strong> : pair of floats &gt;= 0 or &#8220;fixed&#8221;</p>
+<blockquote>
+<div><p>The lower and upper bound on the parameter. If n_elements&gt;1, a pair
+of 1d array with n_elements each may be given alternatively. If
+the string &#8220;fixed&#8221; is passed as bounds, the hyperparameter&#8217;s value
+cannot be changed.</p>
+</div></blockquote>
+<p><strong>n_elements</strong> : int, default=1</p>
+<blockquote>
+<div><p>The number of elements of the hyperparameter value. Defaults to 1,
+which corresponds to a scalar hyperparameter. n_elements &gt; 1
+corresponds to a hyperparameter which is vector-valued,
+such as, e.g., anisotropic length-scales.</p>
+</div></blockquote>
+<p><strong>fixed</strong> : bool, default: None</p>
+<blockquote class="last">
+<div><p>Whether the value of this hyperparameter is fixed, i.e., cannot be
+changed during hyperparameter tuning. If None is passed, the &#8220;fixed&#8221; is
+derived based on the given bounds.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>

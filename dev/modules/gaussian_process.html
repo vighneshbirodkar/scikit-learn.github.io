@@ -258,8 +258,7 @@ WhiteKernel component into the kernel, which can estimate the global noise
 level from the data (see example below).</p>
 <p>The implementation is based on Algorithm 2.1 of [RW2006]. In addition to
 the API of standard sklearn estimators, GaussianProcessRegressor:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li>allows prediction without prior fitting (based on the GP prior)</li>
 <li>provides an additional method <tt class="docutils literal"><span class="pre">sample_y(X)</span></tt>, which evaluates samples
 drawn from the GPR (prior or posterior) at given inputs</li>
@@ -267,7 +266,6 @@ drawn from the GPR (prior or posterior) at given inputs</li>
 externally for other ways of selecting hyperparameters, e.g., via
 Markov chain Monte Carlo.</li>
 </ul>
-</div></blockquote>
 </div>
 <div class="section" id="gpr-examples">
 <h2>1.7.2. GPR examples<a class="headerlink" href="#gpr-examples" title="Permalink to this headline">¶</a></h2>
@@ -351,8 +349,7 @@ Mauna Loa Observatory in Hawaii, between 1958 and 1997. The objective is to
 model the CO2 concentration as a function of the time t.</p>
 <p>The kernel is composed of several terms that are responsible for explaining
 different properties of the signal:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li>a long term, smooth rising trend is to be explained by an RBF kernel. The
 RBF kernel with a large length-scale enforces this component to be smooth;
 it is not enforced that the trend is rising which leaves this choice to the
@@ -374,7 +371,6 @@ explain the correlated noise components such as local weather phenomena,
 and a WhiteKernel contribution for the white noise. The relative amplitudes
 and the RBF&#8217;s length scale are further free parameters.</li>
 </ul>
-</div></blockquote>
 <p>Maximizing the log-marginal-likelihood after subtracting the target&#8217;s mean
 yields the following kernel with an LML of -83.214:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="mf">34.4</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">RBF</span><span class="p">(</span><span class="n">length_scale</span><span class="o">=</span><span class="mf">41.8</span><span class="p">)</span>

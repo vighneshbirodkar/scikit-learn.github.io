@@ -172,23 +172,70 @@
 <blockquote>
 <div><a class="reference external" href="http://vis-www.cs.umass.edu/lfw/lfw-funneled.tgz">http://vis-www.cs.umass.edu/lfw/lfw-funneled.tgz</a> (233MB)</div></blockquote>
 <p>Expected results for the top 5 most represented people in the dataset:</p>
-<div class="highlight-python"><div class="highlight"><pre>                 precision    recall  f1-score   support
-
-   Ariel Sharon       0.67      0.92      0.77        13
-   Colin Powell       0.75      0.78      0.76        60
-Donald Rumsfeld       0.78      0.67      0.72        27
-  George W Bush       0.86      0.86      0.86       146
+<div class="highlight-python"><div class="highlight"><pre>================== ============ ======= ========== =======
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Gerhard Schroeder       0.76      0.76      0.76        25</dt>
-<dd><dl class="first docutils">
-<dt>Hugo Chavez       0.67      0.67      0.67        15</dt>
-<dd>Tony Blair       0.81      0.69      0.75        36</dd>
-</dl>
-<p class="last">avg / total       0.80      0.80      0.80       322</p>
-</dd>
-</dl>
+<blockquote>
+<div>precision    recall  f1-score   support</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="22%" />
+<col width="13%" />
+<col width="19%" />
+<col width="13%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Ariel Sharon</td>
+<td>0.67</td>
+<td>0.92</td>
+<td>0.77</td>
+<td>13</td>
+</tr>
+<tr class="row-even"><td>Colin Powell</td>
+<td>0.75</td>
+<td>0.78</td>
+<td>0.76</td>
+<td>60</td>
+</tr>
+<tr class="row-odd"><td>Donald Rumsfeld</td>
+<td>0.78</td>
+<td>0.67</td>
+<td>0.72</td>
+<td>27</td>
+</tr>
+<tr class="row-even"><td>George W Bush</td>
+<td>0.86</td>
+<td>0.86</td>
+<td>0.86</td>
+<td>146</td>
+</tr>
+<tr class="row-odd"><td>Gerhard Schroeder</td>
+<td>0.76</td>
+<td>0.76</td>
+<td>0.76</td>
+<td>25</td>
+</tr>
+<tr class="row-even"><td>Hugo Chavez</td>
+<td>0.67</td>
+<td>0.67</td>
+<td>0.67</td>
+<td>15</td>
+</tr>
+<tr class="row-odd"><td>Tony Blair</td>
+<td>0.81</td>
+<td>0.69</td>
+<td>0.75</td>
+<td>36</td>
+</tr>
+<tr class="row-even"><td>avg / total</td>
+<td>0.80</td>
+<td>0.80</td>
+<td>0.80</td>
+<td>322</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Python source code:</strong> <a class="reference download internal" href="../../_downloads/face_recognition.py"><tt class="xref download docutils literal"><span class="pre">face_recognition.py</span></tt></a></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
 

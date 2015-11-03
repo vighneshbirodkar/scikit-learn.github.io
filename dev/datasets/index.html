@@ -184,24 +184,27 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#breast-cancer-wisconsin-diagnostic-database">5.13. Breast Cancer Wisconsin (Diagnostic) Database</a><ul>
-<li><a class="reference internal" href="#id11">5.13.1. Notes</a></li>
+<li><a class="reference internal" href="#id10">5.13.1. Notes</a></li>
 <li><a class="reference internal" href="#references">5.13.2. References</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#diabetes-dataset">5.14. Diabetes dataset</a><ul>
-<li><a class="reference internal" href="#id12">5.14.1. Notes</a></li>
-<li><a class="reference internal" href="#id15">5.14.2. Notes</a></li>
-<li><a class="reference internal" href="#id16">5.14.3. References</a></li>
+<li><a class="reference internal" href="#id11">5.14.1. Notes</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#iris-plants-database">5.15. Iris Plants Database</a><ul>
-<li><a class="reference internal" href="#id17">5.15.1. Notes</a></li>
-<li><a class="reference internal" href="#id18">5.15.2. References</a></li>
+<li><a class="reference internal" href="#optical-recognition-of-handwritten-digits-data-set">5.15. Optical Recognition of Handwritten Digits Data Set</a><ul>
+<li><a class="reference internal" href="#id12">5.15.1. Notes</a></li>
+<li><a class="reference internal" href="#id13">5.15.2. References</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#linnerrud-dataset">5.16. Linnerrud dataset</a><ul>
-<li><a class="reference internal" href="#id19">5.16.1. Notes</a></li>
-<li><a class="reference internal" href="#id20">5.16.2. References</a></li>
+<li><a class="reference internal" href="#iris-plants-database">5.16. Iris Plants Database</a><ul>
+<li><a class="reference internal" href="#id14">5.16.1. Notes</a></li>
+<li><a class="reference internal" href="#id15">5.16.2. References</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#linnerrud-dataset">5.17. Linnerrud dataset</a><ul>
+<li><a class="reference internal" href="#id16">5.17.1. Notes</a></li>
+<li><a class="reference internal" href="#id17">5.17.2. References</a></li>
 </ul>
 </li>
 </ul>
@@ -901,7 +904,7 @@ The dataset will be downloaded from the web if necessary.</p>
 </div>
 <div class="section" id="rcv1-dataset">
 <span id="rcv1"></span><h2>5.11. RCV1 dataset<a class="headerlink" href="#rcv1-dataset" title="Permalink to this headline">¶</a></h2>
-<p>Reuters Corpus Volume I (RCV1) is an archive of over 800,000 manually categorized newswire stories made available by Reuters, Ltd. for research purposes. The dataset is extensively described in <a class="footnote-reference" href="#id10" id="id7">[1]</a>.</p>
+<p>Reuters Corpus Volume I (RCV1) is an archive of over 800,000 manually categorized newswire stories made available by Reuters, Ltd. for research purposes. The dataset is extensively described in <a class="footnote-reference" href="#id9" id="id7">[1]</a>.</p>
 <p><a class="reference internal" href="../modules/generated/sklearn.datasets.fetch_rcv1.html#sklearn.datasets.fetch_rcv1" title="sklearn.datasets.fetch_rcv1"><tt class="xref py py-func docutils literal"><span class="pre">sklearn.datasets.fetch_rcv1</span></tt></a> will load the following version: RCV1-v2, vectors, full sets, topics multilabels:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">fetch_rcv1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rcv1</span> <span class="o">=</span> <span class="n">fetch_rcv1</span><span class="p">()</span>
@@ -911,7 +914,7 @@ The dataset will be downloaded from the web if necessary.</p>
 <p><tt class="docutils literal"><span class="pre">data</span></tt>:
 The feature matrix is a scipy CSR sparse matrix, with 804414 samples and
 47236 features. Non-zero values contains cosine-normalized, log TF-IDF vectors.
-A nearly chronological split is proposed in <a class="footnote-reference" href="#id10" id="id8">[1]</a>: The first 23149 samples are the training set. The last 781265 samples are the testing set. This follows the official LYRL2004 chronological split.
+A nearly chronological split is proposed in <a class="footnote-reference" href="#id9" id="id8">[1]</a>: The first 23149 samples are the training set. The last 781265 samples are the testing set. This follows the official LYRL2004 chronological split.
 The array has 0.16% of non zero values:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">rcv1</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span>
 <span class="go">(804414, 47236)</span>
@@ -936,11 +939,11 @@ There are 103 topics, each represented by a string. Their corpus frequencies spa
 <span class="go">[&#39;E11&#39;, &#39;ECAT&#39;, &#39;M11&#39;]</span>
 </pre></div>
 </div>
-<p>The dataset will be downloaded from the <a href="#id21"><span class="problematic" id="id22">`dataset&#8217;s homepage`_</span></a> if necessary.
+<p>The dataset will be downloaded from the <a class="reference external" href="http://jmlr.csail.mit.edu/papers/volume5/lewis04a/">rcv1 homepage</a> if necessary.
 The compressed size is about 656 MB.</p>
 <div class="topic">
 <p class="topic-title first">References</p>
-<table class="docutils footnote" frame="void" id="id10" rules="none">
+<table class="docutils footnote" frame="void" id="id9" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id7">1</a>, <a class="fn-backref" href="#id8">2</a>)</em> Lewis, D. D., Yang, Y., Rose, T. G., &amp; Li, F. (2004). RCV1: A new benchmark collection for text categorization research. The Journal of Machine Learning Research, 5, 361-397.</td></tr>
@@ -949,7 +952,7 @@ The compressed size is about 656 MB.</p>
 </div>
 </div>
 <div class="section" id="boston-house-prices-dataset">
-<h2>5.12. Boston House Prices dataset<a class="headerlink" href="#boston-house-prices-dataset" title="Permalink to this headline">¶</a></h2>
+<span id="boston-house-prices"></span><h2>5.12. Boston House Prices dataset<a class="headerlink" href="#boston-house-prices-dataset" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="notes">
 <h3>5.12.1. Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h3>
 <p>Data Set Characteristics:</p>
@@ -1021,9 +1024,9 @@ problems.</p>
 </div>
 </div>
 <div class="section" id="breast-cancer-wisconsin-diagnostic-database">
-<h2>5.13. Breast Cancer Wisconsin (Diagnostic) Database<a class="headerlink" href="#breast-cancer-wisconsin-diagnostic-database" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id11">
-<h3>5.13.1. Notes<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<span id="breast-cancer"></span><h2>5.13. Breast Cancer Wisconsin (Diagnostic) Database<a class="headerlink" href="#breast-cancer-wisconsin-diagnostic-database" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id10">
+<h3>5.13.1. Notes<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <dl class="docutils">
 <dt>Data Set Characteristics:</dt>
 <dd><table class="first docutils field-list" frame="void" rules="none">
@@ -1039,33 +1042,23 @@ problems.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">Attribute Information:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first">
-<li><p class="first">radius (mean of distances from center to points on the perimeter)</p>
-</li>
-<li><p class="first">texture (standard deviation of gray-scale values)</p>
-</li>
-<li><p class="first">perimeter</p>
-</li>
-<li><p class="first">area</p>
-</li>
-<li><p class="first">smoothness (local variation in radius lengths)</p>
-</li>
-<li><p class="first">compactness (perimeter^2 / area - 1.0)</p>
-</li>
-<li><p class="first">concavity (severity of concave portions of the contour)</p>
-</li>
-<li><p class="first">concave points (number of concave portions of the contour)</p>
-</li>
-<li><p class="first">symmetry</p>
-</li>
-<li><p class="first">fractal dimension (&#8220;coastline approximation&#8221; - 1)</p>
-<blockquote>
-<div><p>The mean, standard error, and &#8220;worst&#8221; or largest (mean of the three
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li>radius (mean of distances from center to points on the perimeter)</li>
+<li>texture (standard deviation of gray-scale values)</li>
+<li>perimeter</li>
+<li>area</li>
+<li>smoothness (local variation in radius lengths)</li>
+<li>compactness (perimeter^2 / area - 1.0)</li>
+<li>concavity (severity of concave portions of the contour)</li>
+<li>concave points (number of concave portions of the contour)</li>
+<li>symmetry</li>
+<li>fractal dimension (&#8220;coastline approximation&#8221; - 1)</li>
+</ul>
+<p>The mean, standard error, and &#8220;worst&#8221; or largest (mean of the three
 largest values) of these features were computed for each image,
 resulting in 30 features.  For instance, field 3 is Mean Radius, field
 13 is Radius SE, field 23 is Worst Radius.</p>
-</div></blockquote>
-</li>
+<ul>
 <li><dl class="first docutils">
 <dt>class:</dt>
 <dd><ul class="first last simple">
@@ -1080,6 +1073,141 @@ resulting in 30 features.  For instance, field 3 is Mean Radius, field
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">Summary Statistics:</th></tr>
 <tr class="field-even field"><td>&nbsp;</td><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="71%" />
+<col width="13%" />
+<col width="15%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&nbsp;</th>
+<th class="head">&nbsp;</th>
+<th class="head">&nbsp;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>radius (mean):</td>
+<td>6.981</td>
+<td>28.11</td>
+</tr>
+<tr class="row-odd"><td>texture (mean):</td>
+<td>9.71</td>
+<td>39.28</td>
+</tr>
+<tr class="row-even"><td>perimeter (mean):</td>
+<td>43.79</td>
+<td>188.5</td>
+</tr>
+<tr class="row-odd"><td>area (mean):</td>
+<td>143.5</td>
+<td>2501.0</td>
+</tr>
+<tr class="row-even"><td>smoothness (mean):</td>
+<td>0.053</td>
+<td>0.163</td>
+</tr>
+<tr class="row-odd"><td>compactness (mean):</td>
+<td>0.019</td>
+<td>0.345</td>
+</tr>
+<tr class="row-even"><td>concavity (mean):</td>
+<td>0.0</td>
+<td>0.427</td>
+</tr>
+<tr class="row-odd"><td>concave points (mean):</td>
+<td>0.0</td>
+<td>0.201</td>
+</tr>
+<tr class="row-even"><td>symmetry (mean):</td>
+<td>0.106</td>
+<td>0.304</td>
+</tr>
+<tr class="row-odd"><td>fractal dimension (mean):</td>
+<td>0.05</td>
+<td>0.097</td>
+</tr>
+<tr class="row-even"><td>radius (standard error):</td>
+<td>0.112</td>
+<td>2.873</td>
+</tr>
+<tr class="row-odd"><td>texture (standard error):</td>
+<td>0.36</td>
+<td>4.885</td>
+</tr>
+<tr class="row-even"><td>perimeter (standard error):</td>
+<td>0.757</td>
+<td>21.98</td>
+</tr>
+<tr class="row-odd"><td>area (standard error):</td>
+<td>6.802</td>
+<td>542.2</td>
+</tr>
+<tr class="row-even"><td>smoothness (standard error):</td>
+<td>0.002</td>
+<td>0.031</td>
+</tr>
+<tr class="row-odd"><td>compactness (standard error):</td>
+<td>0.002</td>
+<td>0.135</td>
+</tr>
+<tr class="row-even"><td>concavity (standard error):</td>
+<td>0.0</td>
+<td>0.396</td>
+</tr>
+<tr class="row-odd"><td>concave points (standard error):</td>
+<td>0.0</td>
+<td>0.053</td>
+</tr>
+<tr class="row-even"><td>symmetry (standard error):</td>
+<td>0.008</td>
+<td>0.079</td>
+</tr>
+<tr class="row-odd"><td>fractal dimension (standard error):</td>
+<td>0.001</td>
+<td>0.03</td>
+</tr>
+<tr class="row-even"><td>radius (worst):</td>
+<td>7.93</td>
+<td>36.04</td>
+</tr>
+<tr class="row-odd"><td>texture (worst):</td>
+<td>12.02</td>
+<td>49.54</td>
+</tr>
+<tr class="row-even"><td>perimeter (worst):</td>
+<td>50.41</td>
+<td>251.2</td>
+</tr>
+<tr class="row-odd"><td>area (worst):</td>
+<td>185.2</td>
+<td>4254.0</td>
+</tr>
+<tr class="row-even"><td>smoothness (worst):</td>
+<td>0.071</td>
+<td>0.223</td>
+</tr>
+<tr class="row-odd"><td>compactness (worst):</td>
+<td>0.027</td>
+<td>1.058</td>
+</tr>
+<tr class="row-even"><td>concavity (worst):</td>
+<td>0.0</td>
+<td>1.252</td>
+</tr>
+<tr class="row-odd"><td>concave points (worst):</td>
+<td>0.0</td>
+<td>0.291</td>
+</tr>
+<tr class="row-even"><td>symmetry (worst):</td>
+<td>0.156</td>
+<td>0.664</td>
+</tr>
+<tr class="row-odd"><td>fractal dimension (worst):</td>
+<td>0.055</td>
+<td>0.208</td>
 </tr>
 </tbody>
 </table>
@@ -1130,34 +1258,25 @@ cd math-prog/cpo-dataset/machine-learn/WDBC/</p>
 <div class="section" id="references">
 <h3>5.13.2. References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><ul>
-<li><p class="first">W.N. Street, W.H. Wolberg and O.L. Mangasarian. Nuclear feature extraction
-for breast tumor diagnosis. IS&amp;T/SPIE 1993 International Symposium on</p>
-<blockquote>
-<div><p>Electronic Imaging: Science and Technology, volume 1905, pages 861-870,
-San Jose, CA, 1993.</p>
-</div></blockquote>
-</li>
-<li><p class="first">O.L. Mangasarian, W.N. Street and W.H. Wolberg. Breast cancer diagnosis and
-prognosis via linear programming. Operations Research, 43(4), pages 570-577,</p>
-<blockquote>
-<div><p>July-August 1995.</p>
-</div></blockquote>
-</li>
-<li><p class="first">W.H. Wolberg, W.N. Street, and O.L. Mangasarian. Machine learning techniques
-to diagnose breast cancer from fine-needle aspirates. Cancer Letters 77 (1994)</p>
-<blockquote>
-<div><p>163-171.</p>
-</div></blockquote>
-</li>
+<div><ul class="simple">
+<li>W.N. Street, W.H. Wolberg and O.L. Mangasarian. Nuclear feature extraction
+for breast tumor diagnosis. IS&amp;T/SPIE 1993 International Symposium on
+Electronic Imaging: Science and Technology, volume 1905, pages 861-870,
+San Jose, CA, 1993.</li>
+<li>O.L. Mangasarian, W.N. Street and W.H. Wolberg. Breast cancer diagnosis and
+prognosis via linear programming. Operations Research, 43(4), pages 570-577,
+July-August 1995.</li>
+<li>W.H. Wolberg, W.N. Street, and O.L. Mangasarian. Machine learning techniques
+to diagnose breast cancer from fine-needle aspirates. Cancer Letters 77 (1994)
+163-171.</li>
 </ul>
 </div></blockquote>
 </div>
 </div>
 <div class="section" id="diabetes-dataset">
-<h2>5.14. Diabetes dataset<a class="headerlink" href="#diabetes-dataset" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id12">
-<h3>5.14.1. Notes<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<span id="diabetes"></span><h2>5.14. Diabetes dataset<a class="headerlink" href="#diabetes-dataset" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id11">
+<h3>5.14.1. Notes<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <p>Ten baseline variables, age, sex, body mass index, average blood
 pressure, and six blood serum measurements were obtained for each of n =
 442 diabetes patients, as well as the response of interest, a
@@ -1212,18 +1331,18 @@ quantitative measure of disease progression one year after baseline.</p>
 </tbody>
 </table>
 </div></blockquote>
-<p><a href="#id13"><span class="problematic" id="id14">*</span></a>Note: Each of these 10 feature variables have been mean centered and scaled by the standard deviation times <cite>n_samples</cite> (i.e. the sum of squares of each column totals 1).</p>
+<p>Note: Each of these 10 feature variables have been mean centered and scaled by the standard deviation times <cite>n_samples</cite> (i.e. the sum of squares of each column totals 1).</p>
 <p>Source URL:
 <a class="reference external" href="http://www4.stat.ncsu.edu/~boos/var.select/diabetes.html">http://www4.stat.ncsu.edu/~boos/var.select/diabetes.html</a></p>
 <p>For more information see:
 Bradley Efron, Trevor Hastie, Iain Johnstone and Robert Tibshirani (2004) &#8220;Least Angle Regression,&#8221; Annals of Statistics (with discussion), 407-499.
 (<a class="reference external" href="http://web.stanford.edu/~hastie/Papers/LARS/LeastAngle_2002.pdf">http://web.stanford.edu/~hastie/Papers/LARS/LeastAngle_2002.pdf</a>)</p>
-<blockquote>
-<div>Optical Recognition of Handwritten Digits Data Set</div></blockquote>
 </div>
-<hr class="docutils" />
-<div class="section" id="id15">
-<h3>5.14.2. Notes<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="optical-recognition-of-handwritten-digits-data-set">
+<span id="digits"></span><h2>5.15. Optical Recognition of Handwritten Digits Data Set<a class="headerlink" href="#optical-recognition-of-handwritten-digits-data-set" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id12">
+<h3>5.15.1. Notes<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <dl class="docutils">
 <dt>Data Set Characteristics:</dt>
 <dd><table class="first last docutils field-list" frame="void" rules="none">
@@ -1275,8 +1394,8 @@ T. Candela, D. L. Dimmick, J. Geist, P. J. Grother, S. A. Janet, and C.
 L. Wilson, NIST Form-Based Handprint Recognition System, NISTIR 5469,
 1994.</p>
 </div>
-<div class="section" id="id16">
-<h3>5.14.3. References<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id13">
+<h3>5.15.2. References<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>C. Kaynak (1995) Methods of Combining Multiple Classifiers and Their
@@ -1297,9 +1416,9 @@ Algorithm. NIPS. 2000.</li>
 </div>
 </div>
 <div class="section" id="iris-plants-database">
-<h2>5.15. Iris Plants Database<a class="headerlink" href="#iris-plants-database" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id17">
-<h3>5.15.1. Notes<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<span id="iris"></span><h2>5.16. Iris Plants Database<a class="headerlink" href="#iris-plants-database" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id14">
+<h3>5.16.1. Notes<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
 <dl class="docutils">
 <dt>Data Set Characteristics:</dt>
 <dd><table class="first docutils field-list" frame="void" rules="none">
@@ -1421,8 +1540,8 @@ data set contains 3 classes of 50 instances each, where each class refers to a
 type of iris plant.  One class is linearly separable from the other 2; the
 latter are NOT linearly separable from each other.</p>
 </div>
-<div class="section" id="id18">
-<h3>5.15.2. References<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id15">
+<h3>5.16.2. References<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Fisher,R.A. &#8220;The use of multiple measurements in taxonomic problems&#8221;
@@ -1444,9 +1563,9 @@ conceptual clustering system finds 3 classes in the data.</li>
 </div>
 </div>
 <div class="section" id="linnerrud-dataset">
-<h2>5.16. Linnerrud dataset<a class="headerlink" href="#linnerrud-dataset" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id19">
-<h3>5.16.1. Notes<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<span id="linnerud"></span><h2>5.17. Linnerrud dataset<a class="headerlink" href="#linnerrud-dataset" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id16">
+<h3>5.17.1. Notes<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
 <dl class="docutils">
 <dt>Data Set Characteristics:</dt>
 <dd><table class="first last docutils field-list" frame="void" rules="none">
@@ -1479,8 +1598,8 @@ conceptual clustering system finds 3 classes in the data.</li>
 </li>
 </ul>
 </div>
-<div class="section" id="id20">
-<h3>5.16.2. References<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id17">
+<h3>5.17.2. References<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li><a class="reference external" href="http://rgm2.lab.nig.ac.jp/RGM2/func.php?rd_id=mixOmics:linnerud">http://rgm2.lab.nig.ac.jp/RGM2/func.php?rd_id=mixOmics:linnerud</a></li>
