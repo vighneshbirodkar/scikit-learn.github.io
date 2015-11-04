@@ -575,7 +575,7 @@ attribute to select important features of the input data. By
 <li>Added <a class="reference internal" href="modules/generated/sklearn.metrics.pairwise.laplacian_kernel.html#sklearn.metrics.pairwise.laplacian_kernel" title="sklearn.metrics.pairwise.laplacian_kernel"><tt class="xref py py-func docutils literal"><span class="pre">metrics.pairwise.laplacian_kernel</span></tt></a>.  By <a class="reference external" href="https://github.com/Clyde-fare">Clyde Fare</a>.</li>
 <li><a class="reference internal" href="modules/generated/sklearn.covariance.GraphLasso.html#sklearn.covariance.GraphLasso" title="sklearn.covariance.GraphLasso"><tt class="xref py py-class docutils literal"><span class="pre">covariance.GraphLasso</span></tt></a> allows separate control of the convergence criterion
 for the Elastic-Net subproblem via  the <tt class="docutils literal"><span class="pre">enet_tol</span></tt> parameter.</li>
-<li>Improved verbosity in <tt class="xref py py-class docutils literal"><span class="pre">decomposition.DictinaryLearning</span></tt>.</li>
+<li>Improved verbosity in <a class="reference internal" href="modules/generated/sklearn.decomposition.DictionaryLearning.html#sklearn.decomposition.DictionaryLearning" title="sklearn.decomposition.DictionaryLearning"><tt class="xref py py-class docutils literal"><span class="pre">decomposition.DictionaryLearning</span></tt></a>.</li>
 <li><a class="reference internal" href="modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier" title="sklearn.ensemble.RandomForestClassifier"><tt class="xref py py-class docutils literal"><span class="pre">ensemble.RandomForestClassifier</span></tt></a> and
 <a class="reference internal" href="modules/generated/sklearn.ensemble.RandomForestRegressor.html#sklearn.ensemble.RandomForestRegressor" title="sklearn.ensemble.RandomForestRegressor"><tt class="xref py py-class docutils literal"><span class="pre">ensemble.RandomForestRegressor</span></tt></a> no longer explicitly store the
 samples used in bagging, resulting in a much reduced memory footprint for
@@ -639,7 +639,7 @@ By <a class="reference external" href="https://github.com/arthurmensch">Arthur M
 <li>Fixes to the <tt class="docutils literal"><span class="pre">Bunch</span></tt> class used to store datasets.</li>
 <li>Fixed <tt class="xref py py-func docutils literal"><span class="pre">ensemble.plot_partial_dependence</span></tt> ignoring the
 <tt class="docutils literal"><span class="pre">percentiles</span></tt> parameter.</li>
-<li>Providing a <tt class="docutils literal"><span class="pre">dict</span></tt> as vocabulary in <tt class="docutils literal"><span class="pre">CountVectorizer</span></tt> no longer
+<li>Providing a <tt class="docutils literal"><span class="pre">set</span></tt> as vocabulary in <tt class="docutils literal"><span class="pre">CountVectorizer</span></tt> no longer
 leads to inconsistent results when pickling.</li>
 <li>Fixed the conditions on when a precomputed Gram matrix needs to
 be recomputed in <a class="reference internal" href="modules/generated/sklearn.linear_model.LinearRegression.html#sklearn.linear_model.LinearRegression" title="sklearn.linear_model.LinearRegression"><tt class="xref py py-class docutils literal"><span class="pre">linear_model.LinearRegression</span></tt></a>,
@@ -666,7 +666,6 @@ By <a class="reference external" href="https://github.com/TomDLT">Tom Dupre la T
 <div class="section" id="id23">
 <h3>API changes summary<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><blockquote>
 <div><ul class="simple">
 <li>Attribute <cite>data_min</cite>, <cite>data_max</cite> and <cite>data_range</cite> in
 <a class="reference internal" href="modules/generated/sklearn.preprocessing.MinMaxScaler.html#sklearn.preprocessing.MinMaxScaler" title="sklearn.preprocessing.MinMaxScaler"><tt class="xref py py-class docutils literal"><span class="pre">preprocessing.MinMaxScaler</span></tt></a> are deprecated and won&#8217;t be available
@@ -721,9 +720,6 @@ and will be removed in 0.19.</li>
 to the constructor.</li>
 <li>Removed deprecated <tt class="docutils literal"><span class="pre">class_weight</span></tt> parameter from <a class="reference internal" href="modules/generated/sklearn.linear_model.SGDClassifier.html#sklearn.linear_model.SGDClassifier" title="sklearn.linear_model.SGDClassifier"><tt class="xref py py-class docutils literal"><span class="pre">linear_model.SGDClassifier</span></tt></a>&#8216;s <tt class="docutils literal"><span class="pre">fit</span></tt>
 method. Use the construction parameter instead.</li>
-</ul>
-</div></blockquote>
-<ul class="simple">
 <li>The deprecated support for the sequence of sequences (or list of lists) multilabel
 format was removed. To convert to and from the supported binary
 indicator matrix format, use
