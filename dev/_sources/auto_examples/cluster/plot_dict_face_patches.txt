@@ -65,6 +65,6 @@ cluster.
 .. literalinclude:: plot_dict_face_patches.py
     :lines: 21-
 
-**Total running time of the example:**  18.36 seconds
-( 0 minutes  18.36 seconds)
+**Total running time of the example:**  18.39 seconds
+( 0 minutes  18.39 seconds)
     

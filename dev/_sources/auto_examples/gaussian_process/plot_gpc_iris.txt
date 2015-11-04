@@ -25,6 +25,6 @@ assigning different length-scales to the two feature dimensions.
 .. literalinclude:: plot_gpc_iris.py
     :lines: 11-
 
-**Total running time of the example:**  16.48 seconds
-( 0 minutes  16.48 seconds)
+**Total running time of the example:**  16.59 seconds
+( 0 minutes  16.59 seconds)
     
