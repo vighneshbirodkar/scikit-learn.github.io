@@ -120,6 +120,6 @@ however.
 .. literalinclude:: plot_mlp_training_curves.py
     :lines: 12-
 
-**Total running time of the example:**  19.57 seconds
-( 0 minutes  19.57 seconds)
+**Total running time of the example:**  18.83 seconds
+( 0 minutes  18.83 seconds)
     
