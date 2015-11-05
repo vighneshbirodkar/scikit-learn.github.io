@@ -87,7 +87,7 @@ map.
 
 **Script output**::
 
-  The best parameters are {'gamma': 0.10000000000000001, 'C': 1.0} with a score of 0.97
+  The best parameters are {'C': 1.0, 'gamma': 0.10000000000000001} with a score of 0.97
 
 
 
@@ -96,6 +96,6 @@ map.
 .. literalinclude:: plot_rbf_parameters.py
     :lines: 68-
 
-**Total running time of the example:**  7.99 seconds
-( 0 minutes  7.99 seconds)
+**Total running time of the example:**  5.56 seconds
+( 0 minutes  5.56 seconds)
     

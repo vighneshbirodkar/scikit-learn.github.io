@@ -60,6 +60,6 @@ it then works on a random subset.
 .. literalinclude:: plot_theilsen.py
     :lines: 36-
 
-**Total running time of the example:**  1.22 seconds
-( 0 minutes  1.22 seconds)
+**Total running time of the example:**  1.10 seconds
+( 0 minutes  1.10 seconds)
     

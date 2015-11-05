@@ -103,6 +103,6 @@ is not scaled.
 .. literalinclude:: plot_svm_scale_c.py
     :lines: 79-
 
-**Total running time of the example:**  25.47 seconds
-( 0 minutes  25.47 seconds)
+**Total running time of the example:**  19.32 seconds
+( 0 minutes  19.32 seconds)
     

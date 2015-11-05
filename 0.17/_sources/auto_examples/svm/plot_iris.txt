@@ -50,6 +50,6 @@ kernel and its parameters.
 .. literalinclude:: plot_iris.py
     :lines: 36-
 
-**Total running time of the example:**  0.71 seconds
-( 0 minutes  0.71 seconds)
+**Total running time of the example:**  0.60 seconds
+( 0 minutes  0.60 seconds)
     

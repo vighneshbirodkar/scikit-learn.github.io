@@ -26,6 +26,6 @@ We use a GridSearchCV to set the dimensionality of the PCA
 .. literalinclude:: plot_digits_pipe.py
     :lines: 15-
 
-**Total running time of the example:**  11.68 seconds
-( 0 minutes  11.68 seconds)
+**Total running time of the example:**  8.60 seconds
+( 0 minutes  8.60 seconds)
     
