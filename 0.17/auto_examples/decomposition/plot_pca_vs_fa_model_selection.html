@@ -75,14 +75,14 @@
               <ul class="dropdown-menu">
             <li class="link-title">Scikit-learn 0.17 (stable)</li>
             <li><a href="../../tutorial/index.html">Tutorials</a></li>
-            <li><a href="../../scikit-learn-docs.pdf.html">User guide</a></li>
+            <li><a href="../../user_guide.html">User guide</a></li>
             <li><a href="../../modules/classes.html">API</a></li>
             <li><a href="../../faq.html">FAQ</a></li>
             <li><a href="../../developers.html">Contributing</a></li>
             <li class="divider"></li>
                 <li><a href="http://scikit-learn.org/dev/documentation.html">Scikit-learn 0.18 (development)</a></li>
                 <li><a href="http://scikit-learn.org/0.16/documentation.html">Scikit-learn 0.16</a></li>
-				<li><a href="../../_downloads/user_guide.pdf">PDF documentation</a></li>
+				<li><a href="../../_downloads/scikit-learn-docs.pdf">PDF documentation</a></li>
               </ul>
             </div>
         </li>
@@ -251,7 +251,7 @@ best n_components by PCA MLE = 38
 
 
 <span class="k">def</span> <span class="nf">shrunk_cov_score</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
-    <span class="n">shrinkages</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+    <span class="n">shrinkages</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy-1.6.0/reference/generated/numpy.logspace.html#numpy.logspace"><span class="n">np</span><span class="o">.</span><span class="n">logspace</span></a><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
     <span class="n">cv</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.grid_search.GridSearchCV.html#sklearn.grid_search.GridSearchCV"><span class="n">GridSearchCV</span></a><span class="p">(</span><a href="../../modules/generated/sklearn.covariance.ShrunkCovariance.html#sklearn.covariance.ShrunkCovariance"><span class="n">ShrunkCovariance</span></a><span class="p">(),</span> <span class="p">{</span><span class="s">&#39;shrinkage&#39;</span><span class="p">:</span> <span class="n">shrinkages</span><span class="p">})</span>
     <span class="k">return</span> <a href="http://docs.scipy.org/doc/numpy-1.6.0/reference/generated/numpy.mean.html#numpy.mean"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><a href="../../modules/generated/sklearn.cross_validation.cross_val_score.html#sklearn.cross_validation.cross_val_score"><span class="n">cross_val_score</span></a><span class="p">(</span><span class="n">cv</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">best_estimator_</span><span class="p">,</span> <span class="n">X</span><span class="p">))</span>
 
@@ -286,9 +286,9 @@ best n_components by PCA MLE = 38
                 <span class="n">label</span><span class="o">=</span><span class="s">&#39;PCA MLE: </span><span class="si">%d</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">n_components_pca_mle</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s">&#39;--&#39;</span><span class="p">)</span>
 
     <span class="c"># compare with other covariance estimators</span>
-    <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.axhline"><span class="n">plt</span><span class="o">.</span><span class="n">axhline</span></a><span class="p">(</span><span class="n">shrunk_cov_score</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;violet&#39;</span><span class="p">,</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">shrunk_cov_score</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;violet&#39;</span><span class="p">,</span>
                 <span class="n">label</span><span class="o">=</span><span class="s">&#39;Shrunk Covariance MLE&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s">&#39;-.&#39;</span><span class="p">)</span>
-    <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.axhline"><span class="n">plt</span><span class="o">.</span><span class="n">axhline</span></a><span class="p">(</span><span class="n">lw_score</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;orange&#39;</span><span class="p">,</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">lw_score</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;orange&#39;</span><span class="p">,</span>
                 <span class="n">label</span><span class="o">=</span><span class="s">&#39;LedoitWolf MLE&#39;</span> <span class="o">%</span> <span class="n">n_components_pca_mle</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s">&#39;-.&#39;</span><span class="p">)</span>
 
     <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.xlabel"><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span></a><span class="p">(</span><span class="s">&#39;nb of components&#39;</span><span class="p">)</span>

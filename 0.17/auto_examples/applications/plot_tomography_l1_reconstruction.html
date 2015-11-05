@@ -75,14 +75,14 @@
               <ul class="dropdown-menu">
             <li class="link-title">Scikit-learn 0.17 (stable)</li>
             <li><a href="../../tutorial/index.html">Tutorials</a></li>
-            <li><a href="../../scikit-learn-docs.pdf.html">User guide</a></li>
+            <li><a href="../../user_guide.html">User guide</a></li>
             <li><a href="../../modules/classes.html">API</a></li>
             <li><a href="../../faq.html">FAQ</a></li>
             <li><a href="../../developers.html">Contributing</a></li>
             <li class="divider"></li>
                 <li><a href="http://scikit-learn.org/dev/documentation.html">Scikit-learn 0.18 (development)</a></li>
                 <li><a href="http://scikit-learn.org/0.16/documentation.html">Scikit-learn 0.16</a></li>
-				<li><a href="../../_downloads/user_guide.pdf">PDF documentation</a></li>
+				<li><a href="../../_downloads/scikit-learn-docs.pdf">PDF documentation</a></li>
               </ul>
             </div>
         </li>
@@ -253,7 +253,7 @@ contributed to fewer projections than the central disk.</p>
         <span class="n">weights</span> <span class="o">+=</span> <span class="nb">list</span><span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span>
         <span class="n">camera_inds</span> <span class="o">+=</span> <span class="nb">list</span><span class="p">(</span><span class="n">inds</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">l_x</span><span class="p">)</span>
         <span class="n">data_inds</span> <span class="o">+=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data_unravel_indices</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span>
-    <span class="n">proj_operator</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/scipy-0.11.0/reference/generated/scipy.sparse.coo_matrix.todok.html#scipy.sparse.coo_matrix"><span class="n">sparse</span><span class="o">.</span><span class="n">coo_matrix</span></a><span class="p">((</span><span class="n">weights</span><span class="p">,</span> <span class="p">(</span><span class="n">camera_inds</span><span class="p">,</span> <span class="n">data_inds</span><span class="p">)))</span>
+    <span class="n">proj_operator</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/scipy-0.11.0/reference/generated/scipy.sparse.coo_matrix.floor.html#scipy.sparse.coo_matrix"><span class="n">sparse</span><span class="o">.</span><span class="n">coo_matrix</span></a><span class="p">((</span><span class="n">weights</span><span class="p">,</span> <span class="p">(</span><span class="n">camera_inds</span><span class="p">,</span> <span class="n">data_inds</span><span class="p">)))</span>
     <span class="k">return</span> <span class="n">proj_operator</span>
 
 
