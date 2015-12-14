@@ -73,16 +73,17 @@
                  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-            <li class="link-title">Scikit-learn 0.17 (development)</li>
+            <li class="link-title">Scikit-learn 0.18 (development)</li>
             <li><a href="../../tutorial/index.html">Tutorials</a></li>
             <li><a href="../../user_guide.html">User guide</a></li>
             <li><a href="../classes.html">API</a></li>
             <li><a href="../../faq.html">FAQ</a></li>
-            <li><a href="../../developers.html">Contributing</a></li>
+            <li><a href="../../developers/contributing.html">Contributing</a></li>
             <li class="divider"></li>
-                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.16.1 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.17 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/0.16/documentation.html">Scikit-learn 0.16</a></li>
                 <li><a href="http://scikit-learn.org/0.15/documentation.html">Scikit-learn 0.15</a></li>
-				<li><a href="../../_downloads/user_guide.pdf">PDF documentation</a></li>
+				<li><a href="../../_downloads/scikit-learn-docs.pdf">PDF documentation</a></li>
               </ul>
             </div>
         </li>
@@ -117,7 +118,7 @@
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        sklearn.clust...
+        sklearn.cluster....
         </span>
             <span class="hiddenrellink">
             sklearn.cluster.DBSCAN
@@ -172,7 +173,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.cluster" title="sklearn.cluster"><tt class="xref py py-mod docutils literal"><span class="pre">sklearn.cluster</span></tt></a>.FeatureAgglomeration<a class="headerlink" href="#sklearn-cluster-featureagglomeration" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="sklearn.cluster.FeatureAgglomeration">
-<em class="property">class </em><tt class="descclassname">sklearn.cluster.</tt><tt class="descname">FeatureAgglomeration</tt><big>(</big><em>n_clusters=2</em>, <em>affinity='euclidean'</em>, <em>memory=Memory(cachedir=None)</em>, <em>connectivity=None</em>, <em>compute_full_tree='auto'</em>, <em>linkage='ward'</em>, <em>pooling_func=&lt;function mean at 0x25021b8&gt;</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/95d91c9/sklearn/cluster/hierarchical.py#L746"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.FeatureAgglomeration" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sklearn.cluster.</tt><tt class="descname">FeatureAgglomeration</tt><big>(</big><em>n_clusters=2</em>, <em>affinity='euclidean'</em>, <em>memory=Memory(cachedir=None)</em>, <em>connectivity=None</em>, <em>compute_full_tree='auto'</em>, <em>linkage='ward'</em>, <em>pooling_func=&lt;function mean at 0x2afcd4cad398&gt;</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/37c8d02/sklearn/cluster/hierarchical.py#L746"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.FeatureAgglomeration" title="Permalink to this definition">¶</a></dt>
 <dd><p>Agglomerate features.</p>
 <p>Similar to AgglomerativeClustering, but recursively merges features
 instead of samples.</p>
@@ -280,7 +281,7 @@ are merged to form node <cite>n_features + i</cite></p>
 <tr class="row-even"><td><a class="reference internal" href="#sklearn.cluster.FeatureAgglomeration.inverse_transform" title="sklearn.cluster.FeatureAgglomeration.inverse_transform"><tt class="xref py py-obj docutils literal"><span class="pre">inverse_transform</span></tt></a>(Xred)</td>
 <td>Inverse the transformation.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#sklearn.cluster.FeatureAgglomeration.pooling_func" title="sklearn.cluster.FeatureAgglomeration.pooling_func"><tt class="xref py py-obj docutils literal"><span class="pre">pooling_func</span></tt></a>(a[,&nbsp;axis,&nbsp;dtype,&nbsp;out])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#sklearn.cluster.FeatureAgglomeration.pooling_func" title="sklearn.cluster.FeatureAgglomeration.pooling_func"><tt class="xref py py-obj docutils literal"><span class="pre">pooling_func</span></tt></a>(a[,&nbsp;axis,&nbsp;dtype,&nbsp;out,&nbsp;keepdims])</td>
 <td>Compute the arithmetic mean along the specified axis.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#sklearn.cluster.FeatureAgglomeration.set_params" title="sklearn.cluster.FeatureAgglomeration.set_params"><tt class="xref py py-obj docutils literal"><span class="pre">set_params</span></tt></a>(**params)</td>
@@ -293,12 +294,12 @@ are merged to form node <cite>n_features + i</cite></p>
 </table>
 <dl class="method">
 <dt id="sklearn.cluster.FeatureAgglomeration.__init__">
-<tt class="descname">__init__</tt><big>(</big><em>n_clusters=2</em>, <em>affinity='euclidean'</em>, <em>memory=Memory(cachedir=None)</em>, <em>connectivity=None</em>, <em>compute_full_tree='auto'</em>, <em>linkage='ward'</em>, <em>pooling_func=&lt;function mean at 0x25021b8&gt;</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/95d91c9/sklearn/cluster/hierarchical.py#L660"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.FeatureAgglomeration.__init__" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">__init__</tt><big>(</big><em>n_clusters=2</em>, <em>affinity='euclidean'</em>, <em>memory=Memory(cachedir=None)</em>, <em>connectivity=None</em>, <em>compute_full_tree='auto'</em>, <em>linkage='ward'</em>, <em>pooling_func=&lt;function mean at 0x2afcd4cad398&gt;</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/37c8d02/sklearn/cluster/hierarchical.py#L660"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.FeatureAgglomeration.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="sklearn.cluster.FeatureAgglomeration.fit">
-<tt class="descname">fit</tt><big>(</big><em>X</em>, <em>y=None</em>, <em>**params</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/95d91c9/sklearn/cluster/hierarchical.py#L821"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.FeatureAgglomeration.fit" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">fit</tt><big>(</big><em>X</em>, <em>y=None</em>, <em>**params</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/37c8d02/sklearn/cluster/hierarchical.py#L821"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.FeatureAgglomeration.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the hierarchical clustering on the data</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -319,7 +320,7 @@ are merged to form node <cite>n_features + i</cite></p>
 
 <dl class="method">
 <dt id="sklearn.cluster.FeatureAgglomeration.fit_transform">
-<tt class="descname">fit_transform</tt><big>(</big><em>X</em>, <em>y=None</em>, <em>**fit_params</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/95d91c9/sklearn/base.py#L438"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.FeatureAgglomeration.fit_transform" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">fit_transform</tt><big>(</big><em>X</em>, <em>y=None</em>, <em>**fit_params</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/37c8d02/sklearn/base.py#L438"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.FeatureAgglomeration.fit_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit to data, then transform it.</p>
 <p>Fits transformer to X and y with optional parameters fit_params
 and returns a transformed version of X.</p>
@@ -349,7 +350,7 @@ and returns a transformed version of X.</p>
 
 <dl class="method">
 <dt id="sklearn.cluster.FeatureAgglomeration.get_params">
-<tt class="descname">get_params</tt><big>(</big><em>deep=True</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/95d91c9/sklearn/base.py#L206"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.FeatureAgglomeration.get_params" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_params</tt><big>(</big><em>deep=True</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/37c8d02/sklearn/base.py#L206"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.FeatureAgglomeration.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters for this estimator.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -374,7 +375,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="method">
 <dt id="sklearn.cluster.FeatureAgglomeration.inverse_transform">
-<tt class="descname">inverse_transform</tt><big>(</big><em>Xred</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/95d91c9/sklearn/cluster/_feature_agglomeration.py#L52"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.FeatureAgglomeration.inverse_transform" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">inverse_transform</tt><big>(</big><em>Xred</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/37c8d02/sklearn/cluster/_feature_agglomeration.py#L52"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.FeatureAgglomeration.inverse_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Inverse the transformation.
 Return a vector of size nb_features with the values of Xred assigned
 to each group of features</p>
@@ -401,7 +402,7 @@ each of the cluster of samples.</p>
 
 <dl class="method">
 <dt id="sklearn.cluster.FeatureAgglomeration.pooling_func">
-<tt class="descname">pooling_func</tt><big>(</big><em>a</em>, <em>axis=None</em>, <em>dtype=None</em>, <em>out=None</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/95d91c9/sklearn/../../../../usr/lib/python2.7/dist-packages/numpy/core/fromnumeric.py#L2299"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.FeatureAgglomeration.pooling_func" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">pooling_func</tt><big>(</big><em>a</em>, <em>axis=None</em>, <em>dtype=None</em>, <em>out=None</em>, <em>keepdims=False</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/37c8d02/sklearn/../../../../../../../usr/lib/python2.7/dist-packages/numpy/core/fromnumeric.py#L2632"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.FeatureAgglomeration.pooling_func" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the arithmetic mean along the specified axis.</p>
 <p>Returns the average of the array elements.  The average is taken over
 the flattened array by default, otherwise over the specified axis.
@@ -433,6 +434,12 @@ is <tt class="docutils literal"><span class="pre">None</span></tt>; if provided,
 expected output, but the type will be cast if necessary.
 See <cite>doc.ufuncs</cite> for details.</p>
 </div></blockquote>
+<p><strong>keepdims</strong> : bool, optional</p>
+<blockquote>
+<div><p>If this is set to True, the axes which are reduced are left
+in the result as dimensions with size one. With this option,
+the result will broadcast correctly against the original <cite>arr</cite>.</p>
+</div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>m</strong> : ndarray, see dtype parameter above</p>
@@ -446,10 +453,11 @@ otherwise a reference to the output array is returned.</p>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<dl class="last docutils">
+<dl class="docutils">
 <dt><tt class="xref py py-obj docutils literal"><span class="pre">average</span></tt></dt>
 <dd>Weighted average</dd>
 </dl>
+<p class="last"><tt class="xref py py-obj docutils literal"><span class="pre">std</span></tt>, <tt class="xref py py-obj docutils literal"><span class="pre">var</span></tt>, <tt class="xref py py-obj docutils literal"><span class="pre">nanmean</span></tt>, <tt class="xref py py-obj docutils literal"><span class="pre">nanstd</span></tt>, <tt class="xref py py-obj docutils literal"><span class="pre">nanvar</span></tt></p>
 </div>
 <p class="rubric">Notes</p>
 <p>The arithmetic mean is the sum of the elements along the axis divided
@@ -486,7 +494,7 @@ example below).  Specifying a higher-precision accumulator using the
 
 <dl class="method">
 <dt id="sklearn.cluster.FeatureAgglomeration.set_params">
-<tt class="descname">set_params</tt><big>(</big><em>**params</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/95d91c9/sklearn/base.py#L243"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.FeatureAgglomeration.set_params" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">set_params</tt><big>(</big><em>**params</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/37c8d02/sklearn/base.py#L243"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.FeatureAgglomeration.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the parameters of this estimator.</p>
 <p>The method works on simple estimators as well as on nested objects
 (such as pipelines). The former have parameters of the form
@@ -504,7 +512,7 @@ component of a nested object.</p>
 
 <dl class="method">
 <dt id="sklearn.cluster.FeatureAgglomeration.transform">
-<tt class="descname">transform</tt><big>(</big><em>X</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/95d91c9/sklearn/cluster/_feature_agglomeration.py#L24"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.FeatureAgglomeration.transform" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">transform</tt><big>(</big><em>X</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/37c8d02/sklearn/cluster/_feature_agglomeration.py#L24"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.FeatureAgglomeration.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transform a new matrix using the built clustering</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />

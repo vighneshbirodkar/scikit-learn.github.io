@@ -36,8 +36,8 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="scikit-learn 0.18.dev0 documentation" href="../../index.html" />
     <link rel="up" title="Examples" href="../index.html" />
-    <link rel="next" title="Comparison of the K-Means and MiniBatchKMeans clustering algorithms" href="plot_mini_batch_kmeans.html" />
-    <link rel="prev" title="Comparing different clustering algorithms on toy datasets" href="plot_cluster_comparison.html" />
+    <link rel="next" title="Comparing different clustering algorithms on toy datasets" href="plot_cluster_comparison.html" />
+    <link rel="prev" title="A demo of K-Means clustering on the handwritten digits data" href="plot_kmeans_digits.html" />
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -73,16 +73,17 @@
                  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-            <li class="link-title">Scikit-learn 0.17 (development)</li>
+            <li class="link-title">Scikit-learn 0.18 (development)</li>
             <li><a href="../../tutorial/index.html">Tutorials</a></li>
             <li><a href="../../user_guide.html">User guide</a></li>
             <li><a href="../../modules/classes.html">API</a></li>
             <li><a href="../../faq.html">FAQ</a></li>
-            <li><a href="../../developers.html">Contributing</a></li>
+            <li><a href="../../developers/contributing.html">Contributing</a></li>
             <li class="divider"></li>
-                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.16.1 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.17 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/0.16/documentation.html">Scikit-learn 0.16</a></li>
                 <li><a href="http://scikit-learn.org/0.15/documentation.html">Scikit-learn 0.15</a></li>
-				<li><a href="../../_downloads/user_guide.pdf">PDF documentation</a></li>
+				<li><a href="../../_downloads/scikit-learn-docs.pdf">PDF documentation</a></li>
               </ul>
             </div>
         </li>
@@ -113,14 +114,14 @@
   <!-- rellinks[1:] is an ugly hack to avoid link to module
   index -->
         <div class="rellink">
-        <a href="plot_cluster_comparison.html"
+        <a href="plot_kmeans_digits.html"
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        Comparing dif...
+        A demo of K-Mean...
         </span>
             <span class="hiddenrellink">
-            Comparing different clustering algorithms on toy datasets
+            A demo of K-Means clustering on the handwritten digits data
             </span>
         </a>
         </div>
@@ -187,21 +188,21 @@ value of k on various overlapping sub-samples of the dataset.</p>
 </ul>
 <p><strong>Script output</strong>:</p>
 <div class="highlight-python"><div class="highlight"><pre>Computing adjusted_rand_score for 10 values of n_clusters and n_samples=100
-done in 0.224s
+done in 0.122s
 Computing v_measure_score for 10 values of n_clusters and n_samples=100
-done in 0.036s
+done in 0.028s
 Computing adjusted_mutual_info_score for 10 values of n_clusters and n_samples=100
-done in 0.981s
+done in 0.618s
 Computing mutual_info_score for 10 values of n_clusters and n_samples=100
-done in 0.024s
+done in 0.018s
 Computing adjusted_rand_score for 10 values of n_clusters and n_samples=1000
-done in 0.241s
+done in 0.107s
 Computing v_measure_score for 10 values of n_clusters and n_samples=1000
-done in 0.067s
+done in 0.049s
 Computing adjusted_mutual_info_score for 10 values of n_clusters and n_samples=1000
-done in 0.533s
+done in 0.309s
 Computing mutual_info_score for 10 values of n_clusters and n_samples=1000
-done in 0.042s
+done in 0.030s
 </pre></div>
 </div>
 <p><strong>Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_adjusted_for_chance_measures.py"><tt class="xref download docutils literal"><span class="pre">plot_adjusted_for_chance_measures.py</span></tt></a></p>
@@ -308,8 +309,8 @@ done in 0.042s
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  2.37 seconds
-( 0 minutes  2.37 seconds)</p>
+<p><strong>Total running time of the example:</strong>  1.46 seconds
+( 0 minutes  1.46 seconds)</p>
 </div>
 
 
@@ -327,7 +328,7 @@ done in 0.042s
      <div class="rel">
     
     <div class="buttonPrevious">
-      <a href="plot_cluster_comparison.html">Previous
+      <a href="plot_kmeans_digits.html">Previous
       </a>
     </div>
     

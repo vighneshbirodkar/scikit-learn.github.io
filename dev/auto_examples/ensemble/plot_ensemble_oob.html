@@ -37,7 +37,7 @@
     <link rel="top" title="scikit-learn 0.18.dev0 documentation" href="../../index.html" />
     <link rel="up" title="Examples" href="../index.html" />
     <link rel="next" title="Gradient Boosting regression" href="plot_gradient_boosting_regression.html" />
-    <link rel="prev" title="Partial Dependence Plots" href="plot_partial_dependence.html" />
+    <link rel="prev" title="Gradient Boosting regularization" href="plot_gradient_boosting_regularization.html" />
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -73,16 +73,17 @@
                  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-            <li class="link-title">Scikit-learn 0.17 (development)</li>
+            <li class="link-title">Scikit-learn 0.18 (development)</li>
             <li><a href="../../tutorial/index.html">Tutorials</a></li>
             <li><a href="../../user_guide.html">User guide</a></li>
             <li><a href="../../modules/classes.html">API</a></li>
             <li><a href="../../faq.html">FAQ</a></li>
-            <li><a href="../../developers.html">Contributing</a></li>
+            <li><a href="../../developers/contributing.html">Contributing</a></li>
             <li class="divider"></li>
-                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.16.1 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.17 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/0.16/documentation.html">Scikit-learn 0.16</a></li>
                 <li><a href="http://scikit-learn.org/0.15/documentation.html">Scikit-learn 0.15</a></li>
-				<li><a href="../../_downloads/user_guide.pdf">PDF documentation</a></li>
+				<li><a href="../../_downloads/scikit-learn-docs.pdf">PDF documentation</a></li>
               </ul>
             </div>
         </li>
@@ -113,14 +114,14 @@
   <!-- rellinks[1:] is an ugly hack to avoid link to module
   index -->
         <div class="rellink">
-        <a href="plot_partial_dependence.html"
+        <a href="plot_gradient_boosting_regularization.html"
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        Partial Depen...
+        Gradient Boostin...
         </span>
             <span class="hiddenrellink">
-            Partial Dependence Plots
+            Gradient Boosting regularization
             </span>
         </a>
         </div>
@@ -169,9 +170,9 @@
 <span id="example-ensemble-plot-ensemble-oob-py"></span><h1>OOB Errors for Random Forests<a class="headerlink" href="#oob-errors-for-random-forests" title="Permalink to this headline">¶</a></h1>
 <p>The <tt class="docutils literal"><span class="pre">RandomForestClassifier</span></tt> is trained using <em>bootstrap aggregation</em>, where
 each new tree is fit from a bootstrap sample of the training observations
-<img class="math" src="../../_images/math/b5c431d1ae18b076ecc008f3084eb2b02591b5e9.png" alt="z_i = (x_i, y_i)"/>. The <em>out-of-bag</em> (OOB) error is the average error for
-each <img class="math" src="../../_images/math/0c9b8c78a7a049eca8f2168d0691afc6a65a9dad.png" alt="z_i"/> calculated using predictions from the trees that do not
-contain <img class="math" src="../../_images/math/0c9b8c78a7a049eca8f2168d0691afc6a65a9dad.png" alt="z_i"/> in their respective bootstrap sample. This allows the
+<span class="math">z_i = (x_i, y_i)</span>. The <em>out-of-bag</em> (OOB) error is the average error for
+each <span class="math">z_i</span> calculated using predictions from the trees that do not
+contain <span class="math">z_i</span> in their respective bootstrap sample. This allows the
 <tt class="docutils literal"><span class="pre">RandomForestClassifier</span></tt> to be fit and validated whilst being trained [1].</p>
 <p>The example below demonstrates how the OOB error can be measured at the
 addition of each new tree during training. The resulting plot allows a
@@ -253,8 +254,8 @@ Learning Ed. 2&#8221;, p592-593, Springer, 2009.</td></tr>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  20.77 seconds
-( 0 minutes  20.77 seconds)</p>
+<p><strong>Total running time of the example:</strong>  12.81 seconds
+( 0 minutes  12.81 seconds)</p>
 </div>
 
 
@@ -272,7 +273,7 @@ Learning Ed. 2&#8221;, p592-593, Springer, 2009.</td></tr>
      <div class="rel">
     
     <div class="buttonPrevious">
-      <a href="plot_partial_dependence.html">Previous
+      <a href="plot_gradient_boosting_regularization.html">Previous
       </a>
     </div>
     

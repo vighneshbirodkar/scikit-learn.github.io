@@ -73,16 +73,17 @@
                  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-            <li class="link-title">Scikit-learn 0.17 (development)</li>
+            <li class="link-title">Scikit-learn 0.18 (development)</li>
             <li><a href="../tutorial/index.html">Tutorials</a></li>
             <li><a href="../user_guide.html">User guide</a></li>
             <li><a href="classes.html">API</a></li>
             <li><a href="../faq.html">FAQ</a></li>
-            <li><a href="../developers.html">Contributing</a></li>
+            <li><a href="../developers/contributing.html">Contributing</a></li>
             <li class="divider"></li>
-                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.16.1 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.17 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/0.16/documentation.html">Scikit-learn 0.16</a></li>
                 <li><a href="http://scikit-learn.org/0.15/documentation.html">Scikit-learn 0.15</a></li>
-				<li><a href="../_downloads/user_guide.pdf">PDF documentation</a></li>
+				<li><a href="../_downloads/scikit-learn-docs.pdf">PDF documentation</a></li>
               </ul>
             </div>
         </li>
@@ -117,7 +118,7 @@
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        1.15. Isotoni...
+        1.15. Isotonic r...
         </span>
             <span class="hiddenrellink">
             1.15. Isotonic regression
@@ -134,7 +135,7 @@
         Up
         <br/>
         <span class="smallrellink">
-        1. Supervised...
+        1. Supervised le...
         </span>
             <span class="hiddenrellink">
             1. Supervised learning
@@ -282,10 +283,10 @@ intrinsic limitation of sigmoid calibration, whose parametric form assumes a
 sigmoid rather than a transposed-sigmoid curve. The non-parametric isotonic
 calibration model, however, makes no such strong assumptions and can deal with
 either shape, provided that there is sufficient calibration data. In general,
-sigmoid calibration is preferable if the calibration curve is sigmoid and when
-there is few calibration data while isotonic calibration is preferable for non-
-sigmoid calibration curves and in situations where many additional data can be
-used for calibration.</p>
+sigmoid calibration is preferable in cases where the calibration curve is sigmoid
+and where there is limited calibration data, while isotonic calibration is
+preferable for non-sigmoid calibration curves and in situations where large
+amounts of data are available for calibration.</p>
 <p><a class="reference internal" href="generated/sklearn.calibration.CalibratedClassifierCV.html#sklearn.calibration.CalibratedClassifierCV" title="sklearn.calibration.CalibratedClassifierCV"><tt class="xref py py-class docutils literal"><span class="pre">CalibratedClassifierCV</span></tt></a> can also deal with classification tasks that
 involve more than two classes if the base estimator can do so. In this case,
 the classifier is calibrated first for each class separately in an one-vs-rest

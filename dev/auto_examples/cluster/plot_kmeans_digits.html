@@ -36,7 +36,7 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="scikit-learn 0.18.dev0 documentation" href="../../index.html" />
     <link rel="up" title="Examples" href="../index.html" />
-    <link rel="next" title="Comparing different clustering algorithms on toy datasets" href="plot_cluster_comparison.html" />
+    <link rel="next" title="Adjustment for chance in clustering performance evaluation" href="plot_adjusted_for_chance_measures.html" />
     <link rel="prev" title="Empirical evaluation of the impact of k-means initialization" href="plot_kmeans_stability_low_dim_dense.html" />
   
   
@@ -73,16 +73,17 @@
                  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-            <li class="link-title">Scikit-learn 0.17 (development)</li>
+            <li class="link-title">Scikit-learn 0.18 (development)</li>
             <li><a href="../../tutorial/index.html">Tutorials</a></li>
             <li><a href="../../user_guide.html">User guide</a></li>
             <li><a href="../../modules/classes.html">API</a></li>
             <li><a href="../../faq.html">FAQ</a></li>
-            <li><a href="../../developers.html">Contributing</a></li>
+            <li><a href="../../developers/contributing.html">Contributing</a></li>
             <li class="divider"></li>
-                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.16.1 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.17 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/0.16/documentation.html">Scikit-learn 0.16</a></li>
                 <li><a href="http://scikit-learn.org/0.15/documentation.html">Scikit-learn 0.15</a></li>
-				<li><a href="../../_downloads/user_guide.pdf">PDF documentation</a></li>
+				<li><a href="../../_downloads/scikit-learn-docs.pdf">PDF documentation</a></li>
               </ul>
             </div>
         </li>
@@ -117,7 +118,7 @@
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        Empirical eva...
+        Empirical evalua...
         </span>
             <span class="hiddenrellink">
             Empirical evaluation of the impact of k-means initialization
@@ -210,9 +211,9 @@ definitions and discussions of the metrics):</p>
 <div class="highlight-python"><div class="highlight"><pre>n_digits: 10,    n_samples 1797,         n_features 64
 _______________________________________________________________________________
 init    time  inertia    homo   compl  v-meas     ARI AMI  silhouette
-k-means++   1.30s    69432   0.602   0.650   0.625   0.465   0.598    0.146
-   random   1.13s    69694   0.669   0.710   0.689   0.553   0.666    0.147
-PCA-based   0.09s    71820   0.673   0.715   0.693   0.567   0.670    0.150
+k-means++   0.53s    69432   0.602   0.650   0.625   0.465   0.598    0.146
+   random   0.49s    69694   0.669   0.710   0.689   0.553   0.666    0.147
+PCA-based   0.04s    71820   0.673   0.715   0.693   0.567   0.670    0.150
 _______________________________________________________________________________
 </pre></div>
 </div>
@@ -319,8 +320,8 @@ _______________________________________________________________________________
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  4.55 seconds
-( 0 minutes  4.55 seconds)</p>
+<p><strong>Total running time of the example:</strong>  1.90 seconds
+( 0 minutes  1.90 seconds)</p>
 </div>
 
 

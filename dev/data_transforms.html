@@ -37,7 +37,7 @@
     <link rel="top" title="scikit-learn 0.18.dev0 documentation" href="index.html" />
     <link rel="up" title="User Guide" href="user_guide.html" />
     <link rel="next" title="4.1. Pipeline and FeatureUnion: combining estimators" href="modules/pipeline.html" />
-    <link rel="prev" title="3.4. Model persistence" href="modules/model_persistence.html" />
+    <link rel="prev" title="3.5. Validation curves: plotting scores to evaluate models" href="modules/learning_curve.html" />
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -73,16 +73,17 @@
                  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-            <li class="link-title">Scikit-learn 0.17 (development)</li>
+            <li class="link-title">Scikit-learn 0.18 (development)</li>
             <li><a href="tutorial/index.html">Tutorials</a></li>
             <li><a href="user_guide.html">User guide</a></li>
             <li><a href="modules/classes.html">API</a></li>
             <li><a href="faq.html">FAQ</a></li>
-            <li><a href="developers.html">Contributing</a></li>
+            <li><a href="developers/contributing.html">Contributing</a></li>
             <li class="divider"></li>
-                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.16.1 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.17 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/0.16/documentation.html">Scikit-learn 0.16</a></li>
                 <li><a href="http://scikit-learn.org/0.15/documentation.html">Scikit-learn 0.15</a></li>
-				<li><a href="_downloads/user_guide.pdf">PDF documentation</a></li>
+				<li><a href="_downloads/scikit-learn-docs.pdf">PDF documentation</a></li>
               </ul>
             </div>
         </li>
@@ -113,14 +114,14 @@
   <!-- rellinks[1:] is an ugly hack to avoid link to module
   index -->
         <div class="rellink">
-        <a href="modules/model_persistence.html"
+        <a href="modules/learning_curve.html"
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        3.4. Model pe...
+        3.5. Validation ...
         </span>
             <span class="hiddenrellink">
-            3.4. Model persistence
+            3.5. Validation curves: plotting scores to evaluate models
             </span>
         </a>
         </div>
@@ -205,7 +206,7 @@
 <a class="reference internal" href="modules/preprocessing.html#preprocessing"><em>Preprocessing data</em></a>), reduce (see <a class="reference internal" href="modules/unsupervised_reduction.html#data-reduction"><em>Unsupervised dimensionality reduction</em></a>), expand (see
 <a class="reference internal" href="modules/kernel_approximation.html#kernel-approximation"><em>Kernel Approximation</em></a>) or generate (see <a class="reference internal" href="modules/feature_extraction.html#feature-extraction"><em>Feature extraction</em></a>)
 feature representations.</p>
-<p>Like other estimators, these are represented by classes with <tt class="docutils literal"><span class="pre">fit</span></tt> method,
+<p>Like other estimators, these are represented by classes with a <tt class="docutils literal"><span class="pre">fit</span></tt> method,
 which learns model parameters (e.g. mean and standard deviation for
 normalization) from a training set, and a <tt class="docutils literal"><span class="pre">transform</span></tt> method which applies
 this transformation model to unseen data. <tt class="docutils literal"><span class="pre">fit_transform</span></tt> may be more
@@ -329,7 +330,7 @@ scikit-learn.</p>
      <div class="rel">
     
     <div class="buttonPrevious">
-      <a href="modules/model_persistence.html">Previous
+      <a href="modules/learning_curve.html">Previous
       </a>
     </div>
     

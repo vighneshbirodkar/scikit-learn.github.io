@@ -73,16 +73,17 @@
                  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-            <li class="link-title">Scikit-learn 0.17 (development)</li>
+            <li class="link-title">Scikit-learn 0.18 (development)</li>
             <li><a href="../../tutorial/index.html">Tutorials</a></li>
             <li><a href="../../user_guide.html">User guide</a></li>
             <li><a href="../../modules/classes.html">API</a></li>
             <li><a href="../../faq.html">FAQ</a></li>
-            <li><a href="../../developers.html">Contributing</a></li>
+            <li><a href="../../developers/contributing.html">Contributing</a></li>
             <li class="divider"></li>
-                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.16.1 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.17 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/0.16/documentation.html">Scikit-learn 0.16</a></li>
                 <li><a href="http://scikit-learn.org/0.15/documentation.html">Scikit-learn 0.15</a></li>
-				<li><a href="../../_downloads/user_guide.pdf">PDF documentation</a></li>
+				<li><a href="../../_downloads/scikit-learn-docs.pdf">PDF documentation</a></li>
               </ul>
             </div>
         </li>
@@ -117,7 +118,7 @@
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        Comparison of...
+        Comparison of Ma...
         </span>
             <span class="hiddenrellink">
             Comparison of Manifold Learning methods
@@ -186,14 +187,14 @@ that of representing a flat map of the Earth, as with
 <a class="reference external" href="http://en.wikipedia.org/wiki/Map_projection">map projection</a></p>
 <img alt="../../_images/plot_manifold_sphere_001.png" class="align-center" src="../../_images/plot_manifold_sphere_001.png" />
 <p><strong>Script output</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>standard: 0.13 sec
-ltsa: 0.26 sec
-hessian: 0.34 sec
-modified: 0.28 sec
-ISO: 0.46 sec
-MDS: 11 sec
-Spectral Embedding: 0.56 sec
-t-SNE: 5 sec
+<div class="highlight-python"><div class="highlight"><pre>standard: 0.097 sec
+ltsa: 0.24 sec
+hessian: 0.28 sec
+modified: 0.23 sec
+ISO: 0.28 sec
+MDS: 1.5 sec
+Spectral Embedding: 0.23 sec
+t-SNE: 2.6 sec
 </pre></div>
 </div>
 <p><strong>Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_manifold_sphere.py"><tt class="xref download docutils literal"><span class="pre">plot_manifold_sphere.py</span></tt></a></p>
@@ -273,7 +274,7 @@ t-SNE: 5 sec
 <span class="k">print</span><span class="p">(</span><span class="s">&quot;</span><span class="si">%s</span><span class="s">: </span><span class="si">%.2g</span><span class="s"> sec&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="s">&#39;ISO&#39;</span><span class="p">,</span> <span class="n">t1</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
 
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">257</span><span class="p">)</span>
-<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.scatter"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span></a><span class="p">(</span><span class="n">trans_data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">trans_data</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>  <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">rainbow</span><span class="p">)</span>
+<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.scatter"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span></a><span class="p">(</span><span class="n">trans_data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">trans_data</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">rainbow</span><span class="p">)</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.title"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span><span class="s">&quot;</span><span class="si">%s</span><span class="s"> (</span><span class="si">%.2g</span><span class="s"> sec)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="s">&#39;Isomap&#39;</span><span class="p">,</span> <span class="n">t1</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><a href="http://matplotlib.org/api/ticker_api.html#matplotlib.ticker.NullFormatter"><span class="n">NullFormatter</span></a><span class="p">())</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><a href="http://matplotlib.org/api/ticker_api.html#matplotlib.ticker.NullFormatter"><span class="n">NullFormatter</span></a><span class="p">())</span>
@@ -287,7 +288,7 @@ t-SNE: 5 sec
 <span class="k">print</span><span class="p">(</span><span class="s">&quot;MDS: </span><span class="si">%.2g</span><span class="s"> sec&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">t1</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
 
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">258</span><span class="p">)</span>
-<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.scatter"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span></a><span class="p">(</span><span class="n">trans_data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">trans_data</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>  <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">rainbow</span><span class="p">)</span>
+<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.scatter"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span></a><span class="p">(</span><span class="n">trans_data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">trans_data</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">rainbow</span><span class="p">)</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.title"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span><span class="s">&quot;MDS (</span><span class="si">%.2g</span><span class="s"> sec)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">t1</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><a href="http://matplotlib.org/api/ticker_api.html#matplotlib.ticker.NullFormatter"><span class="n">NullFormatter</span></a><span class="p">())</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><a href="http://matplotlib.org/api/ticker_api.html#matplotlib.ticker.NullFormatter"><span class="n">NullFormatter</span></a><span class="p">())</span>
@@ -302,7 +303,7 @@ t-SNE: 5 sec
 <span class="k">print</span><span class="p">(</span><span class="s">&quot;Spectral Embedding: </span><span class="si">%.2g</span><span class="s"> sec&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">t1</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
 
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">259</span><span class="p">)</span>
-<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.scatter"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span></a><span class="p">(</span><span class="n">trans_data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">trans_data</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>  <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">rainbow</span><span class="p">)</span>
+<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.scatter"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span></a><span class="p">(</span><span class="n">trans_data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">trans_data</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">rainbow</span><span class="p">)</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.title"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span><span class="s">&quot;Spectral Embedding (</span><span class="si">%.2g</span><span class="s"> sec)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">t1</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><a href="http://matplotlib.org/api/ticker_api.html#matplotlib.ticker.NullFormatter"><span class="n">NullFormatter</span></a><span class="p">())</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><a href="http://matplotlib.org/api/ticker_api.html#matplotlib.ticker.NullFormatter"><span class="n">NullFormatter</span></a><span class="p">())</span>
@@ -315,8 +316,8 @@ t-SNE: 5 sec
 <span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
 <span class="k">print</span><span class="p">(</span><span class="s">&quot;t-SNE: </span><span class="si">%.2g</span><span class="s"> sec&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">t1</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
 
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">250</span><span class="p">)</span>
-<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.scatter"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span></a><span class="p">(</span><span class="n">trans_data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">trans_data</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>  <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">rainbow</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.scatter"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span></a><span class="p">(</span><span class="n">trans_data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">trans_data</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">rainbow</span><span class="p">)</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.title"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span><span class="s">&quot;t-SNE (</span><span class="si">%.2g</span><span class="s"> sec)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">t1</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><a href="http://matplotlib.org/api/ticker_api.html#matplotlib.ticker.NullFormatter"><span class="n">NullFormatter</span></a><span class="p">())</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><a href="http://matplotlib.org/api/ticker_api.html#matplotlib.ticker.NullFormatter"><span class="n">NullFormatter</span></a><span class="p">())</span>
@@ -325,8 +326,8 @@ t-SNE: 5 sec
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  18.87 seconds
-( 0 minutes  18.87 seconds)</p>
+<p><strong>Total running time of the example:</strong>  5.97 seconds
+( 0 minutes  5.97 seconds)</p>
 </div>
 
 

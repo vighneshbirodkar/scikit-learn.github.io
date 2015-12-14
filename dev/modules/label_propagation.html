@@ -73,16 +73,17 @@
                  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-            <li class="link-title">Scikit-learn 0.17 (development)</li>
+            <li class="link-title">Scikit-learn 0.18 (development)</li>
             <li><a href="../tutorial/index.html">Tutorials</a></li>
             <li><a href="../user_guide.html">User guide</a></li>
             <li><a href="classes.html">API</a></li>
             <li><a href="../faq.html">FAQ</a></li>
-            <li><a href="../developers.html">Contributing</a></li>
+            <li><a href="../developers/contributing.html">Contributing</a></li>
             <li class="divider"></li>
-                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.16.1 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.17 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/0.16/documentation.html">Scikit-learn 0.16</a></li>
                 <li><a href="http://scikit-learn.org/0.15/documentation.html">Scikit-learn 0.15</a></li>
-				<li><a href="../_downloads/user_guide.pdf">PDF documentation</a></li>
+				<li><a href="../_downloads/scikit-learn-docs.pdf">PDF documentation</a></li>
               </ul>
             </div>
         </li>
@@ -117,7 +118,7 @@
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        1.13. Feature...
+        1.13. Feature se...
         </span>
             <span class="hiddenrellink">
             1.13. Feature selection
@@ -134,7 +135,7 @@
         Up
         <br/>
         <span class="smallrellink">
-        1. Supervised...
+        1. Supervised le...
         </span>
             <span class="hiddenrellink">
             1. Supervised learning
@@ -181,7 +182,7 @@ labeled points and a large amount of unlabeled points.</p>
 <p class="topic-title first">Unlabeled entries in <cite>y</cite></p>
 <p>It is important to assign an identifier to unlabeled points along with the
 labeled data when training the model with the <tt class="docutils literal"><span class="pre">fit</span></tt> method. The identifier
-that this implementation uses is the integer value <img class="math" src="../_images/math/80d842c5b7aabdb4c23f00d2074915d876e294f2.png" alt="-1"/>.</p>
+that this implementation uses is the integer value <span class="math">-1</span>.</p>
 </div>
 <div class="section" id="label-propagation">
 <span id="id2"></span><h2>1.14.1. Label Propagation<a class="headerlink" href="#label-propagation" title="Permalink to this headline">¶</a></h2>
@@ -210,8 +211,8 @@ differ in modifications to the similarity matrix that graph and the
 clamping effect on the label distributions.
 Clamping allows the algorithm to change the weight of the true ground labeled
 data to some degree. The <a class="reference internal" href="generated/sklearn.semi_supervised.LabelPropagation.html#sklearn.semi_supervised.LabelPropagation" title="sklearn.semi_supervised.LabelPropagation"><tt class="xref py py-class docutils literal"><span class="pre">LabelPropagation</span></tt></a> algorithm performs hard
-clamping of input labels, which means <img class="math" src="../_images/math/e1414c9f072e8b0170686043af51c3fbf387615d.png" alt="\alpha=1"/>. This clamping factor
-can be relaxed, to say <img class="math" src="../_images/math/f3162c5a338569e895ef9e8200a5a69bef9c7dfa.png" alt="\alpha=0.8"/>, which means that we will always
+clamping of input labels, which means <span class="math">\alpha=1</span>. This clamping factor
+can be relaxed, to say <span class="math">\alpha=0.8</span>, which means that we will always
 retain 80 percent of our original label distribution, but the algorithm gets to
 change it&#8217;s confidence of the distribution within 20 percent.</p>
 <p><a class="reference internal" href="generated/sklearn.semi_supervised.LabelPropagation.html#sklearn.semi_supervised.LabelPropagation" title="sklearn.semi_supervised.LabelPropagation"><tt class="xref py py-class docutils literal"><span class="pre">LabelPropagation</span></tt></a> uses the raw similarity matrix constructed from
@@ -226,9 +227,9 @@ effects both scalability and performance of the algorithms. The following are
 available:</p>
 <blockquote>
 <div><ul class="simple">
-<li>rbf (<img class="math" src="../_images/math/3a493378cbeee98bb66506e788ef065d9efb3e9f.png" alt="\exp(-\gamma |x-y|^2), \gamma &gt; 0"/>). <img class="math" src="../_images/math/0ebb67342b546ca42a1c634b1ef03c893c4cdedb.png" alt="\gamma"/> is
+<li>rbf (<span class="math">\exp(-\gamma |x-y|^2), \gamma &gt; 0</span>). <span class="math">\gamma</span> is
 specified by keyword gamma.</li>
-<li>knn (<img class="math" src="../_images/math/eb5886b3cf7d30d33cf985cfa3cd865d2af3ca4b.png" alt="1[x' \in kNN(x)]"/>). <img class="math" src="../_images/math/e9203da50e1059455123460d4e716c9c7f440cc3.png" alt="k"/> is specified by keyword
+<li>knn (<span class="math">1[x' \in kNN(x)]</span>). <span class="math">k</span> is specified by keyword
 n_neighbors.</li>
 </ul>
 </div></blockquote>

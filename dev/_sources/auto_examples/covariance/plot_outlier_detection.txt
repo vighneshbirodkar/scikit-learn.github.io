@@ -59,6 +59,6 @@ fraction.
 .. literalinclude:: plot_outlier_detection.py
     :lines: 30-
 
-**Total running time of the example:**  46.15 seconds
-( 0 minutes  46.15 seconds)
+**Total running time of the example:**  18.22 seconds
+( 0 minutes  18.22 seconds)
     

@@ -73,16 +73,17 @@
                  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-            <li class="link-title">Scikit-learn 0.17 (development)</li>
+            <li class="link-title">Scikit-learn 0.18 (development)</li>
             <li><a href="../../tutorial/index.html">Tutorials</a></li>
             <li><a href="../../user_guide.html">User guide</a></li>
             <li><a href="../../modules/classes.html">API</a></li>
             <li><a href="../../faq.html">FAQ</a></li>
-            <li><a href="../../developers.html">Contributing</a></li>
+            <li><a href="../../developers/contributing.html">Contributing</a></li>
             <li class="divider"></li>
-                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.16.1 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.17 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/0.16/documentation.html">Scikit-learn 0.16</a></li>
                 <li><a href="http://scikit-learn.org/0.15/documentation.html">Scikit-learn 0.15</a></li>
-				<li><a href="../../_downloads/user_guide.pdf">PDF documentation</a></li>
+				<li><a href="../../_downloads/scikit-learn-docs.pdf">PDF documentation</a></li>
               </ul>
             </div>
         </li>
@@ -117,7 +118,7 @@
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        Species distr...
+        Species distribu...
         </span>
             <span class="hiddenrellink">
             Species distribution modeling
@@ -188,7 +189,7 @@ its fluctuations.</p>
 <div class="section" id="clustering">
 <h2>Clustering<a class="headerlink" href="#clustering" title="Permalink to this headline">¶</a></h2>
 <p>We use clustering to group together quotes that behave similarly. Here,
-amongst the <em class="xref std std-ref">various clustering techniques</em> available
+amongst the <a class="reference internal" href="../../modules/clustering.html#clustering"><em>various clustering techniques</em></a> available
 in the scikit-learn, we use <a class="reference internal" href="../../modules/clustering.html#affinity-propagation"><em>Affinity Propagation</em></a> as it does
 not enforce equal-size clusters, and it can choose automatically the
 number of clusters from the data.</p>
@@ -244,9 +245,12 @@ Cluster 12: Kraft Foods
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">finance</span>
+<span class="k">try</span><span class="p">:</span>
+     <span class="kn">from</span> <span class="nn">matplotlib.finance</span> <span class="kn">import</span> <span class="n">quotes_historical_yahoo_ochl</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+     <span class="c"># quotes_historical_yahoo_ochl was named quotes_historical_yahoo before matplotlib 1.4</span>
+     <span class="kn">from</span> <span class="nn">matplotlib.finance</span> <span class="kn">import</span> <span class="n">quotes_historical_yahoo</span> <span class="k">as</span> <span class="n">quotes_historical_yahoo_ochl</span>
 <span class="kn">from</span> <span class="nn">matplotlib.collections</span> <span class="kn">import</span> <a href="http://matplotlib.org/api/collections_api.html#matplotlib.collections.LineCollection"><span class="n">LineCollection</span></a>
-
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">cluster</span><span class="p">,</span> <span class="n">covariance</span><span class="p">,</span> <span class="n">manifold</span>
 
 <span class="c">###############################################################################</span>
@@ -322,7 +326,7 @@ Cluster 12: Kraft Foods
 
 <span class="n">symbols</span><span class="p">,</span> <span class="n">names</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy-1.6.0/reference/generated/numpy.array.html#numpy.array"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">symbol_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span><span class="o">.</span><span class="n">T</span>
 
-<span class="n">quotes</span> <span class="o">=</span> <span class="p">[</span><span class="n">finance</span><span class="o">.</span><span class="n">quotes_historical_yahoo</span><span class="p">(</span><span class="n">symbol</span><span class="p">,</span> <span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">,</span> <span class="n">asobject</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">quotes</span> <span class="o">=</span> <span class="p">[</span><span class="n">quotes_historical_yahoo_ochl</span><span class="p">(</span><span class="n">symbol</span><span class="p">,</span> <span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">,</span> <span class="n">asobject</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
           <span class="k">for</span> <span class="n">symbol</span> <span class="ow">in</span> <span class="n">symbols</span><span class="p">]</span>
 
 <span class="nb">open</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy-1.6.0/reference/generated/numpy.array.html#numpy.array"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a><span class="p">([</span><span class="n">q</span><span class="o">.</span><span class="n">open</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">quotes</span><span class="p">])</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
@@ -432,8 +436,8 @@ Cluster 12: Kraft Foods
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  9.02 seconds
-( 0 minutes  9.02 seconds)</p>
+<p><strong>Total running time of the example:</strong>  23.57 seconds
+( 0 minutes  23.57 seconds)</p>
 </div>
 </div>
 

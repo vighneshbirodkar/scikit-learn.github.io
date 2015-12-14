@@ -73,16 +73,17 @@
                  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-            <li class="link-title">Scikit-learn 0.17 (development)</li>
+            <li class="link-title">Scikit-learn 0.18 (development)</li>
             <li><a href="../tutorial/index.html">Tutorials</a></li>
             <li><a href="../user_guide.html">User guide</a></li>
             <li><a href="classes.html">API</a></li>
             <li><a href="../faq.html">FAQ</a></li>
-            <li><a href="../developers.html">Contributing</a></li>
+            <li><a href="../developers/contributing.html">Contributing</a></li>
             <li class="divider"></li>
-                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.16.1 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.17 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/0.16/documentation.html">Scikit-learn 0.16</a></li>
                 <li><a href="http://scikit-learn.org/0.15/documentation.html">Scikit-learn 0.15</a></li>
-				<li><a href="../_downloads/user_guide.pdf">PDF documentation</a></li>
+				<li><a href="../_downloads/scikit-learn-docs.pdf">PDF documentation</a></li>
               </ul>
             </div>
         </li>
@@ -117,7 +118,7 @@
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        6. Strategies...
+        6. Strategies to...
         </span>
             <span class="hiddenrellink">
             6. Strategies to scale computationally: bigger data
@@ -238,8 +239,8 @@ you an estimate of the order of magnitude of the prediction latency.</p>
 <div class="section" id="influence-of-the-number-of-features">
 <h3>7.1.2. Influence of the Number of Features<a class="headerlink" href="#influence-of-the-number-of-features" title="Permalink to this headline">¶</a></h3>
 <p>Obviously when the number of features increases so does the memory
-consumption of each example. Indeed, for a matrix of <img class="math" src="../_images/math/2de38926392ba23abeac75effc66c37a5f5be5fd.png" alt="M"/> instances
-with <img class="math" src="../_images/math/75e27f04188974063be3230dca208cd495b77ce1.png" alt="N"/> features, the space complexity is in <img class="math" src="../_images/math/9d35315304282a8e3aecf0ddd0425b046af4fef7.png" alt="O(NM)"/>.
+consumption of each example. Indeed, for a matrix of <span class="math">M</span> instances
+with <span class="math">N</span> features, the space complexity is in <span class="math">O(NM)</span>.
 From a computing perspective it also means that the number of basic operations
 (e.g., multiplications for vector-matrix products in linear models) increases
 too. Here is a graph of the evolution of the prediction latency with the

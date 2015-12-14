@@ -1038,31 +1038,6 @@ Examples concerning the :mod:`sklearn.cluster` module.
 
 .. raw:: html
 
-    <div class="thumbnailContainer" tooltip="This example is meant to illustrate situations where k-means will produce unintuitive and possi...">
-
-.. only:: html
-
-  .. figure:: cluster/images/thumb/plot_kmeans_assumptions.png
-    :target: ./cluster/plot_kmeans_assumptions.html
-
-    :ref:`example_cluster_plot_kmeans_assumptions.py`
-
-
-.. raw:: html
-
-    </div>
-
-
-
-.. toctree::
-   :hidden:
-
-   cluster/plot_kmeans_assumptions
-
-
-
-.. raw:: html
-
     <div class="thumbnailContainer" tooltip="Reference: Brendan J. Frey and Delbert Dueck, "Clustering by Passing Messages Between Data Poin...">
 
 .. only:: html
@@ -1083,6 +1058,31 @@ Examples concerning the :mod:`sklearn.cluster` module.
    :hidden:
 
    cluster/plot_affinity_propagation
+
+
+
+.. raw:: html
+
+    <div class="thumbnailContainer" tooltip="This example is meant to illustrate situations where k-means will produce unintuitive and possi...">
+
+.. only:: html
+
+  .. figure:: cluster/images/thumb/plot_kmeans_assumptions.png
+    :target: ./cluster/plot_kmeans_assumptions.html
+
+    :ref:`example_cluster_plot_kmeans_assumptions.py`
+
+
+.. raw:: html
+
+    </div>
+
+
+
+.. toctree::
+   :hidden:
+
+   cluster/plot_kmeans_assumptions
 
 
 
@@ -1238,31 +1238,6 @@ Examples concerning the :mod:`sklearn.cluster` module.
 
 .. raw:: html
 
-    <div class="thumbnailContainer" tooltip="In this example, an image with connected circles is generated and spectral clustering is used t...">
-
-.. only:: html
-
-  .. figure:: cluster/images/thumb/plot_segmentation_toy.png
-    :target: ./cluster/plot_segmentation_toy.html
-
-    :ref:`example_cluster_plot_segmentation_toy.py`
-
-
-.. raw:: html
-
-    </div>
-
-
-
-.. toctree::
-   :hidden:
-
-   cluster/plot_segmentation_toy
-
-
-
-.. raw:: html
-
     <div class="thumbnailContainer" tooltip="The plots display firstly what a K-means algorithm would yield using three clusters. It is then...">
 
 .. only:: html
@@ -1308,6 +1283,31 @@ Examples concerning the :mod:`sklearn.cluster` module.
    :hidden:
 
    cluster/plot_digits_linkage
+
+
+
+.. raw:: html
+
+    <div class="thumbnailContainer" tooltip="In this example, an image with connected circles is generated and spectral clustering is used t...">
+
+.. only:: html
+
+  .. figure:: cluster/images/thumb/plot_segmentation_toy.png
+    :target: ./cluster/plot_segmentation_toy.html
+
+    :ref:`example_cluster_plot_segmentation_toy.py`
+
+
+.. raw:: html
+
+    </div>
+
+
+
+.. toctree::
+   :hidden:
+
+   cluster/plot_segmentation_toy
 
 
 
@@ -1463,31 +1463,6 @@ Examples concerning the :mod:`sklearn.cluster` module.
 
 .. raw:: html
 
-    <div class="thumbnailContainer" tooltip="This example aims at showing characteristics of different clustering algorithms on datasets tha...">
-
-.. only:: html
-
-  .. figure:: cluster/images/thumb/plot_cluster_comparison.png
-    :target: ./cluster/plot_cluster_comparison.html
-
-    :ref:`example_cluster_plot_cluster_comparison.py`
-
-
-.. raw:: html
-
-    </div>
-
-
-
-.. toctree::
-   :hidden:
-
-   cluster/plot_cluster_comparison
-
-
-
-.. raw:: html
-
     <div class="thumbnailContainer" tooltip="The following plots demonstrate the impact of the number of clusters and number of samples on v...">
 
 .. only:: html
@@ -1508,6 +1483,31 @@ Examples concerning the :mod:`sklearn.cluster` module.
    :hidden:
 
    cluster/plot_adjusted_for_chance_measures
+
+
+
+.. raw:: html
+
+    <div class="thumbnailContainer" tooltip="This example aims at showing characteristics of different clustering algorithms on datasets tha...">
+
+.. only:: html
+
+  .. figure:: cluster/images/thumb/plot_cluster_comparison.png
+    :target: ./cluster/plot_cluster_comparison.html
+
+    :ref:`example_cluster_plot_cluster_comparison.py`
+
+
+.. raw:: html
+
+    </div>
+
+
+
+.. toctree::
+   :hidden:
+
+   cluster/plot_cluster_comparison
 
 
 
@@ -2370,31 +2370,6 @@ Examples concerning the :mod:`sklearn.ensemble` module.
 
 .. raw:: html
 
-    <div class="thumbnailContainer" tooltip="Partial dependence plots show the dependence between the target function [1]_ and a set of 'tar...">
-
-.. only:: html
-
-  .. figure:: ensemble/images/thumb/plot_partial_dependence.png
-    :target: ./ensemble/plot_partial_dependence.html
-
-    :ref:`example_ensemble_plot_partial_dependence.py`
-
-
-.. raw:: html
-
-    </div>
-
-
-
-.. toctree::
-   :hidden:
-
-   ensemble/plot_partial_dependence
-
-
-
-.. raw:: html
-
     <div class="thumbnailContainer" tooltip="The ``RandomForestClassifier`` is trained using *bootstrap aggregation*, where each new tree is...">
 
 .. only:: html
@@ -2465,6 +2440,31 @@ Examples concerning the :mod:`sklearn.ensemble` module.
    :hidden:
 
    ensemble/plot_gradient_boosting_quantile
+
+
+
+.. raw:: html
+
+    <div class="thumbnailContainer" tooltip="Partial dependence plots show the dependence between the target function [2]_ and a set of 'tar...">
+
+.. only:: html
+
+  .. figure:: ensemble/images/thumb/plot_partial_dependence.png
+    :target: ./ensemble/plot_partial_dependence.html
+
+    :ref:`example_ensemble_plot_partial_dependence.py`
+
+
+.. raw:: html
+
+    </div>
+
+
+
+.. toctree::
+   :hidden:
+
+   ensemble/plot_partial_dependence
 
 
 
@@ -3283,31 +3283,6 @@ Examples concerning the :mod:`sklearn.linear_model` module.
 
 .. raw:: html
 
-    <div class="thumbnailContainer" tooltip="Plot decision function of a weighted dataset, where the size of points is proportional to its w...">
-
-.. only:: html
-
-  .. figure:: linear_model/images/thumb/plot_sgd_weighted_samples.png
-    :target: ./linear_model/plot_sgd_weighted_samples.html
-
-    :ref:`example_linear_model_plot_sgd_weighted_samples.py`
-
-
-.. raw:: html
-
-    </div>
-
-
-
-.. toctree::
-   :hidden:
-
-   linear_model/plot_sgd_weighted_samples
-
-
-
-.. raw:: html
-
     <div class="thumbnailContainer" tooltip="Shows the effect of collinearity in the coefficients of an estimator.">
 
 .. only:: html
@@ -3333,14 +3308,14 @@ Examples concerning the :mod:`sklearn.linear_model` module.
 
 .. raw:: html
 
-    <div class="thumbnailContainer" tooltip="Computes path on IRIS dataset.">
+    <div class="thumbnailContainer" tooltip="Plot decision function of a weighted dataset, where the size of points is proportional to its w...">
 
 .. only:: html
 
-  .. figure:: linear_model/images/thumb/plot_logistic_path.png
-    :target: ./linear_model/plot_logistic_path.html
+  .. figure:: linear_model/images/thumb/plot_sgd_weighted_samples.png
+    :target: ./linear_model/plot_sgd_weighted_samples.html
 
-    :ref:`example_linear_model_plot_logistic_path.py`
+    :ref:`example_linear_model_plot_sgd_weighted_samples.py`
 
 
 .. raw:: html
@@ -3352,7 +3327,7 @@ Examples concerning the :mod:`sklearn.linear_model` module.
 .. toctree::
    :hidden:
 
-   linear_model/plot_logistic_path
+   linear_model/plot_sgd_weighted_samples
 
 
 
@@ -3383,14 +3358,14 @@ Examples concerning the :mod:`sklearn.linear_model` module.
 
 .. raw:: html
 
-    <div class="thumbnailContainer" tooltip="In this example we see how to robustly fit a linear model to faulty data using the RANSAC algor...">
+    <div class="thumbnailContainer" tooltip="Computes path on IRIS dataset.">
 
 .. only:: html
 
-  .. figure:: linear_model/images/thumb/plot_ransac.png
-    :target: ./linear_model/plot_ransac.html
+  .. figure:: linear_model/images/thumb/plot_logistic_path.png
+    :target: ./linear_model/plot_logistic_path.html
 
-    :ref:`example_linear_model_plot_ransac.py`
+    :ref:`example_linear_model_plot_logistic_path.py`
 
 
 .. raw:: html
@@ -3402,7 +3377,7 @@ Examples concerning the :mod:`sklearn.linear_model` module.
 .. toctree::
    :hidden:
 
-   linear_model/plot_ransac
+   linear_model/plot_logistic_path
 
 
 
@@ -3428,31 +3403,6 @@ Examples concerning the :mod:`sklearn.linear_model` module.
    :hidden:
 
    linear_model/plot_ols
-
-
-
-.. raw:: html
-
-    <div class="thumbnailContainer" tooltip="An example showing how different online solvers perform on the hand-written digits dataset.">
-
-.. only:: html
-
-  .. figure:: linear_model/images/thumb/plot_sgd_comparison.png
-    :target: ./linear_model/plot_sgd_comparison.html
-
-    :ref:`example_linear_model_plot_sgd_comparison.py`
-
-
-.. raw:: html
-
-    </div>
-
-
-
-.. toctree::
-   :hidden:
-
-   linear_model/plot_sgd_comparison
 
 
 
@@ -3503,6 +3453,56 @@ Examples concerning the :mod:`sklearn.linear_model` module.
    :hidden:
 
    linear_model/plot_polynomial_interpolation
+
+
+
+.. raw:: html
+
+    <div class="thumbnailContainer" tooltip="In this example we see how to robustly fit a linear model to faulty data using the RANSAC algor...">
+
+.. only:: html
+
+  .. figure:: linear_model/images/thumb/plot_ransac.png
+    :target: ./linear_model/plot_ransac.html
+
+    :ref:`example_linear_model_plot_ransac.py`
+
+
+.. raw:: html
+
+    </div>
+
+
+
+.. toctree::
+   :hidden:
+
+   linear_model/plot_ransac
+
+
+
+.. raw:: html
+
+    <div class="thumbnailContainer" tooltip="An example showing how different online solvers perform on the hand-written digits dataset.">
+
+.. only:: html
+
+  .. figure:: linear_model/images/thumb/plot_sgd_comparison.png
+    :target: ./linear_model/plot_sgd_comparison.html
+
+    :ref:`example_linear_model_plot_sgd_comparison.py`
+
+
+.. raw:: html
+
+    </div>
+
+
+
+.. toctree::
+   :hidden:
+
+   linear_model/plot_sgd_comparison
 
 
 
@@ -3628,6 +3628,31 @@ Examples concerning the :mod:`sklearn.linear_model` module.
    :hidden:
 
    linear_model/plot_ols_3d
+
+
+
+.. raw:: html
+
+    <div class="thumbnailContainer" tooltip="Plot decision surface of multinomial and One-vs-Rest Logistic Regression. The hyperplanes corre...">
+
+.. only:: html
+
+  .. figure:: linear_model/images/thumb/plot_logistic_multinomial.png
+    :target: ./linear_model/plot_logistic_multinomial.html
+
+    :ref:`example_linear_model_plot_logistic_multinomial.py`
+
+
+.. raw:: html
+
+    </div>
+
+
+
+.. toctree::
+   :hidden:
+
+   linear_model/plot_logistic_multinomial
 
 
 

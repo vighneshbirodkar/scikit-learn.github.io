@@ -73,16 +73,17 @@
                  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-            <li class="link-title">Scikit-learn 0.17 (development)</li>
+            <li class="link-title">Scikit-learn 0.18 (development)</li>
             <li><a href="../../tutorial/index.html">Tutorials</a></li>
             <li><a href="../../user_guide.html">User guide</a></li>
             <li><a href="../../modules/classes.html">API</a></li>
             <li><a href="../../faq.html">FAQ</a></li>
-            <li><a href="../../developers.html">Contributing</a></li>
+            <li><a href="../../developers/contributing.html">Contributing</a></li>
             <li class="divider"></li>
-                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.16.1 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.17 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/0.16/documentation.html">Scikit-learn 0.16</a></li>
                 <li><a href="http://scikit-learn.org/0.15/documentation.html">Scikit-learn 0.15</a></li>
-				<li><a href="../../_downloads/user_guide.pdf">PDF documentation</a></li>
+				<li><a href="../../_downloads/scikit-learn-docs.pdf">PDF documentation</a></li>
               </ul>
             </div>
         </li>
@@ -117,7 +118,7 @@
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        Multi-dimensi...
+        Multi-dimensiona...
         </span>
             <span class="hiddenrellink">
             Multi-dimensional scaling
@@ -180,14 +181,14 @@ manifold-learning algorithms, it does not seeks an isotropic
 representation of the data in the low-dimensional space.</p>
 <img alt="../../_images/plot_compare_methods_001.png" class="align-center" src="../../_images/plot_compare_methods_001.png" />
 <p><strong>Script output</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>standard: 0.19 sec
-ltsa: 0.44 sec
-hessian: 0.48 sec
-modified: 0.4 sec
-Isomap: 0.87 sec
-MDS: 23 sec
-SpectralEmbedding: 0.63 sec
-t-SNE: 8 sec
+<div class="highlight-python"><div class="highlight"><pre>standard: 0.13 sec
+ltsa: 0.42 sec
+hessian: 0.39 sec
+modified: 0.32 sec
+Isomap: 0.5 sec
+MDS: 3 sec
+SpectralEmbedding: 0.26 sec
+t-SNE: 3.9 sec
 </pre></div>
 </div>
 <p><strong>Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_compare_methods.py"><tt class="xref download docutils literal"><span class="pre">plot_compare_methods.py</span></tt></a></p>
@@ -285,7 +286,7 @@ t-SNE: 8 sec
 <span class="n">Y</span> <span class="o">=</span> <span class="n">tsne</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 <span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
 <span class="k">print</span><span class="p">(</span><span class="s">&quot;t-SNE: </span><span class="si">%.2g</span><span class="s"> sec&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">t1</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">250</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.scatter"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span></a><span class="p">(</span><span class="n">Y</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">Y</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Spectral</span><span class="p">)</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.title"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span><span class="s">&quot;t-SNE (</span><span class="si">%.2g</span><span class="s"> sec)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">t1</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><a href="http://matplotlib.org/api/ticker_api.html#matplotlib.ticker.NullFormatter"><span class="n">NullFormatter</span></a><span class="p">())</span>
@@ -295,8 +296,8 @@ t-SNE: 8 sec
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  35.23 seconds
-( 0 minutes  35.23 seconds)</p>
+<p><strong>Total running time of the example:</strong>  9.43 seconds
+( 0 minutes  9.43 seconds)</p>
 </div>
 
 

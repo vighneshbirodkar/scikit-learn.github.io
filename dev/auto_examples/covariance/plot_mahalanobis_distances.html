@@ -73,16 +73,17 @@
                  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-            <li class="link-title">Scikit-learn 0.17 (development)</li>
+            <li class="link-title">Scikit-learn 0.18 (development)</li>
             <li><a href="../../tutorial/index.html">Tutorials</a></li>
             <li><a href="../../user_guide.html">User guide</a></li>
             <li><a href="../../modules/classes.html">API</a></li>
             <li><a href="../../faq.html">FAQ</a></li>
-            <li><a href="../../developers.html">Contributing</a></li>
+            <li><a href="../../developers/contributing.html">Contributing</a></li>
             <li class="divider"></li>
-                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.16.1 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.17 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/0.16/documentation.html">Scikit-learn 0.16</a></li>
                 <li><a href="http://scikit-learn.org/0.15/documentation.html">Scikit-learn 0.15</a></li>
-				<li><a href="../../_downloads/user_guide.pdf">PDF documentation</a></li>
+				<li><a href="../../_downloads/scikit-learn-docs.pdf">PDF documentation</a></li>
               </ul>
             </div>
         </li>
@@ -117,7 +118,7 @@
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        Shrinkage cov...
+        Shrinkage covari...
         </span>
             <span class="hiddenrellink">
             Shrinkage covariance estimation: LedoitWolf vs OAS and max-likelihood
@@ -170,12 +171,12 @@
 <p>An example to show covariance estimation with the Mahalanobis
 distances on Gaussian distributed data.</p>
 <p>For Gaussian distributed data, the distance of an observation
-<img class="math" src="../../_images/math/33dfc32d00ebd5c5791c824010a155d9e5630b6f.png" alt="x_i"/> to the mode of the distribution can be computed using its
-Mahalanobis distance: <img class="math" src="../../_images/math/f2f07f15055990c760c0ab754000b97bed50c917.png" alt="d_{(\mu,\Sigma)}(x_i)^2 = (x_i -
-\mu)'\Sigma^{-1}(x_i - \mu)"/> where <img class="math" src="../../_images/math/126e84ba38f7dece5f0ad64e929b9588b20f6440.png" alt="\mu"/> and <img class="math" src="../../_images/math/19ac15bf260b22dcb61a1042c60259e4b0bfbd64.png" alt="\Sigma"/> are
+<span class="math">x_i</span> to the mode of the distribution can be computed using its
+Mahalanobis distance: <span class="math">d_{(\mu,\Sigma)}(x_i)^2 = (x_i -
+\mu)'\Sigma^{-1}(x_i - \mu)</span> where <span class="math">\mu</span> and <span class="math">\Sigma</span> are
 the location and the covariance of the underlying Gaussian
 distribution.</p>
-<p>In practice, <img class="math" src="../../_images/math/126e84ba38f7dece5f0ad64e929b9588b20f6440.png" alt="\mu"/> and <img class="math" src="../../_images/math/19ac15bf260b22dcb61a1042c60259e4b0bfbd64.png" alt="\Sigma"/> are replaced by some
+<p>In practice, <span class="math">\mu</span> and <span class="math">\Sigma</span> are replaced by some
 estimates.  The usual covariance maximum likelihood estimate is very
 sensitive to the presence of outliers in the data set and therefor,
 the corresponding Mahalanobis distances are. One would better have to
@@ -186,9 +187,9 @@ organisation of the observations.</p>
 <p>The Minimum Covariance Determinant estimator is a robust,
 high-breakdown point (i.e. it can be used to estimate the covariance
 matrix of highly contaminated datasets, up to
-<img class="math" src="../../_images/math/e3c673d681b61952ea1bd482aaef51fe9f7dcd21.png" alt="\frac{n_\text{samples}-n_\text{features}-1}{2}"/> outliers)
+<span class="math">\frac{n_\text{samples}-n_\text{features}-1}{2}</span> outliers)
 estimator of covariance. The idea is to find
-<img class="math" src="../../_images/math/a0911f10b2c581d0e1ef3237c082e1ca9a773b7c.png" alt="\frac{n_\text{samples}+n_\text{features}+1}{2}"/>
+<span class="math">\frac{n_\text{samples}+n_\text{features}+1}{2}</span>
 observations whose empirical covariance has the smallest determinant,
 yielding a &#8220;pure&#8221; subset of observations from which to compute
 standards estimates of location and covariance.</p>
@@ -304,8 +305,8 @@ of America, 17, 684-688.</dd>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  0.55 seconds
-( 0 minutes  0.55 seconds)</p>
+<p><strong>Total running time of the example:</strong>  0.28 seconds
+( 0 minutes  0.28 seconds)</p>
 </div>
 
 

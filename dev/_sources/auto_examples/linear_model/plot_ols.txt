@@ -27,7 +27,7 @@ calculated.
 
   Coefficients: 
    [ 938.23786125]
-  Residual sum of squares: 2548.07
+  Mean squared error: 2548.07
   Variance score: 0.47
 
 
@@ -37,6 +37,6 @@ calculated.
 .. literalinclude:: plot_ols.py
     :lines: 19-
 
-**Total running time of the example:**  0.10 seconds
-( 0 minutes  0.10 seconds)
+**Total running time of the example:**  0.09 seconds
+( 0 minutes  0.09 seconds)
     

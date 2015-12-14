@@ -73,16 +73,17 @@
                  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-            <li class="link-title">Scikit-learn 0.17 (development)</li>
+            <li class="link-title">Scikit-learn 0.18 (development)</li>
             <li><a href="../../tutorial/index.html">Tutorials</a></li>
             <li><a href="../../user_guide.html">User guide</a></li>
             <li><a href="../../modules/classes.html">API</a></li>
             <li><a href="../../faq.html">FAQ</a></li>
-            <li><a href="../../developers.html">Contributing</a></li>
+            <li><a href="../../developers/contributing.html">Contributing</a></li>
             <li class="divider"></li>
-                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.16.1 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.17 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/0.16/documentation.html">Scikit-learn 0.16</a></li>
                 <li><a href="http://scikit-learn.org/0.15/documentation.html">Scikit-learn 0.15</a></li>
-				<li><a href="../../_downloads/user_guide.pdf">PDF documentation</a></li>
+				<li><a href="../../_downloads/scikit-learn-docs.pdf">PDF documentation</a></li>
               </ul>
             </div>
         </li>
@@ -117,7 +118,7 @@
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        Explicit feat...
+        Explicit feature...
         </span>
             <span class="hiddenrellink">
             Explicit feature map approximation for RBF kernels
@@ -213,12 +214,13 @@ proportional to (n_samples * iterations).</p>
 <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
 <span class="n">dataset</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.fetch_20newsgroups.html#sklearn.datasets.fetch_20newsgroups"><span class="n">fetch_20newsgroups</span></a><span class="p">(</span><span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
                              <span class="n">remove</span><span class="o">=</span><span class="p">(</span><span class="s">&#39;headers&#39;</span><span class="p">,</span> <span class="s">&#39;footers&#39;</span><span class="p">,</span> <span class="s">&#39;quotes&#39;</span><span class="p">))</span>
-<span class="n">data_samples</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span>
+<span class="n">data_samples</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">[:</span><span class="n">n_samples</span><span class="p">]</span>
 <span class="k">print</span><span class="p">(</span><span class="s">&quot;done in </span><span class="si">%0.3f</span><span class="s">s.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
 
 <span class="c"># Use tf-idf features for NMF.</span>
 <span class="k">print</span><span class="p">(</span><span class="s">&quot;Extracting tf-idf features for NMF...&quot;</span><span class="p">)</span>
-<span class="n">tfidf_vectorizer</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn.feature_extraction.text.TfidfVectorizer"><span class="n">TfidfVectorizer</span></a><span class="p">(</span><span class="n">max_df</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">min_df</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="c">#max_features=n_features,</span>
+<span class="n">tfidf_vectorizer</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn.feature_extraction.text.TfidfVectorizer"><span class="n">TfidfVectorizer</span></a><span class="p">(</span><span class="n">max_df</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">min_df</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                                   <span class="n">max_features</span><span class="o">=</span><span class="n">n_features</span><span class="p">,</span>
                                    <span class="n">stop_words</span><span class="o">=</span><span class="s">&#39;english&#39;</span><span class="p">)</span>
 <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
 <span class="n">tfidf</span> <span class="o">=</span> <span class="n">tfidf_vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data_samples</span><span class="p">)</span>
@@ -226,29 +228,32 @@ proportional to (n_samples * iterations).</p>
 
 <span class="c"># Use tf (raw term count) features for LDA.</span>
 <span class="k">print</span><span class="p">(</span><span class="s">&quot;Extracting tf features for LDA...&quot;</span><span class="p">)</span>
-<span class="n">tf_vectorizer</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#sklearn.feature_extraction.text.CountVectorizer"><span class="n">CountVectorizer</span></a><span class="p">(</span><span class="n">max_df</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">min_df</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">max_features</span><span class="o">=</span><span class="n">n_features</span><span class="p">,</span>
+<span class="n">tf_vectorizer</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#sklearn.feature_extraction.text.CountVectorizer"><span class="n">CountVectorizer</span></a><span class="p">(</span><span class="n">max_df</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">min_df</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                                <span class="n">max_features</span><span class="o">=</span><span class="n">n_features</span><span class="p">,</span>
                                 <span class="n">stop_words</span><span class="o">=</span><span class="s">&#39;english&#39;</span><span class="p">)</span>
 <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
 <span class="n">tf</span> <span class="o">=</span> <span class="n">tf_vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data_samples</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">&quot;done in </span><span class="si">%0.3f</span><span class="s">s.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
 
 <span class="c"># Fit the NMF model</span>
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;Fitting the NMF model with tf-idf features,&quot;</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Fitting the NMF model with tf-idf features, &quot;</span>
       <span class="s">&quot;n_samples=</span><span class="si">%d</span><span class="s"> and n_features=</span><span class="si">%d</span><span class="s">...&quot;</span>
       <span class="o">%</span> <span class="p">(</span><span class="n">n_samples</span><span class="p">,</span> <span class="n">n_features</span><span class="p">))</span>
 <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
-<span class="n">nmf</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.decomposition.NMF.html#sklearn.decomposition.NMF"><span class="n">NMF</span></a><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">n_topics</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">1</span><span class="p">,</span> <span class="n">l1_ratio</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">tfidf</span><span class="p">)</span>
-<span class="nb">exit</span><span class="p">()</span>
+<span class="n">nmf</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.decomposition.NMF.html#sklearn.decomposition.NMF"><span class="n">NMF</span></a><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">n_topics</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+          <span class="n">alpha</span><span class="o">=.</span><span class="mi">1</span><span class="p">,</span> <span class="n">l1_ratio</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">tfidf</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">&quot;done in </span><span class="si">%0.3f</span><span class="s">s.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Topics in NMF model:&quot;</span><span class="p">)</span>
 <span class="n">tfidf_feature_names</span> <span class="o">=</span> <span class="n">tfidf_vectorizer</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">()</span>
 <span class="n">print_top_words</span><span class="p">(</span><span class="n">nmf</span><span class="p">,</span> <span class="n">tfidf_feature_names</span><span class="p">,</span> <span class="n">n_top_words</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;Fitting LDA models with tf features, n_samples=</span><span class="si">%d</span><span class="s"> and n_features=</span><span class="si">%d</span><span class="s">...&quot;</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Fitting LDA models with tf features, &quot;</span>
+      <span class="s">&quot;n_samples=</span><span class="si">%d</span><span class="s"> and n_features=</span><span class="si">%d</span><span class="s">...&quot;</span>
       <span class="o">%</span> <span class="p">(</span><span class="n">n_samples</span><span class="p">,</span> <span class="n">n_features</span><span class="p">))</span>
 <span class="n">lda</span> <span class="o">=</span> <span class="n">LatentDirichletAllocation</span><span class="p">(</span><span class="n">n_topics</span><span class="o">=</span><span class="n">n_topics</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
-                                <span class="n">learning_method</span><span class="o">=</span><span class="s">&#39;online&#39;</span><span class="p">,</span> <span class="n">learning_offset</span><span class="o">=</span><span class="mf">50.</span><span class="p">,</span>
+                                <span class="n">learning_method</span><span class="o">=</span><span class="s">&#39;online&#39;</span><span class="p">,</span>
+                                <span class="n">learning_offset</span><span class="o">=</span><span class="mf">50.</span><span class="p">,</span>
                                 <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
 <span class="n">lda</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">tf</span><span class="p">)</span>

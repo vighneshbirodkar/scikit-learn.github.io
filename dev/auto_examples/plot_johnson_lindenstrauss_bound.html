@@ -73,16 +73,17 @@
                  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-            <li class="link-title">Scikit-learn 0.17 (development)</li>
+            <li class="link-title">Scikit-learn 0.18 (development)</li>
             <li><a href="../tutorial/index.html">Tutorials</a></li>
             <li><a href="../user_guide.html">User guide</a></li>
             <li><a href="../modules/classes.html">API</a></li>
             <li><a href="../faq.html">FAQ</a></li>
-            <li><a href="../developers.html">Contributing</a></li>
+            <li><a href="../developers/contributing.html">Contributing</a></li>
             <li class="divider"></li>
-                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.16.1 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.17 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/0.16/documentation.html">Scikit-learn 0.16</a></li>
                 <li><a href="http://scikit-learn.org/0.15/documentation.html">Scikit-learn 0.15</a></li>
-				<li><a href="../_downloads/user_guide.pdf">PDF documentation</a></li>
+				<li><a href="../_downloads/scikit-learn-docs.pdf">PDF documentation</a></li>
               </ul>
             </div>
         </li>
@@ -117,7 +118,7 @@
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        Face completi...
+        Face completion ...
         </span>
             <span class="hiddenrellink">
             Face completion with a multi-output estimators
@@ -181,14 +182,14 @@ space while controlling the distortion in the pairwise distances.</p>
 the fact that <cite>p</cite> is defining an eps-embedding with good probability
 as defined by:</p>
 <div class="math">
-<p><img src="../_images/math/89dae7627a99d599a94ac757eb45c31b8597f493.png" alt="(1 - eps) \|u - v\|^2 &lt; \|p(u) - p(v)\|^2 &lt; (1 + eps) \|u - v\|^2"/></p>
+<p><span class="math">(1 - eps) \|u - v\|^2 &lt; \|p(u) - p(v)\|^2 &lt; (1 + eps) \|u - v\|^2</span></p>
 </div><p>Where u and v are any rows taken from a dataset of shape [n_samples,
 n_features] and p is a projection by a random Gaussian N(0, 1) matrix
 with shape [n_components, n_features] (or a sparse Achlioptas matrix).</p>
 <p>The minimum number of components to guarantees the eps-embedding is
 given by:</p>
 <div class="math">
-<p><img src="../_images/math/8e616d45ff825ef696e70ed1394729f97dc155d3.png" alt="n\_components &gt;= 4 log(n\_samples) / (eps^2 / 2 - eps^3 / 3)"/></p>
+<p><span class="math">n\_components &gt;= 4 log(n\_samples) / (eps^2 / 2 - eps^3 / 3)</span></p>
 </div><p>The first plot shows that with an increasing number of samples <tt class="docutils literal"><span class="pre">n_samples</span></tt>,
 the minimal number of dimensions <tt class="docutils literal"><span class="pre">n_components</span></tt> increased logarithmically
 in order to guarantee an <tt class="docutils literal"><span class="pre">eps</span></tt>-embedding.</p>
@@ -254,15 +255,15 @@ from 56436 down to 10000 while reasonably preserving pairwise distances.</p>
 </ul>
 <p><strong>Script output</strong>:</p>
 <div class="highlight-python"><div class="highlight"><pre>Embedding 500 samples with dim 64 using various random projections
-Projected 500 samples from 64 to 300 in 0.009s
+Projected 500 samples from 64 to 300 in 0.006s
 Random matrix with size: 0.029MB
-Mean distances rate: 1.03 (0.09)
-Projected 500 samples from 64 to 1000 in 0.024s
-Random matrix with size: 0.096MB
-Mean distances rate: 1.00 (0.04)
-Projected 500 samples from 64 to 10000 in 0.249s
-Random matrix with size: 0.960MB
-Mean distances rate: 1.01 (0.01)
+Mean distances rate: 0.99 (0.08)
+Projected 500 samples from 64 to 1000 in 0.014s
+Random matrix with size: 0.095MB
+Mean distances rate: 0.97 (0.05)
+Projected 500 samples from 64 to 10000 in 0.136s
+Random matrix with size: 0.956MB
+Mean distances rate: 1.00 (0.01)
 </pre></div>
 </div>
 <p><strong>Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_johnson_lindenstrauss_bound.py"><tt class="xref download docutils literal"><span class="pre">plot_johnson_lindenstrauss_bound.py</span></tt></a></p>
@@ -376,8 +377,8 @@ Mean distances rate: 1.01 (0.01)
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  9.80 seconds
-( 0 minutes  9.80 seconds)</p>
+<p><strong>Total running time of the example:</strong>  10.68 seconds
+( 0 minutes  10.68 seconds)</p>
 </div>
 </div>
 

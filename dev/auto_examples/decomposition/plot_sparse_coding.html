@@ -73,16 +73,17 @@
                  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-            <li class="link-title">Scikit-learn 0.17 (development)</li>
+            <li class="link-title">Scikit-learn 0.18 (development)</li>
             <li><a href="../../tutorial/index.html">Tutorials</a></li>
             <li><a href="../../user_guide.html">User guide</a></li>
             <li><a href="../../modules/classes.html">API</a></li>
             <li><a href="../../faq.html">FAQ</a></li>
-            <li><a href="../../developers.html">Contributing</a></li>
+            <li><a href="../../developers/contributing.html">Contributing</a></li>
             <li class="divider"></li>
-                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.16.1 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.17 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/0.16/documentation.html">Scikit-learn 0.16</a></li>
                 <li><a href="http://scikit-learn.org/0.15/documentation.html">Scikit-learn 0.15</a></li>
-				<li><a href="../../_downloads/user_guide.pdf">PDF documentation</a></li>
+				<li><a href="../../_downloads/scikit-learn-docs.pdf">PDF documentation</a></li>
               </ul>
             </div>
         </li>
@@ -117,7 +118,7 @@
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        FastICA on 2D...
+        FastICA on 2D po...
         </span>
             <span class="hiddenrellink">
             FastICA on 2D point clouds
@@ -239,7 +240,7 @@ is performed in order to stay on the same order of magnitude.</p>
     <span class="k">for</span> <span class="n">title</span><span class="p">,</span> <span class="n">algo</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">n_nonzero</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">estimators</span><span class="p">:</span>
         <span class="n">coder</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.decomposition.SparseCoder.html#sklearn.decomposition.SparseCoder"><span class="n">SparseCoder</span></a><span class="p">(</span><span class="n">dictionary</span><span class="o">=</span><span class="n">D</span><span class="p">,</span> <span class="n">transform_n_nonzero_coefs</span><span class="o">=</span><span class="n">n_nonzero</span><span class="p">,</span>
                             <span class="n">transform_alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">transform_algorithm</span><span class="o">=</span><span class="n">algo</span><span class="p">)</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">coder</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">coder</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
         <span class="n">density</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><a href="http://docs.scipy.org/doc/numpy-1.6.0/reference/generated/numpy.flatnonzero.html#numpy.flatnonzero"><span class="n">np</span><span class="o">.</span><span class="n">flatnonzero</span></a><span class="p">(</span><span class="n">x</span><span class="p">))</span>
         <span class="n">x</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy-1.6.0/reference/generated/numpy.ravel.html#numpy.ravel"><span class="n">np</span><span class="o">.</span><span class="n">ravel</span></a><span class="p">(</span><a href="http://docs.scipy.org/doc/numpy-1.6.0/reference/generated/numpy.dot.html#numpy.dot"><span class="n">np</span><span class="o">.</span><span class="n">dot</span></a><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">D</span><span class="p">))</span>
         <span class="n">squared_error</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy-1.6.0/reference/generated/numpy.sum.html#numpy.sum"><span class="n">np</span><span class="o">.</span><span class="n">sum</span></a><span class="p">((</span><span class="n">y</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
@@ -250,7 +251,7 @@ is performed in order to stay on the same order of magnitude.</p>
     <span class="c"># Soft thresholding debiasing</span>
     <span class="n">coder</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.decomposition.SparseCoder.html#sklearn.decomposition.SparseCoder"><span class="n">SparseCoder</span></a><span class="p">(</span><span class="n">dictionary</span><span class="o">=</span><span class="n">D</span><span class="p">,</span> <span class="n">transform_algorithm</span><span class="o">=</span><span class="s">&#39;threshold&#39;</span><span class="p">,</span>
                         <span class="n">transform_alpha</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">coder</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">coder</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
     <span class="n">_</span><span class="p">,</span> <span class="n">idx</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy-1.6.0/reference/generated/numpy.where.html#numpy.where"><span class="n">np</span><span class="o">.</span><span class="n">where</span></a><span class="p">(</span><span class="n">x</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
     <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">idx</span><span class="p">],</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">D</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
     <span class="n">x</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy-1.6.0/reference/generated/numpy.ravel.html#numpy.ravel"><span class="n">np</span><span class="o">.</span><span class="n">ravel</span></a><span class="p">(</span><a href="http://docs.scipy.org/doc/numpy-1.6.0/reference/generated/numpy.dot.html#numpy.dot"><span class="n">np</span><span class="o">.</span><span class="n">dot</span></a><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">D</span><span class="p">))</span>
@@ -264,8 +265,8 @@ is performed in order to stay on the same order of magnitude.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  0.71 seconds
-( 0 minutes  0.71 seconds)</p>
+<p><strong>Total running time of the example:</strong>  0.87 seconds
+( 0 minutes  0.87 seconds)</p>
 </div>
 
 

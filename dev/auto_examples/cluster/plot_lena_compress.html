@@ -73,16 +73,17 @@
                  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-            <li class="link-title">Scikit-learn 0.17 (development)</li>
+            <li class="link-title">Scikit-learn 0.18 (development)</li>
             <li><a href="../../tutorial/index.html">Tutorials</a></li>
             <li><a href="../../user_guide.html">User guide</a></li>
             <li><a href="../../modules/classes.html">API</a></li>
             <li><a href="../../faq.html">FAQ</a></li>
-            <li><a href="../../developers.html">Contributing</a></li>
+            <li><a href="../../developers/contributing.html">Contributing</a></li>
             <li class="divider"></li>
-                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.16.1 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.17 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/0.16/documentation.html">Scikit-learn 0.16</a></li>
                 <li><a href="http://scikit-learn.org/0.15/documentation.html">Scikit-learn 0.15</a></li>
-				<li><a href="../../_downloads/user_guide.pdf">PDF documentation</a></li>
+				<li><a href="../../_downloads/scikit-learn-docs.pdf">PDF documentation</a></li>
               </ul>
             </div>
         </li>
@@ -117,7 +118,7 @@
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        Online learni...
+        Online learning ...
         </span>
             <span class="hiddenrellink">
             Online learning of a dictionary of parts of faces
@@ -202,7 +203,7 @@ how <cite>k</cite>-means is used for vector quantization.</p>
 <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
     <span class="c"># Newer versions of scipy have lena in misc</span>
     <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">misc</span>
-    <span class="n">lena</span> <span class="o">=</span> <span class="n">misc</span><span class="o">.</span><span class="n">lena</span><span class="p">()</span>
+    <span class="n">lena</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/scipy-0.11.0/reference/generated/scipy.misc.lena.html#scipy.misc.lena"><span class="n">misc</span><span class="o">.</span><span class="n">lena</span></a><span class="p">()</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">lena</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>  <span class="c"># We need an (n_sample, n_feature) array</span>
 <span class="n">k_means</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans"><span class="n">cluster</span><span class="o">.</span><span class="n">KMeans</span></a><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">n_clusters</span><span class="p">,</span> <span class="n">n_init</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">k_means</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
@@ -250,8 +251,8 @@ how <cite>k</cite>-means is used for vector quantization.</p>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  3.92 seconds
-( 0 minutes  3.92 seconds)</p>
+<p><strong>Total running time of the example:</strong>  1.56 seconds
+( 0 minutes  1.56 seconds)</p>
 </div>
 
 

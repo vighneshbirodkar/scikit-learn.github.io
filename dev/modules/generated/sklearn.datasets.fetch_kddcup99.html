@@ -73,16 +73,17 @@
                  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-            <li class="link-title">Scikit-learn 0.17 (development)</li>
+            <li class="link-title">Scikit-learn 0.18 (development)</li>
             <li><a href="../../tutorial/index.html">Tutorials</a></li>
             <li><a href="../../user_guide.html">User guide</a></li>
             <li><a href="../classes.html">API</a></li>
             <li><a href="../../faq.html">FAQ</a></li>
-            <li><a href="../../developers.html">Contributing</a></li>
+            <li><a href="../../developers/contributing.html">Contributing</a></li>
             <li class="divider"></li>
-                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.16.1 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.17 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/0.16/documentation.html">Scikit-learn 0.16</a></li>
                 <li><a href="http://scikit-learn.org/0.15/documentation.html">Scikit-learn 0.15</a></li>
-				<li><a href="../../_downloads/user_guide.pdf">PDF documentation</a></li>
+				<li><a href="../../_downloads/scikit-learn-docs.pdf">PDF documentation</a></li>
               </ul>
             </div>
         </li>
@@ -117,7 +118,7 @@
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        sklearn.datas...
+        sklearn.datasets...
         </span>
             <span class="hiddenrellink">
             sklearn.datasets.fetch_covtype
@@ -169,8 +170,8 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.datasets" title="sklearn.datasets"><tt class="xref py py-mod docutils literal"><span class="pre">sklearn.datasets</span></tt></a>.fetch_kddcup99<a class="headerlink" href="#sklearn-datasets-fetch-kddcup99" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="sklearn.datasets.fetch_kddcup99">
-<tt class="descclassname">sklearn.datasets.</tt><tt class="descname">fetch_kddcup99</tt><big>(</big><em>subset=None</em>, <em>shuffle=False</em>, <em>random_state=None</em>, <em>percent10=False</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/53bc02a/sklearn/datasets/kddcup99.py#L42"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.datasets.fetch_kddcup99" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load and return the kddcup 99 dataset (regression).</p>
+<tt class="descclassname">sklearn.datasets.</tt><tt class="descname">fetch_kddcup99</tt><big>(</big><em>subset=None</em>, <em>shuffle=False</em>, <em>random_state=None</em>, <em>percent10=True</em>, <em>download_if_missing=True</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/37c8d02/sklearn/datasets/kddcup99.py#L42"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.datasets.fetch_kddcup99" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load and return the kddcup 99 dataset (classification).</p>
 <p>The KDD Cup &#8216;99 dataset was created by processing the tcpdump portions
 of the 1998 DARPA Intrusion Detection System (IDS) Evaluation dataset,
 created by MIT Lincoln Lab [1] . The artificial data was generated using
@@ -248,7 +249,7 @@ equal to &#8216;http&#8217; (resp. to &#8216;smtp&#8217;)</li>
 <td>699691</td>
 </tr>
 <tr class="row-even"><td>Dimensionality</td>
-<td>40</td>
+<td>4</td>
 </tr>
 <tr class="row-odd"><td>Features</td>
 <td>discrete (int) or continuous (float)</td>
@@ -269,7 +270,7 @@ equal to &#8216;http&#8217; (resp. to &#8216;smtp&#8217;)</li>
 <td>619052</td>
 </tr>
 <tr class="row-even"><td>Dimensionality</td>
-<td>39</td>
+<td>3</td>
 </tr>
 <tr class="row-odd"><td>Features</td>
 <td>discrete (int) or continuous (float)</td>
@@ -290,7 +291,7 @@ equal to &#8216;http&#8217; (resp. to &#8216;smtp&#8217;)</li>
 <td>95373</td>
 </tr>
 <tr class="row-even"><td>Dimensionality</td>
-<td>39</td>
+<td>3</td>
 </tr>
 <tr class="row-odd"><td>Features</td>
 <td>discrete (int) or continuous (float)</td>
@@ -324,6 +325,11 @@ by <cite>np.random</cite>.</p>
 <p><strong>percent10</strong> : bool, default=False</p>
 <blockquote>
 <div><p>Whether to load only 10 percent of the data.</p>
+</div></blockquote>
+<p><strong>download_if_missing</strong> : bool, default=True</p>
+<blockquote>
+<div><p>If False, raise a IOError if the data is not locally available
+instead of trying to download the data from the source site.</p>
 </div></blockquote>
 </td>
 </tr>

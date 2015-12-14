@@ -36,7 +36,7 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="top" title="scikit-learn 0.18.dev0 documentation" href="../index.html" />
     <link rel="up" title="Developer’s Guide" href="index.html" />
-    <link rel="next" title="Maintainer / core-developer information" href="maintainer.html" />
+    <link rel="next" title="Advanced installation instructions" href="advanced_installation.html" />
     <link rel="prev" title="Utilities for Developers" href="utilities.html" />
   
   
@@ -73,16 +73,17 @@
                  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-            <li class="link-title">Scikit-learn 0.17 (development)</li>
+            <li class="link-title">Scikit-learn 0.18 (development)</li>
             <li><a href="../tutorial/index.html">Tutorials</a></li>
             <li><a href="../user_guide.html">User guide</a></li>
             <li><a href="../modules/classes.html">API</a></li>
             <li><a href="../faq.html">FAQ</a></li>
-            <li><a href="../developers.html">Contributing</a></li>
+            <li><a href="contributing.html">Contributing</a></li>
             <li class="divider"></li>
-                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.16.1 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.17 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/0.16/documentation.html">Scikit-learn 0.16</a></li>
                 <li><a href="http://scikit-learn.org/0.15/documentation.html">Scikit-learn 0.15</a></li>
-				<li><a href="../_downloads/user_guide.pdf">PDF documentation</a></li>
+				<li><a href="../_downloads/scikit-learn-docs.pdf">PDF documentation</a></li>
               </ul>
             </div>
         </li>
@@ -117,7 +118,7 @@
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        Utilities for...
+        Utilities for De...
         </span>
             <span class="hiddenrellink">
             Utilities for Developers
@@ -134,7 +135,7 @@
         Up
         <br/>
         <span class="smallrellink">
-        Developer’s G...
+        Developer’s Guid...
         </span>
             <span class="hiddenrellink">
             Developer’s Guide
@@ -239,9 +240,15 @@ parallelism</strong> that is amenable to <strong>multi-processing</strong> by us
 <tt class="docutils literal"><span class="pre">joblib.Parallel</span></tt> class.</li>
 </ol>
 </div></blockquote>
-<p>When using Cython, include the generated C source code alongside with
-the Cython source code. The goal is to make it possible to install the
-scikit on any machine with Python, Numpy, Scipy and C/C++ compiler.</p>
+<p>When using Cython, use either</p>
+<blockquote>
+<div>$ python setup.py build_ext -i
+$ python setup.py install</div></blockquote>
+<p>to generate C files. You are responsible for adding .c/.cpp extensions along
+with build parameters in each submodule <tt class="docutils literal"><span class="pre">setup.py</span></tt>.</p>
+<p>C/C++ generated files are embedded in distributed stable packages. The goal is
+to make it possible to install scikit-learn stable version
+on any machine with Python, Numpy, Scipy and C/C++ compiler.</p>
 </div>
 <div class="section" id="fast-matrix-multiplications">
 <h2>Fast matrix multiplications<a class="headerlink" href="#fast-matrix-multiplications" title="Permalink to this headline">¶</a></h2>

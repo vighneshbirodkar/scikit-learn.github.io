@@ -73,16 +73,17 @@
                  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-            <li class="link-title">Scikit-learn 0.17 (development)</li>
+            <li class="link-title">Scikit-learn 0.18 (development)</li>
             <li><a href="../tutorial/index.html">Tutorials</a></li>
             <li><a href="../user_guide.html">User guide</a></li>
             <li><a href="classes.html">API</a></li>
             <li><a href="../faq.html">FAQ</a></li>
-            <li><a href="../developers.html">Contributing</a></li>
+            <li><a href="../developers/contributing.html">Contributing</a></li>
             <li class="divider"></li>
-                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.16.1 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.17 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/0.16/documentation.html">Scikit-learn 0.16</a></li>
                 <li><a href="http://scikit-learn.org/0.15/documentation.html">Scikit-learn 0.15</a></li>
-				<li><a href="../_downloads/user_guide.pdf">PDF documentation</a></li>
+				<li><a href="../_downloads/scikit-learn-docs.pdf">PDF documentation</a></li>
               </ul>
             </div>
         </li>
@@ -117,7 +118,7 @@
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        1.10. Decisio...
+        1.10. Decision T...
         </span>
             <span class="hiddenrellink">
             1.10. Decision Trees
@@ -134,7 +135,7 @@
         Up
         <br/>
         <span class="smallrellink">
-        1. Supervised...
+        1. Supervised le...
         </span>
             <span class="hiddenrellink">
             1. Supervised learning
@@ -268,7 +269,7 @@ specifying the strategy to draw random subsets. In particular, <tt class="docuti
 and <tt class="docutils literal"><span class="pre">max_features</span></tt> control the size of the subsets (in terms of samples and
 features), while <tt class="docutils literal"><span class="pre">bootstrap</span></tt> and <tt class="docutils literal"><span class="pre">bootstrap_features</span></tt> control whether
 samples and features are drawn with or without replacement. When using a subset
-of the available samples the generalization error can be estimated with the
+of the available samples the generalization accuracy can be estimated with the
 out-of-bag samples by setting <tt class="docutils literal"><span class="pre">oob_score=True</span></tt>. As an example, the
 snippet below illustrates how to instantiate a bagging ensemble of
 <tt class="xref py py-class docutils literal"><span class="pre">KNeighborsClassifier</span></tt> base estimators, each built on random subsets of
@@ -421,7 +422,7 @@ should always be cross-validated. In addition, note that in random forests,
 bootstrap samples are used by default (<tt class="docutils literal"><span class="pre">bootstrap=True</span></tt>)
 while the default strategy for extra-trees is to use the whole dataset
 (<tt class="docutils literal"><span class="pre">bootstrap=False</span></tt>).
-When using bootstrap sampling the generalization error can be estimated
+When using bootstrap sampling the generalization accuracy can be estimated
 on the left out or out-of-bag samples. This can be enabled by
 setting <tt class="docutils literal"><span class="pre">oob_score=True</span></tt>.</p>
 </div>
@@ -547,9 +548,9 @@ models that are only slightly better than random guessing, such as small
 decision trees) on repeatedly modified versions of the data. The predictions
 from all of them are then combined through a weighted majority vote (or sum) to
 produce the final prediction. The data modifications at each so-called boosting
-iteration consist of applying weights <img class="math" src="../_images/math/ee71d9a60992887aa4b7a1e010886633661a7ada.png" alt="w_1"/>, <img class="math" src="../_images/math/9c87339c285f85c875225faea7ee0af7107cf77b.png" alt="w_2"/>, ..., <img class="math" src="../_images/math/093edac7548ff6dcb81cfbee5ef2249fb8295d23.png" alt="w_N"/>
+iteration consist of applying weights <span class="math">w_1</span>, <span class="math">w_2</span>, ..., <span class="math">w_N</span>
 to each of the training samples. Initially, those weights are all set to
-<img class="math" src="../_images/math/f517ce4e0d7328c27b2820bb5259535d3e1d8aa7.png" alt="w_i = 1/N"/>, so that the first step simply trains a weak learner on the
+<span class="math">w_i = 1/N</span>, so that the first step simply trains a weak learner on the
 original data. For each successive iteration, the sample weights are
 individually modified and the learning algorithm is reapplied to the reweighted
 data. At a given step, those training examples that were incorrectly predicted
@@ -783,9 +784,9 @@ chapter on gradient boosting in <a class="reference internal" href="#f2001" id="
 <p>GBRT considers additive models of the following form:</p>
 <blockquote>
 <div><div class="math">
-<p><img src="../_images/math/38a3baf892674090e4285efd71f2305846d3d8eb.png" alt="F(x) = \sum_{m=1}^{M} \gamma_m h_m(x)"/></p>
+<p><span class="math">F(x) = \sum_{m=1}^{M} \gamma_m h_m(x)</span></p>
 </div></div></blockquote>
-<p>where <img class="math" src="../_images/math/52015b92f53f3a882ed0678cf03a59422703f6ac.png" alt="h_m(x)"/> are the basis functions which are usually called
+<p>where <span class="math">h_m(x)</span> are the basis functions which are usually called
 <em>weak learners</em> in the context of boosting. Gradient Tree Boosting
 uses <a class="reference internal" href="tree.html#tree"><em>decision trees</em></a> of fixed size as weak
 learners. Decision trees have a number of abilities that make them
@@ -795,17 +796,17 @@ and the ability to model complex functions.</p>
 a forward stagewise fashion:</p>
 <blockquote>
 <div><div class="math">
-<p><img src="../_images/math/10825eb55b44e9ab80b14555820128116d47b0ad.png" alt="F_m(x) = F_{m-1}(x) + \gamma_m h_m(x)"/></p>
+<p><span class="math">F_m(x) = F_{m-1}(x) + \gamma_m h_m(x)</span></p>
 </div></div></blockquote>
-<p>At each stage the decision tree <img class="math" src="../_images/math/52015b92f53f3a882ed0678cf03a59422703f6ac.png" alt="h_m(x)"/> is chosen to
-minimize the loss function <img class="math" src="../_images/math/0a5711c7a37994043b2bc3bb374adca232491762.png" alt="L"/> given the current model
-<img class="math" src="../_images/math/b071ffb2ad3393f2755dfcb1741d4c138ed87532.png" alt="F_{m-1}"/> and its fit <img class="math" src="../_images/math/341739768b517fe3ccf083d4b4d6938c5cd7835d.png" alt="F_{m-1}(x_i)"/></p>
+<p>At each stage the decision tree <span class="math">h_m(x)</span> is chosen to
+minimize the loss function <span class="math">L</span> given the current model
+<span class="math">F_{m-1}</span> and its fit <span class="math">F_{m-1}(x_i)</span></p>
 <blockquote>
 <div><div class="math">
-<p><img src="../_images/math/24e745e0f9174a59c0ff6e8a6867a41ba1236a4c.png" alt="F_m(x) = F_{m-1}(x) + \arg\min_{h} \sum_{i=1}^{n} L(y_i,
-F_{m-1}(x_i) - h(x))"/></p>
+<p><span class="math">F_m(x) = F_{m-1}(x) + \arg\min_{h} \sum_{i=1}^{n} L(y_i,
+F_{m-1}(x_i) - h(x))</span></p>
 </div></div></blockquote>
-<p>The initial model <img class="math" src="../_images/math/3bf8e7b868ef3130ec9da58118014d89b059fd79.png" alt="F_{0}"/> is problem specific, for least-squares
+<p>The initial model <span class="math">F_{0}</span> is problem specific, for least-squares
 regression one usually chooses the mean of the target values.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -815,18 +816,18 @@ argument. The passed object has to implement <tt class="docutils literal"><span 
 <p>Gradient Boosting attempts to solve this minimization problem
 numerically via steepest descent: The steepest descent direction is
 the negative gradient of the loss function evaluated at the current
-model <img class="math" src="../_images/math/b071ffb2ad3393f2755dfcb1741d4c138ed87532.png" alt="F_{m-1}"/> which can be calculated for any differentiable
+model <span class="math">F_{m-1}</span> which can be calculated for any differentiable
 loss function:</p>
 <blockquote>
 <div><div class="math">
-<p><img src="../_images/math/da8ea309b3ca0582a5b848cda156da632570b2a9.png" alt="F_m(x) = F_{m-1}(x) + \gamma_m \sum_{i=1}^{n} \nabla_F L(y_i,
-F_{m-1}(x_i))"/></p>
+<p><span class="math">F_m(x) = F_{m-1}(x) + \gamma_m \sum_{i=1}^{n} \nabla_F L(y_i,
+F_{m-1}(x_i))</span></p>
 </div></div></blockquote>
-<p>Where the step length <img class="math" src="../_images/math/e1ff0eb7a23a5f833a66d75d4f681fe0875e781c.png" alt="\gamma_m"/> is chosen using line search:</p>
+<p>Where the step length <span class="math">\gamma_m</span> is chosen using line search:</p>
 <blockquote>
 <div><div class="math">
-<p><img src="../_images/math/934469f7305191f27184dffb1276b1e735050f7d.png" alt="\gamma_m = \arg\min_{\gamma} \sum_{i=1}^{n} L(y_i, F_{m-1}(x_i)
-- \gamma \frac{\partial L(y_i, F_{m-1}(x_i))}{\partial F_{m-1}(x_i)})"/></p>
+<p><span class="math">\gamma_m = \arg\min_{\gamma} \sum_{i=1}^{n} L(y_i, F_{m-1}(x_i)
+- \gamma \frac{\partial L(y_i, F_{m-1}(x_i))}{\partial F_{m-1}(x_i)})</span></p>
 </div></div></blockquote>
 <p>The algorithms for regression and classification
 only differ in the concrete loss function used.</p>
@@ -880,10 +881,10 @@ classification.</li>
 <div class="section" id="shrinkage">
 <span id="gradient-boosting-shrinkage"></span><h4>1.11.4.6.1. Shrinkage<a class="headerlink" href="#shrinkage" title="Permalink to this headline">¶</a></h4>
 <p><a class="reference internal" href="#f2001" id="id15">[F2001]</a> proposed a simple regularization strategy that scales
-the contribution of each weak learner by a factor <img class="math" src="../_images/math/d67fb61cfffca2cc069e083d76cb6220b4ca14c8.png" alt="\nu"/>:</p>
+the contribution of each weak learner by a factor <span class="math">\nu</span>:</p>
 <div class="math">
-<p><img src="../_images/math/47430226015a6b7a0653abed8c7d5d5e9f529404.png" alt="F_m(x) = F_{m-1}(x) + \nu \gamma_m h_m(x)"/></p>
-</div><p>The parameter <img class="math" src="../_images/math/d67fb61cfffca2cc069e083d76cb6220b4ca14c8.png" alt="\nu"/> is also called the <strong>learning rate</strong> because
+<p><span class="math">F_m(x) = F_{m-1}(x) + \nu \gamma_m h_m(x)</span></p>
+</div><p>The parameter <span class="math">\nu</span> is also called the <strong>learning rate</strong> because
 it scales the step length the the gradient descent procedure; it can
 be set via the <tt class="docutils literal"><span class="pre">learning_rate</span></tt> parameter.</p>
 <p>The parameter <tt class="docutils literal"><span class="pre">learning_rate</span></tt> strongly interacts with the parameter
@@ -995,7 +996,7 @@ usually chosen among the most important features.</p>
 <p>The Figure below shows four one-way and one two-way partial dependence plots
 for the California housing dataset:</p>
 <div class="figure align-center">
-<a class="reference external image-reference" href="../auto_examples/ensemble/plot_partial_dependence.html"><img alt="../_images/plot_partial_dependence_0011.png" src="../_images/plot_partial_dependence_0011.png" style="width: 560.0px; height: 420.0px;" /></a>
+<a class="reference external image-reference" href="../auto_examples/ensemble/plot_partial_dependence.html"><img alt="modules/../auto_examples/ensemble/images/plot_partial_dependence_001.png" src="modules/../auto_examples/ensemble/images/plot_partial_dependence_001.png" /></a>
 </div>
 <p>One-way PDPs tell us about the interaction between the target
 response and the target feature (e.g. linear, non-linear).

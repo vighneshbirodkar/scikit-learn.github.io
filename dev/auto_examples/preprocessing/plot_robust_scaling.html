@@ -73,16 +73,17 @@
                  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-            <li class="link-title">Scikit-learn 0.17 (development)</li>
+            <li class="link-title">Scikit-learn 0.18 (development)</li>
             <li><a href="../../tutorial/index.html">Tutorials</a></li>
             <li><a href="../../user_guide.html">User guide</a></li>
             <li><a href="../../modules/classes.html">API</a></li>
             <li><a href="../../faq.html">FAQ</a></li>
-            <li><a href="../../developers.html">Contributing</a></li>
+            <li><a href="../../developers/contributing.html">Contributing</a></li>
             <li class="divider"></li>
-                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.16.1 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.17 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/0.16/documentation.html">Scikit-learn 0.16</a></li>
                 <li><a href="http://scikit-learn.org/0.15/documentation.html">Scikit-learn 0.15</a></li>
-				<li><a href="../../_downloads/user_guide.pdf">PDF documentation</a></li>
+				<li><a href="../../_downloads/scikit-learn-docs.pdf">PDF documentation</a></li>
               </ul>
             </div>
         </li>
@@ -117,7 +118,7 @@
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        Using Functio...
+        Using FunctionTr...
         </span>
             <span class="hiddenrellink">
             Using FunctionTransformer to select columns
@@ -177,7 +178,7 @@ is a large outlier.</p>
 <img alt="../../_images/plot_robust_scaling_001.png" class="align-center" src="../../_images/plot_robust_scaling_001.png" />
 <p><strong>Script output</strong>:</p>
 <div class="highlight-python"><div class="highlight"><pre>Testset accuracy using standard scaler: 0.545
-Testset accuracy using robust scaler:   0.700
+Testset accuracy using robust scaler:   0.705
 </pre></div>
 </div>
 <p><strong>Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_robust_scaling.py"><tt class="xref download docutils literal"><span class="pre">plot_robust_scaling.py</span></tt></a></p>
@@ -218,7 +219,7 @@ Testset accuracy using robust scaler:   0.700
 
 <span class="n">robust_scaler</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.preprocessing.RobustScaler.html#sklearn.preprocessing.RobustScaler"><span class="n">RobustScaler</span></a><span class="p">()</span>
 <span class="n">Xtr_r</span> <span class="o">=</span> <span class="n">robust_scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
-<span class="n">Xte_r</span> <span class="o">=</span> <span class="n">robust_scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">Xte_r</span> <span class="o">=</span> <span class="n">robust_scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 
 
 <span class="c"># Plot data</span>
@@ -250,8 +251,8 @@ Testset accuracy using robust scaler:   0.700
 <span class="k">print</span><span class="p">(</span><span class="s">&quot;Testset accuracy using robust scaler:   </span><span class="si">%.3f</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">acc_r</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  0.34 seconds
-( 0 minutes  0.34 seconds)</p>
+<p><strong>Total running time of the example:</strong>  0.52 seconds
+( 0 minutes  0.52 seconds)</p>
 </div>
 
 

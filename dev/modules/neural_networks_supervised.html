@@ -73,16 +73,17 @@
                  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-            <li class="link-title">Scikit-learn 0.17 (development)</li>
+            <li class="link-title">Scikit-learn 0.18 (development)</li>
             <li><a href="../tutorial/index.html">Tutorials</a></li>
             <li><a href="../user_guide.html">User guide</a></li>
             <li><a href="classes.html">API</a></li>
             <li><a href="../faq.html">FAQ</a></li>
-            <li><a href="../developers.html">Contributing</a></li>
+            <li><a href="../developers/contributing.html">Contributing</a></li>
             <li class="divider"></li>
-                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.16.1 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.17 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/0.16/documentation.html">Scikit-learn 0.16</a></li>
                 <li><a href="http://scikit-learn.org/0.15/documentation.html">Scikit-learn 0.15</a></li>
-				<li><a href="../_downloads/user_guide.pdf">PDF documentation</a></li>
+				<li><a href="../_downloads/scikit-learn-docs.pdf">PDF documentation</a></li>
               </ul>
             </div>
         </li>
@@ -117,7 +118,7 @@
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        1.16. Probabi...
+        1.16. Probabilit...
         </span>
             <span class="hiddenrellink">
             1.16. Probability calibration
@@ -134,7 +135,7 @@
         Up
         <br/>
         <span class="smallrellink">
-        1. Supervised...
+        1. Supervised le...
         </span>
             <span class="hiddenrellink">
             1. Supervised learning
@@ -180,10 +181,10 @@
 <div class="section" id="multi-layer-perceptron">
 <span id="multilayer-perceptron"></span><h2>1.17.1. Multi-layer Perceptron<a class="headerlink" href="#multi-layer-perceptron" title="Permalink to this headline">¶</a></h2>
 <p><strong>Multi-layer Perceptron (MLP)</strong> is a supervised learning algorithm that learns
-a function <img class="math" src="../_images/math/3f8133190ff7864190e0430e0ab579493351ed87.png" alt="f(\cdot): R^m \rightarrow R^o"/> by training on a dataset,
-where <img class="math" src="../_images/math/c4bb40dd65eae6c11b325989b14e0b8d35e4e3ef.png" alt="m"/> is the number of dimensions for input and <img class="math" src="../_images/math/12ea3a10030ba2d90f89dab440196780a4b19e93.png" alt="o"/> is the the
-number of dimensions for output. Given a set of features <img class="math" src="../_images/math/433e45571c69f8fb8fbb9375f2047d581c279090.png" alt="X = {x_1, x_2, ..., x_m}"/>
-and a target <img class="math" src="../_images/math/b124ff74afb0914bb434e8fb849eb56d734412f8.png" alt="y"/>, it can learn a non-linear function approximator for either
+a function <span class="math">f(\cdot): R^m \rightarrow R^o</span> by training on a dataset,
+where <span class="math">m</span> is the number of dimensions for input and <span class="math">o</span> is the the
+number of dimensions for output. Given a set of features <span class="math">X = {x_1, x_2, ..., x_m}</span>
+and a target <span class="math">y</span>, it can learn a non-linear function approximator for either
 classification or regression. It is different from logistic regression, in that
 between the input and the output layer, there can be one or more non-linear
 layers, called hidden layers. Figure 1 shows a one hidden layer MLP with scalar
@@ -193,17 +194,17 @@ output.</p>
 <p class="caption"><strong>Figure 1 : One hidden layer MLP.</strong></p>
 </div>
 <p>The leftmost layer, known as the input layer, consists of a set of neurons
-<img class="math" src="../_images/math/e6c53e63533be27092d0b8601741d2b27946b7eb.png" alt="\{x_i | x_1, x_2, ..., x_m\}"/> representing the input features. Each
+<span class="math">\{x_i | x_1, x_2, ..., x_m\}</span> representing the input features. Each
 neuron in the hidden layer transforms the values from the previous layer with
-a weighted linear summation <img class="math" src="../_images/math/d07e73e12ef3ff7588a69ab03e0d78b3e784afd5.png" alt="w_1x_1 + w_2x_2 + ... + w_mx_m"/>, followed
-by a non-linear activation function <img class="math" src="../_images/math/6bc6300a7acfc8f5432d100870e634966c51c0d1.png" alt="g(\cdot):R \rightarrow R"/> - like
+a weighted linear summation <span class="math">w_1x_1 + w_2x_2 + ... + w_mx_m</span>, followed
+by a non-linear activation function <span class="math">g(\cdot):R \rightarrow R</span> - like
 the hyperbolic tan function. The output layer receives the values from the
 last hidden layer and transforms them into output values.</p>
 <p>The module contains the public attributes <tt class="docutils literal"><span class="pre">coefs_</span></tt> and <tt class="docutils literal"><span class="pre">intercepts_</span></tt>.
 <tt class="docutils literal"><span class="pre">coefs_</span></tt> is a list of weight matrices, where weight matrix at index
-<img class="math" src="../_images/math/a581f053bbfa5115f42c13094857cdd12a37ec49.png" alt="i"/> represents the weights between layer <img class="math" src="../_images/math/a581f053bbfa5115f42c13094857cdd12a37ec49.png" alt="i"/> and layer
-<img class="math" src="../_images/math/cabaea4f4c8ba6d97bfb3055f1a0f3bc14d55e9b.png" alt="i+1"/>. <tt class="docutils literal"><span class="pre">intercepts_</span></tt> is a list of bias vectors, where the vector
-at index <img class="math" src="../_images/math/a581f053bbfa5115f42c13094857cdd12a37ec49.png" alt="i"/> represents the bias values added to layer <img class="math" src="../_images/math/cabaea4f4c8ba6d97bfb3055f1a0f3bc14d55e9b.png" alt="i+1"/>.</p>
+<span class="math">i</span> represents the weights between layer <span class="math">i</span> and layer
+<span class="math">i+1</span>. <tt class="docutils literal"><span class="pre">intercepts_</span></tt> is a list of bias vectors, where the vector
+at index <span class="math">i</span> represents the bias values added to layer <span class="math">i+1</span>.</p>
 <p>The advantages of Multi-layer Perceptron are:</p>
 <blockquote>
 <div><ul class="simple">
@@ -272,7 +273,7 @@ Cross-Entropy loss function, which allows probability estimates by running the
 <p>MLP trains using Backpropagation. More precisely, it trains using some form of
 gradient descent and the gradients are calculated using Backpropagation. For
 classification, it minimizes the Cross-Entropy loss function, giving a vector
-of probability estimates <img class="math" src="../_images/math/25a9728b809a691ce3374eaeab6255410cbff5d9.png" alt="P(y|x)"/> per sample <img class="math" src="../_images/math/188c175aac0a8a9c22499336711b5d7256407254.png" alt="x"/>:</p>
+of probability estimates <span class="math">P(y|x)</span> per sample <span class="math">x</span>:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">clf</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">([[</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">]])</span>  
 <span class="go">array([[ 0.,  1.],</span>
 <span class="go">       [ 0.,  1.]])</span>
@@ -331,10 +332,10 @@ which a sample can have more than one target.</p>
 Stochastic Gradient Descent (SGD) updates parameters using the gradient of the
 loss function with respect to a parameter that needs adaptation, i.e.</p>
 <div class="math">
-<p><img src="../_images/math/2dbac3d4a21ff260f77a24c69c1e3b57acafcf2d.png" alt="w \leftarrow w - \eta (\alpha \frac{\partial R(w)}{\partial w}
-+ \frac{\partial Loss}{\partial w})"/></p>
-</div><p>where <img class="math" src="../_images/math/9172efc523d7488d4c3ed299d0be813de01503b8.png" alt="\eta"/> is the learning rate which controls the step-size in
-the parameter space search.  <img class="math" src="../_images/math/80a949d749900fdcdb8e79f4a29bb0f75efb510b.png" alt="Loss"/> is the loss function used
+<p><span class="math">w \leftarrow w - \eta (\alpha \frac{\partial R(w)}{\partial w}
++ \frac{\partial Loss}{\partial w})</span></p>
+</div><p>where <span class="math">\eta</span> is the learning rate which controls the step-size in
+the parameter space search.  <span class="math">Loss</span> is the loss function used
 for the network.</p>
 <p>More details can be found in the documentation of
 <a class="reference external" href="http://scikit-learn.org/stable/modules/sgd.html">SGD</a></p>
@@ -352,63 +353,63 @@ mini-batch learning.</p>
 </div>
 <div class="section" id="complexity">
 <h2>1.17.5. Complexity<a class="headerlink" href="#complexity" title="Permalink to this headline">¶</a></h2>
-<p>Suppose there are <img class="math" src="../_images/math/413f8a8e40062a9090d9d50b88bc7b551b314c26.png" alt="n"/> training samples, <img class="math" src="../_images/math/c4bb40dd65eae6c11b325989b14e0b8d35e4e3ef.png" alt="m"/> features, <img class="math" src="../_images/math/e9203da50e1059455123460d4e716c9c7f440cc3.png" alt="k"/>
-hidden layers, each containing <img class="math" src="../_images/math/cbb80ad77aa7a5e227d5a46bc44d235284106cfc.png" alt="h"/> neurons - for simplicity, and <img class="math" src="../_images/math/12ea3a10030ba2d90f89dab440196780a4b19e93.png" alt="o"/>
+<p>Suppose there are <span class="math">n</span> training samples, <span class="math">m</span> features, <span class="math">k</span>
+hidden layers, each containing <span class="math">h</span> neurons - for simplicity, and <span class="math">o</span>
 output neurons.  The time complexity of backpropagation is
-<img class="math" src="../_images/math/51cbbb194ebe308898727dceee8936b6fbb62f18.png" alt="O(n\cdot m \cdot h^k \cdot o \cdot i)"/>, where <img class="math" src="../_images/math/a581f053bbfa5115f42c13094857cdd12a37ec49.png" alt="i"/> is the number
+<span class="math">O(n\cdot m \cdot h^k \cdot o \cdot i)</span>, where <span class="math">i</span> is the number
 of iterations. Since backpropagation has a high time complexity, it is advisable
 to start with smaller number of hidden neurons and few hidden layers for
 training.</p>
 </div>
 <div class="section" id="mathematical-formulation">
 <h2>1.17.6. Mathematical formulation<a class="headerlink" href="#mathematical-formulation" title="Permalink to this headline">¶</a></h2>
-<p>Given a set of training examples <img class="math" src="../_images/math/b5b3d40937d9e36635a16e7a3b18f06458712ee9.png" alt="(x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)"/>
-where <img class="math" src="../_images/math/ed7238746ec0fb27be38187ff0576c83ecc0df8f.png" alt="x_i \in \mathbf{R}^n"/> and <img class="math" src="../_images/math/1a6dcb0f90f8ed7f0f0b3af16613143be0ffd6c1.png" alt="y_i \in \{0, 1\}"/>, a one hidden
-layer one hidden neuron MLP learns the function <img class="math" src="../_images/math/a050ea48ee8a8483ecae6199dcdb2448f02b5e17.png" alt="f(x) = W_2 g(W_1^T x + b_1) + b_2"/>
-where <img class="math" src="../_images/math/8952714985c2bf822cadd25c899ee5f5f99c9364.png" alt="W_1 \in \mathbf{R}^m"/> and <img class="math" src="../_images/math/7b87d416cfdb18ebba1e07d8ee177f6d4778588b.png" alt="W_2, b_1, b_2 \in \mathbf{R}"/> are
-model parameters. <img class="math" src="../_images/math/a8ca8de37487157e0ad9134f7b7cc0937f2f84ab.png" alt="W_1, W_2"/> represent the weights of the input layer and
-hidden layer, resepctively; and <img class="math" src="../_images/math/3ee28c31216a8bcd9e06159b87cabf712e85d95d.png" alt="b_1, b_2"/> represent the bias added to
+<p>Given a set of training examples <span class="math">(x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)</span>
+where <span class="math">x_i \in \mathbf{R}^n</span> and <span class="math">y_i \in \{0, 1\}</span>, a one hidden
+layer one hidden neuron MLP learns the function <span class="math">f(x) = W_2 g(W_1^T x + b_1) + b_2</span>
+where <span class="math">W_1 \in \mathbf{R}^m</span> and <span class="math">W_2, b_1, b_2 \in \mathbf{R}</span> are
+model parameters. <span class="math">W_1, W_2</span> represent the weights of the input layer and
+hidden layer, resepctively; and <span class="math">b_1, b_2</span> represent the bias added to
 the hidden layer and the output layer, respectively.
-<img class="math" src="../_images/math/1ebc52bf597809058fd5fe33cbcb3830fce77abd.png" alt="g(\cdot) : R \rightarrow R"/> is the activation function, set by default as
+<span class="math">g(\cdot) : R \rightarrow R</span> is the activation function, set by default as
 the hyperbolic tan. It is given as,</p>
 <div class="math">
-<p><img src="../_images/math/d3d8e7f87a429b546200aee5db4b1eaa631e6d3f.png" alt="g(z)= \frac{e^z-e^{-z}}{e^z+e^{-z}}"/></p>
-</div><p>For binary classification, <img class="math" src="../_images/math/14546c27a7b929642f7840acca5f851c503ea109.png" alt="f(x)"/> passes through the logistic function
-<img class="math" src="../_images/math/db2699a0f2aed4f24f5c6e5da9d2476c02a419a8.png" alt="g(z)=1/(1+e^{-z})"/> to obtain output values between zero and one. A
+<p><span class="math">g(z)= \frac{e^z-e^{-z}}{e^z+e^{-z}}</span></p>
+</div><p>For binary classification, <span class="math">f(x)</span> passes through the logistic function
+<span class="math">g(z)=1/(1+e^{-z})</span> to obtain output values between zero and one. A
 threshold, set to 0.5, would assign samples of outputs larger or equal 0.5
 to the positive class, and the rest to the negative class.</p>
-<p>If there are more than two classes, <img class="math" src="../_images/math/14546c27a7b929642f7840acca5f851c503ea109.png" alt="f(x)"/> itself would be a vector of
+<p>If there are more than two classes, <span class="math">f(x)</span> itself would be a vector of
 size (n_classes,). Instead of passing through logistic function, it passes
 through the softmax function, which is written as,</p>
 <div class="math">
-<p><img src="../_images/math/3f48f89a175f59ed7bac39bbdf09af49fbb26d9f.png" alt="\text{softmax}(z)_i = \frac{\exp(z_i)}{\sum_{l=1}^k\exp(z_l)}"/></p>
-</div><p>where <img class="math" src="../_images/math/0c9b8c78a7a049eca8f2168d0691afc6a65a9dad.png" alt="z_i"/> represents the <img class="math" src="../_images/math/a581f053bbfa5115f42c13094857cdd12a37ec49.png" alt="i"/> th element of the input to softmax,
-which corresponds to class <img class="math" src="../_images/math/a581f053bbfa5115f42c13094857cdd12a37ec49.png" alt="i"/>, and <img class="math" src="../_images/math/28e003020d0ae96250b302d7d779c791f183f707.png" alt="K"/> is the number of classes.
-The result is a vector containing the probabilities that sample <img class="math" src="../_images/math/188c175aac0a8a9c22499336711b5d7256407254.png" alt="x"/>
+<p><span class="math">\text{softmax}(z)_i = \frac{\exp(z_i)}{\sum_{l=1}^k\exp(z_l)}</span></p>
+</div><p>where <span class="math">z_i</span> represents the <span class="math">i</span> th element of the input to softmax,
+which corresponds to class <span class="math">i</span>, and <span class="math">K</span> is the number of classes.
+The result is a vector containing the probabilities that sample <span class="math">x</span>
 belong to each class. The output is the class with the highest probability.</p>
-<p>In regression, the output remains as <img class="math" src="../_images/math/14546c27a7b929642f7840acca5f851c503ea109.png" alt="f(x)"/>; therefore, output activation
+<p>In regression, the output remains as <span class="math">f(x)</span>; therefore, output activation
 function is just the identity function.</p>
 <p>MLP uses different loss functions depending on the problem type. The loss
 function for classification is Cross-Entropy, which in binary case is given as,</p>
 <div class="math">
-<p><img src="../_images/math/ab5970442c1dcd70ca590a06685d0fca5319f924.png" alt="Loss(\hat{y},y,W) = -y \ln {\hat{y}} - (1-y) \ln{(1-\hat{y})} + \alpha ||W||_2^2"/></p>
-</div><p>where <img class="math" src="../_images/math/918f125a813a61c086e578cdaa33c7a8ee6e22a3.png" alt="\alpha ||W||_2^2"/> is an L2-regularization term (aka penalty)
-that penalizes complex models; and <img class="math" src="../_images/math/7f2c98bf462cba6083cf18483ba9510e3c2fd3d3.png" alt="\alpha &gt; 0"/> is a non-negative
+<p><span class="math">Loss(\hat{y},y,W) = -y \ln {\hat{y}} - (1-y) \ln{(1-\hat{y})} + \alpha ||W||_2^2</span></p>
+</div><p>where <span class="math">\alpha ||W||_2^2</span> is an L2-regularization term (aka penalty)
+that penalizes complex models; and <span class="math">\alpha &gt; 0</span> is a non-negative
 hyperparameter that controls the magnitude of the penalty.</p>
 <p>For regression, MLP uses the Square Error loss function; written as,</p>
 <div class="math">
-<p><img src="../_images/math/372cb770e60e27b0c5f465e51565f1a74b25ba4f.png" alt="Loss(\hat{y},y,W) = \frac{1}{2}||\hat{y} - y ||_2^2 + \alpha ||W||_2^2"/></p>
+<p><span class="math">Loss(\hat{y},y,W) = \frac{1}{2}||\hat{y} - y ||_2^2 + \alpha ||W||_2^2</span></p>
 </div><p>Starting from initial random weights, multi-layer perceptron (MLP) minimizes
 the loss function by repeatedly updating these weights. After computing the
 loss, a backward pass propagates it from the output layer to the previous
 layers, providing each weight parameter with an update value meant to decrease
 the loss.</p>
-<p>In gradient descent, the gradient <img class="math" src="../_images/math/9eebd94123c7bbb990289db6e85bdbe64f72f1a0.png" alt="\nabla Loss_{W}"/> of the loss with respect
-to the weights is computed and deducted from <img class="math" src="../_images/math/fa34489cf430b7630b30f28b2eb050e2489e3523.png" alt="W"/>.
+<p>In gradient descent, the gradient <span class="math">\nabla Loss_{W}</span> of the loss with respect
+to the weights is computed and deducted from <span class="math">W</span>.
 More formally, this is expressed as,</p>
 <div class="math">
-<p><img src="../_images/math/90bf052193ba22f630c293f7082230be9dea19f6.png" alt="W^{i+1} = W^i - \epsilon \nabla {Loss}_{W}^{i}"/></p>
-</div><p>where <img class="math" src="../_images/math/a581f053bbfa5115f42c13094857cdd12a37ec49.png" alt="i"/> is the iteration step, and <img class="math" src="../_images/math/19bc0073dde1bcd1a8e6a32b251e80cced668f04.png" alt="\epsilon"/> is the learning rate
+<p><span class="math">W^{i+1} = W^i - \epsilon \nabla {Loss}_{W}^{i}</span></p>
+</div><p>where <span class="math">i</span> is the iteration step, and <span class="math">\epsilon</span> is the learning rate
 with a value larger than 0.</p>
 <p>The algorithm stops when it reaches a preset maximum number of iterations; or
 when the improvement in loss is below a certain, small number.</p>
@@ -435,7 +436,7 @@ You can use <tt class="xref py py-class docutils literal"><span class="pre">Stan
 <p>An alternative and recommended approach is to use <tt class="xref py py-class docutils literal"><span class="pre">StandardScaler</span></tt>
 in a <tt class="xref py py-class docutils literal"><span class="pre">Pipeline</span></tt></p>
 </li>
-<li><p class="first">Finding a reasonable regularization parameter <img class="math" src="../_images/math/ad59b6e24a4a00ac621801f8d7513d68be654ab5.png" alt="\alpha"/> is
+<li><p class="first">Finding a reasonable regularization parameter <span class="math">\alpha</span> is
 best done using <tt class="xref py py-class docutils literal"><span class="pre">GridSearchCV</span></tt>, usually in the
 range <tt class="docutils literal"><span class="pre">10.0</span> <span class="pre">**</span> <span class="pre">-np.arange(1,</span> <span class="pre">7)</span></tt>.</p>
 </li>

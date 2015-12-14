@@ -73,16 +73,17 @@
                  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-            <li class="link-title">Scikit-learn 0.17 (development)</li>
+            <li class="link-title">Scikit-learn 0.18 (development)</li>
             <li><a href="../../tutorial/index.html">Tutorials</a></li>
             <li><a href="../../user_guide.html">User guide</a></li>
             <li><a href="../classes.html">API</a></li>
             <li><a href="../../faq.html">FAQ</a></li>
-            <li><a href="../../developers.html">Contributing</a></li>
+            <li><a href="../../developers/contributing.html">Contributing</a></li>
             <li class="divider"></li>
-                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.16.1 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.17 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/0.16/documentation.html">Scikit-learn 0.16</a></li>
                 <li><a href="http://scikit-learn.org/0.15/documentation.html">Scikit-learn 0.15</a></li>
-				<li><a href="../../_downloads/user_guide.pdf">PDF documentation</a></li>
+				<li><a href="../../_downloads/scikit-learn-docs.pdf">PDF documentation</a></li>
               </ul>
             </div>
         </li>
@@ -117,7 +118,7 @@
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        3.2.4.3.6. sk...
+        3.2.4.3.6. sklea...
         </span>
             <span class="hiddenrellink">
             3.2.4.3.6. sklearn.ensemble.GradientBoostingRegressor
@@ -172,7 +173,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.ensemble" title="sklearn.ensemble"><tt class="xref py py-mod docutils literal"><span class="pre">sklearn.ensemble</span></tt></a>.IsolationForest<a class="headerlink" href="#sklearn-ensemble-isolationforest" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="sklearn.ensemble.IsolationForest">
-<em class="property">class </em><tt class="descclassname">sklearn.ensemble.</tt><tt class="descname">IsolationForest</tt><big>(</big><em>n_estimators=100</em>, <em>max_samples=256</em>, <em>max_features=1.0</em>, <em>bootstrap=False</em>, <em>n_jobs=1</em>, <em>random_state=None</em>, <em>verbose=0</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/95d91c9/sklearn/ensemble/iforest.py#L24"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.ensemble.IsolationForest" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sklearn.ensemble.</tt><tt class="descname">IsolationForest</tt><big>(</big><em>n_estimators=100</em>, <em>max_samples='auto'</em>, <em>max_features=1.0</em>, <em>bootstrap=False</em>, <em>n_jobs=1</em>, <em>random_state=None</em>, <em>verbose=0</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/37c8d02/sklearn/ensemble/iforest.py#L25"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.ensemble.IsolationForest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Isolation Forest Algorithm</p>
 <p>Return the anomaly score of each sample using the IsolationForest algorithm</p>
 <p>The IsolationForest &#8216;isolates&#8217; observations by randomly selecting a feature
@@ -194,13 +195,14 @@ lengths for particular samples, they are highly likely to be anomalies.</p>
 <blockquote>
 <div><p>The number of base estimators in the ensemble.</p>
 </div></blockquote>
-<p><strong>max_samples</strong> : int or float, optional (default=256)</p>
+<p><strong>max_samples</strong> : int or float, optional (default=&#8221;auto&#8221;)</p>
 <blockquote>
 <div><dl class="docutils">
 <dt>The number of samples to draw from X to train each base estimator.</dt>
 <dd><ul class="first last simple">
 <li>If int, then draw <cite>max_samples</cite> samples.</li>
 <li>If float, then draw <cite>max_samples * X.shape[0]</cite> samples.</li>
+<li>If &#8220;auto&#8221;, then <cite>max_samples=min(256, n_samples)</cite>.</li>
 </ul>
 </dd>
 </dl>
@@ -258,17 +260,17 @@ estimator.</p>
 </tbody>
 </table>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r21" rules="none">
+<table class="docutils citation" frame="void" id="r141" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[R21]</a></td><td>Liu, Fei Tony, Ting, Kai Ming and Zhou, Zhi-Hua. &#8220;Isolation forest.&#8221;
+<tr><td class="label"><a class="fn-backref" href="#id1">[R141]</a></td><td>Liu, Fei Tony, Ting, Kai Ming and Zhou, Zhi-Hua. &#8220;Isolation forest.&#8221;
 Data Mining, 2008. ICDM&#8216;08. Eighth IEEE International Conference on.</td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="r22" rules="none">
+<table class="docutils citation" frame="void" id="r142" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[R22]</a></td><td>Liu, Fei Tony, Ting, Kai Ming and Zhou, Zhi-Hua. &#8220;Isolation-based
+<tr><td class="label"><a class="fn-backref" href="#id2">[R142]</a></td><td>Liu, Fei Tony, Ting, Kai Ming and Zhou, Zhi-Hua. &#8220;Isolation-based
 anomaly detection.&#8221; ACM Transactions on Knowledge Discovery from
 Data (TKDD) 6.1 (2012): 3.</td></tr>
 </tbody>
@@ -299,12 +301,12 @@ Data (TKDD) 6.1 (2012): 3.</td></tr>
 </table>
 <dl class="method">
 <dt id="sklearn.ensemble.IsolationForest.__init__">
-<tt class="descname">__init__</tt><big>(</big><em>n_estimators=100</em>, <em>max_samples=256</em>, <em>max_features=1.0</em>, <em>bootstrap=False</em>, <em>n_jobs=1</em>, <em>random_state=None</em>, <em>verbose=0</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/95d91c9/sklearn/ensemble/iforest.py#L100"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.ensemble.IsolationForest.__init__" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">__init__</tt><big>(</big><em>n_estimators=100</em>, <em>max_samples='auto'</em>, <em>max_features=1.0</em>, <em>bootstrap=False</em>, <em>n_jobs=1</em>, <em>random_state=None</em>, <em>verbose=0</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/37c8d02/sklearn/ensemble/iforest.py#L102"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.ensemble.IsolationForest.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="sklearn.ensemble.IsolationForest.decision_function">
-<tt class="descname">decision_function</tt><big>(</big><em>X</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/95d91c9/sklearn/ensemble/iforest.py#L218"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.ensemble.IsolationForest.decision_function" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">decision_function</tt><big>(</big><em>X</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/37c8d02/sklearn/ensemble/iforest.py#L232"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.ensemble.IsolationForest.decision_function" title="Permalink to this definition">¶</a></dt>
 <dd><p>Average of the decision functions of the base classifiers.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -329,7 +331,7 @@ they are supported by the base estimator.</p>
 
 <dl class="method">
 <dt id="sklearn.ensemble.IsolationForest.fit">
-<tt class="descname">fit</tt><big>(</big><em>X</em>, <em>y=None</em>, <em>sample_weight=None</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/95d91c9/sklearn/ensemble/iforest.py#L127"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.ensemble.IsolationForest.fit" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">fit</tt><big>(</big><em>X</em>, <em>y=None</em>, <em>sample_weight=None</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/37c8d02/sklearn/ensemble/iforest.py#L128"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.ensemble.IsolationForest.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit estimator.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -355,7 +357,7 @@ efficiency. Sparse matrices are also supported, use sparse
 
 <dl class="method">
 <dt id="sklearn.ensemble.IsolationForest.get_params">
-<tt class="descname">get_params</tt><big>(</big><em>deep=True</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/95d91c9/sklearn/base.py#L206"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.ensemble.IsolationForest.get_params" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_params</tt><big>(</big><em>deep=True</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/37c8d02/sklearn/base.py#L206"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.ensemble.IsolationForest.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters for this estimator.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -380,7 +382,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="method">
 <dt id="sklearn.ensemble.IsolationForest.predict">
-<tt class="descname">predict</tt><big>(</big><em>X</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/95d91c9/sklearn/ensemble/iforest.py#L167"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.ensemble.IsolationForest.predict" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">predict</tt><big>(</big><em>X</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/37c8d02/sklearn/ensemble/iforest.py#L186"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.ensemble.IsolationForest.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predict anomaly score of X with the IsolationForest algorithm.</p>
 <p>The anomaly score of an input sample is computed as
 the mean anomaly score of the trees in the forest.</p>
@@ -414,7 +416,7 @@ The lower, the more normal.</p>
 
 <dl class="method">
 <dt id="sklearn.ensemble.IsolationForest.set_params">
-<tt class="descname">set_params</tt><big>(</big><em>**params</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/95d91c9/sklearn/base.py#L243"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.ensemble.IsolationForest.set_params" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">set_params</tt><big>(</big><em>**params</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/37c8d02/sklearn/base.py#L243"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.ensemble.IsolationForest.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the parameters of this estimator.</p>
 <p>The method works on simple estimators as well as on nested objects
 (such as pipelines). The former have parameters of the form

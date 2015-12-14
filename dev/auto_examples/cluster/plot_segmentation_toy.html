@@ -36,8 +36,8 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="scikit-learn 0.18.dev0 documentation" href="../../index.html" />
     <link rel="up" title="Examples" href="../index.html" />
-    <link rel="next" title="K-means Clustering" href="plot_cluster_iris.html" />
-    <link rel="prev" title="Hierarchical clustering: structured vs unstructured ward" href="plot_ward_structured_vs_unstructured.html" />
+    <link rel="next" title="Color Quantization using K-Means" href="plot_color_quantization.html" />
+    <link rel="prev" title="Various Agglomerative Clustering on a 2D embedding of digits" href="plot_digits_linkage.html" />
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -73,16 +73,17 @@
                  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-            <li class="link-title">Scikit-learn 0.17 (development)</li>
+            <li class="link-title">Scikit-learn 0.18 (development)</li>
             <li><a href="../../tutorial/index.html">Tutorials</a></li>
             <li><a href="../../user_guide.html">User guide</a></li>
             <li><a href="../../modules/classes.html">API</a></li>
             <li><a href="../../faq.html">FAQ</a></li>
-            <li><a href="../../developers.html">Contributing</a></li>
+            <li><a href="../../developers/contributing.html">Contributing</a></li>
             <li class="divider"></li>
-                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.16.1 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.17 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/0.16/documentation.html">Scikit-learn 0.16</a></li>
                 <li><a href="http://scikit-learn.org/0.15/documentation.html">Scikit-learn 0.15</a></li>
-				<li><a href="../../_downloads/user_guide.pdf">PDF documentation</a></li>
+				<li><a href="../../_downloads/scikit-learn-docs.pdf">PDF documentation</a></li>
               </ul>
             </div>
         </li>
@@ -113,14 +114,14 @@
   <!-- rellinks[1:] is an ugly hack to avoid link to module
   index -->
         <div class="rellink">
-        <a href="plot_ward_structured_vs_unstructured.html"
+        <a href="plot_digits_linkage.html"
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        Hierarchical ...
+        Various Agglomer...
         </span>
             <span class="hiddenrellink">
-            Hierarchical clustering: structured vs unstructured ward
+            Various Agglomerative Clustering on a 2D embedding of digits
             </span>
         </a>
         </div>
@@ -225,9 +226,13 @@ separating the objects one from the other, and not from the background.</p>
 <span class="c">###############################################################################</span>
 <span class="c"># 4 circles</span>
 <span class="n">img</span> <span class="o">=</span> <span class="n">circle1</span> <span class="o">+</span> <span class="n">circle2</span> <span class="o">+</span> <span class="n">circle3</span> <span class="o">+</span> <span class="n">circle4</span>
-<span class="n">mask</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
-<span class="n">img</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
 
+<span class="c"># We use a mask that limits to the foreground: the problem that we are</span>
+<span class="c"># interested in here is not separating the objects from the background,</span>
+<span class="c"># but separating them one from the other.</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
+
+<span class="n">img</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
 <span class="n">img</span> <span class="o">+=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mf">0.2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="o">*</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
 <span class="c"># Convert the image into a graph with the value of the gradient on the</span>
@@ -268,8 +273,8 @@ separating the objects one from the other, and not from the background.</p>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  3.07 seconds
-( 0 minutes  3.07 seconds)</p>
+<p><strong>Total running time of the example:</strong>  1.49 seconds
+( 0 minutes  1.49 seconds)</p>
 </div>
 
 
@@ -287,7 +292,7 @@ separating the objects one from the other, and not from the background.</p>
      <div class="rel">
     
     <div class="buttonPrevious">
-      <a href="plot_ward_structured_vs_unstructured.html">Previous
+      <a href="plot_digits_linkage.html">Previous
       </a>
     </div>
     

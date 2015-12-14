@@ -73,16 +73,17 @@
                  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-            <li class="link-title">Scikit-learn 0.17 (development)</li>
+            <li class="link-title">Scikit-learn 0.18 (development)</li>
             <li><a href="../../tutorial/index.html">Tutorials</a></li>
             <li><a href="../../user_guide.html">User guide</a></li>
             <li><a href="../../modules/classes.html">API</a></li>
             <li><a href="../../faq.html">FAQ</a></li>
-            <li><a href="../../developers.html">Contributing</a></li>
+            <li><a href="../../developers/contributing.html">Contributing</a></li>
             <li class="divider"></li>
-                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.16.1 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.17 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/0.16/documentation.html">Scikit-learn 0.16</a></li>
                 <li><a href="http://scikit-learn.org/0.15/documentation.html">Scikit-learn 0.15</a></li>
-				<li><a href="../../_downloads/user_guide.pdf">PDF documentation</a></li>
+				<li><a href="../../_downloads/scikit-learn-docs.pdf">PDF documentation</a></li>
               </ul>
             </div>
         </li>
@@ -117,7 +118,7 @@
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        Wikipedia pri...
+        Wikipedia princi...
         </span>
             <span class="hiddenrellink">
             Wikipedia principal eigenvector
@@ -197,7 +198,7 @@ Benchmarking SVR(C=1.0, cache_size=200, coef0=0.0, degree=3, epsilon=0.1, gamma=
 benchmarking with 100 features
 benchmarking with 250 features
 benchmarking with 500 features
-example run in 4.99s
+example run in 2.98s
 </pre></div>
 </div>
 <p><strong>Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_prediction_latency.py"><tt class="xref download docutils literal"><span class="pre">plot_prediction_latency.py</span></tt></a></p>
@@ -230,7 +231,7 @@ example run in 4.99s
     <span class="n">n_instances</span> <span class="o">=</span> <span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">runtimes</span> <span class="o">=</span> <a href="http://docs.scipy.org/doc/numpy-1.6.0/reference/generated/numpy.zeros.html#numpy.zeros"><span class="n">np</span><span class="o">.</span><span class="n">zeros</span></a><span class="p">(</span><span class="n">n_instances</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_instances</span><span class="p">):</span>
-        <span class="n">instance</span> <span class="o">=</span> <span class="n">X_test</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span>
+        <span class="n">instance</span> <span class="o">=</span> <span class="n">X_test</span><span class="p">[[</span><span class="n">i</span><span class="p">],</span> <span class="p">:]</span>
         <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
         <span class="n">estimator</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">instance</span><span class="p">)</span>
         <span class="n">runtimes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span>
@@ -429,7 +430,7 @@ example run in 4.99s
         <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
         <span class="n">n_predictions</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">while</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">duration_secs</span><span class="p">:</span>
-            <span class="n">estimator_config</span><span class="p">[</span><span class="s">&#39;instance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">estimator_config</span><span class="p">[</span><span class="s">&#39;instance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">[[</span><span class="mi">0</span><span class="p">]])</span>
             <span class="n">n_predictions</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="n">throughputs</span><span class="p">[</span><span class="n">estimator_config</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">n_predictions</span> <span class="o">/</span> <span class="n">duration_secs</span>
     <span class="k">return</span> <span class="n">throughputs</span>
@@ -500,8 +501,8 @@ example run in 4.99s
 <span class="k">print</span><span class="p">(</span><span class="s">&quot;example run in </span><span class="si">%.2f</span><span class="s">s&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">stop_time</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">))</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  5.00 seconds
-( 0 minutes  5.00 seconds)</p>
+<p><strong>Total running time of the example:</strong>  3.07 seconds
+( 0 minutes  3.07 seconds)</p>
 </div>
 
 

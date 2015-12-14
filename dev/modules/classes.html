@@ -72,16 +72,17 @@
                  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-            <li class="link-title">Scikit-learn 0.17 (development)</li>
+            <li class="link-title">Scikit-learn 0.18 (development)</li>
             <li><a href="../tutorial/index.html">Tutorials</a></li>
             <li><a href="../user_guide.html">User guide</a></li>
             <li><a href="#">API</a></li>
             <li><a href="../faq.html">FAQ</a></li>
-            <li><a href="../developers.html">Contributing</a></li>
+            <li><a href="../developers/contributing.html">Contributing</a></li>
             <li class="divider"></li>
-                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.16.1 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.17 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/0.16/documentation.html">Scikit-learn 0.16</a></li>
                 <li><a href="http://scikit-learn.org/0.15/documentation.html">Scikit-learn 0.15</a></li>
-				<li><a href="../_downloads/user_guide.pdf">PDF documentation</a></li>
+				<li><a href="../_downloads/scikit-learn-docs.pdf">PDF documentation</a></li>
               </ul>
             </div>
         </li>
@@ -116,7 +117,7 @@
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        Understanding...
+        Understanding th...
         </span>
             <span class="hiddenrellink">
             Understanding the decision tree structure
@@ -312,7 +313,7 @@ uses.</p>
 <span id="sklearn-cluster-clustering"></span><span id="cluster-ref"></span><h2><a class="reference internal" href="#module-sklearn.cluster" title="sklearn.cluster"><tt class="xref py py-mod docutils literal"><span class="pre">sklearn.cluster</span></tt></a>: Clustering<a class="headerlink" href="#module-sklearn.cluster" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference internal" href="#module-sklearn.cluster" title="sklearn.cluster"><tt class="xref py py-mod docutils literal"><span class="pre">sklearn.cluster</span></tt></a> module gathers popular unsupervised clustering
 algorithms.</p>
-<p><strong>User guide:</strong> See the <em class="xref std std-ref">clustering</em> section for further details.</p>
+<p><strong>User guide:</strong> See the <a class="reference internal" href="clustering.html#clustering"><em>Clustering</em></a> section for further details.</p>
 <div class="section" id="classes">
 <h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="longtable docutils">
@@ -650,7 +651,7 @@ features some artificial data generators.</p>
 <td>Load the covertype dataset, downloading it if necessary.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/sklearn.datasets.fetch_kddcup99.html#sklearn.datasets.fetch_kddcup99" title="sklearn.datasets.fetch_kddcup99"><tt class="xref py py-obj docutils literal"><span class="pre">datasets.fetch_kddcup99</span></tt></a>([subset,&nbsp;shuffle,&nbsp;...])</td>
-<td>Load and return the kddcup 99 dataset (regression).</td>
+<td>Load and return the kddcup 99 dataset (classification).</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/sklearn.datasets.fetch_rcv1.html#sklearn.datasets.fetch_rcv1" title="sklearn.datasets.fetch_rcv1"><tt class="xref py py-obj docutils literal"><span class="pre">datasets.fetch_rcv1</span></tt></a>([data_home,&nbsp;subset,&nbsp;...])</td>
 <td>Load the RCV1 multilabel dataset, downloading it if necessary.</td>
@@ -767,8 +768,7 @@ this module can be regarded as dimensionality reduction techniques.</p>
 <td>Incremental principal components analysis (IPCA).</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="generated/sklearn.decomposition.ProjectedGradientNMF.html#sklearn.decomposition.ProjectedGradientNMF" title="sklearn.decomposition.ProjectedGradientNMF"><tt class="xref py py-obj docutils literal"><span class="pre">decomposition.ProjectedGradientNMF</span></tt></a>(*args,&nbsp;...)</td>
-<td><p class="rubric">Methods</p>
-</td>
+<td>Non-Negative Matrix Factorization (NMF)</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="generated/sklearn.decomposition.RandomizedPCA.html#sklearn.decomposition.RandomizedPCA" title="sklearn.decomposition.RandomizedPCA"><tt class="xref py py-obj docutils literal"><span class="pre">decomposition.RandomizedPCA</span></tt></a>([n_components,&nbsp;...])</td>
 <td>Principal component analysis (PCA) using randomized SVD</td>

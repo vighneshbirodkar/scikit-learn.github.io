@@ -24,11 +24,11 @@ step before the final (global) clustering step that further reduces these
 
 **Script output**::
 
-  Birch without global clustering as the final step took 8.91 seconds
+  Birch without global clustering as the final step took 5.25 seconds
   n_clusters : 158
-  Birch with global clustering as the final step took 8.88 seconds
+  Birch with global clustering as the final step took 5.00 seconds
   n_clusters : 100
-  Time taken to run MiniBatchKMeans 10.68 seconds
+  Time taken to run MiniBatchKMeans 6.92 seconds
 
 
 
@@ -37,6 +37,6 @@ step before the final (global) clustering step that further reduces these
 .. literalinclude:: plot_birch_vs_minibatchkmeans.py
     :lines: 15-
 
-**Total running time of the example:**  30.51 seconds
-( 0 minutes  30.51 seconds)
+**Total running time of the example:**  18.39 seconds
+( 0 minutes  18.39 seconds)
     

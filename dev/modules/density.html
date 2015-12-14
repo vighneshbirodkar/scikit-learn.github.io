@@ -73,16 +73,17 @@
                  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-            <li class="link-title">Scikit-learn 0.17 (development)</li>
+            <li class="link-title">Scikit-learn 0.18 (development)</li>
             <li><a href="../tutorial/index.html">Tutorials</a></li>
             <li><a href="../user_guide.html">User guide</a></li>
             <li><a href="classes.html">API</a></li>
             <li><a href="../faq.html">FAQ</a></li>
-            <li><a href="../developers.html">Contributing</a></li>
+            <li><a href="../developers/contributing.html">Contributing</a></li>
             <li class="divider"></li>
-                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.16.1 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.17 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/0.16/documentation.html">Scikit-learn 0.16</a></li>
                 <li><a href="http://scikit-learn.org/0.15/documentation.html">Scikit-learn 0.15</a></li>
-				<li><a href="../_downloads/user_guide.pdf">PDF documentation</a></li>
+				<li><a href="../_downloads/scikit-learn-docs.pdf">PDF documentation</a></li>
               </ul>
             </div>
         </li>
@@ -117,7 +118,7 @@
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        2.7. Novelty ...
+        2.7. Novelty and...
         </span>
             <span class="hiddenrellink">
             2.7. Novelty and Outlier Detection
@@ -134,7 +135,7 @@
         Up
         <br/>
         <span class="smallrellink">
-        2. Unsupervis...
+        2. Unsupervised ...
         </span>
             <span class="hiddenrellink">
             2. Unsupervised learning
@@ -178,7 +179,7 @@ Gaussian Mixtures (<a class="reference internal" href="generated/sklearn.mixture
 approaches such as the kernel density estimate
 (<a class="reference internal" href="generated/sklearn.neighbors.KernelDensity.html#sklearn.neighbors.KernelDensity" title="sklearn.neighbors.KernelDensity"><tt class="xref py py-class docutils literal"><span class="pre">sklearn.neighbors.KernelDensity</span></tt></a>).
 Gaussian Mixtures are discussed more fully in the context of
-<em class="xref std std-ref">clustering</em>, because the technique is also useful as
+<a class="reference internal" href="clustering.html#clustering"><em>clustering</em></a>, because the technique is also useful as
 an unsupervised clustering scheme.</p>
 <p>Density estimation is a very simple concept, and most people are already
 familiar with one common density estimation technique: the histogram.</p>
@@ -236,12 +237,12 @@ follows:</p>
 </pre></div>
 </div>
 <p>Here we have used <tt class="docutils literal"><span class="pre">kernel='gaussian'</span></tt>, as seen above.
-Mathematically, a kernel is a positive function <img class="math" src="../_images/math/08b2238649d4005da6c6591a962c50452243ab30.png" alt="K(x;h)"/>
-which is controlled by the bandwidth parameter <img class="math" src="../_images/math/cbb80ad77aa7a5e227d5a46bc44d235284106cfc.png" alt="h"/>.
-Given this kernel form, the density estimate at a point <img class="math" src="../_images/math/b124ff74afb0914bb434e8fb849eb56d734412f8.png" alt="y"/> within
-a group of points <img class="math" src="../_images/math/08fe58960982174a36d8a65ef1af0d3acf7ace5a.png" alt="x_i; i=1\cdots N"/> is given by:</p>
+Mathematically, a kernel is a positive function <span class="math">K(x;h)</span>
+which is controlled by the bandwidth parameter <span class="math">h</span>.
+Given this kernel form, the density estimate at a point <span class="math">y</span> within
+a group of points <span class="math">x_i; i=1\cdots N</span> is given by:</p>
 <div class="math">
-<p><img src="../_images/math/57b73b19a75bba7654c1c5076915da8feca8bdb0.png" alt="\rho_K(y) = \sum_{i=1}^{N} K((y - x_i) / h)"/></p>
+<p><span class="math">\rho_K(y) = \sum_{i=1}^{N} K((y - x_i) / h)</span></p>
 </div><p>The bandwidth here acts as a smoothing parameter, controlling the tradeoff
 between bias and variance in the result.  A large bandwidth leads to a very
 smooth (i.e. high-bias) density distribution.  A small bandwidth leads
@@ -253,22 +254,22 @@ forms, which are shown in the following figure:</p>
 </strong></p><p>The form of these kernels is as follows:</p>
 <ul>
 <li><p class="first">Gaussian kernel (<tt class="docutils literal"><span class="pre">kernel</span> <span class="pre">=</span> <span class="pre">'gaussian'</span></tt>)</p>
-<p><img class="math" src="../_images/math/6f487de9cdc05af1d24272b8f36db9f03d5abb06.png" alt="K(x; h) \propto \exp(- \frac{x^2}{2h^2} )"/></p>
+<p><span class="math">K(x; h) \propto \exp(- \frac{x^2}{2h^2} )</span></p>
 </li>
 <li><p class="first">Tophat kernel (<tt class="docutils literal"><span class="pre">kernel</span> <span class="pre">=</span> <span class="pre">'tophat'</span></tt>)</p>
-<p><img class="math" src="../_images/math/9e63a29c9ced920f6aae821ab3e29e01675f2f12.png" alt="K(x; h) \propto 1"/> if <img class="math" src="../_images/math/caea9921eb427449d088d91b6755d96e7cf1b214.png" alt="x &lt; h"/></p>
+<p><span class="math">K(x; h) \propto 1</span> if <span class="math">x &lt; h</span></p>
 </li>
 <li><p class="first">Epanechnikov kernel (<tt class="docutils literal"><span class="pre">kernel</span> <span class="pre">=</span> <span class="pre">'epanechnikov'</span></tt>)</p>
-<p><img class="math" src="../_images/math/ea8752ded7c5816c51d31d20e7d93f52fbf41f49.png" alt="K(x; h) \propto 1 - \frac{x^2}{h^2}"/></p>
+<p><span class="math">K(x; h) \propto 1 - \frac{x^2}{h^2}</span></p>
 </li>
 <li><p class="first">Exponential kernel (<tt class="docutils literal"><span class="pre">kernel</span> <span class="pre">=</span> <span class="pre">'exponential'</span></tt>)</p>
-<p><img class="math" src="../_images/math/db5929be150f149215fd88053de8d36c6608bef6.png" alt="K(x; h) \propto \exp(-x/h)"/></p>
+<p><span class="math">K(x; h) \propto \exp(-x/h)</span></p>
 </li>
 <li><p class="first">Linear kernel (<tt class="docutils literal"><span class="pre">kernel</span> <span class="pre">=</span> <span class="pre">'linear'</span></tt>)</p>
-<p><img class="math" src="../_images/math/d432478525db6c0e8aeb2a6fa0a8ca3bf0afe7b5.png" alt="K(x; h) \propto 1 - x/h"/> if <img class="math" src="../_images/math/caea9921eb427449d088d91b6755d96e7cf1b214.png" alt="x &lt; h"/></p>
+<p><span class="math">K(x; h) \propto 1 - x/h</span> if <span class="math">x &lt; h</span></p>
 </li>
 <li><p class="first">Cosine kernel (<tt class="docutils literal"><span class="pre">kernel</span> <span class="pre">=</span> <span class="pre">'cosine'</span></tt>)</p>
-<p><img class="math" src="../_images/math/b808030270971971d42ec8e62398634b513667c3.png" alt="K(x; h) \propto \cos(\frac{\pi x}{2h})"/> if <img class="math" src="../_images/math/caea9921eb427449d088d91b6755d96e7cf1b214.png" alt="x &lt; h"/></p>
+<p><span class="math">K(x; h) \propto \cos(\frac{\pi x}{2h})</span> if <span class="math">x &lt; h</span></p>
 </li>
 </ul>
 <p>The kernel density estimator can be used with any of the valid distance

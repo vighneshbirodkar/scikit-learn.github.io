@@ -73,16 +73,17 @@
                  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-            <li class="link-title">Scikit-learn 0.17 (development)</li>
+            <li class="link-title">Scikit-learn 0.18 (development)</li>
             <li><a href="../../tutorial/index.html">Tutorials</a></li>
             <li><a href="../../user_guide.html">User guide</a></li>
             <li><a href="../classes.html">API</a></li>
             <li><a href="../../faq.html">FAQ</a></li>
-            <li><a href="../../developers.html">Contributing</a></li>
+            <li><a href="../../developers/contributing.html">Contributing</a></li>
             <li class="divider"></li>
-                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.16.1 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.17 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/0.16/documentation.html">Scikit-learn 0.16</a></li>
                 <li><a href="http://scikit-learn.org/0.15/documentation.html">Scikit-learn 0.15</a></li>
-				<li><a href="../../_downloads/user_guide.pdf">PDF documentation</a></li>
+				<li><a href="../../_downloads/scikit-learn-docs.pdf">PDF documentation</a></li>
               </ul>
             </div>
         </li>
@@ -117,7 +118,7 @@
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        sklearn.prepr...
+        sklearn.preproce...
         </span>
             <span class="hiddenrellink">
             sklearn.preprocessing.robust_scale
@@ -172,7 +173,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.preprocessing" title="sklearn.preprocessing"><tt class="xref py py-mod docutils literal"><span class="pre">sklearn.preprocessing</span></tt></a>.scale<a class="headerlink" href="#sklearn-preprocessing-scale" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="sklearn.preprocessing.scale">
-<tt class="descclassname">sklearn.preprocessing.</tt><tt class="descname">scale</tt><big>(</big><em>X</em>, <em>axis=0</em>, <em>with_mean=True</em>, <em>with_std=True</em>, <em>copy=True</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/95d91c9/sklearn/preprocessing/data.py#L79"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.preprocessing.scale" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sklearn.preprocessing.</tt><tt class="descname">scale</tt><big>(</big><em>X</em>, <em>axis=0</em>, <em>with_mean=True</em>, <em>with_std=True</em>, <em>copy=True</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/37c8d02/sklearn/preprocessing/data.py#L79"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.preprocessing.scale" title="Permalink to this definition">¶</a></dt>
 <dd><p>Standardize a dataset along any axis</p>
 <p>Center to the mean and component wise scale to unit variance.</p>
 <p>Read more in the <a class="reference internal" href="../preprocessing.html#preprocessing-scaler"><em>User Guide</em></a>.</p>
@@ -203,7 +204,7 @@ unit standard deviation).</p>
 <blockquote class="last">
 <div><p>set to False to perform inplace row normalization and avoid a
 copy (if the input is already a numpy array or a scipy.sparse
-CSR matrix and if axis is 1).</p>
+CSC matrix and if axis is 1).</p>
 </div></blockquote>
 </td>
 </tr>
@@ -219,9 +220,9 @@ since it would make them non-sparse and would potentially crash the
 program with memory exhaustion problems.</p>
 <p>Instead the caller is expected to either set explicitly
 <cite>with_mean=False</cite> (in that case, only variance scaling will be
-performed on the features of the CSR matrix) or to call <cite>X.toarray()</cite>
+performed on the features of the CSC matrix) or to call <cite>X.toarray()</cite>
 if he/she expects the materialized dense array to fit in memory.</p>
-<p>To avoid memory copy the caller should pass a CSR matrix.</p>
+<p>To avoid memory copy the caller should pass a CSC matrix.</p>
 </dd></dl>
 
 <div class="section" id="examples-using-sklearn-preprocessing-scale">

@@ -36,8 +36,8 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="scikit-learn 0.18.dev0 documentation" href="../../index.html" />
     <link rel="up" title="Examples" href="../index.html" />
-    <link rel="next" title="Comparing various online solvers" href="plot_sgd_comparison.html" />
-    <link rel="prev" title="Robust linear model estimation using RANSAC" href="plot_ransac.html" />
+    <link rel="next" title="Ordinary Least Squares and Ridge Regression Variance" href="plot_ols_ridge_variance.html" />
+    <link rel="prev" title="Path with L1- Logistic Regression" href="plot_logistic_path.html" />
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -73,16 +73,17 @@
                  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-            <li class="link-title">Scikit-learn 0.17 (development)</li>
+            <li class="link-title">Scikit-learn 0.18 (development)</li>
             <li><a href="../../tutorial/index.html">Tutorials</a></li>
             <li><a href="../../user_guide.html">User guide</a></li>
             <li><a href="../../modules/classes.html">API</a></li>
             <li><a href="../../faq.html">FAQ</a></li>
-            <li><a href="../../developers.html">Contributing</a></li>
+            <li><a href="../../developers/contributing.html">Contributing</a></li>
             <li class="divider"></li>
-                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.16.1 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.17 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/0.16/documentation.html">Scikit-learn 0.16</a></li>
                 <li><a href="http://scikit-learn.org/0.15/documentation.html">Scikit-learn 0.15</a></li>
-				<li><a href="../../_downloads/user_guide.pdf">PDF documentation</a></li>
+				<li><a href="../../_downloads/scikit-learn-docs.pdf">PDF documentation</a></li>
               </ul>
             </div>
         </li>
@@ -113,14 +114,14 @@
   <!-- rellinks[1:] is an ugly hack to avoid link to module
   index -->
         <div class="rellink">
-        <a href="plot_ransac.html"
+        <a href="plot_logistic_path.html"
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        Robust linear...
+        Path with L1- Lo...
         </span>
             <span class="hiddenrellink">
-            Robust linear model estimation using RANSAC
+            Path with L1- Logistic Regression
             </span>
         </a>
         </div>
@@ -179,7 +180,7 @@ calculated.</p>
 <p><strong>Script output</strong>:</p>
 <div class="highlight-python"><div class="highlight"><pre>Coefficients:
  [ 938.23786125]
-Residual sum of squares: 2548.07
+Mean squared error: 2548.07
 Variance score: 0.47
 </pre></div>
 </div>
@@ -218,8 +219,8 @@ Variance score: 0.47
 
 <span class="c"># The coefficients</span>
 <span class="k">print</span><span class="p">(</span><span class="s">&#39;Coefficients: </span><span class="se">\n</span><span class="s">&#39;</span><span class="p">,</span> <span class="n">regr</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
-<span class="c"># The mean square error</span>
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;Residual sum of squares: </span><span class="si">%.2f</span><span class="s">&quot;</span>
+<span class="c"># The mean squared error</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Mean squared error: </span><span class="si">%.2f</span><span class="s">&quot;</span>
       <span class="o">%</span> <a href="http://docs.scipy.org/doc/numpy-1.6.0/reference/generated/numpy.mean.html#numpy.mean"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">((</span><span class="n">regr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">diabetes_X_test</span><span class="p">)</span> <span class="o">-</span> <span class="n">diabetes_y_test</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
 <span class="c"># Explained variance score: 1 is perfect prediction</span>
 <span class="k">print</span><span class="p">(</span><span class="s">&#39;Variance score: </span><span class="si">%.2f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">regr</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">diabetes_X_test</span><span class="p">,</span> <span class="n">diabetes_y_test</span><span class="p">))</span>
@@ -235,8 +236,8 @@ Variance score: 0.47
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  0.10 seconds
-( 0 minutes  0.10 seconds)</p>
+<p><strong>Total running time of the example:</strong>  0.09 seconds
+( 0 minutes  0.09 seconds)</p>
 </div>
 
 
@@ -254,7 +255,7 @@ Variance score: 0.47
      <div class="rel">
     
     <div class="buttonPrevious">
-      <a href="plot_ransac.html">Previous
+      <a href="plot_logistic_path.html">Previous
       </a>
     </div>
     

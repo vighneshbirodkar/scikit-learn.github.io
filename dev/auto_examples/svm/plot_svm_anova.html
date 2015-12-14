@@ -73,16 +73,17 @@
                  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-            <li class="link-title">Scikit-learn 0.17 (development)</li>
+            <li class="link-title">Scikit-learn 0.18 (development)</li>
             <li><a href="../../tutorial/index.html">Tutorials</a></li>
             <li><a href="../../user_guide.html">User guide</a></li>
             <li><a href="../../modules/classes.html">API</a></li>
             <li><a href="../../faq.html">FAQ</a></li>
-            <li><a href="../../developers.html">Contributing</a></li>
+            <li><a href="../../developers/contributing.html">Contributing</a></li>
             <li class="divider"></li>
-                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.16.1 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.17 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/0.16/documentation.html">Scikit-learn 0.16</a></li>
                 <li><a href="http://scikit-learn.org/0.15/documentation.html">Scikit-learn 0.15</a></li>
-				<li><a href="../../_downloads/user_guide.pdf">PDF documentation</a></li>
+				<li><a href="../../_downloads/scikit-learn-docs.pdf">PDF documentation</a></li>
               </ul>
             </div>
         </li>
@@ -117,7 +118,7 @@
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        SVM: Weighted...
+        SVM: Weighted sa...
         </span>
             <span class="hiddenrellink">
             SVM: Weighted samples
@@ -207,7 +208,7 @@
 
 <span class="k">for</span> <span class="n">percentile</span> <span class="ow">in</span> <span class="n">percentiles</span><span class="p">:</span>
     <span class="n">clf</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="n">anova__percentile</span><span class="o">=</span><span class="n">percentile</span><span class="p">)</span>
-    <span class="c"># Compute cross-validation score using all CPUs</span>
+    <span class="c"># Compute cross-validation score using 1 CPU</span>
     <span class="n">this_scores</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.model_selection.cross_val_score.html#sklearn.model_selection.cross_val_score"><span class="n">cross_val_score</span></a><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">score_means</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">this_scores</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
     <span class="n">score_stds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">this_scores</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
@@ -223,8 +224,8 @@
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  1.04 seconds
-( 0 minutes  1.04 seconds)</p>
+<p><strong>Total running time of the example:</strong>  0.63 seconds
+( 0 minutes  0.63 seconds)</p>
 </div>
 
 

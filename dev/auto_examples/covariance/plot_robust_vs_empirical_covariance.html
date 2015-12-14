@@ -73,16 +73,17 @@
                  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-            <li class="link-title">Scikit-learn 0.17 (development)</li>
+            <li class="link-title">Scikit-learn 0.18 (development)</li>
             <li><a href="../../tutorial/index.html">Tutorials</a></li>
             <li><a href="../../user_guide.html">User guide</a></li>
             <li><a href="../../modules/classes.html">API</a></li>
             <li><a href="../../faq.html">FAQ</a></li>
-            <li><a href="../../developers.html">Contributing</a></li>
+            <li><a href="../../developers/contributing.html">Contributing</a></li>
             <li class="divider"></li>
-                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.16.1 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/stable/documentation.html">Scikit-learn 0.17 (stable)</a></li>
+                <li><a href="http://scikit-learn.org/0.16/documentation.html">Scikit-learn 0.16</a></li>
                 <li><a href="http://scikit-learn.org/0.15/documentation.html">Scikit-learn 0.15</a></li>
-				<li><a href="../../_downloads/user_guide.pdf">PDF documentation</a></li>
+				<li><a href="../../_downloads/scikit-learn-docs.pdf">PDF documentation</a></li>
               </ul>
             </div>
         </li>
@@ -117,7 +118,7 @@
         accesskey="P">Previous
         <br/>
         <span class="smallrellink">
-        Robust covari...
+        Robust covarianc...
         </span>
             <span class="hiddenrellink">
             Robust covariance estimation and Mahalanobis distances relevance
@@ -181,9 +182,9 @@ resistant to &#8220;erroneous&#8221; observations in the data set.</p>
 <p>The Minimum Covariance Determinant estimator is a robust, high-breakdown point
 (i.e. it can be used to estimate the covariance matrix of highly contaminated
 datasets, up to
-<img class="math" src="../../_images/math/1b6d1bfe6128c39a78cf9d03ce2b8c383af766f3.png" alt="\frac{n_\text{samples} - n_\text{features}-1}{2}"/> outliers) estimator of
+<span class="math">\frac{n_\text{samples} - n_\text{features}-1}{2}</span> outliers) estimator of
 covariance. The idea is to find
-<img class="math" src="../../_images/math/fc01155981c5427ca134c16d49045303cd94fb1d.png" alt="\frac{n_\text{samples} + n_\text{features}+1}{2}"/>
+<span class="math">\frac{n_\text{samples} + n_\text{features}+1}{2}</span>
 observations whose empirical covariance has the smallest determinant, yielding
 a &#8220;pure&#8221; subset of observations from which to compute standards estimates of
 location and covariance. After a correction step aiming at compensating the
@@ -201,7 +202,7 @@ distributed data sets:</p>
 <li>The mean and the empirical covariance of the full dataset, which break
 down as soon as there are outliers in the data set</li>
 <li>The robust MCD, that has a low error provided
-<img class="math" src="../../_images/math/37902c51e25e9d0c4c2e966e50b252f82cfa60e1.png" alt="n_\text{samples} &gt; 5n_\text{features}"/></li>
+<span class="math">n_\text{samples} &gt; 5n_\text{features}</span></li>
 <li>The mean and the empirical covariance of the observations that are known
 to be good ones. This can be considered as a &#8220;perfect&#8221; MCD estimation,
 so one can trust our implementation by comparing to this case.</li>
@@ -335,8 +336,8 @@ fundamental concepts. IEEE Signal Processing Magazine 29(4), 61-80.</td></tr>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  4.44 seconds
-( 0 minutes  4.44 seconds)</p>
+<p><strong>Total running time of the example:</strong>  3.21 seconds
+( 0 minutes  3.21 seconds)</p>
 </div>
 </div>
 
