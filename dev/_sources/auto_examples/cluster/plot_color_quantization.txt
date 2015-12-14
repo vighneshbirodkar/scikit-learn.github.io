@@ -47,9 +47,9 @@ randomly) is also shown.
   Fitting model on a small sub-sample of the data
   done in 0.407s.
   Predicting color indices on the full image (k-means)
-  done in 0.268s.
+  done in 0.264s.
   Predicting color indices on the full image (random)
-  done in 0.253s.
+  done in 0.254s.
 
 
 
@@ -58,6 +58,6 @@ randomly) is also shown.
 .. literalinclude:: plot_color_quantization.py
     :lines: 21-
 
-**Total running time of the example:**  1.77 seconds
-( 0 minutes  1.77 seconds)
+**Total running time of the example:**  1.78 seconds
+( 0 minutes  1.78 seconds)
     

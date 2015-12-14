@@ -78,7 +78,7 @@ References
   
    Area under the ROC curve : 0.993919
   
-  time elapsed: 27.62s
+  time elapsed: 28.50s
 
 
 
@@ -87,6 +87,6 @@ References
 .. literalinclude:: plot_species_distribution_modeling.py
     :lines: 38-
 
-**Total running time of the example:**  27.67 seconds
-( 0 minutes  27.67 seconds)
+**Total running time of the example:**  28.55 seconds
+( 0 minutes  28.55 seconds)
     
