@@ -35,13 +35,13 @@ that of representing a flat map of the Earth, as with
 
 **Script output**::
 
-  standard: 0.094 sec
-  ltsa: 0.24 sec
-  hessian: 0.28 sec
-  modified: 0.23 sec
+  standard: 0.091 sec
+  ltsa: 0.23 sec
+  hessian: 0.27 sec
+  modified: 0.22 sec
   ISO: 0.28 sec
-  MDS: 1.6 sec
-  Spectral Embedding: 0.24 sec
+  MDS: 1.5 sec
+  Spectral Embedding: 0.23 sec
   t-SNE: 2.4 sec
 
 
@@ -51,6 +51,6 @@ that of representing a flat map of the Earth, as with
 .. literalinclude:: plot_manifold_sphere.py
     :lines: 29-
 
-**Total running time of the example:**  5.79 seconds
-( 0 minutes  5.79 seconds)
+**Total running time of the example:**  5.62 seconds
+( 0 minutes  5.62 seconds)
     

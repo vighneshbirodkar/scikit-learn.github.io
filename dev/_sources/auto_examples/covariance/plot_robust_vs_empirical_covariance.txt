@@ -69,6 +69,6 @@ References
 .. literalinclude:: plot_robust_vs_empirical_covariance.py
     :lines: 55-
 
-**Total running time of the example:**  3.07 seconds
-( 0 minutes  3.07 seconds)
+**Total running time of the example:**  2.99 seconds
+( 0 minutes  2.99 seconds)
     

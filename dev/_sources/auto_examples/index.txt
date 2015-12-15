@@ -5187,7 +5187,7 @@ Examples concerning the :mod:`sklearn.svm` module.
 
 .. raw:: html
 
-    <div class="thumbnailContainer" tooltip="This example shows how to perform univariate feature before running a SVC (support vector class...">
+    <div class="thumbnailContainer" tooltip="This example shows how to perform univariate feature selection before running a SVC (support ve...">
 
 .. only:: html
 

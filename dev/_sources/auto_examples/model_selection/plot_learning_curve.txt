@@ -40,6 +40,6 @@ samples.
 .. literalinclude:: plot_learning_curve.py
     :lines: 16-
 
-**Total running time of the example:**  11.83 seconds
-( 0 minutes  11.83 seconds)
+**Total running time of the example:**  11.99 seconds
+( 0 minutes  11.99 seconds)
     
