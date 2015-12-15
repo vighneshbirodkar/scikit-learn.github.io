@@ -170,7 +170,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.model_selection" title="sklearn.model_selection"><tt class="xref py py-mod docutils literal"><span class="pre">sklearn.model_selection</span></tt></a>.LabelKFold<a class="headerlink" href="#sklearn-model-selection-labelkfold" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="sklearn.model_selection.LabelKFold">
-<em class="property">class </em><tt class="descclassname">sklearn.model_selection.</tt><tt class="descname">LabelKFold</tt><big>(</big><em>n_folds=3</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/7d6a22a/sklearn/model_selection/_split.py#L417"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.model_selection.LabelKFold" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sklearn.model_selection.</tt><tt class="descname">LabelKFold</tt><big>(</big><em>n_folds=3</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/4b122ad/sklearn/model_selection/_split.py#L417"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.model_selection.LabelKFold" title="Permalink to this definition">¶</a></dt>
 <dd><p>K-fold iterator variant with non-overlapping labels.</p>
 <p>The same label will not appear in two different folds (the number of
 distinct labels has to be at least equal to the number of folds).</p>
@@ -238,12 +238,12 @@ distinct labels is approximately the same in each fold.</p>
 </table>
 <dl class="method">
 <dt id="sklearn.model_selection.LabelKFold.__init__">
-<tt class="descname">__init__</tt><big>(</big><em>n_folds=3</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/7d6a22a/sklearn/model_selection/_split.py#L463"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.model_selection.LabelKFold.__init__" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">__init__</tt><big>(</big><em>n_folds=3</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/4b122ad/sklearn/model_selection/_split.py#L463"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.model_selection.LabelKFold.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="sklearn.model_selection.LabelKFold.get_n_splits">
-<tt class="descname">get_n_splits</tt><big>(</big><em>X=None</em>, <em>y=None</em>, <em>labels=None</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/7d6a22a/sklearn/model_selection/_split.py#L318"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.model_selection.LabelKFold.get_n_splits" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_n_splits</tt><big>(</big><em>X=None</em>, <em>y=None</em>, <em>labels=None</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/4b122ad/sklearn/model_selection/_split.py#L318"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.model_selection.LabelKFold.get_n_splits" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the number of splitting iterations in the cross-validator</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -275,7 +275,7 @@ distinct labels is approximately the same in each fold.</p>
 
 <dl class="method">
 <dt id="sklearn.model_selection.LabelKFold.split">
-<tt class="descname">split</tt><big>(</big><em>X</em>, <em>y=None</em>, <em>labels=None</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/7d6a22a/sklearn/model_selection/_split.py#L283"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.model_selection.LabelKFold.split" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">split</tt><big>(</big><em>X</em>, <em>y=None</em>, <em>labels=None</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/4b122ad/sklearn/model_selection/_split.py#L283"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.model_selection.LabelKFold.split" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate indices to split data into training and test set.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
