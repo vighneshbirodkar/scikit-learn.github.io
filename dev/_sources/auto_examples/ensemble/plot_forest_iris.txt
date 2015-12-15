@@ -70,6 +70,6 @@ samples are built sequentially and so do not use multiple cores.
 .. literalinclude:: plot_forest_iris.py
     :lines: 41-
 
-**Total running time of the example:**  6.41 seconds
-( 0 minutes  6.41 seconds)
+**Total running time of the example:**  6.81 seconds
+( 0 minutes  6.81 seconds)
     

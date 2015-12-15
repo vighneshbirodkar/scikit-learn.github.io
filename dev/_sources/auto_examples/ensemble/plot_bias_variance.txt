@@ -83,6 +83,6 @@ References
 .. literalinclude:: plot_bias_variance.py
     :lines: 64-
 
-**Total running time of the example:**  1.35 seconds
-( 0 minutes  1.35 seconds)
+**Total running time of the example:**  1.42 seconds
+( 0 minutes  1.42 seconds)
     

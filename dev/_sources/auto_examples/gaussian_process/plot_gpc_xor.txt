@@ -26,6 +26,6 @@ stationary kernels often obtain better results.
 .. literalinclude:: plot_gpc_xor.py
     :lines: 12-
 
-**Total running time of the example:**  1.74 seconds
-( 0 minutes  1.74 seconds)
+**Total running time of the example:**  1.80 seconds
+( 0 minutes  1.80 seconds)
     
