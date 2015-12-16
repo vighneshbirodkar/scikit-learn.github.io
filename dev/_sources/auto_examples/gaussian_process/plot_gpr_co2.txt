@@ -82,6 +82,6 @@ confident predictions until around 2015.
 .. literalinclude:: plot_gpr_co2.py
     :lines: 60-
 
-**Total running time of the example:**  21.66 seconds
-( 0 minutes  21.66 seconds)
+**Total running time of the example:**  19.72 seconds
+( 0 minutes  19.72 seconds)
     
