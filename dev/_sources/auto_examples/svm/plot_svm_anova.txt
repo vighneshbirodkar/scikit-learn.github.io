@@ -23,6 +23,6 @@ SVC (support vector classifier) to improve the classification scores.
 .. literalinclude:: plot_svm_anova.py
     :lines: 9-
 
-**Total running time of the example:**  0.64 seconds
-( 0 minutes  0.64 seconds)
+**Total running time of the example:**  0.66 seconds
+( 0 minutes  0.66 seconds)
     
