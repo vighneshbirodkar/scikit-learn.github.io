@@ -172,6 +172,6 @@ model with their true labels.
 .. literalinclude:: plot_label_propagation_digits_active_learning.py
     :lines: 18-
 
-**Total running time of the example:**  1.52 seconds
-( 0 minutes  1.52 seconds)
+**Total running time of the example:**  1.53 seconds
+( 0 minutes  1.53 seconds)
     

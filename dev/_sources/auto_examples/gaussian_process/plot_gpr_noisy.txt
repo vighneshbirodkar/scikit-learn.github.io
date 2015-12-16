@@ -47,6 +47,6 @@ times for different initializations.
 .. literalinclude:: plot_gpr_noisy.py
     :lines: 18-
 
-**Total running time of the example:**  10.42 seconds
-( 0 minutes  10.42 seconds)
+**Total running time of the example:**  9.30 seconds
+( 0 minutes  9.30 seconds)
     
