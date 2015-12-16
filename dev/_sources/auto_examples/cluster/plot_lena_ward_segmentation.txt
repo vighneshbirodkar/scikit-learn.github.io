@@ -20,7 +20,7 @@ for each segmented region to be in one piece.
 **Script output**::
 
   Compute structured hierarchical clustering...
-  Elapsed time:  7.24652481079
+  Elapsed time:  7.23862290382
   Number of pixels:  65536
   Number of clusters:  15
 
