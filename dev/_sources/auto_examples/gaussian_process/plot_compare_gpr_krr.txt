@@ -56,9 +56,9 @@ than just predicting the mean.
 
 **Script output**::
 
-  Time for KRR fitting: 4.900
-  Time for GPR fitting: 0.151
-  Time for KRR prediction: 0.069
+  Time for KRR fitting: 4.884
+  Time for GPR fitting: 0.149
+  Time for KRR prediction: 0.067
   Time for GPR prediction: 0.068
   Time for GPR prediction with standard-deviation: 0.337
 
@@ -69,6 +69,6 @@ than just predicting the mean.
 .. literalinclude:: plot_compare_gpr_krr.py
     :lines: 47-
 
-**Total running time of the example:**  5.66 seconds
-( 0 minutes  5.66 seconds)
+**Total running time of the example:**  5.62 seconds
+( 0 minutes  5.62 seconds)
     
