@@ -30,14 +30,14 @@ representation of the data in the low-dimensional space.
 
 **Script output**::
 
-  standard: 0.15 sec
-  ltsa: 0.43 sec
-  hessian: 0.54 sec
-  modified: 0.35 sec
-  Isomap: 0.56 sec
-  MDS: 3.5 sec
-  SpectralEmbedding: 0.27 sec
-  t-SNE: 3.7 sec
+  standard: 0.13 sec
+  ltsa: 0.4 sec
+  hessian: 0.38 sec
+  modified: 0.31 sec
+  Isomap: 0.5 sec
+  MDS: 2.8 sec
+  SpectralEmbedding: 0.26 sec
+  t-SNE: 3.5 sec
 
 
 
@@ -46,6 +46,6 @@ representation of the data in the low-dimensional space.
 .. literalinclude:: plot_compare_methods.py
     :lines: 21-
 
-**Total running time of the example:**  10.04 seconds
-( 0 minutes  10.04 seconds)
+**Total running time of the example:**  8.79 seconds
+( 0 minutes  8.79 seconds)
     

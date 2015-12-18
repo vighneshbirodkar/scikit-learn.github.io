@@ -366,7 +366,7 @@ that are both costly and useless to avoid computing then rather than
 trying to optimize their implementation).</p>
 <p>It is however still interesting to check what&#8217;s happening inside the
 <tt class="docutils literal"><span class="pre">_nls_subproblem</span></tt> function which is the hotspot if we only consider
-Python code: it takes around 100% of the accumulated time of the module. In
+Python code: it takes around 100% of the cumulated time of the module. In
 order to better understand the profile of this specific function, let
 us install <tt class="docutils literal"><span class="pre">line-prof</span></tt> and wire it to IPython:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ pip install line-profiler

@@ -201,11 +201,11 @@ on the parameters epsilon and C of the SVR.</p>
 </li>
 </ul>
 <p><strong>Script output</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>SVR complexity and bandwidth selected and model fitted in 1.061 s
-KRR complexity and bandwidth selected and model fitted in 0.314 s
+<div class="highlight-python"><div class="highlight"><pre>SVR complexity and bandwidth selected and model fitted in 0.910 s
+KRR complexity and bandwidth selected and model fitted in 0.239 s
 Support vector ratio: 0.320
-SVR prediction for 100000 inputs in 0.118 s
-KRR prediction for 100000 inputs in 0.449 s
+SVR prediction for 100000 inputs in 0.105 s
+KRR prediction for 100000 inputs in 0.361 s
 </pre></div>
 </div>
 <p><strong>Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_kernel_ridge_regression.py"><tt class="xref download docutils literal"><span class="pre">plot_kernel_ridge_regression.py</span></tt></a></p>
@@ -278,9 +278,8 @@ KRR prediction for 100000 inputs in 0.449 s
 <span class="c">#############################################################################</span>
 <span class="c"># look at the results</span>
 <span class="n">sv_ind</span> <span class="o">=</span> <span class="n">svr</span><span class="o">.</span><span class="n">best_estimator_</span><span class="o">.</span><span class="n">support_</span>
-<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.scatter"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span></a><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">sv_ind</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">sv_ind</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;SVR support vectors&#39;</span><span class="p">,</span>
-            <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.scatter"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span></a><span class="p">(</span><span class="n">X</span><span class="p">[:</span><span class="mi">100</span><span class="p">],</span> <span class="n">y</span><span class="p">[:</span><span class="mi">100</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s">&#39;k&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;data&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.scatter"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span></a><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">sv_ind</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">sv_ind</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;SVR support vectors&#39;</span><span class="p">)</span>
+<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.scatter"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span></a><span class="p">(</span><span class="n">X</span><span class="p">[:</span><span class="mi">100</span><span class="p">],</span> <span class="n">y</span><span class="p">[:</span><span class="mi">100</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s">&#39;k&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;data&#39;</span><span class="p">)</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.hold"><span class="n">plt</span><span class="o">.</span><span class="n">hold</span></a><span class="p">(</span><span class="s">&#39;on&#39;</span><span class="p">)</span>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">X_plot</span><span class="p">,</span> <span class="n">y_svr</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">,</span>
          <span class="n">label</span><span class="o">=</span><span class="s">&#39;SVR (fit: </span><span class="si">%.3f</span><span class="s">s, predict: </span><span class="si">%.3f</span><span class="s">s)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">svr_fit</span><span class="p">,</span> <span class="n">svr_predict</span><span class="p">))</span>
@@ -349,8 +348,8 @@ KRR prediction for 100000 inputs in 0.449 s
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  205.77 seconds
-( 3 minutes  25.77 seconds)</p>
+<p><strong>Total running time of the example:</strong>  193.28 seconds
+( 3 minutes  13.28 seconds)</p>
 </div>
 
 
