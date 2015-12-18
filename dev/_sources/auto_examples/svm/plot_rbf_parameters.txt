@@ -96,6 +96,6 @@ map.
 .. literalinclude:: plot_rbf_parameters.py
     :lines: 68-
 
-**Total running time of the example:**  7.21 seconds
-( 0 minutes  7.21 seconds)
+**Total running time of the example:**  7.35 seconds
+( 0 minutes  7.35 seconds)
     

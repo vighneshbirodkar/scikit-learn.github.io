@@ -599,13 +599,13 @@ in which cell <tt class="docutils literal"><span class="pre">[i,</span> <span cl
 <p>In multilabel classification, the function returns the subset accuracy. If
 the entire set of predicted labels for a sample strictly match with the true
 set of labels, then the subset accuracy is 1.0; otherwise it is 0.0.</p>
-<p>If <span class="math">\hat{y}_i</span> is the predicted value of
-the <span class="math">i</span>-th sample and <span class="math">y_i</span> is the corresponding true value,
-then the fraction of correct predictions over <span class="math">n_\text{samples}</span> is
+<p>If <img class="math" src="../_images/math/e8eb12f9407362d0fc035a12094fcc7797dcb69a.png" alt="\hat{y}_i"/> is the predicted value of
+the <img class="math" src="../_images/math/a581f053bbfa5115f42c13094857cdd12a37ec49.png" alt="i"/>-th sample and <img class="math" src="../_images/math/410a65f64e2a609a2a7f544ed72f0982b719807a.png" alt="y_i"/> is the corresponding true value,
+then the fraction of correct predictions over <img class="math" src="../_images/math/8bd3f4f4b38e127b70e57ee0d8a8f6c3f9a67560.png" alt="n_\text{samples}"/> is
 defined as</p>
 <div class="math">
-<p><span class="math">\texttt{accuracy}(y, \hat{y}) = \frac{1}{n_\text{samples}} \sum_{i=0}^{n_\text{samples}-1} 1(\hat{y}_i = y_i)</span></p>
-</div><p>where <span class="math">1(x)</span> is the <a class="reference external" href="http://en.wikipedia.org/wiki/Indicator_function">indicator function</a>.</p>
+<p><img src="../_images/math/27e20bf0b2786124f8df6383493b347e6ce8586d.png" alt="\texttt{accuracy}(y, \hat{y}) = \frac{1}{n_\text{samples}} \sum_{i=0}^{n_\text{samples}-1} 1(\hat{y}_i = y_i)"/></p>
+</div><p>where <img class="math" src="../_images/math/6205f47dc46df64205ff4ed08f0e63aed02741ea.png" alt="1(x)"/> is the <a class="reference external" href="http://en.wikipedia.org/wiki/Indicator_function">indicator function</a>.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y_pred</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
@@ -646,9 +646,9 @@ and not for more than two annotators.</p>
 <span id="id3"></span><h3>3.3.2.4. Confusion matrix<a class="headerlink" href="#confusion-matrix" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference internal" href="generated/sklearn.metrics.confusion_matrix.html#sklearn.metrics.confusion_matrix" title="sklearn.metrics.confusion_matrix"><tt class="xref py py-func docutils literal"><span class="pre">confusion_matrix</span></tt></a> function evaluates
 classification accuracy by computing the <a class="reference external" href="http://en.wikipedia.org/wiki/Confusion_matrix">confusion matrix</a>.</p>
-<p>By definition, entry <span class="math">i, j</span> in a confusion matrix is
-the number of observations actually in group <span class="math">i</span>, but
-predicted to be in group <span class="math">j</span>. Here is an example:</p>
+<p>By definition, entry <img class="math" src="../_images/math/f7c20d233f3b81c6c4a72366352f7029d73a2eb3.png" alt="i, j"/> in a confusion matrix is
+the number of observations actually in group <img class="math" src="../_images/math/a581f053bbfa5115f42c13094857cdd12a37ec49.png" alt="i"/>, but
+predicted to be in group <img class="math" src="../_images/math/d32c78b759903e3f4bd4fd2ce0b86358f7500c5d.png" alt="j"/>. Here is an example:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y_true</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y_pred</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
@@ -715,13 +715,13 @@ grid search with nested cross-validation.</li>
 <p>The <a class="reference internal" href="generated/sklearn.metrics.hamming_loss.html#sklearn.metrics.hamming_loss" title="sklearn.metrics.hamming_loss"><tt class="xref py py-func docutils literal"><span class="pre">hamming_loss</span></tt></a> computes the average Hamming loss or <a class="reference external" href="http://en.wikipedia.org/wiki/Hamming_distance">Hamming
 distance</a> between two sets
 of samples.</p>
-<p>If <span class="math">\hat{y}_j</span> is the predicted value for the <span class="math">j</span>-th label of
-a given sample, <span class="math">y_j</span> is the corresponding true value, and
-<span class="math">n_\text{labels}</span> is the number of classes or labels, then the
-Hamming loss <span class="math">L_{Hamming}</span> between two samples is defined as:</p>
+<p>If <img class="math" src="../_images/math/5006ffbc5dcfb197dae87d662a077f941e570203.png" alt="\hat{y}_j"/> is the predicted value for the <img class="math" src="../_images/math/d32c78b759903e3f4bd4fd2ce0b86358f7500c5d.png" alt="j"/>-th label of
+a given sample, <img class="math" src="../_images/math/7e5afa68eb01a86e3fc93b26c2608df5bd10159b.png" alt="y_j"/> is the corresponding true value, and
+<img class="math" src="../_images/math/a058f7fd60c9f0b5be678d2de8bef4c2587d93b4.png" alt="n_\text{labels}"/> is the number of classes or labels, then the
+Hamming loss <img class="math" src="../_images/math/e840adff6b2c292512f5c2eb67ad2c9c401366b5.png" alt="L_{Hamming}"/> between two samples is defined as:</p>
 <div class="math">
-<p><span class="math">L_{Hamming}(y, \hat{y}) = \frac{1}{n_\text{labels}} \sum_{j=0}^{n_\text{labels} - 1} 1(\hat{y}_j \not= y_j)</span></p>
-</div><p>where <span class="math">1(x)</span> is the <a class="reference external" href="http://en.wikipedia.org/wiki/Indicator_function">indicator function</a>.</p>
+<p><img src="../_images/math/eaa83ad913d07b540296aa7850a0756648059da7.png" alt="L_{Hamming}(y, \hat{y}) = \frac{1}{n_\text{labels}} \sum_{j=0}^{n_\text{labels} - 1} 1(\hat{y}_j \not= y_j)"/></p>
+</div><p>where <img class="math" src="../_images/math/6205f47dc46df64205ff4ed08f0e63aed02741ea.png" alt="1(x)"/> is the <a class="reference external" href="http://en.wikipedia.org/wiki/Indicator_function">indicator function</a>.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">hamming_loss</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y_pred</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y_true</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
@@ -751,11 +751,11 @@ zero and one, exclusive.</p>
 <p>The <a class="reference internal" href="generated/sklearn.metrics.jaccard_similarity_score.html#sklearn.metrics.jaccard_similarity_score" title="sklearn.metrics.jaccard_similarity_score"><tt class="xref py py-func docutils literal"><span class="pre">jaccard_similarity_score</span></tt></a> function computes the average (default)
 or sum of <a class="reference external" href="http://en.wikipedia.org/wiki/Jaccard_index">Jaccard similarity coefficients</a>, also called the Jaccard index,
 between pairs of label sets.</p>
-<p>The Jaccard similarity coefficient of the <span class="math">i</span>-th samples,
-with a ground truth label set <span class="math">y_i</span> and predicted label set
-<span class="math">\hat{y}_i</span>, is defined as</p>
+<p>The Jaccard similarity coefficient of the <img class="math" src="../_images/math/a581f053bbfa5115f42c13094857cdd12a37ec49.png" alt="i"/>-th samples,
+with a ground truth label set <img class="math" src="../_images/math/410a65f64e2a609a2a7f544ed72f0982b719807a.png" alt="y_i"/> and predicted label set
+<img class="math" src="../_images/math/e8eb12f9407362d0fc035a12094fcc7797dcb69a.png" alt="\hat{y}_i"/>, is defined as</p>
 <div class="math">
-<p><span class="math">J(y_i, \hat{y}_i) = \frac{|y_i \cap \hat{y}_i|}{|y_i \cup \hat{y}_i|}.</span></p>
+<p><img src="../_images/math/4f53fbf22e40f593a72f3f7788bccc7f17b1136c.png" alt="J(y_i, \hat{y}_i) = \frac{|y_i \cap \hat{y}_i|}{|y_i \cup \hat{y}_i|}."/></p>
 </div><p>In binary and multiclass classification, the Jaccard similarity coefficient
 score is equal to the classification accuracy.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
@@ -781,11 +781,11 @@ of the classifier not to label as positive a sample that is negative, and
 <a class="reference external" href="http://en.wikipedia.org/wiki/Precision_and_recall#Recall">recall</a> is the
 ability of the classifier to find all the positive samples.</p>
 <p>The  <a class="reference external" href="http://en.wikipedia.org/wiki/F1_score">F-measure</a>
-(<span class="math">F_\beta</span> and <span class="math">F_1</span> measures) can be interpreted as a weighted
+(<img class="math" src="../_images/math/f83bbb89a735c6e2de5fed05a31ac683d1c20699.png" alt="F_\beta"/> and <img class="math" src="../_images/math/86b53a99470bfe410dd9108afdb7a4464f2461fb.png" alt="F_1"/> measures) can be interpreted as a weighted
 harmonic mean of the precision and recall. A
-<span class="math">F_\beta</span> measure reaches its best value at 1 and its worst score at 0.
-With <span class="math">\beta = 1</span>,  <span class="math">F_\beta</span> and
-<span class="math">F_1</span>  are equivalent, and the recall and the precision are equally important.</p>
+<img class="math" src="../_images/math/f83bbb89a735c6e2de5fed05a31ac683d1c20699.png" alt="F_\beta"/> measure reaches its best value at 1 and its worst score at 0.
+With <img class="math" src="../_images/math/62d80c06c441f97f096c5a6b5f48e6714cb071df.png" alt="\beta = 1"/>,  <img class="math" src="../_images/math/f83bbb89a735c6e2de5fed05a31ac683d1c20699.png" alt="F_\beta"/> and
+<img class="math" src="../_images/math/86b53a99470bfe410dd9108afdb7a4464f2461fb.png" alt="F_1"/>  are equivalent, and the recall and the precision are equally important.</p>
 <p>The <a class="reference internal" href="generated/sklearn.metrics.precision_recall_curve.html#sklearn.metrics.precision_recall_curve" title="sklearn.metrics.precision_recall_curve"><tt class="xref py py-func docutils literal"><span class="pre">precision_recall_curve</span></tt></a> computes a precision-recall curve
 from the ground truth label and a score given by the classifier
 by varying a decision threshold.</p>
@@ -876,11 +876,11 @@ Correct absence of result</td>
 </table>
 <p>In this context, we can define the notions of precision, recall and F-measure:</p>
 <div class="math">
-<p><span class="math">\text{precision} = \frac{tp}{tp + fp},</span></p>
+<p><img src="../_images/math/f8029f7b6c8fc80db737d850ed8e10ea8f27e410.png" alt="\text{precision} = \frac{tp}{tp + fp},"/></p>
 </div><div class="math">
-<p><span class="math">\text{recall} = \frac{tp}{tp + fn},</span></p>
+<p><img src="../_images/math/ca017d3d38a5a935ae8bee84d8143b44f1b32c9a.png" alt="\text{recall} = \frac{tp}{tp + fn},"/></p>
 </div><div class="math">
-<p><span class="math">F_\beta = (1 + \beta^2) \frac{\text{precision} \times \text{recall}}{\beta^2 \text{precision} + \text{recall}}.</span></p>
+<p><img src="../_images/math/b6183c8fb10498f949131f2aa67eeb1256cdc68a.png" alt="F_\beta = (1 + \beta^2) \frac{\text{precision} \times \text{recall}}{\beta^2 \text{precision} + \text{recall}}."/></p>
 </div><p>Here are some small examples in binary classification:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">metrics</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y_pred</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
@@ -928,25 +928,25 @@ specified by the <tt class="docutils literal"><span class="pre">average</span></
 <a class="reference internal" href="generated/sklearn.metrics.fbeta_score.html#sklearn.metrics.fbeta_score" title="sklearn.metrics.fbeta_score"><tt class="xref py py-func docutils literal"><span class="pre">fbeta_score</span></tt></a>, <a class="reference internal" href="generated/sklearn.metrics.precision_recall_fscore_support.html#sklearn.metrics.precision_recall_fscore_support" title="sklearn.metrics.precision_recall_fscore_support"><tt class="xref py py-func docutils literal"><span class="pre">precision_recall_fscore_support</span></tt></a>,
 <a class="reference internal" href="generated/sklearn.metrics.precision_score.html#sklearn.metrics.precision_score" title="sklearn.metrics.precision_score"><tt class="xref py py-func docutils literal"><span class="pre">precision_score</span></tt></a> and <a class="reference internal" href="generated/sklearn.metrics.recall_score.html#sklearn.metrics.recall_score" title="sklearn.metrics.recall_score"><tt class="xref py py-func docutils literal"><span class="pre">recall_score</span></tt></a> functions, as described
 <a class="reference internal" href="#average"><em>above</em></a>. Note that for &#8220;micro&#8221;-averaging in a multiclass setting
-with all labels included will produce equal precision, recall and <span class="math">F</span>,
+with all labels included will produce equal precision, recall and <img class="math" src="../_images/math/183421431fcc0a42e22f825a33dcc3c51607fa6e.png" alt="F"/>,
 while &#8220;weighted&#8221; averaging may produce an F-score that is not between
 precision and recall.</p>
 <p>To make this more explicit, consider the following notation:</p>
 <ul class="simple">
-<li><span class="math">y</span> the set of <em>predicted</em> <span class="math">(sample, label)</span> pairs</li>
-<li><span class="math">\hat{y}</span> the set of <em>true</em> <span class="math">(sample, label)</span> pairs</li>
-<li><span class="math">L</span> the set of labels</li>
-<li><span class="math">S</span> the set of samples</li>
-<li><span class="math">y_s</span> the subset of <span class="math">y</span> with sample <span class="math">s</span>,
-i.e. <span class="math">y_s := \left\{(s', l) \in y | s' = s\right\}</span></li>
-<li><span class="math">y_l</span> the subset of <span class="math">y</span> with label <span class="math">l</span></li>
-<li>similarly, <span class="math">\hat{y}_s</span> and <span class="math">\hat{y}_l</span> are subsets of
-<span class="math">\hat{y}</span></li>
-<li><span class="math">P(A, B) := \frac{\left| A \cap B \right|}{\left|A\right|}</span></li>
-<li><span class="math">R(A, B) := \frac{\left| A \cap B \right|}{\left|B\right|}</span>
-(Conventions vary on handling <span class="math">B = \emptyset</span>; this implementation uses
-<span class="math">R(A, B):=0</span>, and similar for <span class="math">P</span>.)</li>
-<li><span class="math">F_\beta(A, B) := \left(1 + \beta^2\right) \frac{P(A, B) \times R(A, B)}{\beta^2 P(A, B) + R(A, B)}</span></li>
+<li><img class="math" src="../_images/math/b124ff74afb0914bb434e8fb849eb56d734412f8.png" alt="y"/> the set of <em>predicted</em> <img class="math" src="../_images/math/1a84eaa6f87e3ed766b4b2f302564b4667ad0ba9.png" alt="(sample, label)"/> pairs</li>
+<li><img class="math" src="../_images/math/4edbd88750539c2610a7bbfcf79c33cf1ae7a36c.png" alt="\hat{y}"/> the set of <em>true</em> <img class="math" src="../_images/math/1a84eaa6f87e3ed766b4b2f302564b4667ad0ba9.png" alt="(sample, label)"/> pairs</li>
+<li><img class="math" src="../_images/math/0a5711c7a37994043b2bc3bb374adca232491762.png" alt="L"/> the set of labels</li>
+<li><img class="math" src="../_images/math/11a85f3c69ae6702cb1d99d3de451913b8f84c04.png" alt="S"/> the set of samples</li>
+<li><img class="math" src="../_images/math/efcf8324302d900d3e5d02f6b1215ebdb19c56a1.png" alt="y_s"/> the subset of <img class="math" src="../_images/math/b124ff74afb0914bb434e8fb849eb56d734412f8.png" alt="y"/> with sample <img class="math" src="../_images/math/6859317dd1b439cef34131bcd4bafee8393444e0.png" alt="s"/>,
+i.e. <img class="math" src="../_images/math/fbef4da83706299daf2d9e8ac762cb70fae90a64.png" alt="y_s := \left\{(s', l) \in y | s' = s\right\}"/></li>
+<li><img class="math" src="../_images/math/0b5a7fd2f2dd52ffb51438669d9acff8026a2db9.png" alt="y_l"/> the subset of <img class="math" src="../_images/math/b124ff74afb0914bb434e8fb849eb56d734412f8.png" alt="y"/> with label <img class="math" src="../_images/math/d99efde75c84ef402a92cd4497530d2366fb112f.png" alt="l"/></li>
+<li>similarly, <img class="math" src="../_images/math/a1e3128960061808219116bfa141011127c8a202.png" alt="\hat{y}_s"/> and <img class="math" src="../_images/math/5243a04d6927973d5106a8a447a279b6e7bc8c4e.png" alt="\hat{y}_l"/> are subsets of
+<img class="math" src="../_images/math/4edbd88750539c2610a7bbfcf79c33cf1ae7a36c.png" alt="\hat{y}"/></li>
+<li><img class="math" src="../_images/math/cfbc38219af5e2dddce2a3752f9ce8c7e36c74f4.png" alt="P(A, B) := \frac{\left| A \cap B \right|}{\left|A\right|}"/></li>
+<li><img class="math" src="../_images/math/37bd21d9bdc90aae55a42612868b7627e34e473a.png" alt="R(A, B) := \frac{\left| A \cap B \right|}{\left|B\right|}"/>
+(Conventions vary on handling <img class="math" src="../_images/math/5ee39cf1ba2e48363d6da03fe2d74383773ce52d.png" alt="B = \emptyset"/>; this implementation uses
+<img class="math" src="../_images/math/53f2b29c5e244e289c3f2f1419cad5f5b59b7a1c.png" alt="R(A, B):=0"/>, and similar for <img class="math" src="../_images/math/f48b617185733d8dd6712643f1ab17c736661a06.png" alt="P"/>.)</li>
+<li><img class="math" src="../_images/math/07c10ca9581adc1e9563003d046a47e32a36d902.png" alt="F_\beta(A, B) := \left(1 + \beta^2\right) \frac{P(A, B) \times R(A, B)}{\beta^2 P(A, B) + R(A, B)}"/></li>
 </ul>
 <p>Then the metrics are defined as:</p>
 <table border="1" class="docutils">
@@ -965,29 +965,29 @@ i.e. <span class="math">y_s := \left\{(s', l) \in y | s' = s\right\}</span></li>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">&quot;micro&quot;</span></tt></td>
-<td><span class="math">P(y, \hat{y})</span></td>
-<td><span class="math">R(y, \hat{y})</span></td>
-<td><span class="math">F_\beta(y, \hat{y})</span></td>
+<td><img class="math" src="../_images/math/949d33e11f3c86a73d4a5e620dfd1303a1a2cb33.png" alt="P(y, \hat{y})"/></td>
+<td><img class="math" src="../_images/math/3985035067a2795cdb42d096753adef8367c81db.png" alt="R(y, \hat{y})"/></td>
+<td><img class="math" src="../_images/math/95ab6d5fe8ab264f7fdeb24242d837c278e509a6.png" alt="F_\beta(y, \hat{y})"/></td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">&quot;samples&quot;</span></tt></td>
-<td><span class="math">\frac{1}{\left|S\right|} \sum_{s \in S} P(y_s, \hat{y}_s)</span></td>
-<td><span class="math">\frac{1}{\left|S\right|} \sum_{s \in S} R(y_s, \hat{y}_s)</span></td>
-<td><span class="math">\frac{1}{\left|S\right|} \sum_{s \in S} F_\beta(y_s, \hat{y}_s)</span></td>
+<td><img class="math" src="../_images/math/970416fa31b015c6ef397ee8b7073af8ac18e534.png" alt="\frac{1}{\left|S\right|} \sum_{s \in S} P(y_s, \hat{y}_s)"/></td>
+<td><img class="math" src="../_images/math/2e32af6e1d375a08fe0603bf8c95696943c558b5.png" alt="\frac{1}{\left|S\right|} \sum_{s \in S} R(y_s, \hat{y}_s)"/></td>
+<td><img class="math" src="../_images/math/1ac1b7a14866748c386ccbc41d0b4714aafe1c1e.png" alt="\frac{1}{\left|S\right|} \sum_{s \in S} F_\beta(y_s, \hat{y}_s)"/></td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">&quot;macro&quot;</span></tt></td>
-<td><span class="math">\frac{1}{\left|L\right|} \sum_{l \in L} P(y_l, \hat{y}_l)</span></td>
-<td><span class="math">\frac{1}{\left|L\right|} \sum_{l \in L} R(y_l, \hat{y}_l)</span></td>
-<td><span class="math">\frac{1}{\left|L\right|} \sum_{l \in L} F_\beta(y_l, \hat{y}_l)</span></td>
+<td><img class="math" src="../_images/math/126ebec962b92ea636c9a03b9cb9c6bd2672a1f5.png" alt="\frac{1}{\left|L\right|} \sum_{l \in L} P(y_l, \hat{y}_l)"/></td>
+<td><img class="math" src="../_images/math/5f2d199ed595804f94edd64ed3a3ecbe9bb802e0.png" alt="\frac{1}{\left|L\right|} \sum_{l \in L} R(y_l, \hat{y}_l)"/></td>
+<td><img class="math" src="../_images/math/d4b9f7415136a81704b29ba2438c4a00f22523b4.png" alt="\frac{1}{\left|L\right|} \sum_{l \in L} F_\beta(y_l, \hat{y}_l)"/></td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">&quot;weighted&quot;</span></tt></td>
-<td><span class="math">\frac{1}{\sum_{l \in L} \left|\hat{y}_l\right|} \sum_{l \in L} \left|\hat{y}_l\right| P(y_l, \hat{y}_l)</span></td>
-<td><span class="math">\frac{1}{\sum_{l \in L} \left|\hat{y}_l\right|} \sum_{l \in L} \left|\hat{y}_l\right| R(y_l, \hat{y}_l)</span></td>
-<td><span class="math">\frac{1}{\sum_{l \in L} \left|\hat{y}_l\right|} \sum_{l \in L} \left|\hat{y}_l\right| F_\beta(y_l, \hat{y}_l)</span></td>
+<td><img class="math" src="../_images/math/482659e43723f207c6852fcf9ec728833d1a059c.png" alt="\frac{1}{\sum_{l \in L} \left|\hat{y}_l\right|} \sum_{l \in L} \left|\hat{y}_l\right| P(y_l, \hat{y}_l)"/></td>
+<td><img class="math" src="../_images/math/05f6967941388299e26ac610d9660d3b6e7d1c33.png" alt="\frac{1}{\sum_{l \in L} \left|\hat{y}_l\right|} \sum_{l \in L} \left|\hat{y}_l\right| R(y_l, \hat{y}_l)"/></td>
+<td><img class="math" src="../_images/math/09e53d7a8fb63ae416b161ae68bb19b686e99e6c.png" alt="\frac{1}{\sum_{l \in L} \left|\hat{y}_l\right|} \sum_{l \in L} \left|\hat{y}_l\right| F_\beta(y_l, \hat{y}_l)"/></td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">None</span></tt></td>
-<td><span class="math">\langle P(y_l, \hat{y}_l) | l \in L \rangle</span></td>
-<td><span class="math">\langle R(y_l, \hat{y}_l) | l \in L \rangle</span></td>
-<td><span class="math">\langle F_\beta(y_l, \hat{y}_l) | l \in L \rangle</span></td>
+<td><img class="math" src="../_images/math/cea4625fa5fb7540216ae99faa89608515f220ce.png" alt="\langle P(y_l, \hat{y}_l) | l \in L \rangle"/></td>
+<td><img class="math" src="../_images/math/2ffabef66048a9e67e450c89a8960d3584a342b1.png" alt="\langle R(y_l, \hat{y}_l) | l \in L \rangle"/></td>
+<td><img class="math" src="../_images/math/be3d951d311311b8ef38c7362db122debcb9fa88.png" alt="\langle F_\beta(y_l, \hat{y}_l) | l \in L \rangle"/></td>
 </tr>
 </tbody>
 </table>
@@ -1029,21 +1029,21 @@ the model and the data using
 <a class="reference external" href="http://en.wikipedia.org/wiki/Hinge_loss">hinge loss</a>, a one-sided metric
 that considers only prediction errors. (Hinge
 loss is used in maximal margin classifiers such as support vector machines.)</p>
-<p>If the labels are encoded with +1 and -1,  <span class="math">y</span>: is the true
-value, and <span class="math">w</span> is the predicted decisions as output by
+<p>If the labels are encoded with +1 and -1,  <img class="math" src="../_images/math/b124ff74afb0914bb434e8fb849eb56d734412f8.png" alt="y"/>: is the true
+value, and <img class="math" src="../_images/math/8659700e6646cd91bc02c32affaa5ec046ee9935.png" alt="w"/> is the predicted decisions as output by
 <tt class="docutils literal"><span class="pre">decision_function</span></tt>, then the hinge loss is defined as:</p>
 <div class="math">
-<p><span class="math">L_\text{Hinge}(y, w) = \max\left\{1 - wy, 0\right\} = \left|1 - wy\right|_+</span></p>
+<p><img src="../_images/math/c198beefcd66ade24e26b1063e3cc5fc0fb9e66d.png" alt="L_\text{Hinge}(y, w) = \max\left\{1 - wy, 0\right\} = \left|1 - wy\right|_+"/></p>
 </div><p>If there are more than two labels, <a class="reference internal" href="generated/sklearn.metrics.hinge_loss.html#sklearn.metrics.hinge_loss" title="sklearn.metrics.hinge_loss"><tt class="xref py py-func docutils literal"><span class="pre">hinge_loss</span></tt></a> uses a multiclass variant
 due to Crammer &amp; Singer.
 <a class="reference external" href="http://jmlr.csail.mit.edu/papers/volume2/crammer01a/crammer01a.pdf">Here</a> is
 the paper describing it.</p>
-<p>If <span class="math">y_w</span> is the predicted decision for true label and <span class="math">y_t</span> is the
+<p>If <img class="math" src="../_images/math/f03033722e159f6786afc42a9fd41401988ead89.png" alt="y_w"/> is the predicted decision for true label and <img class="math" src="../_images/math/fc9b39d13c288347abb9aef1e1591a4ea3b85b00.png" alt="y_t"/> is the
 maximum of the predicted decisions for all other labels, where predicted
 decisions are output by decision function, then multiclass hinge loss is defined
 by:</p>
 <div class="math">
-<p><span class="math">L_\text{Hinge}(y_w, y_t) = \max\left\{1 + y_t - y_w, 0\right\}</span></p>
+<p><img src="../_images/math/23a80b675c45b1f775e65ae538e11c3dcad01577.png" alt="L_\text{Hinge}(y_w, y_t) = \max\left\{1 + y_t - y_w, 0\right\}"/></p>
 </div><p>Here a small example demonstrating the use of the <a class="reference internal" href="generated/sklearn.metrics.hinge_loss.html#sklearn.metrics.hinge_loss" title="sklearn.metrics.hinge_loss"><tt class="xref py py-func docutils literal"><span class="pre">hinge_loss</span></tt></a> function
 with a svm classifier in a binary class problem:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">svm</span>
@@ -1089,26 +1089,26 @@ commonly used in (multinomial) logistic regression and neural networks, as well
 as in some variants of expectation-maximization, and can be used to evaluate the
 probability outputs (<tt class="docutils literal"><span class="pre">predict_proba</span></tt>) of a classifier instead of its
 discrete predictions.</p>
-<p>For binary classification with a true label <span class="math">y \in \{0,1\}</span>
-and a probability estimate <span class="math">p = \operatorname{Pr}(y = 1)</span>,
+<p>For binary classification with a true label <img class="math" src="../_images/math/0de6d1f23c5946a81cd4df860506e2d182ad36a5.png" alt="y \in \{0,1\}"/>
+and a probability estimate <img class="math" src="../_images/math/25e9a1b2bfd74e98c96a5fe98da2d5061d12373a.png" alt="p = \operatorname{Pr}(y = 1)"/>,
 the log loss per sample is the negative log-likelihood
 of the classifier given the true label:</p>
 <div class="math">
-<p><span class="math">L_{\log}(y, p) = -\log \operatorname{Pr}(y|p) = -(y \log (p) + (1 - y) \log (1 - p))</span></p>
+<p><img src="../_images/math/40ac35228adf99f7d4dd3647418e4701f2fb1d35.png" alt="L_{\log}(y, p) = -\log \operatorname{Pr}(y|p) = -(y \log (p) + (1 - y) \log (1 - p))"/></p>
 </div><p>This extends to the multiclass case as follows.
 Let the true labels for a set of samples
-be encoded as a 1-of-K binary indicator matrix <span class="math">Y</span>,
-i.e., <span class="math">y_{i,k} = 1</span> if sample <span class="math">i</span> has label <span class="math">k</span>
-taken from a set of <span class="math">K</span> labels.
-Let <span class="math">P</span> be a matrix of probability estimates,
-with <span class="math">p_{i,k} = \operatorname{Pr}(t_{i,k} = 1)</span>.
+be encoded as a 1-of-K binary indicator matrix <img class="math" src="../_images/math/b018f9153661cd702305aecc28713fd9705e7cb3.png" alt="Y"/>,
+i.e., <img class="math" src="../_images/math/ab388f28b5239d428e1d905d42b2f60f74deaaae.png" alt="y_{i,k} = 1"/> if sample <img class="math" src="../_images/math/a581f053bbfa5115f42c13094857cdd12a37ec49.png" alt="i"/> has label <img class="math" src="../_images/math/e9203da50e1059455123460d4e716c9c7f440cc3.png" alt="k"/>
+taken from a set of <img class="math" src="../_images/math/28e003020d0ae96250b302d7d779c791f183f707.png" alt="K"/> labels.
+Let <img class="math" src="../_images/math/f48b617185733d8dd6712643f1ab17c736661a06.png" alt="P"/> be a matrix of probability estimates,
+with <img class="math" src="../_images/math/d4403c0633869f2284fcb87186bbada49ab4abae.png" alt="p_{i,k} = \operatorname{Pr}(t_{i,k} = 1)"/>.
 Then the log loss of the whole set is</p>
 <div class="math">
-<p><span class="math">L_{\log}(Y, P) = -\log \operatorname{Pr}(Y|P) = - \frac{1}{N} \sum_{i=0}^{N-1} \sum_{k=0}^{K-1} y_{i,k} \log p_{i,k}</span></p>
+<p><img src="../_images/math/500b1d06c41424d2ee227d6e7d133acca6a70fdc.png" alt="L_{\log}(Y, P) = -\log \operatorname{Pr}(Y|P) = - \frac{1}{N} \sum_{i=0}^{N-1} \sum_{k=0}^{K-1} y_{i,k} \log p_{i,k}"/></p>
 </div><p>To see how this generalizes the binary log loss given above,
 note that in the binary case,
-<span class="math">p_{i,0} = 1 - p_{i,1}</span> and <span class="math">y_{i,0} = 1 - y_{i,1}</span>,
-so expanding the inner sum over <span class="math">y_{i,k} \in \{0,1\}</span>
+<img class="math" src="../_images/math/201829ffee3d603b006f553725e6a844eb867a7a.png" alt="p_{i,0} = 1 - p_{i,1}"/> and <img class="math" src="../_images/math/42f3e1b073ed67007f6df2143280dba7738fdd69.png" alt="y_{i,0} = 1 - y_{i,1}"/>,
+so expanding the inner sum over <img class="math" src="../_images/math/f185d30ec52427801782cc5d5d810d04577604d9.png" alt="y_{i,k} \in \{0,1\}"/>
 gives the binary log loss.</p>
 <p>The <a class="reference internal" href="generated/sklearn.metrics.log_loss.html#sklearn.metrics.log_loss" title="sklearn.metrics.log_loss"><tt class="xref py py-func docutils literal"><span class="pre">log_loss</span></tt></a> function computes log loss given a list of ground-truth
 labels and a probability matrix, as returned by an estimator&#8217;s <tt class="docutils literal"><span class="pre">predict_proba</span></tt>
@@ -1137,11 +1137,11 @@ of very different sizes. The MCC is in essence a correlation coefficient
 value between -1 and +1. A coefficient of +1 represents a perfect
 prediction, 0 an average random prediction and -1 an inverse prediction.
 The statistic is also known as the phi coefficient.&#8221;</div></blockquote>
-<p>If <span class="math">tp</span>, <span class="math">tn</span>, <span class="math">fp</span> and <span class="math">fn</span> are respectively the
+<p>If <img class="math" src="../_images/math/907f05ef53aaa4e8f4a9f2f06dd3c257f7bc9f5a.png" alt="tp"/>, <img class="math" src="../_images/math/10c1145cd86665e4b73a65a7e9175b18fa65bebc.png" alt="tn"/>, <img class="math" src="../_images/math/cd5f753c7065014aa75c6c7b3a40f9d614d4bba8.png" alt="fp"/> and <img class="math" src="../_images/math/769cd7f00a85e761d9b63fc6a6b4eec08a3a4adf.png" alt="fn"/> are respectively the
 number of true positives, true negatives, false positives and false negatives,
 the MCC coefficient is defined as</p>
 <div class="math">
-<p><span class="math">MCC = \frac{tp \times tn - fp \times fn}{\sqrt{(tp + fp)(tp + fn)(tn + fp)(tn + fn)}}.</span></p>
+<p><img src="../_images/math/6461c5a07ba694eef0501a5b22cf9c4b7ff3a19d.png" alt="MCC = \frac{tp \times tn - fp \times fn}{\sqrt{(tp + fp)(tp + fn)(tn + fp)(tn + fn)}}."/></p>
 </div><p>Here is a small example illustrating the usage of the <a class="reference internal" href="generated/sklearn.metrics.matthews_corrcoef.html#sklearn.metrics.matthews_corrcoef" title="sklearn.metrics.matthews_corrcoef"><tt class="xref py py-func docutils literal"><span class="pre">matthews_corrcoef</span></tt></a>
 function:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">matthews_corrcoef</span>
@@ -1222,20 +1222,20 @@ model species distribution.</li>
 <div class="section" id="zero-one-loss">
 <span id="id11"></span><h3>3.3.2.13. Zero one loss<a class="headerlink" href="#zero-one-loss" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference internal" href="generated/sklearn.metrics.zero_one_loss.html#sklearn.metrics.zero_one_loss" title="sklearn.metrics.zero_one_loss"><tt class="xref py py-func docutils literal"><span class="pre">zero_one_loss</span></tt></a> function computes the sum or the average of the 0-1
-classification loss (<span class="math">L_{0-1}</span>) over <span class="math">n_{\text{samples}}</span>. By
+classification loss (<img class="math" src="../_images/math/804a9c8168cae2d295c66c7e62007ae903dbbd31.png" alt="L_{0-1}"/>) over <img class="math" src="../_images/math/e088d1aeabf6b6f6608c43bb18829dd7a4097d7f.png" alt="n_{\text{samples}}"/>. By
 default, the function normalizes over the sample. To get the sum of the
-<span class="math">L_{0-1}</span>, set <tt class="docutils literal"><span class="pre">normalize</span></tt> to <tt class="docutils literal"><span class="pre">False</span></tt>.</p>
+<img class="math" src="../_images/math/804a9c8168cae2d295c66c7e62007ae903dbbd31.png" alt="L_{0-1}"/>, set <tt class="docutils literal"><span class="pre">normalize</span></tt> to <tt class="docutils literal"><span class="pre">False</span></tt>.</p>
 <p>In multilabel classification, the <a class="reference internal" href="generated/sklearn.metrics.zero_one_loss.html#sklearn.metrics.zero_one_loss" title="sklearn.metrics.zero_one_loss"><tt class="xref py py-func docutils literal"><span class="pre">zero_one_loss</span></tt></a> scores a subset as
 one if its labels strictly match the predictions, and as a zero if there
 are any errors.  By default, the function returns the percentage of imperfectly
 predicted subsets.  To get the count of such subsets instead, set
 <tt class="docutils literal"><span class="pre">normalize</span></tt> to <tt class="docutils literal"><span class="pre">False</span></tt></p>
-<p>If <span class="math">\hat{y}_i</span> is the predicted value of
-the <span class="math">i</span>-th sample and <span class="math">y_i</span> is the corresponding true value,
-then the 0-1 loss <span class="math">L_{0-1}</span> is defined as:</p>
+<p>If <img class="math" src="../_images/math/e8eb12f9407362d0fc035a12094fcc7797dcb69a.png" alt="\hat{y}_i"/> is the predicted value of
+the <img class="math" src="../_images/math/a581f053bbfa5115f42c13094857cdd12a37ec49.png" alt="i"/>-th sample and <img class="math" src="../_images/math/410a65f64e2a609a2a7f544ed72f0982b719807a.png" alt="y_i"/> is the corresponding true value,
+then the 0-1 loss <img class="math" src="../_images/math/804a9c8168cae2d295c66c7e62007ae903dbbd31.png" alt="L_{0-1}"/> is defined as:</p>
 <div class="math">
-<p><span class="math">L_{0-1}(y_i, \hat{y}_i) = 1(\hat{y}_i \not= y_i)</span></p>
-</div><p>where <span class="math">1(x)</span> is the <a class="reference external" href="http://en.wikipedia.org/wiki/Indicator_function">indicator function</a>.</p>
+<p><img src="../_images/math/ffc7ed353dab8e432d5438f675003c661b61c118.png" alt="L_{0-1}(y_i, \hat{y}_i) = 1(\hat{y}_i \not= y_i)"/></p>
+</div><p>where <img class="math" src="../_images/math/6205f47dc46df64205ff4ed08f0e63aed02741ea.png" alt="1(x)"/> is the <a class="reference external" href="http://en.wikipedia.org/wiki/Indicator_function">indicator function</a>.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">zero_one_loss</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y_pred</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y_true</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
@@ -1277,14 +1277,14 @@ are predicted. This is useful if you want to know how many top-scored-labels
 you have to predict in average without missing any true one. The best value
 of this metrics is thus the average number of true labels.</p>
 <p>Formally, given a binary indicator matrix of the ground truth labels
-<span class="math">y \in \left\{0, 1\right\}^{n_\text{samples} \times n_\text{labels}}</span> and the
+<img class="math" src="../_images/math/a7ae2dd6cbafb069b9d6e59bd4f598b4f808bc77.png" alt="y \in \left\{0, 1\right\}^{n_\text{samples} \times n_\text{labels}}"/> and the
 score associated with each label
-<span class="math">\hat{f} \in \mathbb{R}^{n_\text{samples} \times n_\text{labels}}</span>,
+<img class="math" src="../_images/math/67fec6448d04cd81375dc7d6760d79a568885cda.png" alt="\hat{f} \in \mathbb{R}^{n_\text{samples} \times n_\text{labels}}"/>,
 the coverage is defined as</p>
 <div class="math">
-<p><span class="math">coverage(y, \hat{f}) = \frac{1}{n_{\text{samples}}}
-  \sum_{i=0}^{n_{\text{samples}} - 1} \max_{j:y_{ij} = 1} \text{rank}_{ij}</span></p>
-</div><p>with <span class="math">\text{rank}_{ij} = \left|\left\{k: \hat{f}_{ik} \geq \hat{f}_{ij} \right\}\right|</span>.
+<p><img src="../_images/math/d3e169efcd9e98e56756db017b46c12b1b77fc73.png" alt="coverage(y, \hat{f}) = \frac{1}{n_{\text{samples}}}
+  \sum_{i=0}^{n_{\text{samples}} - 1} \max_{j:y_{ij} = 1} \text{rank}_{ij}"/></p>
+</div><p>with <img class="math" src="../_images/math/bd92becc4053aee90a86f9e9fcef56900578d7b4.png" alt="\text{rank}_{ij} = \left|\left\{k: \hat{f}_{ik} \geq \hat{f}_{ij} \right\}\right|"/>.
 Given the rank definition, ties in <tt class="docutils literal"><span class="pre">y_scores</span></tt> are broken by giving the
 maximal rank that would have been assigned to all tied values.</p>
 <p>Here is a small example of usage of this function:</p>
@@ -1311,17 +1311,17 @@ greater than 0, and the best value is 1. If there is exactly one relevant
 label per sample, label ranking average precision is equivalent to the <a class="reference external" href="http://en.wikipedia.org/wiki/Mean_reciprocal_rank">mean
 reciprocal rank</a>.</p>
 <p>Formally, given a binary indicator matrix of the ground truth labels
-<span class="math">y \in \mathcal{R}^{n_\text{samples} \times n_\text{labels}}</span> and the
+<img class="math" src="../_images/math/aafc9fcef30f90e72603bb05bc157411e1c3c9c9.png" alt="y \in \mathcal{R}^{n_\text{samples} \times n_\text{labels}}"/> and the
 score associated with each label
-<span class="math">\hat{f} \in \mathcal{R}^{n_\text{samples} \times n_\text{labels}}</span>,
+<img class="math" src="../_images/math/b43ce5c3516d9440304d43ff76d96e2f227d047c.png" alt="\hat{f} \in \mathcal{R}^{n_\text{samples} \times n_\text{labels}}"/>,
 the average precision is defined as</p>
 <div class="math">
-<p><span class="math">LRAP(y, \hat{f}) = \frac{1}{n_{\text{samples}}}
+<p><img src="../_images/math/2a723246d7e6a9d664152e543cf908a90e100e9e.png" alt="LRAP(y, \hat{f}) = \frac{1}{n_{\text{samples}}}
   \sum_{i=0}^{n_{\text{samples}} - 1} \frac{1}{|y_i|}
-  \sum_{j:y_{ij} = 1} \frac{|\mathcal{L}_{ij}|}{\text{rank}_{ij}}</span></p>
-</div><p>with <span class="math">\mathcal{L}_{ij} = \left\{k: y_{ik} = 1, \hat{f}_{ik} \geq \hat{f}_{ij} \right\}</span>,
-<span class="math">\text{rank}_{ij} = \left|\left\{k: \hat{f}_{ik} \geq \hat{f}_{ij} \right\}\right|</span>
-and <span class="math">|\cdot|</span> is the l0 norm or the cardinality of the set.</p>
+  \sum_{j:y_{ij} = 1} \frac{|\mathcal{L}_{ij}|}{\text{rank}_{ij}}"/></p>
+</div><p>with <img class="math" src="../_images/math/3263c84783e5f5605c1c8a4a4b44320926c3d5a7.png" alt="\mathcal{L}_{ij} = \left\{k: y_{ik} = 1, \hat{f}_{ik} \geq \hat{f}_{ij} \right\}"/>,
+<img class="math" src="../_images/math/bd92becc4053aee90a86f9e9fcef56900578d7b4.png" alt="\text{rank}_{ij} = \left|\left\{k: \hat{f}_{ik} \geq \hat{f}_{ij} \right\}\right|"/>
+and <img class="math" src="../_images/math/312a337f683f70a24fb8960a14d0aba32f4f8c0c.png" alt="|\cdot|"/> is the l0 norm or the cardinality of the set.</p>
 <p>Here is a small example of usage of this function:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">label_ranking_average_precision_score</span>
@@ -1340,15 +1340,15 @@ ordered, i.e. true labels have a lower score than false labels, weighted by the
 the inverse number of false and true labels. The lowest achievable
 ranking loss is zero.</p>
 <p>Formally, given a binary indicator matrix of the ground truth labels
-<span class="math">y \in \left\{0, 1\right\}^{n_\text{samples} \times n_\text{labels}}</span> and the
+<img class="math" src="../_images/math/a7ae2dd6cbafb069b9d6e59bd4f598b4f808bc77.png" alt="y \in \left\{0, 1\right\}^{n_\text{samples} \times n_\text{labels}}"/> and the
 score associated with each label
-<span class="math">\hat{f} \in \mathbb{R}^{n_\text{samples} \times n_\text{labels}}</span>,
+<img class="math" src="../_images/math/67fec6448d04cd81375dc7d6760d79a568885cda.png" alt="\hat{f} \in \mathbb{R}^{n_\text{samples} \times n_\text{labels}}"/>,
 the ranking loss is defined as</p>
 <div class="math">
-<p><span class="math">\text{ranking\_loss}(y, \hat{f}) =  \frac{1}{n_{\text{samples}}}
+<p><img src="../_images/math/95d9d8c73551549b4dbdebf7e900f69909b2cda3.png" alt="\text{ranking\_loss}(y, \hat{f}) =  \frac{1}{n_{\text{samples}}}
   \sum_{i=0}^{n_{\text{samples}} - 1} \frac{1}{|y_i|(n_\text{labels} - |y_i|)}
-  \left|\left\{(k, l): \hat{f}_{ik} &lt; \hat{f}_{il}, y_{ik} = 1, y_{il} = 0&nbsp;\right\}\right|</span></p>
-</div><p>where <span class="math">|\cdot|</span> is the <span class="math">\ell_0</span> norm or the cardinality of the set.</p>
+  \left|\left\{(k, l): \hat{f}_{ik} &lt; \hat{f}_{il}, y_{ik} = 1, y_{il} = 0&nbsp;\right\}\right|"/></p>
+</div><p>where <img class="math" src="../_images/math/312a337f683f70a24fb8960a14d0aba32f4f8c0c.png" alt="|\cdot|"/> is the <img class="math" src="../_images/math/7f8a07910f19a76b1d1412bfb2db3bb26db0453d.png" alt="\ell_0"/> norm or the cardinality of the set.</p>
 <p>Here is a small example of usage of this function:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">label_ranking_loss</span>
@@ -1392,11 +1392,11 @@ future.</p>
 <span id="id17"></span><h3>3.3.4.1. Explained variance score<a class="headerlink" href="#explained-variance-score" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference internal" href="generated/sklearn.metrics.explained_variance_score.html#sklearn.metrics.explained_variance_score" title="sklearn.metrics.explained_variance_score"><tt class="xref py py-func docutils literal"><span class="pre">explained_variance_score</span></tt></a> computes the <a class="reference external" href="http://en.wikipedia.org/wiki/Explained_variation">explained variance
 regression score</a>.</p>
-<p>If <span class="math">\hat{y}</span> is the estimated target output, <span class="math">y</span> the corresponding
-(correct) target output, and <span class="math">Var</span> is <a class="reference external" href="http://en.wikipedia.org/wiki/Variance">Variance</a>, the square of the standard deviation,
+<p>If <img class="math" src="../_images/math/4edbd88750539c2610a7bbfcf79c33cf1ae7a36c.png" alt="\hat{y}"/> is the estimated target output, <img class="math" src="../_images/math/b124ff74afb0914bb434e8fb849eb56d734412f8.png" alt="y"/> the corresponding
+(correct) target output, and <img class="math" src="../_images/math/d69442b6ad88297bb014a0bc0c8d40dced76b707.png" alt="Var"/> is <a class="reference external" href="http://en.wikipedia.org/wiki/Variance">Variance</a>, the square of the standard deviation,
 then the explained variance is estimated as follow:</p>
 <div class="math">
-<p><span class="math">\texttt{explained\_{}variance}(y, \hat{y}) = 1 - \frac{Var\{ y - \hat{y}\}}{Var\{y\}}</span></p>
+<p><img src="../_images/math/56782c21fe4a6ef3b34912b9e13463b1e23f6719.png" alt="\texttt{explained\_{}variance}(y, \hat{y}) = 1 - \frac{Var\{ y - \hat{y}\}}{Var\{y\}}"/></p>
 </div><p>The best possible score is 1.0, lower values are worse.</p>
 <p>Here is a small example of usage of the <a class="reference internal" href="generated/sklearn.metrics.explained_variance_score.html#sklearn.metrics.explained_variance_score" title="sklearn.metrics.explained_variance_score"><tt class="xref py py-func docutils literal"><span class="pre">explained_variance_score</span></tt></a>
 function:</p>
@@ -1421,12 +1421,12 @@ function:</p>
 <p>The <a class="reference internal" href="generated/sklearn.metrics.mean_absolute_error.html#sklearn.metrics.mean_absolute_error" title="sklearn.metrics.mean_absolute_error"><tt class="xref py py-func docutils literal"><span class="pre">mean_absolute_error</span></tt></a> function computes <a class="reference external" href="http://en.wikipedia.org/wiki/Mean_absolute_error">mean absolute
 error</a>, a risk
 metric corresponding to the expected value of the absolute error loss or
-<span class="math">l1</span>-norm loss.</p>
-<p>If <span class="math">\hat{y}_i</span> is the predicted value of the <span class="math">i</span>-th sample,
-and <span class="math">y_i</span> is the corresponding true value, then the mean absolute error
-(MAE) estimated over <span class="math">n_{\text{samples}}</span> is defined as</p>
+<img class="math" src="../_images/math/c3a1ea1c5ef9f9923d99db023a65c73d4b6dbc94.png" alt="l1"/>-norm loss.</p>
+<p>If <img class="math" src="../_images/math/e8eb12f9407362d0fc035a12094fcc7797dcb69a.png" alt="\hat{y}_i"/> is the predicted value of the <img class="math" src="../_images/math/a581f053bbfa5115f42c13094857cdd12a37ec49.png" alt="i"/>-th sample,
+and <img class="math" src="../_images/math/410a65f64e2a609a2a7f544ed72f0982b719807a.png" alt="y_i"/> is the corresponding true value, then the mean absolute error
+(MAE) estimated over <img class="math" src="../_images/math/e088d1aeabf6b6f6608c43bb18829dd7a4097d7f.png" alt="n_{\text{samples}}"/> is defined as</p>
 <div class="math">
-<p><span class="math">\text{MAE}(y, \hat{y}) = \frac{1}{n_{\text{samples}}} \sum_{i=0}^{n_{\text{samples}}-1} \left| y_i - \hat{y}_i \right|.</span></p>
+<p><img src="../_images/math/c9069138144f82207c7a093887720188291e663a.png" alt="\text{MAE}(y, \hat{y}) = \frac{1}{n_{\text{samples}}} \sum_{i=0}^{n_{\text{samples}}-1} \left| y_i - \hat{y}_i \right|."/></p>
 </div><p>Here is a small example of usage of the <a class="reference internal" href="generated/sklearn.metrics.mean_absolute_error.html#sklearn.metrics.mean_absolute_error" title="sklearn.metrics.mean_absolute_error"><tt class="xref py py-func docutils literal"><span class="pre">mean_absolute_error</span></tt></a> function:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y_true</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
@@ -1451,11 +1451,11 @@ and <span class="math">y_i</span> is the corresponding true value, then the mean
 error</a>, a risk
 metric corresponding to the expected value of the squared (quadratic) error loss or
 loss.</p>
-<p>If <span class="math">\hat{y}_i</span> is the predicted value of the <span class="math">i</span>-th sample,
-and <span class="math">y_i</span> is the corresponding true value, then the mean squared error
-(MSE) estimated over <span class="math">n_{\text{samples}}</span> is defined as</p>
+<p>If <img class="math" src="../_images/math/e8eb12f9407362d0fc035a12094fcc7797dcb69a.png" alt="\hat{y}_i"/> is the predicted value of the <img class="math" src="../_images/math/a581f053bbfa5115f42c13094857cdd12a37ec49.png" alt="i"/>-th sample,
+and <img class="math" src="../_images/math/410a65f64e2a609a2a7f544ed72f0982b719807a.png" alt="y_i"/> is the corresponding true value, then the mean squared error
+(MSE) estimated over <img class="math" src="../_images/math/e088d1aeabf6b6f6608c43bb18829dd7a4097d7f.png" alt="n_{\text{samples}}"/> is defined as</p>
 <div class="math">
-<p><span class="math">\text{MSE}(y, \hat{y}) = \frac{1}{n_\text{samples}} \sum_{i=0}^{n_\text{samples} - 1} (y_i - \hat{y}_i)^2.</span></p>
+<p><img src="../_images/math/b141ee17d93799d1b44c7ba206a859af1a21ba2e.png" alt="\text{MSE}(y, \hat{y}) = \frac{1}{n_\text{samples}} \sum_{i=0}^{n_\text{samples} - 1} (y_i - \hat{y}_i)^2."/></p>
 </div><p>Here is a small example of usage of the <a class="reference internal" href="generated/sklearn.metrics.mean_squared_error.html#sklearn.metrics.mean_squared_error" title="sklearn.metrics.mean_squared_error"><tt class="xref py py-func docutils literal"><span class="pre">mean_squared_error</span></tt></a>
 function:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
@@ -1483,11 +1483,11 @@ evaluate gradient boosting regression.</li>
 <p>The <a class="reference internal" href="generated/sklearn.metrics.median_absolute_error.html#sklearn.metrics.median_absolute_error" title="sklearn.metrics.median_absolute_error"><tt class="xref py py-func docutils literal"><span class="pre">median_absolute_error</span></tt></a> is particularly interesting because it is
 robust to outliers. The loss is calculated by taking the median of all absolute
 differences between the target and the prediction.</p>
-<p>If <span class="math">\hat{y}_i</span> is the predicted value of the <span class="math">i</span>-th sample
-and <span class="math">y_i</span> is the corresponding true value, then the median absolute error
-(MedAE) estimated over <span class="math">n_{\text{samples}}</span> is defined as</p>
+<p>If <img class="math" src="../_images/math/e8eb12f9407362d0fc035a12094fcc7797dcb69a.png" alt="\hat{y}_i"/> is the predicted value of the <img class="math" src="../_images/math/a581f053bbfa5115f42c13094857cdd12a37ec49.png" alt="i"/>-th sample
+and <img class="math" src="../_images/math/410a65f64e2a609a2a7f544ed72f0982b719807a.png" alt="y_i"/> is the corresponding true value, then the median absolute error
+(MedAE) estimated over <img class="math" src="../_images/math/e088d1aeabf6b6f6608c43bb18829dd7a4097d7f.png" alt="n_{\text{samples}}"/> is defined as</p>
 <div class="math">
-<p><span class="math">\text{MedAE}(y, \hat{y}) = \text{median}(\mid y_1 - \hat{y}_1 \mid, \ldots, \mid y_n - \hat{y}_n \mid).</span></p>
+<p><img src="../_images/math/cd4d8aea4c1f75783b600893b4dae07546196b46.png" alt="\text{MedAE}(y, \hat{y}) = \text{median}(\mid y_1 - \hat{y}_1 \mid, \ldots, \mid y_n - \hat{y}_n \mid)."/></p>
 </div><p>The <a class="reference internal" href="generated/sklearn.metrics.median_absolute_error.html#sklearn.metrics.median_absolute_error" title="sklearn.metrics.median_absolute_error"><tt class="xref py py-func docutils literal"><span class="pre">median_absolute_error</span></tt></a> does not support multioutput.</p>
 <p>Here is a small example of usage of the <a class="reference internal" href="generated/sklearn.metrics.median_absolute_error.html#sklearn.metrics.median_absolute_error" title="sklearn.metrics.median_absolute_error"><tt class="xref py py-func docutils literal"><span class="pre">median_absolute_error</span></tt></a>
 function:</p>
@@ -1508,12 +1508,12 @@ be predicted by the model. Best possible score is 1.0 and it can be negative
 (because the model can be arbitrarily worse). A constant model that always
 predicts the expected value of y, disregarding the input features, would get a
 R^2 score of 0.0.</p>
-<p>If <span class="math">\hat{y}_i</span> is the predicted value of the <span class="math">i</span>-th sample
-and <span class="math">y_i</span> is the corresponding true value, then the score R² estimated
-over <span class="math">n_{\text{samples}}</span> is defined as</p>
+<p>If <img class="math" src="../_images/math/e8eb12f9407362d0fc035a12094fcc7797dcb69a.png" alt="\hat{y}_i"/> is the predicted value of the <img class="math" src="../_images/math/a581f053bbfa5115f42c13094857cdd12a37ec49.png" alt="i"/>-th sample
+and <img class="math" src="../_images/math/410a65f64e2a609a2a7f544ed72f0982b719807a.png" alt="y_i"/> is the corresponding true value, then the score R² estimated
+over <img class="math" src="../_images/math/e088d1aeabf6b6f6608c43bb18829dd7a4097d7f.png" alt="n_{\text{samples}}"/> is defined as</p>
 <div class="math">
-<p><span class="math">R^2(y, \hat{y}) = 1 - \frac{\sum_{i=0}^{n_{\text{samples}} - 1} (y_i - \hat{y}_i)^2}{\sum_{i=0}^{n_\text{samples} - 1} (y_i - \bar{y})^2}</span></p>
-</div><p>where <span class="math">\bar{y} =  \frac{1}{n_{\text{samples}}} \sum_{i=0}^{n_{\text{samples}} - 1} y_i</span>.</p>
+<p><img src="../_images/math/02fd9261058a79736b1df19af192c584f222eb3a.png" alt="R^2(y, \hat{y}) = 1 - \frac{\sum_{i=0}^{n_{\text{samples}} - 1} (y_i - \hat{y}_i)^2}{\sum_{i=0}^{n_\text{samples} - 1} (y_i - \bar{y})^2}"/></p>
+</div><p>where <img class="math" src="../_images/math/8953d4d91d7fd620495bfa79ff5f9efe6e94ea84.png" alt="\bar{y} =  \frac{1}{n_{\text{samples}}} \sum_{i=0}^{n_{\text{samples}} - 1} y_i"/>.</p>
 <p>Here is a small example of usage of the <a class="reference internal" href="generated/sklearn.metrics.r2_score.html#sklearn.metrics.r2_score" title="sklearn.metrics.r2_score"><tt class="xref py py-func docutils literal"><span class="pre">r2_score</span></tt></a> function:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y_true</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>

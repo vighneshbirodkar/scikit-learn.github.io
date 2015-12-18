@@ -182,14 +182,14 @@ space while controlling the distortion in the pairwise distances.</p>
 the fact that <cite>p</cite> is defining an eps-embedding with good probability
 as defined by:</p>
 <div class="math">
-<p><span class="math">(1 - eps) \|u - v\|^2 &lt; \|p(u) - p(v)\|^2 &lt; (1 + eps) \|u - v\|^2</span></p>
+<p><img src="../_images/math/89dae7627a99d599a94ac757eb45c31b8597f493.png" alt="(1 - eps) \|u - v\|^2 &lt; \|p(u) - p(v)\|^2 &lt; (1 + eps) \|u - v\|^2"/></p>
 </div><p>Where u and v are any rows taken from a dataset of shape [n_samples,
 n_features] and p is a projection by a random Gaussian N(0, 1) matrix
 with shape [n_components, n_features] (or a sparse Achlioptas matrix).</p>
 <p>The minimum number of components to guarantees the eps-embedding is
 given by:</p>
 <div class="math">
-<p><span class="math">n\_components &gt;= 4 log(n\_samples) / (eps^2 / 2 - eps^3 / 3)</span></p>
+<p><img src="../_images/math/8e616d45ff825ef696e70ed1394729f97dc155d3.png" alt="n\_components &gt;= 4 log(n\_samples) / (eps^2 / 2 - eps^3 / 3)"/></p>
 </div><p>The first plot shows that with an increasing number of samples <tt class="docutils literal"><span class="pre">n_samples</span></tt>,
 the minimal number of dimensions <tt class="docutils literal"><span class="pre">n_components</span></tt> increased logarithmically
 in order to guarantee an <tt class="docutils literal"><span class="pre">eps</span></tt>-embedding.</p>
@@ -256,14 +256,14 @@ from 56436 down to 10000 while reasonably preserving pairwise distances.</p>
 <p><strong>Script output</strong>:</p>
 <div class="highlight-python"><div class="highlight"><pre>Embedding 500 samples with dim 64 using various random projections
 Projected 500 samples from 64 to 300 in 0.006s
-Random matrix with size: 0.028MB
-Mean distances rate: 0.97 (0.08)
+Random matrix with size: 0.029MB
+Mean distances rate: 1.02 (0.08)
 Projected 500 samples from 64 to 1000 in 0.015s
-Random matrix with size: 0.094MB
-Mean distances rate: 0.97 (0.04)
-Projected 500 samples from 64 to 10000 in 0.140s
-Random matrix with size: 0.958MB
-Mean distances rate: 0.99 (0.01)
+Random matrix with size: 0.097MB
+Mean distances rate: 0.99 (0.05)
+Projected 500 samples from 64 to 10000 in 0.137s
+Random matrix with size: 0.960MB
+Mean distances rate: 1.00 (0.01)
 </pre></div>
 </div>
 <p><strong>Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_johnson_lindenstrauss_bound.py"><tt class="xref download docutils literal"><span class="pre">plot_johnson_lindenstrauss_bound.py</span></tt></a></p>
@@ -377,8 +377,8 @@ Mean distances rate: 0.99 (0.01)
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  11.05 seconds
-( 0 minutes  11.05 seconds)</p>
+<p><strong>Total running time of the example:</strong>  10.83 seconds
+( 0 minutes  10.83 seconds)</p>
 </div>
 </div>
 

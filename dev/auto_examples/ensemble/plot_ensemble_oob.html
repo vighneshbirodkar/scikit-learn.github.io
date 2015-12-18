@@ -170,9 +170,9 @@
 <span id="example-ensemble-plot-ensemble-oob-py"></span><h1>OOB Errors for Random Forests<a class="headerlink" href="#oob-errors-for-random-forests" title="Permalink to this headline">¶</a></h1>
 <p>The <tt class="docutils literal"><span class="pre">RandomForestClassifier</span></tt> is trained using <em>bootstrap aggregation</em>, where
 each new tree is fit from a bootstrap sample of the training observations
-<span class="math">z_i = (x_i, y_i)</span>. The <em>out-of-bag</em> (OOB) error is the average error for
-each <span class="math">z_i</span> calculated using predictions from the trees that do not
-contain <span class="math">z_i</span> in their respective bootstrap sample. This allows the
+<img class="math" src="../../_images/math/b5c431d1ae18b076ecc008f3084eb2b02591b5e9.png" alt="z_i = (x_i, y_i)"/>. The <em>out-of-bag</em> (OOB) error is the average error for
+each <img class="math" src="../../_images/math/0c9b8c78a7a049eca8f2168d0691afc6a65a9dad.png" alt="z_i"/> calculated using predictions from the trees that do not
+contain <img class="math" src="../../_images/math/0c9b8c78a7a049eca8f2168d0691afc6a65a9dad.png" alt="z_i"/> in their respective bootstrap sample. This allows the
 <tt class="docutils literal"><span class="pre">RandomForestClassifier</span></tt> to be fit and validated whilst being trained [1].</p>
 <p>The example below demonstrates how the OOB error can be measured at the
 addition of each new tree during training. The resulting plot allows a
@@ -254,8 +254,8 @@ Learning Ed. 2&#8221;, p592-593, Springer, 2009.</td></tr>
 <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the example:</strong>  12.39 seconds
-( 0 minutes  12.39 seconds)</p>
+<p><strong>Total running time of the example:</strong>  12.87 seconds
+( 0 minutes  12.87 seconds)</p>
 </div>
 
 

@@ -356,9 +356,9 @@ tokens are only processed on demand from the hasher.</p>
 <h3>4.2.2.1. Implementation details<a class="headerlink" href="#implementation-details" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="generated/sklearn.feature_extraction.FeatureHasher.html#sklearn.feature_extraction.FeatureHasher" title="sklearn.feature_extraction.FeatureHasher"><tt class="xref py py-class docutils literal"><span class="pre">FeatureHasher</span></tt></a> uses the signed 32-bit variant of MurmurHash3.
 As a result (and because of limitations in <tt class="docutils literal"><span class="pre">scipy.sparse</span></tt>),
-the maximum number of features supported is currently <span class="math">2^{31} - 1</span>.</p>
+the maximum number of features supported is currently <img class="math" src="../_images/math/93c8c4826c6f7713528b0a263ab8b95d736366c6.png" alt="2^{31} - 1"/>.</p>
 <p>The original formulation of the hashing trick by Weinberger et al.
-used two separate hash functions <span class="math">h</span> and <span class="math">\xi</span>
+used two separate hash functions <img class="math" src="../_images/math/cbb80ad77aa7a5e227d5a46bc44d235284106cfc.png" alt="h"/> and <img class="math" src="../_images/math/26bfd3bc4c5db78139d8897f9cfa5bba511a2f22.png" alt="\xi"/>
 to determine the column index and sign of a feature, respectively.
 The present implementation works under the assumption
 that the sign bit of MurmurHash3 is independent of its other bits.</p>

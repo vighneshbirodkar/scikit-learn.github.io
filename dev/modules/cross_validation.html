@@ -258,7 +258,7 @@ but generally follow the same principles).
 The following procedure is followed for each of the <em>k</em> &#8220;folds&#8221;:</p>
 <blockquote>
 <div><ul class="simple">
-<li>A model is trained using <span class="math">k-1</span> of the folds as training data;</li>
+<li>A model is trained using <img class="math" src="../_images/math/aff99fd5805e4be25fcb57c9a2667f8337206a66.png" alt="k-1"/> of the folds as training data;</li>
 <li>the resulting model is validated on the remaining part of the data
 (i.e., it is used as a test set to compute a performance measure
 such as accuracy).</li>
@@ -384,10 +384,10 @@ that can be used to generate dataset splits according to different cross
 validation strategies.</p>
 <div class="section" id="k-fold">
 <h3>3.1.2.1. K-fold<a class="headerlink" href="#k-fold" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference internal" href="generated/sklearn.model_selection.KFold.html#sklearn.model_selection.KFold" title="sklearn.model_selection.KFold"><tt class="xref py py-class docutils literal"><span class="pre">KFold</span></tt></a> divides all the samples in <span class="math">k</span> groups of samples,
-called folds (if <span class="math">k = n</span>, this is equivalent to the <em>Leave One
+<p><a class="reference internal" href="generated/sklearn.model_selection.KFold.html#sklearn.model_selection.KFold" title="sklearn.model_selection.KFold"><tt class="xref py py-class docutils literal"><span class="pre">KFold</span></tt></a> divides all the samples in <img class="math" src="../_images/math/e9203da50e1059455123460d4e716c9c7f440cc3.png" alt="k"/> groups of samples,
+called folds (if <img class="math" src="../_images/math/48b80c2fee19e41a529e3220199a5562ea29e35d.png" alt="k = n"/>, this is equivalent to the <em>Leave One
 Out</em> strategy), of equal sizes (if possible). The prediction function is
-learned using <span class="math">k - 1</span> folds, and the fold left out is used for test.</p>
+learned using <img class="math" src="../_images/math/23ca2c534b3fe41683cbc51a0948ba22563356d1.png" alt="k - 1"/> folds, and the fold left out is used for test.</p>
 <p>Example of 2-fold cross-validation on a dataset with 4 samples:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">KFold</span>
@@ -459,8 +459,8 @@ size due to the imbalance in the data.</p>
 <h3>3.1.2.4. Leave-One-Out - LOO<a class="headerlink" href="#leave-one-out-loo" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="generated/sklearn.model_selection.LeaveOneOut.html#sklearn.model_selection.LeaveOneOut" title="sklearn.model_selection.LeaveOneOut"><tt class="xref py py-class docutils literal"><span class="pre">LeaveOneOut</span></tt></a> (or LOO) is a simple cross-validation. Each learning
 set is created by taking all the samples except one, the test set being
-the sample left out. Thus, for <span class="math">n</span> samples, we have <span class="math">n</span> different
-training sets and <span class="math">n</span> different tests set. This cross-validation
+the sample left out. Thus, for <img class="math" src="../_images/math/413f8a8e40062a9090d9d50b88bc7b551b314c26.png" alt="n"/> samples, we have <img class="math" src="../_images/math/413f8a8e40062a9090d9d50b88bc7b551b314c26.png" alt="n"/> different
+training sets and <img class="math" src="../_images/math/413f8a8e40062a9090d9d50b88bc7b551b314c26.png" alt="n"/> different tests set. This cross-validation
 procedure does not waste much data as only one sample is removed from the
 training set:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">LeaveOneOut</span>
@@ -476,15 +476,15 @@ training set:</p>
 </pre></div>
 </div>
 <p>Potential users of LOO for model selection should weigh a few known caveats.
-When compared with <span class="math">k</span>-fold cross validation, one builds <span class="math">n</span> models
-from <span class="math">n</span> samples instead of <span class="math">k</span> models, where <span class="math">n &gt; k</span>.
-Moreover, each is trained on <span class="math">n - 1</span> samples rather than
-<span class="math">(k-1)n / k</span>. In both ways, assuming <span class="math">k</span> is not too large
-and <span class="math">k &lt; n</span>, LOO is more computationally expensive than <span class="math">k</span>-fold
+When compared with <img class="math" src="../_images/math/e9203da50e1059455123460d4e716c9c7f440cc3.png" alt="k"/>-fold cross validation, one builds <img class="math" src="../_images/math/413f8a8e40062a9090d9d50b88bc7b551b314c26.png" alt="n"/> models
+from <img class="math" src="../_images/math/413f8a8e40062a9090d9d50b88bc7b551b314c26.png" alt="n"/> samples instead of <img class="math" src="../_images/math/e9203da50e1059455123460d4e716c9c7f440cc3.png" alt="k"/> models, where <img class="math" src="../_images/math/1f8d6a1c6e2d5114c2d22fd2592a116661811378.png" alt="n &gt; k"/>.
+Moreover, each is trained on <img class="math" src="../_images/math/baa709da88ecdd56290056e3c38fabe588997875.png" alt="n - 1"/> samples rather than
+<img class="math" src="../_images/math/7b9f3442b3a233a596cbd4f46f76e7ce4f1ca6fb.png" alt="(k-1)n / k"/>. In both ways, assuming <img class="math" src="../_images/math/e9203da50e1059455123460d4e716c9c7f440cc3.png" alt="k"/> is not too large
+and <img class="math" src="../_images/math/9409722cc2a6a7d686d6cd7011aabf9fea6197df.png" alt="k &lt; n"/>, LOO is more computationally expensive than <img class="math" src="../_images/math/e9203da50e1059455123460d4e716c9c7f440cc3.png" alt="k"/>-fold
 cross validation.</p>
 <p>In terms of accuracy, LOO often results in high variance as an estimator for the
-test error. Intuitively, since <span class="math">n - 1</span> of
-the <span class="math">n</span> samples are used to build each model, models constructed from
+test error. Intuitively, since <img class="math" src="../_images/math/baa709da88ecdd56290056e3c38fabe588997875.png" alt="n - 1"/> of
+the <img class="math" src="../_images/math/413f8a8e40062a9090d9d50b88bc7b551b314c26.png" alt="n"/> samples are used to build each model, models constructed from
 folds are virtually identical to each other and to the model built from the
 entire training set.</p>
 <p>However, if the learning curve is steep for the training size in question,
@@ -507,10 +507,10 @@ Statistical Learning</a>, Springer 2013</li>
 <div class="section" id="leave-p-out-lpo">
 <h3>3.1.2.5. Leave-P-Out - LPO<a class="headerlink" href="#leave-p-out-lpo" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="generated/sklearn.model_selection.LeavePOut.html#sklearn.model_selection.LeavePOut" title="sklearn.model_selection.LeavePOut"><tt class="xref py py-class docutils literal"><span class="pre">LeavePOut</span></tt></a> is very similar to <a class="reference internal" href="generated/sklearn.model_selection.LeaveOneOut.html#sklearn.model_selection.LeaveOneOut" title="sklearn.model_selection.LeaveOneOut"><tt class="xref py py-class docutils literal"><span class="pre">LeaveOneOut</span></tt></a> as it creates all
-the possible training/test sets by removing <span class="math">p</span> samples from the complete
-set. For <span class="math">n</span> samples, this produces <span class="math">{n \choose p}</span> train-test
+the possible training/test sets by removing <img class="math" src="../_images/math/3eca8557203e86160952e1c0f735f7417f3285b1.png" alt="p"/> samples from the complete
+set. For <img class="math" src="../_images/math/413f8a8e40062a9090d9d50b88bc7b551b314c26.png" alt="n"/> samples, this produces <img class="math" src="../_images/math/d72a9aef7b3237cc3733eef2e7aef97a156230e8.png" alt="{n \choose p}"/> train-test
 pairs. Unlike <a class="reference internal" href="generated/sklearn.model_selection.LeaveOneOut.html#sklearn.model_selection.LeaveOneOut" title="sklearn.model_selection.LeaveOneOut"><tt class="xref py py-class docutils literal"><span class="pre">LeaveOneOut</span></tt></a> and <a class="reference internal" href="generated/sklearn.model_selection.KFold.html#sklearn.model_selection.KFold" title="sklearn.model_selection.KFold"><tt class="xref py py-class docutils literal"><span class="pre">KFold</span></tt></a>, the test sets will
-overlap for <span class="math">p &gt; 1</span>.</p>
+overlap for <img class="math" src="../_images/math/db30f65159c0f4b2e3ec318ed09839aa42bf261a.png" alt="p &gt; 1"/>.</p>
 <p>Example of Leave-2-Out on a dataset with 4 samples:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">LeavePOut</span>
 
@@ -567,7 +567,7 @@ of the train and test fold will not share the same label value.</p>
 <div class="section" id="leave-p-label-out">
 <h3>3.1.2.7. Leave-P-Label-Out<a class="headerlink" href="#leave-p-label-out" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="generated/sklearn.model_selection.LeavePLabelOut.html#sklearn.model_selection.LeavePLabelOut" title="sklearn.model_selection.LeavePLabelOut"><tt class="xref py py-class docutils literal"><span class="pre">LeavePLabelOut</span></tt></a> is similar as <em>Leave-One-Label-Out</em>, but removes
-samples related to <span class="math">P</span> labels for each training/test set.</p>
+samples related to <img class="math" src="../_images/math/f48b617185733d8dd6712643f1ab17c736661a06.png" alt="P"/> labels for each training/test set.</p>
 <p>Example of Leave-2-Label Out:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">LeavePLabelOut</span>
 
@@ -634,7 +634,7 @@ out for each split.</p>
 </div>
 <p>This class is useful when the behavior of <tt class="xref py py-class docutils literal"><span class="pre">LeavePLabelsOut</span></tt> is
 desired, but the number of labels is large enough that generating all
-possible partitions with <span class="math">P</span> labels withheld would be prohibitively
+possible partitions with <img class="math" src="../_images/math/f48b617185733d8dd6712643f1ab17c736661a06.png" alt="P"/> labels withheld would be prohibitively
 expensive.  In such a scenario, <a class="reference internal" href="generated/sklearn.model_selection.LabelShuffleSplit.html#sklearn.model_selection.LabelShuffleSplit" title="sklearn.model_selection.LabelShuffleSplit"><tt class="xref py py-class docutils literal"><span class="pre">LabelShuffleSplit</span></tt></a> provides
 a random sample (with replacement) of the train / test splits
 generated by <tt class="xref py py-class docutils literal"><span class="pre">LeavePLabelsOut</span></tt>.</p>

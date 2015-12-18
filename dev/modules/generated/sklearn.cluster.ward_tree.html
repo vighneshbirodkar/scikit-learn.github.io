@@ -170,7 +170,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.cluster" title="sklearn.cluster"><tt class="xref py py-mod docutils literal"><span class="pre">sklearn.cluster</span></tt></a>.ward_tree<a class="headerlink" href="#sklearn-cluster-ward-tree" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="sklearn.cluster.ward_tree">
-<tt class="descclassname">sklearn.cluster.</tt><tt class="descname">ward_tree</tt><big>(</big><em>X</em>, <em>connectivity=None</em>, <em>n_clusters=None</em>, <em>return_distance=False</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/91df00f/sklearn/cluster/hierarchical.py#L88"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.ward_tree" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sklearn.cluster.</tt><tt class="descname">ward_tree</tt><big>(</big><em>X</em>, <em>connectivity=None</em>, <em>n_clusters=None</em>, <em>return_distance=False</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/60562ba/sklearn/cluster/hierarchical.py#L88"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.cluster.ward_tree" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ward clustering based on a Feature matrix.</p>
 <p>Recursively merges the pair of clusters that minimally increases
 within-cluster variance.</p>
@@ -239,18 +239,18 @@ the nodes <cite>children[i, 1]</cite> and <cite>children[i, 2]</cite>. If the no
 leaves of the tree, then <cite>distances[i]</cite> is their unweighted euclidean
 distance. Distances are updated in the following way
 (from scipy.hierarchy.linkage):</p>
-<p>The new entry <span class="math">d(u,v)</span> is computed as follows,</p>
+<p>The new entry <img class="math" src="../../_images/math/97b17ba426e816881f89900ee53da726840e79e7.png" alt="d(u,v)"/> is computed as follows,</p>
 <div class="math">
-<p><span class="math">d(u,v) = \sqrt{\frac{|v|+|s|}
+<p><img src="../../_images/math/aee98367dcd43a9677b3447ee9c5853812db77f8.png" alt="d(u,v) = \sqrt{\frac{|v|+|s|}
                     {T}d(v,s)^2
              + \frac{|v|+|t|}
                     {T}d(v,t)^2
              - \frac{|v|}
-                    {T}d(s,t)^2}</span></p>
-</div><p>where <span class="math">u</span> is the newly joined cluster consisting of
-clusters <span class="math">s</span> and <span class="math">t</span>, <span class="math">v</span> is an unused
-cluster in the forest, <span class="math">T=|v|+|s|+|t|</span>, and
-<span class="math">|*|</span> is the cardinality of its argument. This is also
+                    {T}d(s,t)^2}"/></p>
+</div><p>where <img class="math" src="../../_images/math/e5fc41b391867da81606413e3389c7efc73abaf0.png" alt="u"/> is the newly joined cluster consisting of
+clusters <img class="math" src="../../_images/math/6859317dd1b439cef34131bcd4bafee8393444e0.png" alt="s"/> and <img class="math" src="../../_images/math/ef9270877405055756d345facd044e4ab297f858.png" alt="t"/>, <img class="math" src="../../_images/math/0e22076955898e6c9bb38aa079135195c24dc81e.png" alt="v"/> is an unused
+cluster in the forest, <img class="math" src="../../_images/math/5c35be80517ffef4a33d6d5d72e68bbdbd0aab1b.png" alt="T=|v|+|s|+|t|"/>, and
+<img class="math" src="../../_images/math/24ebde4aa6565bb26051379bbc4bc07867b22c0d.png" alt="|*|"/> is the cardinality of its argument. This is also
 known as the incremental algorithm.</p>
 </div></blockquote>
 </td>

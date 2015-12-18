@@ -350,11 +350,11 @@ The <tt class="docutils literal"><span class="pre">n_class</span> <span class="p
 for these classifiers.</p>
 <p>This might be made more clear by an example:</p>
 <p>Consider a three class problem with with class 0 having three support vectors
-<span class="math">v^{0}_0, v^{1}_0, v^{2}_0</span> and class 1 and 2 having two support vectors
-<span class="math">v^{0}_1, v^{1}_1</span> and <span class="math">v^{0}_2, v^{1}_2</span> respectively.  For each
-support vector <span class="math">v^{j}_i</span>, there are two dual coefficients.  Let&#8217;s call
-the coefficient of support vector <span class="math">v^{j}_i</span> in the classifier between
-classes <span class="math">i</span> and <span class="math">k</span> <span class="math">\alpha^{j}_{i,k}</span>.
+<img class="math" src="../_images/math/4b88f1d1d8196c7bbe4ae71a937f701fee59589f.png" alt="v^{0}_0, v^{1}_0, v^{2}_0"/> and class 1 and 2 having two support vectors
+<img class="math" src="../_images/math/749ba150f0874a6aeb9951c4d3874994bb8ce7a8.png" alt="v^{0}_1, v^{1}_1"/> and <img class="math" src="../_images/math/55717c27d8dc9fc74a47ab9c34e12fdee568d9ba.png" alt="v^{0}_2, v^{1}_2"/> respectively.  For each
+support vector <img class="math" src="../_images/math/ae16e9774b173bfa6489c04d4d7b581ff31a55a5.png" alt="v^{j}_i"/>, there are two dual coefficients.  Let&#8217;s call
+the coefficient of support vector <img class="math" src="../_images/math/ae16e9774b173bfa6489c04d4d7b581ff31a55a5.png" alt="v^{j}_i"/> in the classifier between
+classes <img class="math" src="../_images/math/a581f053bbfa5115f42c13094857cdd12a37ec49.png" alt="i"/> and <img class="math" src="../_images/math/e9203da50e1059455123460d4e716c9c7f440cc3.png" alt="k"/> <img class="math" src="../_images/math/e26798dbf37644239db0d4660e7d514993e0c293.png" alt="\alpha^{j}_{i,k}"/>.
 Then <tt class="docutils literal"><span class="pre">dual_coef_</span></tt> looks like this:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -363,32 +363,32 @@ Then <tt class="docutils literal"><span class="pre">dual_coef_</span></tt> looks
 <col width="27%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><span class="math">\alpha^{0}_{0,1}</span></td>
-<td><span class="math">\alpha^{0}_{0,2}</span></td>
+<tr class="row-odd"><td><img class="math" src="../_images/math/a1b925a4dbbe65450fbebb81572f6222a434b9a0.png" alt="\alpha^{0}_{0,1}"/></td>
+<td><img class="math" src="../_images/math/2d68a3b7f2e7b7d869d407df04909c805063cca5.png" alt="\alpha^{0}_{0,2}"/></td>
 <td rowspan="3">Coefficients
 for SVs of class 0</td>
 </tr>
-<tr class="row-even"><td><span class="math">\alpha^{1}_{0,1}</span></td>
-<td><span class="math">\alpha^{1}_{0,2}</span></td>
+<tr class="row-even"><td><img class="math" src="../_images/math/8c43465f3d8574113c7e15638bbf2fae35ee3896.png" alt="\alpha^{1}_{0,1}"/></td>
+<td><img class="math" src="../_images/math/83a6b3500cafea6d2bc19e8dc4550cfc77f8b04a.png" alt="\alpha^{1}_{0,2}"/></td>
 </tr>
-<tr class="row-odd"><td><span class="math">\alpha^{2}_{0,1}</span></td>
-<td><span class="math">\alpha^{2}_{0,2}</span></td>
+<tr class="row-odd"><td><img class="math" src="../_images/math/f812188f63141acf67e13dca94938ea66c93d8b3.png" alt="\alpha^{2}_{0,1}"/></td>
+<td><img class="math" src="../_images/math/132dd1872743cc6a09b7224a438f031de75f935d.png" alt="\alpha^{2}_{0,2}"/></td>
 </tr>
-<tr class="row-even"><td><span class="math">\alpha^{0}_{1,0}</span></td>
-<td><span class="math">\alpha^{0}_{1,2}</span></td>
+<tr class="row-even"><td><img class="math" src="../_images/math/c071d5b7948b79b8bd2232aae2939399a487a24c.png" alt="\alpha^{0}_{1,0}"/></td>
+<td><img class="math" src="../_images/math/8efaf51c35183f8aa1a1c4ccaefd5a49b9dbef8c.png" alt="\alpha^{0}_{1,2}"/></td>
 <td rowspan="2">Coefficients
 for SVs of class 1</td>
 </tr>
-<tr class="row-odd"><td><span class="math">\alpha^{1}_{1,0}</span></td>
-<td><span class="math">\alpha^{1}_{1,2}</span></td>
+<tr class="row-odd"><td><img class="math" src="../_images/math/f639c61c3322f48687bf08827b851de13d220c0d.png" alt="\alpha^{1}_{1,0}"/></td>
+<td><img class="math" src="../_images/math/76fb561a7220221493e4887d6c19668c2c0009c2.png" alt="\alpha^{1}_{1,2}"/></td>
 </tr>
-<tr class="row-even"><td><span class="math">\alpha^{0}_{2,0}</span></td>
-<td><span class="math">\alpha^{0}_{2,1}</span></td>
+<tr class="row-even"><td><img class="math" src="../_images/math/1ec89a125496001eea33264978ca18b2f28136cb.png" alt="\alpha^{0}_{2,0}"/></td>
+<td><img class="math" src="../_images/math/715efcbd1f7148dd4d8e1b3a6a9ea03d12907d8b.png" alt="\alpha^{0}_{2,1}"/></td>
 <td rowspan="2">Coefficients
 for SVs of class 2</td>
 </tr>
-<tr class="row-odd"><td><span class="math">\alpha^{1}_{2,0}</span></td>
-<td><span class="math">\alpha^{1}_{2,1}</span></td>
+<tr class="row-odd"><td><img class="math" src="../_images/math/d637f33c37a5688da805b551083d16e7a674f7d5.png" alt="\alpha^{1}_{2,0}"/></td>
+<td><img class="math" src="../_images/math/8ab6fd0263c1e67950fc82aacea0ec613e7d37ed.png" alt="\alpha^{1}_{2,1}"/></td>
 </tr>
 </tbody>
 </table>
@@ -522,10 +522,10 @@ storage requirements increase rapidly with the number of training
 vectors. The core of an SVM is a quadratic programming problem (QP),
 separating support vectors from the rest of the training data. The QP
 solver used by this <a class="reference external" href="http://www.csie.ntu.edu.tw/~cjlin/libsvm/">libsvm</a>-based implementation scales between
-<span class="math">O(n_{features} \times n_{samples}^2)</span> and
-<span class="math">O(n_{features} \times n_{samples}^3)</span> depending on how efficiently
+<img class="math" src="../_images/math/7325ea0226849021035c250bebb23461ccf847dc.png" alt="O(n_{features} \times n_{samples}^2)"/> and
+<img class="math" src="../_images/math/a93196c3d7dc949166a2193a44426878754eaa31.png" alt="O(n_{features} \times n_{samples}^3)"/> depending on how efficiently
 the <a class="reference external" href="http://www.csie.ntu.edu.tw/~cjlin/libsvm/">libsvm</a> cache is used in practice (dataset dependent). If the data
-is very sparse <span class="math">n_{features}</span> should be replaced by the average number
+is very sparse <img class="math" src="../_images/math/77d50c3510468fe9b613e6302375706598dfb13d.png" alt="n_{features}"/> should be replaced by the average number
 of non-zero features in a sample vector.</p>
 <p>Also note that for the linear case, the algorithm used in
 <a class="reference internal" href="generated/sklearn.svm.LinearSVC.html#sklearn.svm.LinearSVC" title="sklearn.svm.LinearSVC"><tt class="xref py py-class docutils literal"><span class="pre">LinearSVC</span></tt></a> by the <a class="reference external" href="http://www.csie.ntu.edu.tw/~cjlin/liblinear/">liblinear</a> implementation is much more
@@ -594,13 +594,13 @@ be calculated using <a class="reference internal" href="generated/sklearn.svm.l1
 <p>The <em>kernel function</em> can be any of the following:</p>
 <blockquote>
 <div><ul class="simple">
-<li>linear: <span class="math">\langle x, x'\rangle</span>.</li>
-<li>polynomial: <span class="math">(\gamma \langle x, x'\rangle + r)^d</span>.
-<span class="math">d</span> is specified by keyword <tt class="docutils literal"><span class="pre">degree</span></tt>, <span class="math">r</span> by <tt class="docutils literal"><span class="pre">coef0</span></tt>.</li>
-<li>rbf: <span class="math">\exp(-\gamma |x-x'|^2)</span>. <span class="math">\gamma</span> is
+<li>linear: <img class="math" src="../_images/math/b8ce75ac275fbe7a9cc88f535e164ba2397d3a85.png" alt="\langle x, x'\rangle"/>.</li>
+<li>polynomial: <img class="math" src="../_images/math/59ec4d406b308d297b0e2e908f767564cd4e64ec.png" alt="(\gamma \langle x, x'\rangle + r)^d"/>.
+<img class="math" src="../_images/math/425d86ba2f2979d75b7535c2bcf92c33ed6b285a.png" alt="d"/> is specified by keyword <tt class="docutils literal"><span class="pre">degree</span></tt>, <img class="math" src="../_images/math/2ede365ad144ab396916ec60458da03860803078.png" alt="r"/> by <tt class="docutils literal"><span class="pre">coef0</span></tt>.</li>
+<li>rbf: <img class="math" src="../_images/math/47ed3b4a33cd152093bab738cf2002fa69c54c21.png" alt="\exp(-\gamma |x-x'|^2)"/>. <img class="math" src="../_images/math/0ebb67342b546ca42a1c634b1ef03c893c4cdedb.png" alt="\gamma"/> is
 specified by keyword <tt class="docutils literal"><span class="pre">gamma</span></tt>, must be greater than 0.</li>
-<li>sigmoid (<span class="math">\tanh(\gamma \langle x,x'\rangle + r)</span>),
-where <span class="math">r</span> is specified by <tt class="docutils literal"><span class="pre">coef0</span></tt>.</li>
+<li>sigmoid (<img class="math" src="../_images/math/d768e9b981b47e886f24febd01391eeb3c2c98b6.png" alt="\tanh(\gamma \langle x,x'\rangle + r)"/>),
+where <img class="math" src="../_images/math/2ede365ad144ab396916ec60458da03860803078.png" alt="r"/> is specified by <tt class="docutils literal"><span class="pre">coef0</span></tt>.</li>
 </ul>
 </div></blockquote>
 <p>Different kernels are specified by keyword kernel at initialization:</p>
@@ -709,40 +709,40 @@ generalization error of the classifier.</p>
 </div>
 <div class="section" id="svc">
 <h3>1.4.7.1. SVC<a class="headerlink" href="#svc" title="Permalink to this headline">¶</a></h3>
-<p>Given training vectors <span class="math">x_i \in \mathbb{R}^p</span>, i=1,..., n, in two classes, and a
-vector <span class="math">y \in \{1, -1\}^n</span>, SVC solves the following primal problem:</p>
+<p>Given training vectors <img class="math" src="../_images/math/2c1db07a28fbde7396015ec811dcaf9d577f6679.png" alt="x_i \in \mathbb{R}^p"/>, i=1,..., n, in two classes, and a
+vector <img class="math" src="../_images/math/c6d6323bc6376953afef6b5b8a6689a5440357c4.png" alt="y \in \{1, -1\}^n"/>, SVC solves the following primal problem:</p>
 <div class="math">
-<p><span class="math">\min_ {w, b, \zeta} \frac{1}{2} w^T w + C \sum_{i=1}^{n} \zeta_i
+<p><img src="../_images/math/396704acdf11cc18d2d02b32275c0ee42d76b95e.png" alt="\min_ {w, b, \zeta} \frac{1}{2} w^T w + C \sum_{i=1}^{n} \zeta_i
 
 
 
 \textrm {subject to } &amp; y_i (w^T \phi (x_i) + b) \geq 1 - \zeta_i,\\
-&amp; \zeta_i \geq 0, i=1, ..., n</span></p>
+&amp; \zeta_i \geq 0, i=1, ..., n"/></p>
 </div><p>Its dual is</p>
 <div class="math">
-<p><span class="math">\min_{\alpha} \frac{1}{2} \alpha^T Q \alpha - e^T \alpha
+<p><img src="../_images/math/2133ba457cf081dbcc03536c61648e52417fc80c.png" alt="\min_{\alpha} \frac{1}{2} \alpha^T Q \alpha - e^T \alpha
 
 
 \textrm {subject to } &amp; y^T \alpha = 0\\
-&amp; 0 \leq \alpha_i \leq C, i=1, ..., n</span></p>
-</div><p>where <span class="math">e</span> is the vector of all ones, <span class="math">C &gt; 0</span> is the upper bound,
-<span class="math">Q</span> is an <span class="math">n</span> by <span class="math">n</span> positive semidefinite matrix,
-<span class="math">Q_{ij} \equiv y_i y_j K(x_i, x_j)</span> Where <span class="math">K(x_i, x_j) = \phi (x_i)^T \phi (x_j)</span>
+&amp; 0 \leq \alpha_i \leq C, i=1, ..., n"/></p>
+</div><p>where <img class="math" src="../_images/math/630e3a780577ea7921e81ee2ac5237dd1802ec8d.png" alt="e"/> is the vector of all ones, <img class="math" src="../_images/math/cb131e0f1390675e9f3219554f22bec1e387f75f.png" alt="C &gt; 0"/> is the upper bound,
+<img class="math" src="../_images/math/7b1816c51f7d31275cd3ad400208fb7b3ce136a0.png" alt="Q"/> is an <img class="math" src="../_images/math/413f8a8e40062a9090d9d50b88bc7b551b314c26.png" alt="n"/> by <img class="math" src="../_images/math/413f8a8e40062a9090d9d50b88bc7b551b314c26.png" alt="n"/> positive semidefinite matrix,
+<img class="math" src="../_images/math/778bba042f0a485da8e3297541320a94246be194.png" alt="Q_{ij} \equiv y_i y_j K(x_i, x_j)"/> Where <img class="math" src="../_images/math/e8add116d50419f711117e1ff314e230537fccc8.png" alt="K(x_i, x_j) = \phi (x_i)^T \phi (x_j)"/>
 is the kernel. Here training vectors are implicitly mapped into a higher
-(maybe infinite) dimensional space by the function <span class="math">\phi</span>.</p>
+(maybe infinite) dimensional space by the function <img class="math" src="../_images/math/10e009bdb83f96c5f47c58b34d5d4b12ef268d5b.png" alt="\phi"/>.</p>
 <p>The decision function is:</p>
 <div class="math">
-<p><span class="math">\operatorname{sgn}(\sum_{i=1}^n y_i \alpha_i K(x_i, x) + \rho)</span></p>
+<p><img src="../_images/math/765b4bda0ec7e64d4baa34e4f0e8cc01ca151e1a.png" alt="\operatorname{sgn}(\sum_{i=1}^n y_i \alpha_i K(x_i, x) + \rho)"/></p>
 </div><div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">While SVM models derived from <a class="reference external" href="http://www.csie.ntu.edu.tw/~cjlin/libsvm/">libsvm</a> and <a class="reference external" href="http://www.csie.ntu.edu.tw/~cjlin/liblinear/">liblinear</a> use <tt class="docutils literal"><span class="pre">C</span></tt> as
 regularization parameter, most other estimators use <tt class="docutils literal"><span class="pre">alpha</span></tt>. The relation
-between both is <span class="math">C = \frac{n\_samples}{alpha}</span>.</p>
+between both is <img class="math" src="../_images/math/560f9754fb09aec60beabe312f4d9427baf0f452.png" alt="C = \frac{n\_samples}{alpha}"/>.</p>
 </div>
 <p>This parameters can be accessed through the members <tt class="docutils literal"><span class="pre">dual_coef_</span></tt>
-which holds the product <span class="math">y_i \alpha_i</span>, <tt class="docutils literal"><span class="pre">support_vectors_</span></tt> which
+which holds the product <img class="math" src="../_images/math/a684a4a28d9d3b9c31da95fe0408c235c1e1961f.png" alt="y_i \alpha_i"/>, <tt class="docutils literal"><span class="pre">support_vectors_</span></tt> which
 holds the support vectors, and <tt class="docutils literal"><span class="pre">intercept_</span></tt> which holds the independent
-term <span class="math">\rho</span> :</p>
+term <img class="math" src="../_images/math/f574498915fa9e02eeb5141c24835d077eba3e75.png" alt="\rho"/> :</p>
 <div class="topic">
 <p class="topic-title first">References:</p>
 <ul class="simple">
@@ -756,44 +756,44 @@ C. Cortes, V. Vapnik, Machine Leaming, 20, 273-297 (1995)</li>
 </div>
 <div class="section" id="nusvc">
 <h3>1.4.7.2. NuSVC<a class="headerlink" href="#nusvc" title="Permalink to this headline">¶</a></h3>
-<p>We introduce a new parameter <span class="math">\nu</span> which controls the number of
-support vectors and training errors. The parameter <span class="math">\nu \in (0,
-1]</span> is an upper bound on the fraction of training errors and a lower
+<p>We introduce a new parameter <img class="math" src="../_images/math/d67fb61cfffca2cc069e083d76cb6220b4ca14c8.png" alt="\nu"/> which controls the number of
+support vectors and training errors. The parameter <img class="math" src="../_images/math/daf0484d7bd97c43bc8c73b35c3335345d24b8b4.png" alt="\nu \in (0,
+1]"/> is an upper bound on the fraction of training errors and a lower
 bound of the fraction of support vectors.</p>
-<p>It can be shown that the <span class="math">\nu</span>-SVC formulation is a reparametrization
-of the <span class="math">C</span>-SVC and therefore mathematically equivalent.</p>
+<p>It can be shown that the <img class="math" src="../_images/math/d67fb61cfffca2cc069e083d76cb6220b4ca14c8.png" alt="\nu"/>-SVC formulation is a reparametrization
+of the <img class="math" src="../_images/math/2bcc65482aa8e15cd4c9e9f2542451fb4e971a91.png" alt="C"/>-SVC and therefore mathematically equivalent.</p>
 </div>
 <div class="section" id="svr">
 <h3>1.4.7.3. SVR<a class="headerlink" href="#svr" title="Permalink to this headline">¶</a></h3>
-<p>Given training vectors <span class="math">x_i \in \mathbb{R}^p</span>, i=1,..., n, and a
-vector <span class="math">y \in \mathbb{R}^n</span> <span class="math">\varepsilon</span>-SVR solves the following primal problem:</p>
+<p>Given training vectors <img class="math" src="../_images/math/2c1db07a28fbde7396015ec811dcaf9d577f6679.png" alt="x_i \in \mathbb{R}^p"/>, i=1,..., n, and a
+vector <img class="math" src="../_images/math/5c83c0acadd3ac75ed5baf206310b9b1a2b03f3a.png" alt="y \in \mathbb{R}^n"/> <img class="math" src="../_images/math/f348c73e654151e416e3c525b2ff7803590754ce.png" alt="\varepsilon"/>-SVR solves the following primal problem:</p>
 <div class="math">
-<p><span class="math">\min_ {w, b, \zeta, \zeta^*} \frac{1}{2} w^T w + C \sum_{i=1}^{n} (\zeta_i + \zeta_i^*)
+<p><img src="../_images/math/a4564c53a065f88d31b097b1b15a2db01e72bfd5.png" alt="\min_ {w, b, \zeta, \zeta^*} \frac{1}{2} w^T w + C \sum_{i=1}^{n} (\zeta_i + \zeta_i^*)
 
 
 
 \textrm {subject to } &amp; y_i - w^T \phi (x_i) - b \leq \varepsilon + \zeta_i,\\
                       &amp; w^T \phi (x_i) + b - y_i \leq \varepsilon + \zeta_i^*,\\
-                      &amp; \zeta_i, \zeta_i^* \geq 0, i=1, ..., n</span></p>
+                      &amp; \zeta_i, \zeta_i^* \geq 0, i=1, ..., n"/></p>
 </div><p>Its dual is</p>
 <div class="math">
-<p><span class="math">\min_{\alpha, \alpha^*} \frac{1}{2} (\alpha - \alpha^*)^T Q (\alpha - \alpha^*) + \varepsilon e^T (\alpha + \alpha^*) - y^T (\alpha - \alpha^*)
+<p><img src="../_images/math/08c0a64f82c8a1bcf792aa6ffc9fda4281353e77.png" alt="\min_{\alpha, \alpha^*} \frac{1}{2} (\alpha - \alpha^*)^T Q (\alpha - \alpha^*) + \varepsilon e^T (\alpha + \alpha^*) - y^T (\alpha - \alpha^*)
 
 
 \textrm {subject to } &amp; e^T (\alpha - \alpha^*) = 0\\
-&amp; 0 \leq \alpha_i, \alpha_i^* \leq C, i=1, ..., n</span></p>
-</div><p>where <span class="math">e</span> is the vector of all ones, <span class="math">C &gt; 0</span> is the upper bound,
-<span class="math">Q</span> is an <span class="math">n</span> by <span class="math">n</span> positive semidefinite matrix,
-<span class="math">Q_{ij} \equiv K(x_i, x_j) = \phi (x_i)^T \phi (x_j)</span>
+&amp; 0 \leq \alpha_i, \alpha_i^* \leq C, i=1, ..., n"/></p>
+</div><p>where <img class="math" src="../_images/math/630e3a780577ea7921e81ee2ac5237dd1802ec8d.png" alt="e"/> is the vector of all ones, <img class="math" src="../_images/math/cb131e0f1390675e9f3219554f22bec1e387f75f.png" alt="C &gt; 0"/> is the upper bound,
+<img class="math" src="../_images/math/7b1816c51f7d31275cd3ad400208fb7b3ce136a0.png" alt="Q"/> is an <img class="math" src="../_images/math/413f8a8e40062a9090d9d50b88bc7b551b314c26.png" alt="n"/> by <img class="math" src="../_images/math/413f8a8e40062a9090d9d50b88bc7b551b314c26.png" alt="n"/> positive semidefinite matrix,
+<img class="math" src="../_images/math/d80d16109b367f75e59c10ae58352d93d4904c5e.png" alt="Q_{ij} \equiv K(x_i, x_j) = \phi (x_i)^T \phi (x_j)"/>
 is the kernel. Here training vectors are implicitly mapped into a higher
-(maybe infinite) dimensional space by the function <span class="math">\phi</span>.</p>
+(maybe infinite) dimensional space by the function <img class="math" src="../_images/math/10e009bdb83f96c5f47c58b34d5d4b12ef268d5b.png" alt="\phi"/>.</p>
 <p>The decision function is:</p>
 <div class="math">
-<p><span class="math">\sum_{i=1}^n (\alpha_i - \alpha_i^*) K(x_i, x) + \rho</span></p>
+<p><img src="../_images/math/9e6226cf29fbc353fca744defafbe44fee8db62b.png" alt="\sum_{i=1}^n (\alpha_i - \alpha_i^*) K(x_i, x) + \rho"/></p>
 </div><p>These parameters can be accessed through the members <tt class="docutils literal"><span class="pre">dual_coef_</span></tt>
-which holds the difference <span class="math">\alpha_i - \alpha_i^*</span>, <tt class="docutils literal"><span class="pre">support_vectors_</span></tt> which
+which holds the difference <img class="math" src="../_images/math/45566259f5632df57a1a4e87893103d00a4b5608.png" alt="\alpha_i - \alpha_i^*"/>, <tt class="docutils literal"><span class="pre">support_vectors_</span></tt> which
 holds the support vectors, and <tt class="docutils literal"><span class="pre">intercept_</span></tt> which holds the independent
-term <span class="math">\rho</span></p>
+term <img class="math" src="../_images/math/f574498915fa9e02eeb5141c24835d077eba3e75.png" alt="\rho"/></p>
 <div class="topic">
 <p class="topic-title first">References:</p>
 <ul class="simple">

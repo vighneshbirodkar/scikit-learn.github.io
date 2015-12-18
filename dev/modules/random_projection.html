@@ -251,7 +251,7 @@ empirical validation using sparse random matrices.</li>
 <p>The <a class="reference internal" href="generated/sklearn.random_projection.GaussianRandomProjection.html#sklearn.random_projection.GaussianRandomProjection" title="sklearn.random_projection.GaussianRandomProjection"><tt class="xref py py-class docutils literal"><span class="pre">sklearn.random_projection.GaussianRandomProjection</span></tt></a> reduces the
 dimensionality by projecting the original input space on a randomly generated
 matrix where components are drawn from the following distribution
-<span class="math">N(0, \frac{1}{n_{components}})</span>.</p>
+<img class="math" src="../_images/math/4b6fc14718fd93134fd32b08a74c8eb41f56f14b.png" alt="N(0, \frac{1}{n_{components}})"/>.</p>
 <p>Here a small excerpt which illustrates how to use the Gaussian random
 projection transformer:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
@@ -275,16 +275,16 @@ more memory efficient and allowing faster computation of the projected data.</p>
 <p>If we define <tt class="docutils literal"><span class="pre">s</span> <span class="pre">=</span> <span class="pre">1</span> <span class="pre">/</span> <span class="pre">density</span></tt>, the elements of the random matrix
 are drawn from</p>
 <div class="math">
-<p><span class="math">\left\{
+<p><img src="../_images/math/c5926a04917006dc055a58af642f40f878e4fb49.png" alt="\left\{
 \begin{array}{c c l}
 -\sqrt{\frac{s}{n_{\text{components}}}} &amp; &amp; 1 / 2s\\
 0 &amp;\text{with probability}  &amp; 1 - 1 / s \\
 +\sqrt{\frac{s}{n_{\text{components}}}} &amp; &amp; 1 / 2s\\
 \end{array}
-\right.</span></p>
-</div><p>where <span class="math">n_{\text{components}}</span> is the size of the projected subspace.
+\right."/></p>
+</div><p>where <img class="math" src="../_images/math/e04c1e6d6021997fb981328239bc866d3a3a382b.png" alt="n_{\text{components}}"/> is the size of the projected subspace.
 By default the density of non zero elements is set to the minimum density as
-recommended by Ping Li et al.: <span class="math">1 / \sqrt{n_{\text{features}}}</span>.</p>
+recommended by Ping Li et al.: <img class="math" src="../_images/math/62af498c85cf5772b99f66e5b493cdcba66a7b48.png" alt="1 / \sqrt{n_{\text{features}}}"/>.</p>
 <p>Here a small excerpt which illustrates how to use the sparse random
 projection transformer:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>

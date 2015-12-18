@@ -210,8 +210,8 @@ implemented with objects learning in an unsupervised way from the data:</p>
 <p>Inliers are labeled 1, while outliers are labeled -1.</p>
 <div class="section" id="novelty-detection">
 <h2>2.7.1. Novelty Detection<a class="headerlink" href="#novelty-detection" title="Permalink to this headline">¶</a></h2>
-<p>Consider a data set of <span class="math">n</span> observations from the same
-distribution described by <span class="math">p</span> features.  Consider now that we
+<p>Consider a data set of <img class="math" src="../_images/math/413f8a8e40062a9090d9d50b88bc7b551b314c26.png" alt="n"/> observations from the same
+distribution described by <img class="math" src="../_images/math/3eca8557203e86160952e1c0f735f7417f3285b1.png" alt="p"/> features.  Consider now that we
 add one more observation to that data set. Is the new observation so
 different from the others that we can doubt it is regular? (i.e. does
 it come from the same distribution?) Or on the contrary, is it so
@@ -220,7 +220,7 @@ observations? This is the question addressed by the novelty detection
 tools and methods.</p>
 <p>In general, it is about to learn a rough, close frontier delimiting
 the contour of the initial observations distribution, plotted in
-embedding <span class="math">p</span>-dimensional space. Then, if further observations
+embedding <img class="math" src="../_images/math/3eca8557203e86160952e1c0f735f7417f3285b1.png" alt="p"/>-dimensional space. Then, if further observations
 lay within the frontier-delimited subspace, they are considered as
 coming from the same population than the initial
 observations. Otherwise, if they lay outside the frontier, we can say
@@ -231,7 +231,7 @@ and implemented in the <a class="reference internal" href="svm.html#svm"><em>Sup
 kernel and a scalar parameter to define a frontier.  The RBF kernel is
 usually chosen although there exists no exact formula or algorithm to
 set its bandwidth parameter. This is the default in the scikit-learn
-implementation. The <span class="math">\nu</span> parameter, also known as the margin of
+implementation. The <img class="math" src="../_images/math/d67fb61cfffca2cc069e083d76cb6220b4ca14c8.png" alt="\nu"/> parameter, also known as the margin of
 the One-Class SVM, corresponds to the probability of finding a new,
 but regular, observation outside the frontier.</p>
 <div class="topic">

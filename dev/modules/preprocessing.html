@@ -387,11 +387,11 @@ for regression.</p>
 </div>
 <div class="section" id="centering-kernel-matrices">
 <span id="kernel-centering"></span><h3>4.3.1.4. Centering kernel matrices<a class="headerlink" href="#centering-kernel-matrices" title="Permalink to this headline">¶</a></h3>
-<p>If you have a kernel matrix of a kernel <span class="math">K</span> that computes a dot product
-in a feature space defined by function <span class="math">phi</span>,
+<p>If you have a kernel matrix of a kernel <img class="math" src="../_images/math/28e003020d0ae96250b302d7d779c791f183f707.png" alt="K"/> that computes a dot product
+in a feature space defined by function <img class="math" src="../_images/math/ec6ee91dd7171da4cf7a8858d648c7537f0c02af.png" alt="phi"/>,
 a <a class="reference internal" href="generated/sklearn.preprocessing.KernelCenterer.html#sklearn.preprocessing.KernelCenterer" title="sklearn.preprocessing.KernelCenterer"><tt class="xref py py-class docutils literal"><span class="pre">KernelCenterer</span></tt></a> can transform the kernel matrix
 so that it contains inner products in the feature space
-defined by <span class="math">phi</span> followed by removal of the mean in that space.</p>
+defined by <img class="math" src="../_images/math/ec6ee91dd7171da4cf7a8858d648c7537f0c02af.png" alt="phi"/> followed by removal of the mean in that space.</p>
 </div>
 </div>
 <div class="section" id="normalization">
@@ -614,7 +614,7 @@ estimator that supports imputation. See <a class="reference internal" href="../a
 <span class="go">       [  1.,   4.,   5.,  16.,  20.,  25.]])</span>
 </pre></div>
 </div>
-<p>The features of X have been transformed from <span class="math">(X_1, X_2)</span> to <span class="math">(1, X_1, X_2, X_1^2, X_1X_2, X_2^2)</span>.</p>
+<p>The features of X have been transformed from <img class="math" src="../_images/math/34adf865a29381a6d492d1d69c2f7e1e4a01c8fa.png" alt="(X_1, X_2)"/> to <img class="math" src="../_images/math/89ff7f73e231da14014c5c4355ff5ab3ba181fec.png" alt="(1, X_1, X_2, X_1^2, X_1X_2, X_2^2)"/>.</p>
 <p>In some cases, only interaction terms among features are required, and it can be gotten with the setting <tt class="docutils literal"><span class="pre">interaction_only=True</span></tt>:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">X</span>                                                 
@@ -628,7 +628,7 @@ estimator that supports imputation. See <a class="reference internal" href="../a
 <span class="go">       [   1.,    6.,    7.,    8.,   42.,   48.,   56.,  336.]])</span>
 </pre></div>
 </div>
-<p>The features of X have been transformed from <span class="math">(X_1, X_2, X_3)</span> to <span class="math">(1, X_1, X_2, X_3, X_1X_2, X_1X_3, X_2X_3, X_1X_2X_3)</span>.</p>
+<p>The features of X have been transformed from <img class="math" src="../_images/math/754ae478b77cf358d3ae841fb0b18368afdf37f1.png" alt="(X_1, X_2, X_3)"/> to <img class="math" src="../_images/math/7c842dafc2022b137525e227b2e7703098069372.png" alt="(1, X_1, X_2, X_3, X_1X_2, X_1X_3, X_2X_3, X_1X_2X_3)"/>.</p>
 <p>Note that polynomial features are used implicitily in <a class="reference external" href="http://en.wikipedia.org/wiki/Kernel_method">kernel methods</a> (e.g., <a class="reference internal" href="generated/sklearn.svm.SVC.html#sklearn.svm.SVC" title="sklearn.svm.SVC"><tt class="xref py py-class docutils literal"><span class="pre">sklearn.svm.SVC</span></tt></a>, <a class="reference internal" href="generated/sklearn.decomposition.KernelPCA.html#sklearn.decomposition.KernelPCA" title="sklearn.decomposition.KernelPCA"><tt class="xref py py-class docutils literal"><span class="pre">sklearn.decomposition.KernelPCA</span></tt></a>) when using polynomial <a class="reference internal" href="svm.html#svm-kernels"><em>Kernel functions</em></a>.</p>
 <p>See <a class="reference internal" href="../auto_examples/linear_model/plot_polynomial_interpolation.html#example-linear-model-plot-polynomial-interpolation-py"><em>Polynomial interpolation</em></a> for Ridge regression using created polynomial features.</p>
 </div>

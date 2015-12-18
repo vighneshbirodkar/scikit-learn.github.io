@@ -273,20 +273,20 @@ estimator on <strong>new data</strong>. This is why datasets are often split int
 <div class="section" id="the-curse-of-dimensionality">
 <span id="curse-of-dimensionality"></span><h3>The curse of dimensionality<a class="headerlink" href="#the-curse-of-dimensionality" title="Permalink to this headline">¶</a></h3>
 <p>For an estimator to be effective, you need the distance between neighboring
-points to be less than some value <span class="math">d</span>, which depends on the problem.
-In one dimension, this requires on average <span class="math">n ~ 1/d</span> points.
-In the context of the above <span class="math">k</span>-NN example, if the data is described by
-just one feature with values ranging from 0 to 1 and with <span class="math">n</span> training
-observations, then new data will be no further away than <span class="math">1/n</span>.
+points to be less than some value <img class="math" src="../../_images/math/425d86ba2f2979d75b7535c2bcf92c33ed6b285a.png" alt="d"/>, which depends on the problem.
+In one dimension, this requires on average <img class="math" src="../../_images/math/1149cb226589a7b7d18f15d51c492e99da4fae4c.png" alt="n ~ 1/d"/> points.
+In the context of the above <img class="math" src="../../_images/math/e9203da50e1059455123460d4e716c9c7f440cc3.png" alt="k"/>-NN example, if the data is described by
+just one feature with values ranging from 0 to 1 and with <img class="math" src="../../_images/math/413f8a8e40062a9090d9d50b88bc7b551b314c26.png" alt="n"/> training
+observations, then new data will be no further away than <img class="math" src="../../_images/math/8ed7b101148182605feefc48fac92f577d32f6f2.png" alt="1/n"/>.
 Therefore, the nearest neighbor decision rule will be efficient as soon as
-<span class="math">1/n</span> is small compared to the scale of between-class feature variations.</p>
-<p>If the number of features is <span class="math">p</span>, you now require <span class="math">n ~ 1/d^p</span>
-points.  Let&#8217;s say that we require 10 points in one dimension: now <span class="math">10^p</span>
-points are required in <span class="math">p</span> dimensions to pave the <span class="math">[0, 1]</span> space.
-As <span class="math">p</span> becomes large, the number of training points required for a good
+<img class="math" src="../../_images/math/8ed7b101148182605feefc48fac92f577d32f6f2.png" alt="1/n"/> is small compared to the scale of between-class feature variations.</p>
+<p>If the number of features is <img class="math" src="../../_images/math/3eca8557203e86160952e1c0f735f7417f3285b1.png" alt="p"/>, you now require <img class="math" src="../../_images/math/1ce752cc0feafeca82a10347e47927f82d90254d.png" alt="n ~ 1/d^p"/>
+points.  Let&#8217;s say that we require 10 points in one dimension: now <img class="math" src="../../_images/math/d6e79569893190df0327efadedba52812f6ec183.png" alt="10^p"/>
+points are required in <img class="math" src="../../_images/math/3eca8557203e86160952e1c0f735f7417f3285b1.png" alt="p"/> dimensions to pave the <img class="math" src="../../_images/math/787ef8897f85416cae83d74ef5630a9c5973d996.png" alt="[0, 1]"/> space.
+As <img class="math" src="../../_images/math/3eca8557203e86160952e1c0f735f7417f3285b1.png" alt="p"/> becomes large, the number of training points required for a good
 estimator grows exponentially.</p>
 <p>For example, if each point is just a single number (8 bytes), then an
-effective <span class="math">k</span>-NN estimator in a paltry <span class="math">p~20</span> dimensions would
+effective <img class="math" src="../../_images/math/e9203da50e1059455123460d4e716c9c7f440cc3.png" alt="k"/>-NN estimator in a paltry <img class="math" src="../../_images/math/b0baabc767a659b7f59f2d65ba14cbeff17d9d6b.png" alt="p~20"/> dimensions would
 require more training data than the current estimated size of the entire
 internet (±1000 Exabytes or so).</p>
 <p>This is called the
@@ -318,13 +318,13 @@ in it&#8217;s simplest form, fits a linear model to the data set by adjusting
 a set of parameters in order to make the sum of the squared residuals
 of the model as small as possible.</p>
 <a class="reference external image-reference" href="../../auto_examples/linear_model/plot_ols.html"><img alt="../../_images/plot_ols_0012.png" class="align-right" src="../../_images/plot_ols_0012.png" style="width: 320.0px; height: 240.0px;" /></a>
-<p>Linear models: <span class="math">y = X\beta + \epsilon</span></p>
+<p>Linear models: <img class="math" src="../../_images/math/da6d9feb881cb1b6599ef1aee85eb1131052017b.png" alt="y = X\beta + \epsilon"/></p>
 <blockquote>
 <div><ul class="simple">
-<li><span class="math">X</span>: data</li>
-<li><span class="math">y</span>: target variable</li>
-<li><span class="math">\beta</span>: Coefficients</li>
-<li><span class="math">\epsilon</span>: Observation noise</li>
+<li><img class="math" src="../../_images/math/f026aecf11ec7f6141ab863f260d395f94b10f51.png" alt="X"/>: data</li>
+<li><img class="math" src="../../_images/math/b124ff74afb0914bb434e8fb849eb56d734412f8.png" alt="y"/>: target variable</li>
+<li><img class="math" src="../../_images/math/8ce03f78ed945f2ef3dac87c8799b55b393527e7.png" alt="\beta"/>: Coefficients</li>
+<li><img class="math" src="../../_images/math/19bc0073dde1bcd1a8e6a32b251e80cced668f04.png" alt="\epsilon"/>: Observation noise</li>
 </ul>
 </div></blockquote>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span>
@@ -467,8 +467,8 @@ regression is not the right approach as it will give too much weight to
 data far from the decision frontier. A linear approach is to fit a sigmoid
 function or <strong>logistic</strong> function:</p>
 <div class="math">
-<p><span class="math">y = \textrm{sigmoid}(X\beta - \textrm{offset}) + \epsilon =
-\frac{1}{1 + \textrm{exp}(- X\beta + \textrm{offset})} + \epsilon</span></p>
+<p><img src="../../_images/math/3fcabd4a94b24f0fb2bd4b2bb79703cf8f5eb496.png" alt="y = \textrm{sigmoid}(X\beta - \textrm{offset}) + \epsilon =
+\frac{1}{1 + \textrm{exp}(- X\beta + \textrm{offset})} + \epsilon"/></p>
 </div><div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">logistic</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LogisticRegression</span><span class="p">(</span><span class="n">C</span><span class="o">=</span><span class="mf">1e5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">logistic</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">iris_X_train</span><span class="p">,</span> <span class="n">iris_y_train</span><span class="p">)</span>
 <span class="go">LogisticRegression(C=100000.0, class_weight=None, dual=False,</span>

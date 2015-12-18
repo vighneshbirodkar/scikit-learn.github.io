@@ -173,15 +173,15 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.metrics" title="sklearn.metrics"><tt class="xref py py-mod docutils literal"><span class="pre">sklearn.metrics</span></tt></a>.mutual_info_score<a class="headerlink" href="#sklearn-metrics-mutual-info-score" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="sklearn.metrics.mutual_info_score">
-<tt class="descclassname">sklearn.metrics.</tt><tt class="descname">mutual_info_score</tt><big>(</big><em>labels_true</em>, <em>labels_pred</em>, <em>contingency=None</em>, <em>max_n_classes=5000</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/91df00f/sklearn/metrics/cluster/supervised.py#L551"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.metrics.mutual_info_score" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sklearn.metrics.</tt><tt class="descname">mutual_info_score</tt><big>(</big><em>labels_true</em>, <em>labels_pred</em>, <em>contingency=None</em>, <em>max_n_classes=5000</em><big>)</big><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/60562ba/sklearn/metrics/cluster/supervised.py#L551"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sklearn.metrics.mutual_info_score" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mutual Information between two clusterings</p>
 <p>The Mutual Information is a measure of the similarity between two labels of
-the same data. Where <span class="math">P(i)</span> is the probability of a random sample
-occurring in cluster <span class="math">U_i</span> and <span class="math">P'(j)</span> is the probability of a
-random sample occurring in cluster <span class="math">V_j</span>, the Mutual Information
-between clusterings <span class="math">U</span> and <span class="math">V</span> is given as:</p>
+the same data. Where <img class="math" src="../../_images/math/c659422e679981e7ee3a7a3bc3a7420a5c0257cb.png" alt="P(i)"/> is the probability of a random sample
+occurring in cluster <img class="math" src="../../_images/math/efa692abc46aba225adbe774bd88586d30d62ab6.png" alt="U_i"/> and <img class="math" src="../../_images/math/7708bff9659d3004788cde7bb74d8019469a289c.png" alt="P'(j)"/> is the probability of a
+random sample occurring in cluster <img class="math" src="../../_images/math/770bbb31758ede291297b7bd4e7b21c2163831ec.png" alt="V_j"/>, the Mutual Information
+between clusterings <img class="math" src="../../_images/math/73f5e249c88b2b3068263480f576b051cb5c4f6e.png" alt="U"/> and <img class="math" src="../../_images/math/c99df7a209495334da442b1ec998abaabfa320d8.png" alt="V"/> is given as:</p>
 <div class="math">
-<p><span class="math">MI(U,V)=\sum_{i=1}^R \sum_{j=1}^C P(i,j)\log\frac{P(i,j)}{P(i)P'(j)}</span></p>
+<p><img src="../../_images/math/4538c7d3ad3bb7fb14e3db8250fd9e4cce31d23d.png" alt="MI(U,V)=\sum_{i=1}^R \sum_{j=1}^C P(i,j)\log\frac{P(i,j)}{P(i)P'(j)}"/></p>
 </div><p>This is equal to the Kullback-Leibler divergence of the joint distribution
 with the product distribution of the marginals.</p>
 <p>This metric is independent of the absolute values of the labels:
